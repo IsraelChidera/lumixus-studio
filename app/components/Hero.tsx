@@ -1,5 +1,10 @@
 import React from 'react';
 import Container from '@/app/components/Elements/Container';
+import Button from '@/app/components/Elements/Button';
+import Button2 from '@/app/components/Elements/Button2';
+import { FaArrowRight } from "react-icons/fa";
+import screen from '@/public/screenshero-screens.png';
+import Image from 'next/image';
 
 const Hero = () => {
     return (
@@ -17,10 +22,26 @@ const Hero = () => {
                     </p>
                 </div>
 
-                <div>
-                    
+                <div className='mt-[80px] flex items-center justify-center w-full'>
+                    <div className='flex space-x-4 '>
+                        <Button className='flex items-center text-[17px] space-x-2'>
+                            <span>
+                                Get Started
+                            </span>
+
+                            <FaArrowRight className="text-white" />
+                        </Button>
+
+                        <Button2 className='text-[17px]'>
+                            Learn More
+                        </Button2>
+                    </div>
                 </div>
             </Container>
+
+            <div className='mt-[35px]'>
+                <Image src={screen} alt="hero screens" />
+            </div>
         </header>
     )
 }
