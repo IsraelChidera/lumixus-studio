@@ -8,7 +8,7 @@ import Image from 'next/image';
 
 const Hero = () => {
     return (
-        <header className='pt-[50px]'>
+        <header className='pt-[50px] pb-[100px]'>
             <Container>
                 <h1 className='text-center text-[80px] font-medium leading-[5.5rem]'>
                     <span>Let's build products</span><br />
