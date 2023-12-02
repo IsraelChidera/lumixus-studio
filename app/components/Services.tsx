@@ -1,13 +1,14 @@
 import React from 'react';
 import Container from '@/app/components/Elements/Container';
 import Button from '@/app/components/Elements/Button';
+import Image from 'next/image';
 import { FaArrowRight } from "react-icons/fa";
 import web from '@/public/web.png';
 import strategy from '@/public/strategy.png';
-import Image from 'next/image';
 import ball from '@/public/ball.png';
 import { MdWeb } from "react-icons/md";
 import { GrOptimize } from "react-icons/gr";
+import { IoStorefrontOutline } from "react-icons/io5";
 
 const Services = () => {
     return (
@@ -91,6 +92,19 @@ const Services = () => {
 
                             <div>
                                 <h4 className='text-xl'>Optimization</h4>
+                                <p className='text-sm pt-1'>
+                                    Product agency that relates people relations
+                                </p>
+                            </div>
+                        </div>
+
+                        <div className='flex items-center space-x-4'>
+                            <div>
+                                <IoStorefrontOutline className="text-blue text-[40px]" />
+                            </div>
+
+                            <div>
+                                <h4 className='text-xl'>Ecommerce</h4>
                                 <p className='text-sm pt-1'>
                                     Product agency that relates people relations
                                 </p>

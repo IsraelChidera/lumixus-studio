@@ -12,5 +12,19 @@ body {
   background: #161616;
   scroll-behavior: smooth;
   color: #ffffff;
-  
+}
+
+.centered-element {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.bg-image {
+  /* background-image: url(img/imgportfolio/2.png); */
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center -31.875px;
 }
