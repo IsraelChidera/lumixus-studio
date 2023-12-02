@@ -1,6 +1,5 @@
 'use client'
 import React, { useRef, useCallback } from 'react';
-import Container from '@/app/components/Elements/Container';
 import Image from 'next/image';
 import Link from 'next/link';
 import balls from '@/public/balls.png';
@@ -30,7 +29,7 @@ const Works = () => {
     }, []);
 
     return (
-        <section className='mt-[154px] relative'>
+        <section className='mt-[154px] relative pb-[100px]'>
             <div className='relative z-20'>
                 <div className='ml-[97px] grid grid-cols-4 gap-x-10'>
                     <div className='col-span-1 flex items-center'>

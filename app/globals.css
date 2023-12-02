@@ -22,9 +22,21 @@ body {
 }
 
 .bg-image {
+  position: relative;
   /* background-image: url(img/imgportfolio/2.png); */
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-position: center -31.875px;
+}
+
+.bg-image:before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: #121319;
+  z-index: 1;
 }
