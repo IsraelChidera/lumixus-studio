@@ -6,6 +6,7 @@ import Works from './components/Works'
 import StartProject from './components/StartProject'
 import Testimonial from './components/Testimonial'
 import Contact from './components/Contact'
+import Footer from './components/Footer'
 
 export default function Home() {
   return (
@@ -17,6 +18,7 @@ export default function Home() {
       <StartProject />
       <Testimonial />
       <Contact />
+      <Footer />
     </main>
   )
 }
