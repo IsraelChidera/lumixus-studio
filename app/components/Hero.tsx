@@ -11,8 +11,8 @@ const Hero = () => {
         <header className='pt-[50px] pb-[100px]'>
             <Container>
                 <h1 className='text-center text-[80px] font-medium leading-[5.5rem]'>
-                    <span>Let's build products</span><br />
-                    <span>together for life</span>
+                    <span className='gradient-animation-light'>Let's build products</span><br />
+                    <span className='gradient-animation-dark'>together for life</span>
                 </h1>
 
                 <div className='mx-auto w-full flex items-center justify-center text-center'>

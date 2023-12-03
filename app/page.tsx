@@ -18,7 +18,7 @@ export default function Home() {
       <StartProject />
       <Testimonial />
       <Contact />
-      <Footer />
+      <Footer />      
     </main>
   )
 }

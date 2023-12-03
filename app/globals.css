@@ -52,7 +52,7 @@ body {
 }
 
 .gradient-animation-dark {
-  background: linear-gradient(81deg, #130A52 33%, #42AFE9 57%, #130A52 69%);
+  background: linear-gradient(81deg, #4452FE 33%, #3600ff 57%, #4452FE 69%);
   background-size: 400%;
   background-clip: text;
   -webkit-background-clip: text;

@@ -3,16 +3,16 @@ import React from 'react';
 import Container from '@/app/components/Elements/Container';
 import { FaInstagram } from "react-icons/fa";
 import { SiGmail } from "react-icons/si";
-import logo from '@/public/logo-3.png'
+import logo from '@/public/logo-blue.png';
 import { FaFacebookSquare } from "react-icons/fa";
 
 const Footer = () => {
     return (
-        <footer className='mt-20 border-t border-[#0E0E0E] pt-4 pb-6'>
+        <footer className='mt-20 border-t border-[#0E0E0E]'>
             <Container>
                 <div className='flex justify-between items-center'>
                     <div className=''>
-                        <Image src={logo} alt="logo" className='w-20 h-20' />
+                        <Image src={logo} alt="logo" className='w-36' />
                     </div>
 
                     <div className='flex items-center space-x-4'>
