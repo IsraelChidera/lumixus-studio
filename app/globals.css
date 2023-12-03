@@ -12,6 +12,7 @@ body {
   background: #161616;
   scroll-behavior: smooth;
   color: #ffffff;
+  overflow-x: hidden;
 }
 
 .centered-element {
