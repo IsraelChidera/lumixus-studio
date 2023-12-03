@@ -57,8 +57,7 @@ export default function RootLayout({
       </head>
       <body className="relative">
         {children}
-        <FloatingButton />
-
+        <FloatingButton />               
         <script src="//code.tidio.co/eags5ma6uvurxlw7que0lrhkgybpmcfl.js" async></script>
       </body>
     </html>

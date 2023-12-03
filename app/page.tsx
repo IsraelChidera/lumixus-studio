@@ -7,10 +7,11 @@ import StartProject from './components/StartProject'
 import Testimonial from './components/Testimonial'
 import Contact from './components/Contact'
 import Footer from './components/Footer'
+import CustomCursor from './components/CustomCursor'
 
 export default function Home() {
   return (
-    <main>
+    <main className='relative'>
       <Navbar />
       <Hero />
       <Services />
@@ -18,7 +19,8 @@ export default function Home() {
       <StartProject />
       <Testimonial />
       <Contact />
-      <Footer />      
+      <Footer />
+      <CustomCursor />      
     </main>
   )
 }
