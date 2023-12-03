@@ -41,3 +41,31 @@ body {
   opacity: 0.6;
   z-index: 1;
 }
+
+.gradient-animation-light {
+  background: radial-gradient(circle, #fff 14%, #42AFE9 57%, #fff 100%);
+  background-size: 400%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  animation: gradientAnimation 15s linear infinite;
+}
+
+.gradient-animation-dark {
+  background: linear-gradient(81deg, #130A52 33%, #42AFE9 57%, #130A52 69%);
+  background-size: 400%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  animation: gradientAnimation 10s linear infinite;
+}
+
+@keyframes gradientAnimation {
+  0% {
+    background-position: 100% 0;
+  }
+
+  100% {
+    background-position: -100% 0;
+  }
+}

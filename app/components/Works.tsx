@@ -4,11 +4,10 @@ import Image from 'next/image';
 import Link from 'next/link';
 import balls from '@/public/balls.png';
 import { FaArrowRight } from "react-icons/fa";
-import { FaArrowLeft } from "react-icons/fa";
 
 import { A11y, Navigation, Pagination } from 'swiper/modules';
 // import Swiper and modules styles
-import { Swiper, SwiperSlide, useSwiper } from 'swiper/react';
+import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
