@@ -12,31 +12,31 @@ const Navbar = () => {
 
                 <ul className='flex tracking-wide items-center justify-between space-x-6 text-sm'>
                     <li className=''>
-                        <Link href="#">
+                        <Link href="#about">
                             About
                         </Link>
                     </li>
 
                     <li>
-                        <Link href="#">
+                        <Link href="/#services">
                             Services
                         </Link>
                     </li>
 
                     <li>
-                        <Link href="#">
+                        <Link href="#works">
                             Portfolio
                         </Link>
                     </li>
 
                     <li>
-                        <Link href="#">
+                        <Link href="#testimonials">
                             Testimonials
                         </Link>
                     </li>
 
                     <li>
-                        <Link href="#">
+                        <Link href="#contact">
                             Contact
                         </Link>
                     </li>
