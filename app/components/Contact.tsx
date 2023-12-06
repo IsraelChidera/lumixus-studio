@@ -15,7 +15,7 @@ const Contact = () => {
                 </h2>
 
                 <form className='mt-4'>
-                    <div className='grid grid-cols-3 gap-x-4 gap-y-8 '>
+                    <div className='md:grid grid-cols-3 md:space-y-0 space-y-6 md:gap-x-4 gap-y-8 '>
                         <div>
                             <input
                                 type="text"

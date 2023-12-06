@@ -30,7 +30,7 @@ const Works = () => {
     return (
         <section className='mt-[154px] relative pb-[100px]'>
             <div className='relative z-20'>
-                <div className='ml-[97px] grid grid-cols-4 gap-x-10'>
+                <div className='md:px-0 px-3  md:ml-[97px] md:grid grid-cols-4 gap-x-10'>
                     <div className='col-span-1 flex items-center'>
                         <div>
                             <h2 style={{ lineHeight: "100px" }} className='text-[81px] font-medium '>
@@ -40,19 +40,33 @@ const Works = () => {
 
                             <Link className='-pt-10 flex space-x-4 items-center' href="#">
                                 <span>Our Portfolio</span>
-                                <FaArrowRight className='text-white' />
+                                <FaArrowRight className='text-white md:block hidden' />
                             </Link>
                         </div>
                     </div>
 
-                    <div className='col-span-3 w-full'>
+                    <div className='mt-4 md:mt-0 col-span-3 w-full'>
                         <div className='relative z-30'>
                             <Swiper
                                 ref={swiperRef}
                                 modules={[Navigation, Pagination, A11y]}
                                 pagination={true}
+                                breakpoints={{
+                                    640: {
+                                      slidesPerView: 2,
+                                      spaceBetween: 10,
+                                    },
+                                    768: {
+                                      slidesPerView: 1.5,
+                                      spaceBetween: 10,
+                                    },
+                                    1024: {
+                                      slidesPerView: 1.5,
+                                      spaceBetween: 10,
+                                    },
+                                  }}
                                 spaceBetween={30}
-                                slidesPerView={2.5}
+                                // slidesPerView={2.5}
                                 onSlideChange={() => console.log('slide change')}
                                 onSwiper={(swiper) => console.log(swiper)}
                                 className='relative'
@@ -87,7 +101,7 @@ const Works = () => {
                                     </div>
                                 </SwiperSlide>
 
-                                <div onClick={slideNext} className='cursor-pointer centered-element z-20 p-[25px]' style={{ background: "rgba(0, 0, 0, 0.90)" }}>
+                                <div onClick={slideNext} className='md:block hidden cursor-pointer centered-element z-20 p-[25px]' style={{ background: "rgba(0, 0, 0, 0.90)" }}>
                                     <FaArrowRight  />
                                 </div>
                             </Swiper>

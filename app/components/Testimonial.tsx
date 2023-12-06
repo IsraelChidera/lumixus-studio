@@ -40,7 +40,7 @@ const Testimonial = () => {
                                 What does our <br/> client have to say?
                             </h2>
 
-                            <div className='w-[470px] mt-10'>
+                            <div className='md:w-[470px] mt-10'>
 
                                 <Swiper
                                     ref={swiperRef}
