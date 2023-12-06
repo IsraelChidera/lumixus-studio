@@ -10,7 +10,7 @@ const Navbar = () => {
             <Container className='flex justify-between items-center'>
                 <Image src={logo} alt="Lumixus studio logo" className='w-36' />
 
-                <ul className='flex tracking-wide items-center justify-between space-x-6 text-sm'>
+                <ul className='xl:flex hidden tracking-wide items-center justify-between space-x-6 text-sm'>
                     <li className=''>
                         <Link href="#about">
                             About
@@ -41,6 +41,8 @@ const Navbar = () => {
                         </Link>
                     </li>
                 </ul>
+
+                {/* Mobile navigation */}
             </Container>
 
         </nav>

@@ -10,7 +10,7 @@ const Hero = () => {
     return (
         <header className='pt-[50px] pb-[100px]'>
             <Container>
-                <h1 className='text-center text-[80px] font-medium leading-[5.5rem]'>
+                <h1 className='text-center sm:text-[60px] text-[80px] font-medium -leading-7 sm:leading-[5.5rem]'>
                     <span className='gradient-animation-light'>Let's build products</span><br />
                     <span className='gradient-animation-dark'>together for life</span>
                 </h1>
@@ -22,8 +22,8 @@ const Hero = () => {
                     </p>
                 </div>
 
-                <div className='mt-[80px] flex items-center justify-center w-full'>
-                    <div className='flex space-x-4 '>
+                <div className='mt-4 sm:mt-[80px] flex items-center justify-center w-full'>
+                    <div className='sm:flex sm:space-x-4 sm:space-y-0 space-y-4 '>
                         <Button className='flex items-center text-[17px] space-x-2'>
                             <span>
                                 Get Started
@@ -32,7 +32,7 @@ const Hero = () => {
                             <FaArrowRight className="text-white" />
                         </Button>
 
-                        <Button2 className='text-[17px]'>
+                        <Button2 className=' w-full text-[17px]'>
                             Learn More
                         </Button2>
                     </div>

@@ -45,7 +45,7 @@ const Services = () => {
                         We provide end-to-end solutions
                     </h2>
 
-                    <div className='grid grid-cols-2 gap-y-10 gap-x-10 pt-9 pb-9'>
+                    <div className='grid grid-cols-1 md:grid-cols-2 gap-y-10 md:gap-y-10 md:gap-x-10 pt-9 pb-9'>
                         <div className='flex items-center space-x-4'>
                             <div>
                                 <Image src={web} alt="web dev icon" />
