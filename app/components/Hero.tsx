@@ -40,7 +40,7 @@ const Hero = () => {
             </Container>
 
             <div className='mt-[35px]'>
-                <Image src={screen} alt="hero screens" />
+                <Image src={screen} alt="hero screens" style={{ width: "100%" }} />
             </div>
         </header>
     )

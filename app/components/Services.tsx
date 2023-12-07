@@ -13,7 +13,7 @@ import { IoStorefrontOutline } from "react-icons/io5";
 const Services = () => {
     return (
         <section id="#services" className='mt-[62px] pb-[50px]'>
-            <Container>
+            <Container className='px-3 lg:px-0'>
                 <p className='uppercase text-center text-sm font-medium'>
                     Who we are
                 </p>
