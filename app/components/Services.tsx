@@ -9,6 +9,7 @@ import ball from '@/public/ball.png';
 import { MdWeb } from "react-icons/md";
 import { GrOptimize } from "react-icons/gr";
 import { IoStorefrontOutline } from "react-icons/io5";
+import Link from 'next/link';
 
 const Services = () => {
     return (
@@ -25,13 +26,15 @@ const Services = () => {
                 </h2>
 
                 <div className='flex items-center justify-center mt-[30px] pb-[37px]'>
-                    <Button className='flex items-center text-[17px] space-x-2'>
-                        <span>
-                            Get a Free Consultation
-                        </span>
+                    <Link href="https://calendly.com/lumixusstudio/30min">
+                        <Button className='flex items-center text-[17px] space-x-2'>
+                            <span>
+                                Get a Free Consultation
+                            </span>
 
-                        <FaArrowRight className="text-white" />
-                    </Button>
+                            <FaArrowRight className="text-white" />
+                        </Button>
+                    </Link>
                 </div>
             </Container>
 

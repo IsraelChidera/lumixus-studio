@@ -5,6 +5,7 @@ import { FaArrowRight } from "react-icons/fa";
 import Image from 'next/image';
 import ring from '@/public/ring.png';
 import ring2 from '@/public/ring-2.png';
+import Link from 'next/link';
 
 const StartProject = () => {
     return (
@@ -19,18 +20,21 @@ const StartProject = () => {
                 </h2>
 
                 <div className='flex items-center justify-center'>
-                    <Button className='flex items-center text-[17px] space-x-2 mt-[28px]'>
-                        <span>
-                            Schedule a call
-                        </span>
+                    <Link href="https://calendly.com/lumixusstudio/let-s-talk">
+                        <Button className='flex items-center text-[17px] space-x-2 mt-[28px]'>
+                            <span>
+                                Schedule a call
+                            </span>
 
-                        <FaArrowRight className="text-white" />
-                    </Button>
+                            <FaArrowRight className="text-white" />
+                        </Button>
+                    </Link>
+
                 </div>
             </Container>
 
-            <Image className='opacity-60 absolute top-0 right-0 z-10' src={ring} alt="ring svg"/>
-            <Image className='opacity-60 absolute top-0 left-0 z-10' src={ring2} alt="ring svg"/>
+            <Image className='opacity-60 absolute top-0 right-0 z-10' src={ring} alt="ring svg" />
+            <Image className='opacity-60 absolute top-0 left-0 z-10' src={ring2} alt="ring svg" />
         </section>
     )
 }

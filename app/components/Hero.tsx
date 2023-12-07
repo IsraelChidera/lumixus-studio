@@ -5,12 +5,13 @@ import Button2 from '@/app/components/Elements/Button2';
 import { FaArrowRight } from "react-icons/fa";
 import screen from '@/public/screenshero-screens.png';
 import Image from 'next/image';
+import Link from 'next/link';
 
 const Hero = () => {
     return (
         <header className='pt-[50px] pb-[100px]'>
             <Container>
-                <h1 className='text-center sm:text-[60px] text-[80px] font-medium -leading-7 sm:leading-[5.5rem]'>
+                <h1 className='text-center sm:text-[60px] text-6xl font-medium -leading-7 sm:leading-[5.5rem]'>
                     <span className='gradient-animation-light'>Let's build products</span><br />
                     <span className='gradient-animation-dark'>together for life</span>
                 </h1>
@@ -23,18 +24,20 @@ const Hero = () => {
                 </div>
 
                 <div className='mt-4 sm:mt-[80px] flex items-center justify-center w-full'>
-                    <div className='sm:flex sm:space-x-4 sm:space-y-0 space-y-4 '>
-                        <Button className='flex items-center text-[17px] space-x-2'>
-                            <span>
-                                Get Started
-                            </span>
+                    <div className='md:grid grid-cols-2 md:space-y-0 space-y-4 space-x-0 md:space-x-4'>
 
-                            <FaArrowRight className="text-white" />
-                        </Button>
+                        <Link href="https://calendly.com/lumixusstudio/let-s-talk" className='w-full block'>
+                            <Button className='w-full  text-[17px] '>
+                                Schedule a call
+                            </Button>
+                        </Link>
 
-                        <Button2 className=' w-full text-[17px]'>
-                            Learn More
-                        </Button2>
+                        <Link href="#" className='w-full block'>
+                            <Button2 className=' w-full text-[17px]'>
+                                Learn more
+                            </Button2>
+                        </Link>
+
                     </div>
                 </div>
             </Container>

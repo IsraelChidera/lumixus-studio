@@ -16,16 +16,16 @@ const Footer = () => {
                     </div>
 
                     <div className='flex items-center justify-center space-x-4'>
-                        <a href="mailto:lumixusstudio@gmail.com"> 
-                            <SiGmail className="text-2xl"/>
+                        <a className='' href="mailto:lumixusstudio@gmail.com"> 
+                            <SiGmail className="text-sm lg:text-2xl md:text-base "/>
                         </a>
 
                         <a href="https://www.instagram.com/lumixus_studio/">
-                            <FaInstagram className="text-2xl"/>
+                            <FaInstagram className="text-sm lg:text-2xl md:text-base "/>
                         </a>
 
                         <a href="#">
-                            <FaFacebookSquare className="text-2xl"/>
+                            <FaFacebookSquare className="text-sm lg:text-2xl md:text-base "/>
                         </a>
                     </div>
                 </div>
