@@ -11,32 +11,32 @@ export const metadata: Metadata = {
 const myFont = localFont({
   src: [
     {
-      path: '../fonts/GraphikExtraLight.otf',
+      path: './fonts/GraphikExtraLight.otf',
       weight: '200',
       style: 'extralight'
     },
     {
-      path: '../fonts/GraphikLight.otf',
+      path: './fonts/GraphikLight.otf',
       weight: '300',
       style: 'light'
     },
     {
-      path: '../fonts/GraphikRegular.otf',
+      path: './fonts/GraphikRegular.otf',
       weight: '400',
       style: 'regular'
     },
     {
-      path: '../fonts/GraphikMedium.otf',
+      path: './fonts/GraphikMedium.otf',
       weight: '500',
       style: 'medium'
     },
     {
-      path: '../fonts/GraphikBold.otf',
+      path: './fonts/GraphikBold.otf',
       weight: '600',
       style: 'bold'
     },
     {
-      path: '../fonts/GraphikBlack.otf',
+      path: './fonts/GraphikBlack.otf',
       weight: '700',
       style: 'black'
     }
