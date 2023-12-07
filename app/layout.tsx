@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 const myFont = localFont({
   src: [
     {
-      path: './fonts/GraphikExtraLight.otf',
+      path: './fonts/GraphikExtralight.otf',
       weight: '200',
       style: 'extralight'
     },
