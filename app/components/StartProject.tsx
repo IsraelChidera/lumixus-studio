@@ -21,7 +21,7 @@ const StartProject = () => {
                 <div className='flex items-center justify-center'>
                     <Button className='flex items-center text-[17px] space-x-2 mt-[28px]'>
                         <span>
-                            Get in touch
+                            Schedule a call
                         </span>
 
                         <FaArrowRight className="text-white" />
