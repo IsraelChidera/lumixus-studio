@@ -1,8 +1,7 @@
 "use client"
 import React, { useRef, useCallback } from 'react';
 
-import { FaArrowRight } from "react-icons/fa";
-import { FaArrowLeft } from "react-icons/fa";
+import Button from '@/app/components/Elements/Button';
 
 import { A11y, Navigation, Pagination } from 'swiper/modules';
 // import Swiper and modules styles
@@ -16,12 +15,12 @@ const Testimonial = () => {
     const swiperRef: any = useRef(null);
 
 
-    const slidePrev = useCallback(() => {
+    const slidePrev:any = useCallback(() => {
         if (!swiperRef.current) return;
         swiperRef.current.swiper.slidePrev();
     }, []);
 
-    const slideNext = useCallback(() => {
+    const slideNext:any = useCallback(() => {
         if (!swiperRef.current) return;
         swiperRef.current.swiper.slideNext();
     }, []);
@@ -113,6 +112,10 @@ const Testimonial = () => {
                                     </SwiperSlide>
                                 </Swiper>
 
+                                <div className='flex justify-between items-center mt-6'>
+                                    <Button onClick={slidePrev}>Prev</Button>
+                                    <Button onClick={slideNext}>Next</Button>
+                                </div>
                             </div>
                         </div>
                     </div>
