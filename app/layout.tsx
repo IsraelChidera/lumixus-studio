@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import './globals.css';
 import localFont from 'next/font/local'
 import FloatingButton from './components/FloatingButton';
+import CustomCursor from './components/CustomCursor';
 
 export const metadata: Metadata = {
   title: 'Lumixus studio',
@@ -57,7 +58,8 @@ export default function RootLayout({
       </head>
       <body className="relative">
         {children}
-        <FloatingButton />               
+        <FloatingButton />  
+        <CustomCursor />                
         <script src="//code.tidio.co/eags5ma6uvurxlw7que0lrhkgybpmcfl.js" async></script>
       </body>
     </html>

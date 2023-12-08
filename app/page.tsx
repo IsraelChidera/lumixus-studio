@@ -1,4 +1,3 @@
-import Image from 'next/image'
 import Navbar from './components/Navbar'
 import Hero from './components/Hero'
 import Services from './components/Services'
@@ -7,7 +6,6 @@ import StartProject from './components/StartProject'
 import Testimonial from './components/Testimonial'
 import Contact from './components/Contact'
 import Footer from './components/Footer'
-import CustomCursor from './components/CustomCursor'
 
 export default function Home() {
   return (
@@ -19,8 +17,7 @@ export default function Home() {
       <StartProject />
       <Testimonial />
       <Contact />
-      <Footer />
-      <CustomCursor />      
+      <Footer />         
     </main>
   )
 }
