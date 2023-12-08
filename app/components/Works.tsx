@@ -11,6 +11,9 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
+import pharmabolt from '@/public/pharmabolt.png';
+import getlinked from '@/public/getlinked.png';
+import icystore from '@/public/icystore.png';
 
 const Works = () => {
 
@@ -53,18 +56,18 @@ const Works = () => {
                                 pagination={true}
                                 breakpoints={{
                                     640: {
-                                      slidesPerView: 2,
-                                      spaceBetween: 10,
+                                        slidesPerView: 2,
+                                        spaceBetween: 10,
                                     },
                                     768: {
-                                      slidesPerView: 1.5,
-                                      spaceBetween: 10,
+                                        slidesPerView: 1.5,
+                                        spaceBetween: 10,
                                     },
                                     1024: {
-                                      slidesPerView: 1.5,
-                                      spaceBetween: 10,
+                                        slidesPerView: 1.5,
+                                        spaceBetween: 10,
                                     },
-                                  }}
+                                }}
                                 spaceBetween={30}
                                 // slidesPerView={2.5}
                                 onSlideChange={() => console.log('slide change')}
@@ -72,38 +75,55 @@ const Works = () => {
                                 className='relative'
                             >
                                 <SwiperSlide>
-                                    <div className='w-[325px] h-[562px] bg-red-600 '>
-                                        a
+                                    <div className='relative' >
+                                        <Image src={pharmabolt} alt="web project" />
+                                        <div className='centered-bottom bg-[#0E0E0E]  pt-2 px-10 pb-4'>
+                                            <p className='gradient-animation-light text-center text-sm font-semibold'>Ecommerce & Web Development</p>
+                                            <h3 className='pt-4 text-[17px] font-semibold text-center text-white'>Pharmabolt</h3>
+                                        </div>
                                     </div>
                                 </SwiperSlide>
 
                                 <SwiperSlide>
-                                    <div className='w-[325px] h-[562px] bg-red-600 '>
-                                        a
+                                    <div className='relative' >
+                                        <Image src={getlinked} alt="web project" />
+                                        <div className='centered-bottom bg-[#0E0E0E]  pt-2 px-10 pb-4'>
+                                            <p className='gradient-animation-light text-center text-sm font-semibold'>Web Design & Development</p>
+                                            <h3 className='pt-4 text-[17px] font-semibold text-center text-white'>GetLinked - Landing Page</h3>
+                                        </div>
                                     </div>
                                 </SwiperSlide>
 
                                 <SwiperSlide>
-                                    <div className='w-[325px] h-[562px] bg-red-600 '>
-                                        a
+                                    <div className='relative' >
+                                        <Image src={icystore} alt="web project" />
+                                        <div className='centered-bottom bg-[#0E0E0E]  pt-2 px-10 pb-4'>
+                                            <p className='gradient-animation-light text-center text-sm font-semibold'>Ecommerce & Web Development</p>
+                                            <h3 className='pt-4 text-[17px] font-semibold text-center text-white'>Icy Store</h3>
+                                        </div>
                                     </div>
                                 </SwiperSlide>
 
                                 <SwiperSlide>
-                                    <div className='w-[325px] h-[562px] bg-red-600 '>
-                                        a
+                                    <div className='relative' >
+                                        <Image src={pharmabolt} alt="web project" />
+                                        <div className='centered-bottom bg-[#0E0E0E]  pt-2 px-10 pb-4'>
+                                            <p className='gradient-animation-light text-center text-sm font-semibold'>Ecommerce & Web Development</p>
+                                            <h3 className='pt-4 text-[17px] font-semibold text-center text-white'>Pharmabolt</h3>
+                                        </div>
                                     </div>
                                 </SwiperSlide>
 
                                 <SwiperSlide>
-                                    <div className='w-[325px] h-[562px] bg-red-600 '>
-                                        a
+                                    <div className='relative' >
+                                        <Image src={icystore} alt="web project" />
+                                        <div className='centered-bottom bg-[#0E0E0E]  pt-2 px-10 pb-4'>
+                                            <p className='gradient-animation-light text-center text-xs md:text-sm font-semibold'>Ecommerce & Web Development</p>
+                                            <h3 className='pt-4 text-sm md:text-[17px] font-semibold text-center text-white'>Icy Store</h3>
+                                        </div>
                                     </div>
                                 </SwiperSlide>
 
-                                <div onClick={slideNext} className='md:block hidden cursor-pointer centered-element z-20 p-[25px]' style={{ background: "rgba(0, 0, 0, 0.90)" }}>
-                                    <FaArrowRight  />
-                                </div>
                             </Swiper>
                         </div>
                     </div>
