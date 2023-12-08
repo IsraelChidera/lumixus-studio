@@ -33,7 +33,7 @@ const Works = () => {
     return (
         <section className='mt-[154px] relative pb-[100px]'>
             <div className='relative z-20'>
-                <div className='md:px-0 px-3  md:ml-[97px] md:grid grid-cols-4 gap-x-10'>
+                <div className='lg:px-0 px-3  lg:ml-[97px] lg:grid grid-cols-4 gap-x-10'>
                     <div className='col-span-1 flex items-center'>
                         <div>
                             <h2 style={{ lineHeight: "100px" }} className='text-[81px] font-medium '>
@@ -43,12 +43,12 @@ const Works = () => {
 
                             <Link className='-pt-10 flex space-x-4 items-center' href="#">
                                 <span>Our Portfolio</span>
-                                <FaArrowRight className='text-white md:block hidden' />
+                                <FaArrowRight className='text-white lg:block hidden' />
                             </Link>
                         </div>
                     </div>
 
-                    <div className='mt-4 md:mt-0 col-span-3 w-full'>
+                    <div className='mt-4 lg:mt-0 col-span-3 w-full'>
                         <div className='relative z-30'>
                             <Swiper
                                 ref={swiperRef}
