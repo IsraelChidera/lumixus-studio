@@ -78,6 +78,18 @@ body {
   }
 }
 
+.swiper-container {
+  position: relative;
+}
+
+/* Style for pagination at the bottom */
+.swiper-pagination {
+  position: absolute;
+  bottom: 0px; /* Adjust this value to control the distance from the bottom */
+  left: 0%;
+  transform: translateX(-50%);
+}
+
 .cursor {
   width: 20px;
   height: 20px;
@@ -117,4 +129,22 @@ body {
 
 .expand {
   animation: cursorAnim .5s forwards;
+}
+
+.swiper-pagination-fraction, .swiper-pagination-custom, .swiper-horizontal > .swiper-pagination-bullets, .swiper-pagination-bullets.swiper-pagination-horizontal {
+  bottom: var(--swiper-pagination-bottom, 8px);
+  /* top: var(--swiper-pagination-top, auto); */
+  left: 0;
+  bottom: -10px;
+  width: 100%;
+  position: relative;
+  z-index: 999;
+}
+
+.swiper-pagination-fraction, .swiper-pagination-custom, .swiper-horizontal > .swiper-pagination-bullets, .swiper-pagination-bullets.swiper-pagination-horizontal {
+  bottom: var(--swiper-pagination-bottom, 8px);
+  /* top: var(--swiper-pagination-top, auto); */
+  left: 0;
+  width: 100%;
+  bottom: -8px;
 }

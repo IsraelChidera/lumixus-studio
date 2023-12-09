@@ -4,7 +4,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import balls from '@/public/balls.png';
 import { FaArrowRight } from "react-icons/fa";
-
+import Button from '@/app/components/Elements/Button';
 import { A11y, Navigation, Pagination } from 'swiper/modules';
 // import Swiper and modules styles
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -125,6 +125,11 @@ const Works = () => {
                                 </SwiperSlide>
 
                             </Swiper>
+
+                            <div className="mt-4 flex justify-between items-center">
+                                <Button onClick={slidePrev}>Prev</Button>
+                                <Button onClick={slideNext}>Next</Button>
+                            </div>
                         </div>
                     </div>
                 </div>

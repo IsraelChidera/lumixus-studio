@@ -43,13 +43,13 @@ const Testimonial = () => {
 
                                 <Swiper
                                     ref={swiperRef}
-                                    modules={[Navigation, Pagination, A11y]}                                    
-                                    pagination={true}
+                                    modules={[Navigation, Pagination, A11y]}  
+                                    pagination={true}                                                                      
                                     spaceBetween={30}
                                     slidesPerView={1}
                                     onSlideChange={() => console.log('slide change')}
                                     onSwiper={(swiper) => console.log(swiper)}
-                                    className='relative'
+                                    className='relative swiper-pagination-top swiper-container'
                                 >
                                     <SwiperSlide>
                                         <div>
@@ -65,7 +65,6 @@ const Testimonial = () => {
                                             </div>      
                                         </div>
                                     </SwiperSlide>
-
 
                                     <SwiperSlide>
                                         <div>

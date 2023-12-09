@@ -31,7 +31,7 @@ const FloatingButton = () => {
 
     return (
         <button
-            className={`fixed bottom-[140px] md:right-10 right-1 p-4 md:p-6 z-30 drop-shadow-2xl rounded-full bg-primary animate-bounce text-white ${showButton ? 'block' : 'hidden'}`}
+            className={`fixed bottom-[140px] md:right-3 right-3 p-4 md:p-6 z-30 drop-shadow-2xl rounded-full bg-primary animate-bounce text-white ${showButton ? 'block' : 'hidden'}`}
             onClick={scrollToTop}
         >
             <IoIosArrowUp />
