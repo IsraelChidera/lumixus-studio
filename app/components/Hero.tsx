@@ -32,7 +32,7 @@ const Hero = () => {
                             </Button>
                         </Link>
 
-                        <Link href="#" className='w-full block'>
+                        <Link href="#how" className='w-full block'>
                             <Button2 className=' w-full text-[17px]'>
                                 Learn more
                             </Button2>

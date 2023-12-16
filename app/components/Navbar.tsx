@@ -2,13 +2,13 @@ import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import Container from '@/app/components/Elements/Container';
-import logo from '@/public/logo-blue.png';
+import logo from '@/public/logo-white.png';
 
 const Navbar = () => {
     return (
-        <nav>
+        <nav className='pt-6 pb-4'>
             <Container className='flex justify-between items-center'>
-                <Image src={logo} alt="Lumixus studio logo" className='w-36' />
+                <Image src={logo} alt="Lumixus studio logo" className='w-28' />
 
                 <ul className='xl:flex hidden tracking-wide items-center justify-between space-x-6 text-sm'>
                     <li className=''>
