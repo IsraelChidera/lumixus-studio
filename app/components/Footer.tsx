@@ -15,7 +15,7 @@ const Footer = () => {
                         <Image src={logo} alt="logo" className='w-20' />
                     </div>
 
-                    <div className='flex items-center justify-center space-x-4'>
+                    <div className='flex md:pt-0 pt-3 items-center justify-center space-x-4'>
                         <a className='' href="mailto:lumixusstudio@gmail.com"> 
                             <SiGmail className="text-sm md:text-base "/>
                         </a>

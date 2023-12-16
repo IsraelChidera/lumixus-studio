@@ -13,32 +13,34 @@ import Link from 'next/link';
 
 const Services = () => {
     return (
-        <section id="#services" className='mt-[62px] pb-[50px]'>
+        <section className='mt-[62px] pb-[50px]'>
             <Container className='px-3 lg:px-0'>
-                <p className='uppercase text-center text-sm font-medium'>
-                    Who we are
-                </p>
+                <div id="about">
+                    <p className='uppercase text-center text-sm font-medium'>
+                        Who we are
+                    </p>
 
-                <h2 className='mt-[22px] leading-normal text-center text-[36px] font-medium'>
-                    Lumixous Studio is a digital solution for a product agency
-                    that relates people relations with products,
-                    story development, and other services.
-                </h2>
+                    <h2 className='mt-[22px] leading-normal text-center text-[36px] font-medium'>
+                        Lumixous Studio is a digital solution for a product agency
+                        that relates people relations with products,
+                        story development, and other services.
+                    </h2>
 
-                <div className='flex items-center justify-center mt-[30px] pb-[37px]'>
-                    <Link href="https://calendly.com/lumixusstudio/30min">
-                        <Button className='flex items-center text-[17px] space-x-2'>
-                            <span>
-                                Get a Free Consultation
-                            </span>
+                    <div className='flex items-center justify-center mt-[30px] pb-[37px]'>
+                        <Link href="https://calendly.com/lumixusstudio/30min">
+                            <Button className='flex items-center text-[17px] space-x-2'>
+                                <span>
+                                    Get a Free Consultation
+                                </span>
 
-                            <FaArrowRight className="text-white" />
-                        </Button>
-                    </Link>
+                                <FaArrowRight className="text-white" />
+                            </Button>
+                        </Link>
+                    </div>
                 </div>
             </Container>
 
-            <div className='pt-[114px] bg-[#0E0E0E] relative '>
+            <div id="services" className='pt-[114px] bg-[#0E0E0E] relative '>
                 <Container className='relative z-20'>
                     <p className='uppercase text-center text-[20px] font-medium'>
                         Our best services

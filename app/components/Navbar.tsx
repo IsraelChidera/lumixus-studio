@@ -5,7 +5,9 @@ import Link from 'next/link';
 import Container from '@/app/components/Elements/Container';
 import Button from '@/app/components/Elements/Button';
 import logo from '@/public/logo-white.png';
-import { FaBarsStaggered } from "react-icons/fa6";
+import { FaBarsStaggered, FaXmark } from "react-icons/fa6";
+import { MdArrowOutward } from "react-icons/md";
+
 
 const Navbar = () => {
 
@@ -27,7 +29,7 @@ const Navbar = () => {
                     </li>
 
                     <li className="hover:text-blue">
-                        <Link href="/#services">
+                        <Link href="#services">
                             Services
                         </Link>
                     </li>
@@ -70,37 +72,49 @@ const Navbar = () => {
                         <div className='pt-10 flex items-center justify-between'>
                             <Image src={logo} alt="Lumixus studio logo" className='w-16 md:w-28' />
 
-                            <FaBarsStaggered onClick={() => setClick(false)} />
+                            <FaXmark onClick={() => setClick(false)} />
                         </div>
 
                         <ul className='mt-10 space-y-6'>
                             <li className="text-[34px]">
-                                <Link href="#about" className='hover:text-blue' onClick={() => setClick(false)} >
-                                    About
+                                <Link href="#about" className='hover:text-blue flex items-center space-x-2' onClick={() => setClick(false)} >
+                                    <span>About</span>
+
+                                    <MdArrowOutward />
                                 </Link>
                             </li>
 
                             <li className="text-[34px]">
-                                <Link href="/#services" className='hover:text-blue' onClick={() => setClick(false)} >
-                                    Services
+                                <Link href="#services" className='hover:text-blue flex items-center space-x-2' onClick={() => setClick(false)} >
+                                    <span>Services</span>
+
+                                    <MdArrowOutward />
                                 </Link>
                             </li>
 
                             <li className="text-[34px]">
-                                <Link href="#works" className='hover:text-blue' onClick={() => setClick(false)} >
-                                    Portfolio
+                                <Link href="#works" className='hover:text-blue flex items-center space-x-2' onClick={() => setClick(false)} >
+                                    <span>Portfolio</span>
+
+                                    <MdArrowOutward />
                                 </Link>
                             </li>
 
                             <li className="text-[34px]">
-                                <Link href="#testimonials" className='hover:text-blue' onClick={() => setClick(false)} >
-                                    Testimonials
+                                <Link href="#testimonials" className='hover:text-blue flex items-center space-x-2' onClick={() => setClick(false)} >
+                                    <span>Testimonials</span>
+
+                                    <MdArrowOutward />
                                 </Link>
                             </li>
 
                             <li className="text-[34px]">
-                                <Link href="#contact" className='hover:text-blue' onClick={() => setClick(false)} >
+                                <Link href="#contact" className='hover:text-blue flex items-center space-x-2' onClick={() => setClick(false)} >
+                                    <span>
                                     Contact
+                                    </span>
+
+                                    <MdArrowOutward />
                                 </Link>
                             </li>
 

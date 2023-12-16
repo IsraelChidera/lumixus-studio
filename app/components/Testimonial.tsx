@@ -26,7 +26,7 @@ const Testimonial = () => {
     }, []);
 
     return (
-        <section className='mt-[100px]'>
+        <section id="testimonials" className='mt-[100px]'>
             <div className='bg-image h-screen'>
                 <div className='md:flex relative z-30 p-6 items-center h-full md:justify-end'>
                     <div className='bg-[#0E0E0E] px-6 py-10'>
