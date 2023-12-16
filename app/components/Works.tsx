@@ -31,7 +31,7 @@ const Works = () => {
     }, []);
 
     return (
-        <section className='mt-[154px] relative pb-[100px]'>
+        <section id="works" className='mt-[154px] pt-10px relative pb-[100px]'>
             <div className='relative z-20'>
                 <div className='lg:px-0 px-3  lg:ml-[97px] lg:grid grid-cols-4 gap-x-10'>
                     <div className='col-span-1 flex items-center'>

@@ -8,24 +8,24 @@ import { FaFacebookSquare } from "react-icons/fa";
 
 const Footer = () => {
     return (
-        <footer className='mt-20 border-t border-[#0E0E0E] pb-4 md:pb-0'>
+        <footer className='mt-20 px-4 py-4 border-t border-[#0E0E0E]'>
             <Container className='md:block flex w-full justify-center items-center'>
                 <div className='md:flex justify-between items-center'>
                     <div className=''>
-                        <Image src={logo} alt="logo" className='w-36' />
+                        <Image src={logo} alt="logo" className='w-20' />
                     </div>
 
                     <div className='flex items-center justify-center space-x-4'>
                         <a className='' href="mailto:lumixusstudio@gmail.com"> 
-                            <SiGmail className="text-sm lg:text-2xl md:text-base "/>
+                            <SiGmail className="text-sm md:text-base "/>
                         </a>
 
                         <a href="https://www.instagram.com/lumixus_studio/">
-                            <FaInstagram className="text-sm lg:text-2xl md:text-base "/>
+                            <FaInstagram className="text-sm md:text-base "/>
                         </a>
 
                         <a href="#">
-                            <FaFacebookSquare className="text-sm lg:text-2xl md:text-base "/>
+                            <FaFacebookSquare className="text-sm md:text-base "/>
                         </a>
                     </div>
                 </div>

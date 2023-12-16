@@ -2,7 +2,6 @@ import React from 'react';
 import Container from '@/app/components/Elements/Container';
 import Button from '@/app/components/Elements/Button';
 import Button2 from '@/app/components/Elements/Button2';
-import { FaArrowRight } from "react-icons/fa";
 import screen from '@/public/screenshero-screens.png';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -23,7 +22,7 @@ const Hero = () => {
                     </p>
                 </div>
 
-                <div className='mt-4 sm:mt-[80px] flex items-center justify-center w-full'>
+                <div className='mt-4 sm:mt-[40px] flex items-center justify-center w-full'>
                     <div className='md:grid grid-cols-2 md:space-y-0 space-y-4 space-x-0 md:space-x-4'>
 
                         <Link href="https://calendly.com/lumixusstudio/let-s-talk" className='w-full block'>
