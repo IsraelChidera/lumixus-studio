@@ -30,6 +30,8 @@ const Contact = () => {
                             <input
                                 type="text"
                                 placeholder='First Name'
+                                name="firstname"
+                                value={formValues.firstName}
                                 className='w-full p-5 focus:outline-none'
                                 style={{ background: "rgba(255, 255, 255, 0.01)", backdropFilter: "blur(4px)", borderBottom: "1px solid rgba(255, 255, 255, 0.1)", }}
                                 required
@@ -39,6 +41,8 @@ const Contact = () => {
                         <div>
                             <input
                                 type="email"
+                                name="email"
+                                value={formValues.email}
                                 placeholder='Email'
                                 className='w-full p-5 focus:outline-none'
                                 style={{ background: "rgba(255, 255, 255, 0.01)", backdropFilter: "blur(4px)", borderBottom: "1px solid rgba(255, 255, 255, 0.1)", }}
@@ -50,6 +54,8 @@ const Contact = () => {
                             <input
                                 type="text"
                                 placeholder='Last Name'
+                                name="lastname"
+                                value={formValues.lastName}
                                 className='w-full p-5 focus:outline-none'
                                 style={{ background: "rgba(255, 255, 255, 0.01)", backdropFilter: "blur(4px)", borderBottom: "1px solid rgba(255, 255, 255, 0.1)", }}
                                 required
@@ -59,6 +65,8 @@ const Contact = () => {
                         <div className='col-span-3'>
                             <textarea
                                 rows={6}
+                                name="message"
+                                value={formValues.message}
                                 className='w-full p-5 focus:outline-none'
                                 placeholder='Message'
                                 style={{ background: "rgba(255, 255, 255, 0.01)", backdropFilter: "blur(4px)", borderBottom: "1px solid rgba(255, 255, 255, 0.1)", }}
