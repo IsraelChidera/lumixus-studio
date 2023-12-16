@@ -53,10 +53,11 @@ const Navbar = () => {
                 {/* Mobile navigation */}
                 <FaBarsStaggered 
                     className="xl:hidden block cursor-pointer"
+                    style={{width:"20px", height: "20px"}}
                     onClick={handleClick}
                 />
 
-                
+
             </Container>
 
         </nav>
