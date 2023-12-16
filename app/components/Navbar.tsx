@@ -52,9 +52,11 @@ const Navbar = () => {
 
                 {/* Mobile navigation */}
                 <FaBarsStaggered 
-                    className="md:hidden block"
+                    className="xl:hidden block cursor-pointer"
                     onClick={handleClick}
                 />
+
+                
             </Container>
 
         </nav>
