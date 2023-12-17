@@ -5,8 +5,13 @@ import FloatingButton from './components/FloatingButton';
 import CustomCursor from './components/CustomCursor';
 
 export const metadata: Metadata = {
-  title: 'Lumixus studio',
-  description: '',
+  title: {
+    default: "Lumixus studio | Web. development, E-commerce, Web. Optimization, Consultation | Nigeria",
+    template: "%s | Lumixus studio",
+  },
+  description: 'Your one-stop shop for all things digital success',
+  applicationName: 'Next.js',
+  keywords: ['Web Development', 'Web Design', 'Web Optimization', 'Ecommerce', 'Digital Strategy']
 }
 
 const myFont = localFont({
@@ -49,6 +54,27 @@ export default function RootLayout({
 }: {
   children: React.ReactNode
 }) {
+
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Lumixus studio",
+    "alternateName": "Lumixus",
+    "url": "https://lumixus.studio",
+    "logo": "https://lumixus.studio/public/logo-1.png",
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "telephone": "+2348146265074",
+      "contactType": "customer service",
+      "areaServed": "NG",
+      "availableLanguage": "en"
+    },
+    "sameAs": "https://www.instagram.com/lumixus_studio/"
+  }
+
+  const jsonString: any = JSON.stringify(jsonLd);
+
+
   return (
     <html lang="en" className={myFont.className}>
       <head>
@@ -58,9 +84,14 @@ export default function RootLayout({
       </head>
       <body className="relative">
         {children}
-        <FloatingButton />  
-        <CustomCursor />                
+        <FloatingButton />
+        <CustomCursor />
+        
         <script src="//code.tidio.co/eags5ma6uvurxlw7que0lrhkgybpmcfl.js" async></script>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: jsonString }}
+        />
       </body>
     </html>
   )
