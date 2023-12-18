@@ -5,13 +5,18 @@ import Button2 from '@/app/components/Elements/Button2';
 import Link from 'next/link';
 
 const Contact = () => {
-
     const [formValues, setFormValues] = useState({
         firstName: '',
         lastName: '',
         email: '',
         message: '',
     });
+
+    const handleChange = (e: any) => {
+        setFormValues({ ...formValues, [e.target.id]: e.target.value });
+    };
+
+
 
     return (
         <section id="contact">
@@ -31,7 +36,9 @@ const Contact = () => {
                                 type="text"
                                 placeholder='First Name'
                                 name="firstname"
+                                id="firstname"
                                 value={formValues.firstName}
+                                onChange={handleChange}
                                 className='w-full p-5 focus:outline-none'
                                 style={{ background: "rgba(255, 255, 255, 0.01)", backdropFilter: "blur(4px)", borderBottom: "1px solid rgba(255, 255, 255, 0.1)", }}
                                 required
@@ -42,6 +49,7 @@ const Contact = () => {
                             <input
                                 type="email"
                                 name="email"
+                                id="email"
                                 value={formValues.email}
                                 placeholder='Email'
                                 className='w-full p-5 focus:outline-none'
@@ -55,6 +63,7 @@ const Contact = () => {
                                 type="text"
                                 placeholder='Last Name'
                                 name="lastname"
+                                id="lastname"
                                 value={formValues.lastName}
                                 className='w-full p-5 focus:outline-none'
                                 style={{ background: "rgba(255, 255, 255, 0.01)", backdropFilter: "blur(4px)", borderBottom: "1px solid rgba(255, 255, 255, 0.1)", }}
@@ -66,6 +75,7 @@ const Contact = () => {
                             <textarea
                                 rows={6}
                                 name="message"
+                                id="message"
                                 value={formValues.message}
                                 className='w-full p-5 focus:outline-none'
                                 placeholder='Message'
