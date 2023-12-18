@@ -6,8 +6,8 @@ import Link from 'next/link';
 
 const Contact = () => {
     const [formValues, setFormValues] = useState({
-        firstName: '',
-        lastName: '',
+        firstname: '',
+        lastname: '',
         email: '',
         message: '',
     });
@@ -16,7 +16,9 @@ const Contact = () => {
         setFormValues({ ...formValues, [e.target.id]: e.target.value });
     };
 
-
+    const handleSubmit = (e: any) => {        
+        console.log({ formValues })
+    }
 
     return (
         <section id="contact">
@@ -35,10 +37,10 @@ const Contact = () => {
                             <input
                                 type="text"
                                 placeholder='First Name'
-                                name="firstname"
+                                // name="firstname"
                                 id="firstname"
-                                value={formValues.firstName}
-                                onChange={handleChange}
+                                value={formValues.firstname}
+                                onChange={handleChange}                                                                
                                 className='w-full p-5 focus:outline-none'
                                 style={{ background: "rgba(255, 255, 255, 0.01)", backdropFilter: "blur(4px)", borderBottom: "1px solid rgba(255, 255, 255, 0.1)", }}
                                 required
@@ -48,9 +50,10 @@ const Contact = () => {
                         <div>
                             <input
                                 type="email"
-                                name="email"
+                                // name="email"
                                 id="email"
                                 value={formValues.email}
+                                onChange={handleChange}
                                 placeholder='Email'
                                 className='w-full p-5 focus:outline-none'
                                 style={{ background: "rgba(255, 255, 255, 0.01)", backdropFilter: "blur(4px)", borderBottom: "1px solid rgba(255, 255, 255, 0.1)", }}
@@ -64,7 +67,8 @@ const Contact = () => {
                                 placeholder='Last Name'
                                 name="lastname"
                                 id="lastname"
-                                value={formValues.lastName}
+                                value={formValues.lastname}
+                                onChange={handleChange}
                                 className='w-full p-5 focus:outline-none'
                                 style={{ background: "rgba(255, 255, 255, 0.01)", backdropFilter: "blur(4px)", borderBottom: "1px solid rgba(255, 255, 255, 0.1)", }}
                                 required
@@ -77,6 +81,7 @@ const Contact = () => {
                                 name="message"
                                 id="message"
                                 value={formValues.message}
+                                onChange={handleChange}
                                 className='w-full p-5 focus:outline-none'
                                 placeholder='Message'
                                 style={{ background: "rgba(255, 255, 255, 0.01)", backdropFilter: "blur(4px)", borderBottom: "1px solid rgba(255, 255, 255, 0.1)", }}
@@ -86,7 +91,7 @@ const Contact = () => {
                     </div>
 
                     <div className='flex items-center justify-center mt-6'>
-                        <Link href={`mailto:lumixousstudio@gmail.com?subject=${`Summer%20Party`}&body=${`You%20are%20invited%20to%20a%20big%20summer%20party!`}`}
+                        {/* <Link href={`mailto:lumixousstudio@gmail.com?subject=${`Summer%20Party`}&body=${`You%20are%20invited%20to%20a%20big%20summer%20party!`}`}
                             target='_blank'
                             style={{ boxShadow: "0px 4px 31px 0px rgba(0, 0, 0, 0.15)" }}
                             className={` hover:text-blue hover:bg-white transition-colors ease-linear w-full py-[10px] px-[30px] border border-white bg-transparent text-center text-white`}
@@ -94,7 +99,11 @@ const Contact = () => {
                             <span className='text-sm'>
                                 Send Message
                             </span>
-                        </Link>
+                        </Link> */}
+
+                        <Button2 onClick={handleSubmit}>
+                            <span className='text-sm'>Send Message</span>
+                        </Button2>
                     </div>
                 </form>
             </Container>
