@@ -69,9 +69,7 @@ const Works = () => {
                                     },
                                 }}
                                 spaceBetween={30}
-                                // slidesPerView={2.5}
-                                onSlideChange={() => console.log('slide change')}
-                                onSwiper={(swiper) => console.log(swiper)}
+                                // slidesPerView={2.5}                                
                                 className='relative'
                             >
                                 <SwiperSlide>

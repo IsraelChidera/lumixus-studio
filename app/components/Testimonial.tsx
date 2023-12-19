@@ -46,9 +46,7 @@ const Testimonial = () => {
                                     modules={[Navigation, Pagination, A11y]}  
                                     pagination={true}                                                                      
                                     spaceBetween={30}
-                                    slidesPerView={1}
-                                    onSlideChange={() => console.log('slide change')}
-                                    onSwiper={(swiper) => console.log(swiper)}
+                                    slidesPerView={1}                                    
                                     className='relative swiper-pagination-top swiper-container'
                                 >
                                     <SwiperSlide>
