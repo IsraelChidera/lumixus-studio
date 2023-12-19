@@ -31,12 +31,11 @@ const Hero = () => {
                             </Button>
                         </Link>
 
-                        <Link href="#how" className='w-full block'>
+                        <Link href="#services" className='w-full block'>
                             <Button2 className=' w-full text-[17px]'>
                                 Learn more
                             </Button2>
                         </Link>
-
                     </div>
                 </div>
             </Container>
