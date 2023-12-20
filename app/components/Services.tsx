@@ -27,7 +27,7 @@ const Services = () => {
                     </h2>
 
                     <div className='flex items-center justify-center mt-[30px] pb-[37px]'>
-                        <Link href="https://calendly.com/lumixusstudio/30min">
+                        <Link data-aos="fade-up" href="https://calendly.com/lumixusstudio/30min">
                             <Button className='flex items-center text-[17px] space-x-2'>
                                 <span>
                                     Get a Free Consultation
@@ -42,11 +42,11 @@ const Services = () => {
 
             <div id="services" className='pt-[114px] bg-[#0E0E0E] relative '>
                 <Container className='relative z-20'>
-                    <p className='uppercase text-center text-[20px] font-medium'>
+                    <p data-aos="fade-up" className='uppercase text-center text-[20px] font-medium'>
                         Our best services
                     </p>
 
-                    <h2 className='text-6xl text-center font-medium'>
+                    <h2 data-aos="fade-up" className='text-6xl text-center font-medium'>
                         We provide end-to-end solutions
                     </h2>
 

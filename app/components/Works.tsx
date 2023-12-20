@@ -34,7 +34,7 @@ const Works = () => {
         <section id="works" className='mt-[154px] pt-10px relative pb-[100px]'>
             <div className='relative z-20'>
                 <div className='lg:px-0 px-3  lg:ml-[97px] lg:grid grid-cols-4 gap-x-10'>
-                    <div className='col-span-1 flex items-center'>
+                    <div data-aos="fade-up" className='col-span-1 flex items-center'>
                         <div>
                             <h2 style={{ lineHeight: "100px" }} className='text-[81px] font-medium '>
                                 <span>Our Latest</span>  <br />
@@ -48,7 +48,7 @@ const Works = () => {
                         </div>
                     </div>
 
-                    <div className='mt-4 lg:mt-0 col-span-3 w-full'>
+                    <div data-aos="fade-up" className='mt-4 lg:mt-0 col-span-3 w-full'>
                         <div className='relative z-30'>
                             <Swiper
                                 ref={swiperRef}

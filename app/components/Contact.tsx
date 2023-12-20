@@ -86,11 +86,11 @@ const Contact = () => {
     return (
         <section id="contact">
             <Container className='mt-[154px] relative pb-[100px]'>
-                <p className='uppercase text-center text-sm font-medium'>
+                <p data-aos="fade-up" className='uppercase text-center text-sm font-medium'>
                     Contact us
                 </p>
 
-                <h2 className='gradient-animation-light mt-[22px] leading-normal text-center text-[48px] font-medium'>
+                <h2 data-aos="fade-up" className='gradient-animation-light mt-[22px] leading-normal text-center text-[48px] font-medium'>
                     Let's Get in Touch And Make Magic Together.
                 </h2>
 
@@ -111,7 +111,7 @@ const Contact = () => {
                                 }
                         ) => (
                             <>
-                                <Form className='mt-4'>
+                                <Form data-aos="fade-up" className='mt-4'>
                                     <div className='md:grid grid-cols-3 md:space-y-0 space-y-6 md:gap-x-4 gap-y-8 '>
                                         <div>
                                             <Field

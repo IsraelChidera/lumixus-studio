@@ -31,15 +31,15 @@ const Testimonial = () => {
                 <div className='md:flex relative z-30 p-6 items-center h-full md:justify-end'>
                     <div className='bg-[#0E0E0E] px-6 py-10'>
                         <div>
-                            <p className='uppercase text-left text-sm font-medium'>
+                            <p data-aos="fade-up" className='uppercase text-left text-sm font-medium'>
                                 Our clients
                             </p>
 
-                            <h2 className='mt-[2px] leading-normal text-left text-[30px] font-medium'>
+                            <h2 data-aos="fade-up" className='mt-[2px] leading-normal text-left text-[30px] font-medium'>
                                 What does our <br/> client have to say?
                             </h2>
 
-                            <div className='md:w-[470px] w-full mt-10'>
+                            <div data-aos="fade-up" className='md:w-[470px] w-full mt-10'>
 
                                 <Swiper
                                     ref={swiperRef}

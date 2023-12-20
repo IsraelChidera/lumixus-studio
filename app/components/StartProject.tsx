@@ -11,15 +11,15 @@ const StartProject = () => {
     return (
         <section className='bg-[#0E0E0E] py-[90px] relative' >
             <Container className='relative z-20'>
-                <p className='uppercase text-center text-sm font-medium'>
+                <p data-aos="fade-up" className='uppercase text-center text-sm font-medium'>
                     Let's talk
                 </p>
 
-                <h2 className='mt-[22px] leading-normal text-center text-[36px] font-medium'>
+                <h2 data-aos="fade-up" className='mt-[22px] leading-normal text-center text-[36px] font-medium'>
                     About your next project
                 </h2>
 
-                <div className='flex items-center justify-center'>
+                <div data-aos="fade-up" className='flex items-center justify-center'>
                     <Link href="https://calendly.com/lumixusstudio/let-s-talk">
                         <Button className='flex items-center text-[17px] space-x-2 mt-[28px]'>
                             <span>
