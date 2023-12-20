@@ -20,7 +20,7 @@ const Services = () => {
                         Who we are
                     </p>
 
-                    <h2 className='mt-[22px] leading-normal text-center text-[36px] font-medium'>
+                    <h2 data-aos="fade-up" className='mt-[22px] leading-normal text-center text-[36px] font-medium'>
                         Lumixous Studio is a digital solution for a product agency
                         that relates people relations with products,
                         story development, and other services.
