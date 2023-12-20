@@ -80,7 +80,7 @@ const Navbar = () => {
                                 <Link href="#about" className='hover:text-blue flex items-center space-x-2' onClick={() => setClick(false)} >
                                     <span>About</span>
 
-                                    <MdArrowOutward />
+                                    <MdArrowOutward className="animate-bounce" />
                                 </Link>
                             </li>
 
@@ -88,7 +88,7 @@ const Navbar = () => {
                                 <Link href="#services" className='hover:text-blue flex items-center space-x-2' onClick={() => setClick(false)} >
                                     <span>Services</span>
 
-                                    <MdArrowOutward />
+                                    <MdArrowOutward className="animate-bounce" />
                                 </Link>
                             </li>
 
@@ -96,7 +96,7 @@ const Navbar = () => {
                                 <Link href="#works" className='hover:text-blue flex items-center space-x-2' onClick={() => setClick(false)} >
                                     <span>Portfolio</span>
 
-                                    <MdArrowOutward />
+                                    <MdArrowOutward className="animate-bounce" />
                                 </Link>
                             </li>
 
@@ -104,7 +104,7 @@ const Navbar = () => {
                                 <Link href="#testimonials" className='hover:text-blue flex items-center space-x-2' onClick={() => setClick(false)} >
                                     <span>Testimonials</span>
 
-                                    <MdArrowOutward />
+                                    <MdArrowOutward className="animate-bounce" />
                                 </Link>
                             </li>
 
@@ -114,7 +114,7 @@ const Navbar = () => {
                                     Contact
                                     </span>
 
-                                    <MdArrowOutward />
+                                    <MdArrowOutward className="animate-bounce" />
                                 </Link>
                             </li>
 
