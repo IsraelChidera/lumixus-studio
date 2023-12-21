@@ -78,7 +78,7 @@ const Contact = () => {
 
         if(values){
             setSubmitting(false);
-            window.open(`mailto:lumixousstudio@gmail.com?subject=${`Contact%20Form%20Message%20-%20${values.firstname}%20${values.lastname}`}&body=${`${values.message}`}`, '_blank');
+            window.open(`mailto:lumixusstudio@gmail.com?subject=${`Contact%20Form%20Message%20-%20${values.firstname}%20${values.lastname}`}&body=${`${values.message}`}`, '_blank');
         }
 
     }   
