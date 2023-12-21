@@ -22,15 +22,7 @@ type ErrorsProps = {
 const Contact = () => {
 
     const [success, setSuccess] = useState(false);
-    const [submitting, setSubmitting] = useState(false);
-    // const [formValues, setFormValues] = useState({
-    //     firstname: '',
-    //     lastname: '',
-    //     email: '',
-    //     message: '',
-    // });
-
-
+    const [submitting, setSubmitting] = useState(false);  
 
     const initialValues: InitialValuesProps = {
         email: "",
