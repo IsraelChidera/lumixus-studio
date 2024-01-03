@@ -3,7 +3,7 @@ import React from 'react';
 import Container from '@/app/components/Elements/Container';
 import { FaInstagram } from "react-icons/fa";
 import { SiGmail } from "react-icons/si";
-import logo from '@/public/logo-blue.png';
+import logo from '@/public/logo-white.png';
 import { FaFacebookSquare } from "react-icons/fa";
 
 const Footer = () => {
