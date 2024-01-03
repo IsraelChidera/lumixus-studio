@@ -14,6 +14,9 @@ import 'swiper/css/pagination';
 import pharmabolt from '@/public/pharmabolt.png';
 import getlinked from '@/public/getlinked.png';
 import icystore from '@/public/icystore.png';
+import ayuda from '@/public/ayuda.png';
+import najec from '@/public/najec.png';
+import vertis from '@/public/vertis.png';
 
 const Works = () => {
 
@@ -54,6 +57,7 @@ const Works = () => {
                                 ref={swiperRef}
                                 modules={[Navigation, Pagination, A11y]}
                                 pagination={true}
+                                loop={true}
                                 breakpoints={{
                                     640: {
                                         slidesPerView: 2,
@@ -72,12 +76,59 @@ const Works = () => {
                                 // slidesPerView={2.5}                                
                                 className='relative'
                             >
+
+                                <SwiperSlide>
+                                    <div className='relative' >
+                                        <Image src={ayuda} alt="web project" />
+                                        <div className='centered-bottom bg-[#0E0E0E]  pt-2 px-10 pb-4'>
+                                            <p className='gradient-animation-light text-center text-sm font-semibold'>Blogging & Web Design</p>
+                                            <h3 className='pt-4 text-[17px] underline hover:no-underline font-semibold text-center text-white'>
+                                                <Link href="https://ayudacontents.netlify.app/">
+                                                    Ayuda Content
+                                                </Link>
+                                            </h3>
+                                        </div>
+                                    </div>
+                                </SwiperSlide>
+
+                                <SwiperSlide>
+                                    <div className='relative' >
+                                        <Image src={najec} alt="web project" />
+                                        <div className='centered-bottom bg-[#0E0E0E]  pt-2 px-10 pb-4'>
+                                            <p className='gradient-animation-light text-center text-xs md:text-sm font-semibold'>Web Design & Web Development</p>
+                                            <h3 className='pt-4 underline hover:no-underline text-sm md:text-[17px] font-semibold text-center text-white'>
+                                                <Link href="#">
+                                                    Najec Limited
+                                                </Link>
+                                            </h3>
+                                        </div>
+                                    </div>
+                                </SwiperSlide>
+
+                                <SwiperSlide>
+                                    <div className='relative' >
+                                        <Image src={vertis} alt="web project" />
+                                        <div className='centered-bottom bg-[#0E0E0E]  pt-2 px-10 pb-4'>
+                                            <p className='gradient-animation-light text-center text-xs md:text-sm font-semibold'>Web Design & Web Development</p>
+                                            <h3 className='pt-4 underline hover:no-underline text-sm md:text-[17px] font-semibold text-center text-white'>
+                                                <Link href="https://vertistechnologiesltd.com/">
+                                                    Vertis Technologies
+                                                </Link>
+                                            </h3>
+                                        </div>
+                                    </div>
+                                </SwiperSlide>
+
                                 <SwiperSlide>
                                     <div className='relative' >
                                         <Image src={pharmabolt} alt="web project" />
                                         <div className='centered-bottom bg-[#0E0E0E]  pt-2 px-10 pb-4'>
                                             <p className='gradient-animation-light text-center text-sm font-semibold'>Ecommerce & Web Development</p>
-                                            <h3 className='pt-4 text-[17px] font-semibold text-center text-white'>Pharmabolt</h3>
+                                            <h3 className='pt-4 underline hover:no-underline text-[17px] font-semibold text-center text-white'>
+                                                <Link href="https://pharmaboltapp.vercel.app/">
+                                                    Pharmabolt
+                                                </Link>
+                                            </h3>
                                         </div>
                                     </div>
                                 </SwiperSlide>
@@ -87,7 +138,11 @@ const Works = () => {
                                         <Image src={getlinked} alt="web project" />
                                         <div className='centered-bottom bg-[#0E0E0E]  pt-2 px-10 pb-4'>
                                             <p className='gradient-animation-light text-center text-sm font-semibold'>Web Design & Development</p>
-                                            <h3 className='pt-4 text-[17px] font-semibold text-center text-white'>GetLinked - Landing Page</h3>
+                                            <h3 className='pt-4 text-[17px] underline hover:no-underline font-semibold text-center text-white'>
+                                                <Link href="https://getlinked-app.netlify.app/">
+                                                    GetLinked - Landing Page
+                                                </Link>
+                                            </h3>
                                         </div>
                                     </div>
                                 </SwiperSlide>
@@ -97,31 +152,14 @@ const Works = () => {
                                         <Image src={icystore} alt="web project" />
                                         <div className='centered-bottom bg-[#0E0E0E]  pt-2 px-10 pb-4'>
                                             <p className='gradient-animation-light text-center text-sm font-semibold'>Ecommerce & Web Development</p>
-                                            <h3 className='pt-4 text-[17px] font-semibold text-center text-white'>Icy Store</h3>
+                                            <h3 className='pt-4 text-[17px] underline hover:no-underline font-semibold text-center text-white'>
+                                                <Link href="https://icystore.vercel.app/">
+                                                    Icy Store
+                                                </Link>
+                                            </h3>
                                         </div>
                                     </div>
                                 </SwiperSlide>
-
-                                <SwiperSlide>
-                                    <div className='relative' >
-                                        <Image src={pharmabolt} alt="web project" />
-                                        <div className='centered-bottom bg-[#0E0E0E]  pt-2 px-10 pb-4'>
-                                            <p className='gradient-animation-light text-center text-sm font-semibold'>Ecommerce & Web Development</p>
-                                            <h3 className='pt-4 text-[17px] font-semibold text-center text-white'>Pharmabolt</h3>
-                                        </div>
-                                    </div>
-                                </SwiperSlide>
-
-                                <SwiperSlide>
-                                    <div className='relative' >
-                                        <Image src={icystore} alt="web project" />
-                                        <div className='centered-bottom bg-[#0E0E0E]  pt-2 px-10 pb-4'>
-                                            <p className='gradient-animation-light text-center text-xs md:text-sm font-semibold'>Ecommerce & Web Development</p>
-                                            <h3 className='pt-4 text-sm md:text-[17px] font-semibold text-center text-white'>Icy Store</h3>
-                                        </div>
-                                    </div>
-                                </SwiperSlide>
-
                             </Swiper>
 
                             <div className="mt-4 flex justify-between items-center">
