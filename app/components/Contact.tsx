@@ -41,7 +41,7 @@ const Contact = () => {
         }
 
         if (!values.lastname) {
-            errors.lastname = "First name is required";
+            errors.lastname = "Last name is required";
         } else if (values.lastname.length <= 3) {
             errors.lastname = 'Must be 3 characters or more';
         }

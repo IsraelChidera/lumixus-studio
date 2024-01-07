@@ -21,9 +21,15 @@ const Services = () => {
                     </p>
 
                     <h2 data-aos="fade-up" className='mt-[22px] leading-normal text-center text-[36px] font-medium'>
-                        Lumixous Studio is a digital solution for a product agency
-                        that relates people relations with products,
-                        story development, and other services.
+                        Lumixus Studio is a growth catalyst. We engineer websites
+                        that captivate your audience and convert them into loyal
+                        customers, propelling your business forward. <br/> We leverage
+                        data-driven design, user-centric optimization, and strategic
+                        SEO to boost brand awareness, fuel engagement, and drive
+                        measurable results. Whether it's increased website traffic, 
+                        improved lead generation, a thriving online presence, or 
+                        skyrocketing sales, we help you achieve your unique 
+                        business goals
                     </h2>
 
                     <div className='flex items-center justify-center mt-[30px] pb-[37px]'>
@@ -57,9 +63,9 @@ const Services = () => {
                             </div>
 
                             <div>
-                                <h4 className='text-xl'>Web Design and Development</h4>
+                                <h4 className='text-xl'>Website Design & Development</h4>
                                 <p className='text-sm pt-1'>
-                                    Product agency that relates people relations
+                                    Align your website goals with user needs and market trends
                                 </p>
                             </div>
                         </div>
@@ -72,7 +78,8 @@ const Services = () => {
                             <div>
                                 <h4 className='text-xl'>Web Design Consulting</h4>
                                 <p className='text-sm pt-1'>
-                                    Product agency that relates people relations
+                                    Craft captivating interfaces that are intuitive and
+                                    enjoyable to navigate.
                                 </p>
                             </div>
                         </div>
@@ -83,9 +90,9 @@ const Services = () => {
                             </div>
 
                             <div>
-                                <h4 className='text-xl'>Strategy</h4>
+                                <h4 className='text-xl'>SEO Strategies & Optimization</h4>
                                 <p className='text-sm pt-1'>
-                                    Product agency that relates people relations
+                                    Propel your website to the top of search results and attract qualified leads.
                                 </p>
                             </div>
                         </div>
@@ -96,9 +103,22 @@ const Services = () => {
                             </div>
 
                             <div>
-                                <h4 className='text-xl'>Optimization</h4>
+                                <h4 className='text-xl'>Web Optimization</h4>
                                 <p className='text-sm pt-1'>
-                                    Product agency that relates people relations
+                                    Build high-performing websites for speed, scalability, and mobile responsiveness.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div className='flex items-center space-x-4'>
+                            <div>
+                                <GrOptimize className="text-blue text-[40px]" />
+                            </div>
+
+                            <div>
+                                <h4 className='text-xl'>Conversion Optimization</h4>
+                                <p className='text-sm pt-1'>
+                                    Analyze user behavior and refine your website to maximize conversions and sales.
                                 </p>
                             </div>
                         </div>
@@ -109,9 +129,9 @@ const Services = () => {
                             </div>
 
                             <div>
-                                <h4 className='text-xl'>Ecommerce</h4>
+                                <h4 className='text-xl'>E-commerce Development & Management</h4>
                                 <p className='text-sm pt-1'>
-                                    Product agency that relates people relations
+                                    Build your online store from scratch and optimize it for smooth, frictionless sales.
                                 </p>
                             </div>
                         </div>

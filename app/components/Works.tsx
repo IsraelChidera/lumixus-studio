@@ -44,10 +44,10 @@ const Works = () => {
                                 <span>Work</span>
                             </h2>
 
-                            <Link className='-pt-10 flex space-x-4 items-center' href="#">
+                            <a className='-pt-10 flex space-x-4 items-center'>
                                 <span>Our Portfolio</span>
                                 <FaArrowRight className='text-white lg:block hidden' />
-                            </Link>
+                            </a>
                         </div>
                     </div>
 
