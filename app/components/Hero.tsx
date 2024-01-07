@@ -10,13 +10,13 @@ const Hero = () => {
     return (
         <header className='pt-[50px] pb-[100px]'>
             <Container>
-                <h1 className='text-center sm:text-[60px] text-6xl font-medium -leading-7 '>
+                <h1 className='text-center text-[30px] sm:text-[60px] text-6xl font-medium -leading-7 '>
                     <span className='gradient-animation-light'>Elevate your brand</span><br />
                     <span className='gradient-animation-dark'>Craft experiences that convert!</span>
                 </h1>
 
                 <div className='mx-auto w-full flex items-center justify-center text-center'>
-                    <p className='p-3 mt-[10px] md:w-[582px]'>                        
+                    <p className='p-3 sm:text-base text-sm mt-[10px] md:w-[582px]'>                        
                         We craft user-centric websites that not only drive growth but also solidify 
                         your presence and influence in the ever-evolving digital landscape.
                     </p>

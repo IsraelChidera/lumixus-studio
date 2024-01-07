@@ -20,7 +20,7 @@ const Services = () => {
                         Who we are
                     </p>
 
-                    <h2 data-aos="fade-up" className='mt-[22px] leading-normal text-center text-[36px] font-medium'>
+                    <h2 data-aos="fade-up" className='mt-[22px] leading-normal text-center text-[20px] md:text-[36px] font-medium'>
                         Lumixus Studio is a growth catalyst. We engineer websites
                         that captivate your audience and convert them into loyal
                         customers, propelling your business forward. <br/> We leverage
