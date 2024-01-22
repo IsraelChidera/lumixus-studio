@@ -12,11 +12,11 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import pharmabolt from '@/public/pharmabolt.png';
-import getlinked from '@/public/getlinked.png';
 import icystore from '@/public/icystore.png';
 import ayuda from '@/public/ayuda.png';
 import najec from '@/public/najec.png';
-import vertis from '@/public/vertis.png';
+import nextcash from '@/public/nextcash.png';
+import ninolynks from '@/public/ninolynks.png';
 
 const Works = () => {
 
@@ -97,7 +97,7 @@ const Works = () => {
                                         <div className='centered-bottom bg-[#0E0E0E]  pt-2 px-10 pb-4'>
                                             <p className='gradient-animation-light text-center text-xs md:text-sm font-semibold'>Web Design & Web Development</p>
                                             <h3 className='pt-4 underline hover:no-underline text-sm md:text-[17px] font-semibold text-center text-white'>
-                                                <Link href="#">
+                                                <Link href="https://najecltd.com">
                                                     Najec Limited
                                                 </Link>
                                             </h3>
@@ -107,12 +107,12 @@ const Works = () => {
 
                                 <SwiperSlide>
                                     <div className='relative' >
-                                        <Image src={vertis} alt="web project" />
+                                        <Image src={nextcash} alt="web project" />
                                         <div className='centered-bottom bg-[#0E0E0E]  pt-2 px-10 pb-4'>
-                                            <p className='gradient-animation-light text-center text-xs md:text-sm font-semibold'>Web Design & Web Development</p>
+                                            <p className='gradient-animation-light text-center text-xs md:text-sm font-semibold'>Ecommerce Store</p>
                                             <h3 className='pt-4 underline hover:no-underline text-sm md:text-[17px] font-semibold text-center text-white'>
-                                                <Link href="https://vertistechnologiesltd.com/">
-                                                    Vertis Technologies
+                                                <Link href="https://nextcashandcarry.com.ng/">
+                                                    Next Cash & Carry
                                                 </Link>
                                             </h3>
                                         </div>
@@ -135,12 +135,12 @@ const Works = () => {
 
                                 <SwiperSlide>
                                     <div className='relative' >
-                                        <Image src={getlinked} alt="web project" />
+                                        <Image src={ninolynks} alt="web project" />
                                         <div className='centered-bottom bg-[#0E0E0E]  pt-2 px-10 pb-4'>
-                                            <p className='gradient-animation-light text-center text-sm font-semibold'>Web Design & Development</p>
+                                            <p className='gradient-animation-light text-center text-sm font-semibold'>Shopping Store</p>
                                             <h3 className='pt-4 text-[17px] underline hover:no-underline font-semibold text-center text-white'>
-                                                <Link href="https://getlinked-app.netlify.app/">
-                                                    GetLinked - Landing Page
+                                                <Link href="https://ninolynks.com/">
+                                                    Ninolynks
                                                 </Link>
                                             </h3>
                                         </div>
