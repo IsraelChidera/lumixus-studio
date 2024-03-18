@@ -91,7 +91,7 @@ export default function RootLayout({
         <meta name="twitter:creator" content="@Lumixus" />
         <meta name="twitter:title" content="Lumixus studio" />
         <meta name="twitter:description" content="Web design, digital marketing, web application, website,website design,Lumixus Studio, design, mobile, application, software, web application, CRM, ERP, E-commerce, Networking, Management" />
-
+        <meta name="google-site-verification" content="88ZqRCGFRf_I2IGEUIxUaF0Wes8tGZq59uGbTjImxAo" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800&display=swap" rel="stylesheet" />
