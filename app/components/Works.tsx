@@ -14,6 +14,7 @@ import 'swiper/css/pagination';
 import pharmabolt from '@/public/pharmabolt.png';
 import icystore from '@/public/icystore.png';
 import ayuda from '@/public/ayuda.png';
+import chris from '@/public/chris-global.png';
 import najec from '@/public/najec.png';
 import nextcash from '@/public/nextcash.png';
 import ninolynks from '@/public/ninolynks.png';
@@ -76,6 +77,20 @@ const Works = () => {
                                 // slidesPerView={2.5}                                
                                 className='relative'
                             >
+
+                                <SwiperSlide>
+                                    <div className='relative' >
+                                        <Image src={chris} alt="web project" />
+                                        <div className='centered-bottom bg-[#0E0E0E]  pt-2 px-10 pb-4'>
+                                            <p className='gradient-animation-light text-center text-sm font-semibold'>CRO & Web design</p>
+                                            <h3 className='pt-4 text-[17px] underline hover:no-underline font-semibold text-center text-white'>
+                                                <Link href="https://chrisglobal.netlify.app/">
+                                                    Chris Global Limited
+                                                </Link>
+                                            </h3>
+                                        </div>
+                                    </div>
+                                </SwiperSlide>
 
                                 <SwiperSlide>
                                     <div className='relative' >
