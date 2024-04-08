@@ -104,21 +104,7 @@ const Works = () => {
                                             </h3>
                                         </div>
                                     </div>
-                                </SwiperSlide>
-
-                                <SwiperSlide>
-                                    <div className='relative' >
-                                        <Image src={najec} alt="web project" />
-                                        <div className='centered-bottom bg-[#0E0E0E]  pt-2 px-10 pb-4'>
-                                            <p className='gradient-animation-light text-center text-xs md:text-sm font-semibold'>Web Design & Web Development</p>
-                                            <h3 className='pt-4 underline hover:no-underline text-sm md:text-[17px] font-semibold text-center text-white'>
-                                                <Link href="https://najecltd.com">
-                                                    Najec Limited
-                                                </Link>
-                                            </h3>
-                                        </div>
-                                    </div>
-                                </SwiperSlide>
+                                </SwiperSlide>                                
 
                                 <SwiperSlide>
                                     <div className='relative' >
