@@ -16,27 +16,38 @@ const Services = () => {
         <section className='mt-[62px] pb-[50px]'>
             <Container className='px-3 lg:px-0'>
                 <div id="about">
-                    <p className='uppercase text-center text-sm font-medium'>
+                    <p className='uppercase text-left text-sm font-medium'>
                         Who we are
                     </p>
+                    <h3 className='text-lg border-b pb-1'>
+                        Lumixus Studio
+                    </h3>
 
-                    <h2 data-aos="fade-up" className='mt-[22px] leading-normal text-center text-[20px] md:text-[36px] font-medium'>
+                    <h2 data-aos="fade-up" className='mt-[22px] leading-normal text-left text-[20px] md:text-[36px] font-medium'>
                         Lumixus Studio is a growth catalyst. We engineer websites
-                        that captivate your audience and convert them into loyal
-                        customers, propelling your business forward. <br/> We leverage
-                        data-driven design, user-centric optimization, and strategic
-                        SEO to boost brand awareness, fuel engagement, and drive
-                        measurable results. Whether it's increased website traffic, 
-                        improved lead generation, a thriving online presence, or 
-                        skyrocketing sales, we help you achieve your unique 
+                        that captivate your audience and convert them into <span className="text-[#186CE9]">loyal
+                            customers</span>, propelling your business forward.
+                    </h2>
+
+                    <h2 data-aos="fade-up" className='mt-[22px] leading-normal text-left text-[20px] md:text-[36px] font-medium'>
+                        Whether it's increased <span className="text-[#186CE9]">website traffic</span>,
+                        improved <span className="text-[#186CE9]">lead generation</span>, a thriving online presence, or
+                        skyrocketing <span className="text-[#186CE9]">sales</span>, we help you achieve your unique
                         business goals
                     </h2>
 
+                    <h2 data-aos="fade-up" className='mt-[22px] leading-normal text-left text-[20px] md:text-[36px] font-medium'>
+                        We leverage
+                        data-driven design, user-centric <span className="text-[#186CE9]">optimization</span>, content marketing and strategic
+                        <span className="text-[#186CE9]"> SEO</span> to boost brand awareness, fuel engagement, and drive
+                        measurable results.
+                    </h2>
+
                     <div className='flex items-center justify-center mt-[30px] pb-[37px]'>
-                        <Link data-aos="fade-up" href="https://calendly.com/lumixusstudio/30min">
+                        <Link data-aos="fade-up" href="https://cal.com/lumixus-studio/30min">
                             <Button className='flex items-center text-[17px] space-x-2'>
                                 <span>
-                                    Get a Free Consultation
+                                    Get started
                                 </span>
 
                                 <FaArrowRight className="text-white" />
@@ -48,11 +59,11 @@ const Services = () => {
 
             <div id="services" className='pt-[114px] bg-[#0E0E0E] relative '>
                 <Container className='relative z-20'>
-                    <p data-aos="fade-up" className='uppercase text-center text-[20px] font-medium'>
+                    <p data-aos="fade-up" className='uppercase text-left text-[20px] font-medium'>
                         Our best services
                     </p>
 
-                    <h2 data-aos="fade-up" className='text-6xl text-center font-medium'>
+                    <h2 data-aos="fade-up" className='text-6xl text-left font-medium'>
                         We provide end-to-end solutions
                     </h2>
 
@@ -65,7 +76,7 @@ const Services = () => {
                             <div>
                                 <h4 className='text-xl'>Website Design & Development</h4>
                                 <p className='text-sm pt-1'>
-                                    Align your website goals with user needs and market trends
+                                    Tailor your website to meet specific business objectives and user expectations.
                                 </p>
                             </div>
                         </div>
@@ -76,10 +87,9 @@ const Services = () => {
                             </div>
 
                             <div>
-                                <h4 className='text-xl'>Web Design Consulting</h4>
+                                <h4 className='text-xl'>AI and Tech Integration</h4>
                                 <p className='text-sm pt-1'>
-                                    Craft captivating interfaces that are intuitive and
-                                    enjoyable to navigate.
+                                    Leverage the latest AI and tech tools to streamline operations and foster business growth.
                                 </p>
                             </div>
                         </div>
@@ -129,9 +139,9 @@ const Services = () => {
                             </div>
 
                             <div>
-                                <h4 className='text-xl'>E-commerce Development & Management</h4>
+                                <h4 className='text-xl'>Web Management</h4>
                                 <p className='text-sm pt-1'>
-                                    Build your online store from scratch and optimize it for smooth, frictionless sales.
+                                    Ensure your website remains updated, secure, and running smoothly with our continuous management services.
                                 </p>
                             </div>
                         </div>

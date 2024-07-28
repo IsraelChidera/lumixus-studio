@@ -20,7 +20,7 @@ const StartProject = () => {
                 </h2>
 
                 <div data-aos="fade-up" className='flex items-center justify-center'>
-                    <Link href="https://calendly.com/lumixusstudio/let-s-talk">
+                    <Link href="https://cal.com/lumixus-studio/30min">
                         <Button className='flex items-center text-[17px] space-x-2 mt-[28px]'>
                             <span>
                                 Schedule a call

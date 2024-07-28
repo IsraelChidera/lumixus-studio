@@ -8,29 +8,32 @@ import Link from 'next/link';
 
 const Hero = () => {
     return (
-        <header className='pt-[50px] pb-[100px]'>
+        <header className='pt-[60px] pb-[100px]'>
             <Container>
                 <div className='text-center mb-1'>
-                    <Link className="bg-white text-primary rounded-2xl px-4 md:py-2 py-1 text-xs md:text-sm" href="href=https://calendly.com/lumixusstudio/let-s-talk">
-                        <span>Get a free website audit today!</span>
+                    <Link 
+                        className="bg-white text-primary rounded-2xl px-4 md:py-2 py-1 text-xs md:text-sm" 
+                        href="https://cal.com/lumixus-studio/15min"
+                    >
+                        <span>Get a free website consultation today!</span>
                     </Link>
                 </div>
-                <h1 className='text-center text-[30px] sm:text-[60px] text-6xl font-medium -leading-7 '>
-                    <span className='gradient-animation-light'>Elevate your brand</span><br />
-                    <span className='gradient-animation-dark'>Craft experiences that convert!</span>
+                <h1 className='text-center text-[30px] sm:text-[60px] text-6xl font-medium -leading-7 mt-2'>
+                    <span className='gradient-animation-light'>Achieve Business Growth</span><br />
+                    <span className='gradient-animation-dark'>Helping SMEs Close More Deals</span>
                 </h1>
 
                 <div className='mx-auto w-full flex items-center justify-center text-center'>
-                    <p className='p-3 sm:text-base text-sm mt-[10px] md:w-[582px]'>
+                    <p className='p-3 sm:text-base text-sm mt-[8px] md:w-[582px]'>
                         We craft user-centric websites that not only drive growth but also solidify
-                        your presence and influence in the ever-evolving digital landscape.
+                        your presence and influence in the ever-evolving digital space.
                     </p>
                 </div>
 
                 <div className='mt-4 sm:mt-[40px] flex items-center justify-center w-full'>
                     <div className='md:grid grid-cols-2 md:space-y-0 space-y-4 space-x-0 md:space-x-4'>
 
-                        <Link href="https://calendly.com/lumixusstudio/let-s-talk" className='w-full block'>
+                        <Link href="https://cal.com/lumixus-studio/30min" className='w-full block'>
                             <Button className='w-full  text-[17px] '>
                                 Schedule a call
                             </Button>

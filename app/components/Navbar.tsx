@@ -119,7 +119,7 @@ const Navbar = () => {
                             </li>
 
                             <li>
-                                <Link href="https://calendly.com/lumixusstudio/let-s-talk" className='w-full '>
+                                <Link href="https://cal.com/lumixus-studio/30min" className='w-full '>
                                     <Button className='md:w-1/2 w-full text-[17px] '>
                                         Schedule a call
                                     </Button>
