@@ -19,8 +19,8 @@ const Hero = () => {
                     </Link>
                 </div>
                 <h1 className='text-center text-[30px] sm:text-[60px] text-6xl font-medium -leading-7 mt-2'>
-                    <span className='gradient-animation-light'>Achieve Business Growth</span><br />
-                    <span className='gradient-animation-dark'>Helping SMEs Close More Deals</span>
+                    <span className='gradient-animation-light'>Helping SMEs Drive More Sales</span><br />
+                    <span className='gradient-animation-dark'>Close Deals & Double Leads</span>
                 </h1>
 
                 <div className='mx-auto w-full flex items-center justify-center text-center'>

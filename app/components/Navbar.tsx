@@ -59,8 +59,6 @@ const Navbar = () => {
                     style={{ width: "20px", height: "20px" }}
                     onClick={handleClick}
                 />
-
-
             </Container>
 
             {
