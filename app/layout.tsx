@@ -10,7 +10,7 @@ export const metadata: Metadata = {
     template: "%s | Lumixus studio",
   },
   description: 'Your one-stop shop for all things digital success',
-  applicationName: 'Next.js',
+  applicationName: 'Lumixus studio',
   keywords: ['Web Development', 'Web Design', 'Web Optimization', 'Ecommerce', 'Digital Strategy']
 }
 
