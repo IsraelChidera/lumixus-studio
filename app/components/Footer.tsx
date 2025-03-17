@@ -17,11 +17,11 @@ const Footer = () => {
 
                     <div className='flex md:pt-0 pt-3 items-center justify-center space-x-4'>
                         <a href="mailto:lumixusstudio@gmail.com"> 
-                            <SiGmail className="text-sm md:text-base "/>
+                            <SiGmail className="w-8 h-8 md:text-base "/>
                         </a>
 
                         <a href="https://www.instagram.com/lumixus_studio/">
-                            <FaInstagram className="text-sm md:text-base "/>
+                            <FaInstagram className="w-8 h-8 md:text-base "/>
                         </a>
                        
                     </div>
