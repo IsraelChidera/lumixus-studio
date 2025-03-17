@@ -60,7 +60,7 @@ const Services = () => {
             <div id="services" className='pt-[114px] bg-[#0E0E0E] relative '>
                 <Container className='relative z-20'>
                     <p data-aos="fade-up" className='uppercase text-left text-[20px] font-medium'>
-                        Our best services
+                        Why Choose Us?
                     </p>
 
                     <h2 data-aos="fade-up" className='text-6xl text-left font-medium'>
@@ -87,9 +87,9 @@ const Services = () => {
                             </div>
 
                             <div>
-                                <h4 className='text-xl'>AI and Tech Integration</h4>
+                                <h4 className='text-xl'>Automation</h4>
                                 <p className='text-sm pt-1'>
-                                    Leverage the latest AI and tech tools to streamline operations and foster business growth.
+                                    Leverage automation tools to streamline operations, enhance efficiency, and drive business growth.
                                 </p>
                             </div>
                         </div>
@@ -139,9 +139,9 @@ const Services = () => {
                             </div>
 
                             <div>
-                                <h4 className='text-xl'>Web Management</h4>
+                                <h4 className='text-xl'>Social Media & Marketing</h4>
                                 <p className='text-sm pt-1'>
-                                    Ensure your website remains updated, secure, and running smoothly with our continuous management services.
+                                    Boost your brand's online presence with strategic content marketing, social media management, and paid advertising campaigns.
                                 </p>
                             </div>
                         </div>

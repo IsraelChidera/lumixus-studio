@@ -12,13 +12,13 @@ const Hero = () => {
             <Container>
                 <div className='text-center mb-1'>
                     <Link 
-                        className="bg-white text-primary rounded-2xl px-4 md:py-2 py-1 text-xs md:text-sm" 
+                        className="bg-white text-primary rounded-2xl px-4 md:py-1 py-1 text-xs " 
                         href="https://cal.com/lumixus-studio/15min"
                     >
                         <span>Get a free website consultation today!</span>
                     </Link>
                 </div>
-                <h1 className='text-center text-[30px] sm:text-[60px] text-6xl font-medium -leading-7 mt-2'>
+                <h1 className='text-center text-[30px] sm:text-[60px] text-5xl font-semibold -leading-4 mt-2'>
                     <span className='gradient-animation-light'>Helping SMEs Drive More Sales</span><br />
                     <span className='gradient-animation-dark'>Close Deals & Double Leads</span>
                 </h1>

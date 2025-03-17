@@ -8,7 +8,7 @@ import { FaFacebookSquare } from "react-icons/fa";
 
 const Footer = () => {
     return (
-        <footer className='mt-20 px-4 py-4 border-t border-[#0E0E0E]'>
+        <footer className='mt-20 py-4 border-t border-gray-100'>
             <Container className='md:block flex w-full justify-center items-center'>
                 <div className='md:flex justify-between items-center'>
                     <div className=''>
