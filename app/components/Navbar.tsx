@@ -109,7 +109,7 @@ const Navbar = () => {
                             <li className="text-[34px]">
                                 <Link href="#contact" className='hover:text-blue flex items-center space-x-2' onClick={() => setClick(false)} >
                                     <span>
-                                    Contact
+                                        Contact
                                     </span>
 
                                     <MdArrowOutward className="animate-bounce" />
