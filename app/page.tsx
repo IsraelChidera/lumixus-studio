@@ -21,9 +21,9 @@ export default function Home() {
       </div>
       <div className="relative">
         <Services />
-        <Works />
-        <StartProject />
+        <Works />        
         <Pricing />
+        <StartProject />
         <Testimonial />
         <Faq />
         <Image src="/body-blur.webp" alt="blur" className='absolute top-0 left-0 z-10' width={1300} height={1866} />

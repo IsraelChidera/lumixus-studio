@@ -46,41 +46,41 @@ const Pricing = () => {
                     <div className='relative z-20 mt-20 grid lg:grid-cols-3 gap-10'>
                         <div className='bg-[#0e0e0e] py-8 px-4 rounded-[6px]'>
                             <div className=''>
-                                <p className='text-[24px] lg:text-[28px] mb-4'>Free</p>
-                                <p className='text[40px] lg:text-[48px] mb-6'>$0</p>
+                                <p className='text-[24px] lg:text-[28px] mb-4'>Starter Package</p>
+                                {/* <p className='text[40px] lg:text-[48px] mb-6'>$0</p> */}
                                 <p className='text-[#757577] text-base lg:text-[17px] mb-10'>
-                                    Get started for free with essential tools to explore Graft's capabilities.
+                                    Best for New Businesses
                                 </p>
 
                                 <ul className="space-y-4">
                                     <li className='flex items-center text-base:text[17px] space-x-2'>
                                         <IoCheckmarkCircleOutline />
-                                        <span>10+ templates.</span>
+                                        <span>Custom Website.</span>
                                     </li>
 
                                     <li className='flex items-center text[17px] space-x-2'>
                                         <IoCheckmarkCircleOutline />
-                                        <span>2,000 words/month.</span>
+                                        <span>Basic SEO Setup (On-page optimization)</span>
                                     </li>
 
                                     <li className='flex items-center text[17px] space-x-2'>
                                         <IoCheckmarkCircleOutline />
-                                        <span>2 languages {"(e.g., English, Swahili)."}</span>
+                                        <span>Google My Business Setup</span>
                                     </li>
 
                                     <li className='flex items-center text[17px] space-x-2'>
                                         <IoCheckmarkCircleOutline />
-                                        <span>Single-user access.</span>
+                                        <span>Brand Identity Guide </span>
                                     </li>
 
                                     <li className='flex items-center text[17px] space-x-2'>
                                         <IoCheckmarkCircleOutline />
-                                        <span>Standard email support.</span>
+                                        <span>Social Media</span>
                                     </li>
 
                                     <li className='flex items-center text[17px] space-x-2'>
                                         <IoCheckmarkCircleOutline />
-                                        <span>Single format export.</span>
+                                        <span>Add-ons (if required)</span>
                                     </li>
                                 </ul>
                             </div>
@@ -92,42 +92,42 @@ const Pricing = () => {
 
                         <div className='bg-[#0e0e0e] py-8 px-4 rounded-[6px]'>
                             <div className=''>
-                                <p className='text-[24px] lg:text-[28px] mb-4 text-primary'>Pay-as-you-go</p>
-                                <p className='text-[40px] lg:text-[48px] mb-6'>$2</p>
+                                <p className='text-[24px] lg:text-[28px] mb-4 text-white'>Growth Package</p>
+                                {/* <p className='text-[40px] lg:text-[48px] mb-6'>$2</p> */}
                                 <p className='text-[#757577] text-[17px] mb-10'>
-                                    Designed for small businesses looking to scale their operations efficiently.
+                                    For Businesses Ready to Scale
                                 </p>
 
                                 <ul className="space-y-4">
                                     <li className='flex items-center text[17px] space-x-2'>
                                         <IoCheckmarkCircleOutline />
-                                        <span>50+ templates.</span>
+                                        <span>Everything in Start Package</span>
                                     </li>
 
                                     <li className='flex items-center text[17px] space-x-2'>
                                         <IoCheckmarkCircleOutline />
-                                        <span>5,000 words/week.</span>
+                                        <span>Advanced SEO</span>
                                     </li>
 
                                     <li className='flex items-center text[17px] space-x-2'>
                                         <IoCheckmarkCircleOutline />
-                                        <span>5 languages, including French.</span>
+                                        <span>Social Media Strategy Guide</span>
                                     </li>
 
                                     <li className='flex items-center text[17px] space-x-2'>
                                         <IoCheckmarkCircleOutline />
-                                        <span>Up to 3 team members.</span>
+                                        <span>Content Creation & Strategy</span>
                                     </li>
 
                                     <li className='flex items-center text[17px] space-x-2'>
                                         <IoCheckmarkCircleOutline />
-                                        <span>Priority email support.</span>
+                                        <span>Social Media Management</span>
                                     </li>
 
-                                    <li className='flex items-center text[17px] space-x-2'>
+                                    {/* <li className='flex items-center text[17px] space-x-2'>
                                         <IoCheckmarkCircleOutline />
-                                        <span>Export content in multiple formats.</span>
-                                    </li>
+                                        <span></span>
+                                    </li> */}
                                 </ul>
                             </div>
 
@@ -138,47 +138,37 @@ const Pricing = () => {
 
                         <div className='bg-[#0e0e0e] py-8 px-4 rounded-[6px]'>
                             <div className=''>
-                                <p className='text-[24px] lg:text-[28px] mb-4 text-primary'>Monthly plan</p>
-                                <p className='text-[40px] lg:text-[48px] mb-6'>$8<span className='text-[#757577] text-[17px]'>/month</span></p>
+                                <p className='text-[24px] lg:text-[28px] mb-4 text-white'>Scale Package</p>
+                                {/* <p className='text-[40px] lg:text-[48px] mb-6'>$8<span className='text-[#757577] text-[17px]'>/month</span></p> */}
                                 <p className='text-[#757577] text-[17px] mb-10'>
-                                    Unlock advanced features to grow and manage your business effectively.
+                                    For Businesses Looking to Dominate
                                 </p>
 
                                 <ul className="space-y-4">
                                     <li className='flex items-center text[17px] space-x-2'>
                                         <IoCheckmarkCircleOutline />
-                                        <span>100+ templates for all industries.</span>
+                                        <span>Everything in Growth Package</span>
                                     </li>
 
                                     <li className='flex items-center text[17px] space-x-2'>
                                         <IoCheckmarkCircleOutline />
-                                        <span>Unlimited words.</span>
+                                        <span>Full Marketing System (Sales Funnel, Lead Magnets)</span>
                                     </li>
 
                                     <li className='flex items-center text[17px] space-x-2'>
                                         <IoCheckmarkCircleOutline />
-                                        <span>Custom AI prompts.</span>
+                                        <span>Email Marketing Automation</span>
                                     </li>
 
                                     <li className='flex items-center text[17px] space-x-2'>
                                         <IoCheckmarkCircleOutline />
-                                        <span>Up to 10 team members.</span>
-                                    </li>
-
-                                    <li className='flex items-center text[17px] space-x-2'>
-                                        <IoCheckmarkCircleOutline />
-                                        <span>Dedicated account manager.</span>
-                                    </li>
-
-                                    <li className='flex items-center text[17px] space-x-2'>
-                                        <IoCheckmarkCircleOutline />
-                                        <span>White-label content export options.</span>
-                                    </li>
+                                        <span>Paid Ads Strategy</span>
+                                    </li>                                    
                                 </ul>
                             </div>
                         </div>
                     </div>
-                </div>                
+                </div>
             </Container>
         </motion.section>
     )

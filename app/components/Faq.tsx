@@ -17,36 +17,45 @@ const Faq = () => {
     const faqs = [
         {
             id: 1,
-            question: `What makes Graft different from other AI tools?`,
-            answer: `Graft is tailored for African businesses with localized insights, multilingual support, and industry-specific prompts to ensure culturally relevant and practical outputs.`
+            question: `What services does Lumixus Studio offer?`,
+            answer: `Lumixus Studio specializes in web. application, SEO, branding, marketing, and business automation for service-based entrepreneurs.`
         },
         {
             id: 2,
-            question: `Can I try Graft before committing to a paid plan?`,
-            answer: `Yes! Graft offers a free trial so you can explore its features before making a commitment. This allows you to test the platform and see if it fits your needs before upgrading to a paid plan.`
+            question: `How long does it take to build a website?`,
+            answer: `The timeline depends on the project scope. A standard website takes 2-4 weeks, while more advanced projects (e.g., eCommerce, automation) may take 4-8 weeks. We prioritise quality`
         },
-
         {
             id: 3,
-            question: `What industries does Graft support?`,
-            answer: `Graft is designed to support a wide range of industries, including finance, healthcare, e-commerce, logistics, marketing, and more. Its flexible and customizable features make it a great fit for businesses of all sizes and sectors.`
+            question: `Do you offer branding services along with web design?`,
+            answer: `Yes! Our Starter Package includes basic branding (logo, colors, fonts), while higher-tier packages offer full brand strategy, social media templates, and marketing automation.`
         },
         {
             id: 4,
-            question: `Does Graft support collaboration?`,
-            answer: `Absolutely! Graft includes robust collaboration tools that allow teams to work together seamlessly. You can share projects, assign tasks, leave comments, and track progress in real-time, ensuring smooth workflow and communication
+            question: `Do you offer payment plans?`,
+            answer: `Yes! We provide flexible payment options, including installments for high-tier packages. Contact us to discuss a plan that works for your budget.
             `
         },
         {
             id: 5,
-            question: `How secure is my data on Graft?`,
-            answer: `Security is a top priority at Graft. We use industry-leading encryption, secure cloud storage, and regular security updates to protect your data. Additionally, role-based access controls ensure that only authorized users can view or edit sensitive information.`
+            question: `Will my website be mobile-friendly?`,
+            answer: `100%! Every website we build is fully responsive and optimized for desktop, tablet, and mobile devices to ensure a seamless user experience.`
         },
         {
             id: 6,
-            question: `Can I upgrade or downgrade my plan?`,
-            answer: `Yes! Graft offers flexible pricing plans, allowing you to upgrade or downgrade at any time. You can adjust your subscription based on your needs, ensuring you only pay for the features and capacity that suit your business.`
+            question: `Can you handle my social media and content marketing?`,
+            answer: `Yes! Our Growth & Scale Packages include social media strategy, content creation, and even paid ad management to boost your online presence.`
         },
+        {
+            id: 7,
+            question: `Do you provide ongoing maintenance and support?`,
+            answer: `Yes! We offer monthly maintenance plans that include bug fixes, security updates, performance monitoring, and content updates to keep your site running smoothly.`
+        },
+        {
+            id: 8,
+            question: `How do I get started?`,
+            answer: `Simply contact us for a free consultation. We'll discuss your goals, suggest the best package for you, and begin crafting a website that helps grow your business.`
+        }
     ]
 
     return (
