@@ -81,9 +81,9 @@ const Works = () => {
                                 <SwiperSlide>
                                     <div className='relative' >
                                         <Image src={goodhomes} alt="web project" />
-                                        <div className='centered-bottom bg-[#0E0E0E]  pt-2 px-10 pb-4'>
+                                        <div className='centered-bottom bg-[#0E0E0E]  pt-2 px-6 lg:px-10 pb-4'>
                                             <p className='gradient-animation-light text-center text-sm font-semibold'>Web design | Branding | SEO | CRO</p>
-                                            <h3 className='pt-4 text-[17px] font-semibold text-center text-white'>
+                                            <h3 className='pt-4 text-sm lg:text-[17px] font-semibold text-center text-white'>
                                                 Good Homes - real estate website
                                             </h3>
                                         </div>
@@ -93,9 +93,9 @@ const Works = () => {
                                 <SwiperSlide>
                                     <div className='relative' >
                                         <Image src={chris} alt="web project" />
-                                        <div className='centered-bottom bg-[#0E0E0E]  pt-2 px-10 pb-4'>
+                                        <div className='centered-bottom bg-[#0E0E0E]  pt-2 px-6 lg:px-10 pb-4'>
                                             <p className='gradient-animation-light text-center text-sm font-semibold'>Branding | Web design | Social Media </p>
-                                            <h3 className='pt-4 text-[17px] font-semibold text-center text-white'>
+                                            <h3 className='pt-4 text-sm lg:text-[17px] font-semibold text-center text-white'>
                                                 Chris Global Limited
                                             </h3>
                                         </div>
@@ -105,9 +105,9 @@ const Works = () => {
                                 <SwiperSlide>
                                     <div className='relative' >
                                         <Image src={ayuda} alt="web project" />
-                                        <div className='centered-bottom bg-[#0E0E0E]  pt-2 px-10 pb-4'>
+                                        <div className='centered-bottom bg-[#0E0E0E]  pt-2 px-6 lg:px-10 pb-4'>
                                             <p className='gradient-animation-light text-center text-sm font-semibold'>Branding | Web Design | Social Media</p>
-                                            <h3 className='pt-4 text-[17px] font-semibold text-center text-white'>
+                                            <h3 className='pt-4 text-sm lg:text-[17px] font-semibold text-center text-white'>
                                                 Ayuda Content
                                             </h3>
                                         </div>
@@ -117,9 +117,9 @@ const Works = () => {
                                 <SwiperSlide>
                                     <div className='relative' >
                                         <Image src={pharmabolt} alt="web project" />
-                                        <div className='centered-bottom bg-[#0E0E0E]  pt-2 px-10 pb-4'>
+                                        <div className='centered-bottom bg-[#0E0E0E]  pt-2 px-6 lg:px-10 pb-4'>
                                             <p className='gradient-animation-light text-center text-sm font-semibold'>Ecommerce | Web. | CRO</p>
-                                            <h3 className='pt-4 text-[17px] font-semibold text-center text-white'>
+                                            <h3 className='pt-4 text-sm lg:text-[17px] font-semibold text-center text-white'>
                                                 Pharmabolt
                                             </h3>
                                         </div>
@@ -129,9 +129,9 @@ const Works = () => {
                                 <SwiperSlide>
                                     <div className='relative' >
                                         <Image src={ninolynks} alt="web project" />
-                                        <div className='centered-bottom bg-[#0E0E0E]  pt-2 px-10 pb-4'>
+                                        <div className='centered-bottom bg-[#0E0E0E]  pt-2 px-6 lg:px-10 pb-4'>
                                             <p className='gradient-animation-light text-center text-sm font-semibold'>Ecommerce | CRO</p>
-                                            <h3 className='pt-4 text-[17px] font-semibold text-center text-white'>
+                                            <h3 className='pt-4 text-sm lg:text-[17px] font-semibold text-center text-white'>
                                                 Ninolynks
                                             </h3>
                                         </div>
@@ -141,9 +141,9 @@ const Works = () => {
                                 <SwiperSlide>
                                     <div className='relative' >
                                         <Image src={icystore} alt="web project" />
-                                        <div className='centered-bottom bg-[#0E0E0E]  pt-2 px-10 pb-4'>
+                                        <div className='centered-bottom bg-[#0E0E0E]  pt-2 px-6 lg:px-10 pb-4'>
                                             <p className='gradient-animation-light text-center text-sm font-semibold'>E-commerce | Web Development | Branding | CRO</p>
-                                            <h3 className='pt-4 text-[17px] font-semibold text-center text-white'>
+                                            <h3 className='pt-4 text-sm lg:text-[17px] font-semibold text-center text-white'>
                                                 Icy Store
                                             </h3>
                                         </div>

@@ -25,7 +25,7 @@ const Services = () => {
                     </h2>
 
                     <div className='mt-10 flex justify-center'>
-                        <div className="lg:w-[800px] grid grid-cols-2 gap-4 ">
+                        <div className="lg:w-[800px] grid lg:grid-cols-2 gap-4 ">
                             <div className='rounded-[6px] bg-[#0e0e0e] pt-[29px] pb-[29px] px-[35px]'>
                                 <div>
                                     <Image src={web} alt="web dev icon" />
@@ -57,7 +57,7 @@ const Services = () => {
                                     <MdWeb className="text-blue text-[40px]" />
                                 </div>
 
-                                <div>
+                                <div className='pt-2'>
                                     <h4 className='text-xl'>Automation</h4>
                                     <p className='text-sm pt-1'>
                                         Leverage automation tools to streamline operations, enhance efficiency, and drive business growth.
@@ -70,7 +70,7 @@ const Services = () => {
                                     <GrOptimize className="text-blue text-[40px]" />
                                 </div>
 
-                                <div>
+                                <div className='pt-2'>
                                     <h4 className='text-xl'>Growth Strategy</h4>
                                     <p className='text-sm pt-1'>
                                         We will help grow your business by creating a growth strategy that aligns with your goals and objectives.
@@ -83,7 +83,7 @@ const Services = () => {
                                     <IoStorefrontOutline className="text-blue text-[40px]" />
                                 </div>
 
-                                <div>
+                                <div className='pt-2'>
                                     <h4 className='text-xl'>Social Media & Marketing</h4>
                                     <p className='text-sm pt-1'>
                                         Boost your brand's online presence with strategic content marketing, social media management, and paid advertising campaigns.
@@ -96,7 +96,7 @@ const Services = () => {
                                     <GrOptimize className="text-blue text-[40px]" />
                                 </div>
 
-                                <div>
+                                <div className='pt-2'>
                                     <h4 className='text-xl'>Conversion Optimization</h4>
                                     <p className='text-sm pt-1'>
                                         Analyze user behavior and refine your website to maximize conversions and sales.

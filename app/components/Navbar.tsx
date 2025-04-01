@@ -52,11 +52,11 @@ const Navbar = () => {
                                 Testimonials
                             </Link>
                         </li>
-                        
+
                     </ul>
                 </div>
 
-                <Button className="flex items-center space-x-2">
+                <Button className="hidden xl:flex items-center space-x-2">
                     <span>Start Now</span>
                     <MdArrowOutward className='text-white' />
                 </Button>
@@ -86,7 +86,7 @@ const Navbar = () => {
                                 <Link href="#about" className='hover:opacity-60 hover:text-white transition-all ease-in delay-75  flex items-center space-x-2' onClick={() => setClick(false)} >
                                     <span>About</span>
 
-                                    <MdArrowOutward className="animate-bounce" />
+                                    <MdArrowOutward />
                                 </Link>
                             </li>
 
@@ -94,7 +94,7 @@ const Navbar = () => {
                                 <Link href="#services" className='hover:opacity-60 hover:text-white transition-all ease-in delay-75  flex items-center space-x-2' onClick={() => setClick(false)} >
                                     <span>Services</span>
 
-                                    <MdArrowOutward className="animate-bounce" />
+                                    <MdArrowOutward />
                                 </Link>
                             </li>
 
@@ -102,7 +102,7 @@ const Navbar = () => {
                                 <Link href="#works" className='hover:opacity-60 hover:text-white transition-all ease-in delay-75  flex items-center space-x-2' onClick={() => setClick(false)} >
                                     <span>Portfolio</span>
 
-                                    <MdArrowOutward className="animate-bounce" />
+                                    <MdArrowOutward />
                                 </Link>
                             </li>
 
@@ -110,7 +110,7 @@ const Navbar = () => {
                                 <Link href="#testimonials" className='hover:opacity-60 hover:text-white transition-all ease-in delay-75  flex items-center space-x-2' onClick={() => setClick(false)} >
                                     <span>Testimonials</span>
 
-                                    <MdArrowOutward className="animate-bounce" />
+                                    <MdArrowOutward />
                                 </Link>
                             </li>
 
@@ -120,7 +120,7 @@ const Navbar = () => {
                                         Contact
                                     </span>
 
-                                    <MdArrowOutward className="animate-bounce" />
+                                    <MdArrowOutward />
                                 </Link>
                             </li>
 
