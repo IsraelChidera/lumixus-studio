@@ -6,18 +6,29 @@ import StartProject from './components/StartProject'
 import Testimonial from './components/Testimonial'
 import Contact from './components/Contact'
 import Footer from './components/Footer'
+import Image from 'next/image'
+import Faq from './components/Faq'
+import Pricing from './components/Pricing'
 
 export default function Home() {
   return (
     <main className='relative'>
-      <Navbar />
-      <Hero />
-      <Works />
-      <Services />      
-      <StartProject />
-      <Testimonial />
+      <div className="relative">
+        <Navbar />
+        <Hero />
+
+        <Image src="/nav-blur.webp" alt="blur" className='absolute top-0 left-0 z-10' width={1300} height={200} />
+      </div>
+      <div className="relative">
+        <Services />
+        <Works />
+        <StartProject />
+        <Pricing />
+        <Testimonial />
+        <Faq />
+        <Image src="/body-blur.webp" alt="blur" className='absolute top-0 left-0 z-10' width={1300} height={1866} />
+      </div>
       <Contact />
-      <Footer />         
     </main>
   )
 }

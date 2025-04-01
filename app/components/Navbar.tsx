@@ -17,41 +17,49 @@ const Navbar = () => {
     }
 
     return (
-        <nav className='pt-6 pb-4 relative'>
+        <nav className='pt-6 pb-4 relative z-20'>
             <Container className='flex justify-between items-center'>
-                <Image src={logo} alt="Lumixus studio logo" className='w-16 md:w-28' />
+                <div className="flex items-center space-x-6">
+                    <Image src={logo} alt="Lumixus studio logo" className='pr-6 w-16 md:w-28 border-r border-r-white ' />
 
-                <ul className='xl:flex hidden tracking-wide items-center justify-between space-x-6 text-sm'>
-                    <li className="hover:text-blue">
-                        <Link href="#about">
-                            About
-                        </Link>
-                    </li>
+                    <ul className='ml-4 xl:flex hidden tracking-wide items-center justify-between space-x-6 text-sm'>
+                        <li className="hover:opacity-60 hover:text-white transition-all ease-in delay-75 ">
+                            <Link href="#about">
+                                Resources
+                            </Link>
+                        </li>
 
-                    <li className="hover:text-blue">
-                        <Link href="#services">
-                            Services
-                        </Link>
-                    </li>
+                        <li className="hover:opacity-60 hover:text-white transition-all ease-in delay-75 ">
+                            <Link href="#about">
+                                About
+                            </Link>
+                        </li>
 
-                    <li className="hover:text-blue">
-                        <Link href="#works">
-                            Portfolio
-                        </Link>
-                    </li>
+                        <li className="hover:opacity-60 hover:text-white transition-all ease-in delay-75 ">
+                            <Link href="#services">
+                                Services
+                            </Link>
+                        </li>
 
-                    <li className="hover:text-blue">
-                        <Link href="#testimonials">
-                            Testimonials
-                        </Link>
-                    </li>
+                        <li className="hover:opacity-60 hover:text-white transition-all ease-in delay-75 ">
+                            <Link href="#works">
+                                Portfolio
+                            </Link>
+                        </li>
 
-                    <li className="hover:text-blue">
-                        <Link href="#contact">
-                            Contact
-                        </Link>
-                    </li>
-                </ul>
+                        <li className="hover:opacity-60 hover:text-white transition-all ease-in delay-75 ">
+                            <Link href="#testimonials">
+                                Testimonials
+                            </Link>
+                        </li>
+                        
+                    </ul>
+                </div>
+
+                <Button className="flex items-center space-x-2">
+                    <span>Start Now</span>
+                    <MdArrowOutward className='text-white' />
+                </Button>
 
                 {/* Mobile navigation */}
                 <FaBarsStaggered
@@ -75,7 +83,7 @@ const Navbar = () => {
 
                         <ul className='mt-10 space-y-6'>
                             <li className="text-[34px]">
-                                <Link href="#about" className='hover:text-blue flex items-center space-x-2' onClick={() => setClick(false)} >
+                                <Link href="#about" className='hover:opacity-60 hover:text-white transition-all ease-in delay-75  flex items-center space-x-2' onClick={() => setClick(false)} >
                                     <span>About</span>
 
                                     <MdArrowOutward className="animate-bounce" />
@@ -83,7 +91,7 @@ const Navbar = () => {
                             </li>
 
                             <li className="text-[34px]">
-                                <Link href="#services" className='hover:text-blue flex items-center space-x-2' onClick={() => setClick(false)} >
+                                <Link href="#services" className='hover:opacity-60 hover:text-white transition-all ease-in delay-75  flex items-center space-x-2' onClick={() => setClick(false)} >
                                     <span>Services</span>
 
                                     <MdArrowOutward className="animate-bounce" />
@@ -91,7 +99,7 @@ const Navbar = () => {
                             </li>
 
                             <li className="text-[34px]">
-                                <Link href="#works" className='hover:text-blue flex items-center space-x-2' onClick={() => setClick(false)} >
+                                <Link href="#works" className='hover:opacity-60 hover:text-white transition-all ease-in delay-75  flex items-center space-x-2' onClick={() => setClick(false)} >
                                     <span>Portfolio</span>
 
                                     <MdArrowOutward className="animate-bounce" />
@@ -99,7 +107,7 @@ const Navbar = () => {
                             </li>
 
                             <li className="text-[34px]">
-                                <Link href="#testimonials" className='hover:text-blue flex items-center space-x-2' onClick={() => setClick(false)} >
+                                <Link href="#testimonials" className='hover:opacity-60 hover:text-white transition-all ease-in delay-75  flex items-center space-x-2' onClick={() => setClick(false)} >
                                     <span>Testimonials</span>
 
                                     <MdArrowOutward className="animate-bounce" />
@@ -107,7 +115,7 @@ const Navbar = () => {
                             </li>
 
                             <li className="text-[34px]">
-                                <Link href="#contact" className='hover:text-blue flex items-center space-x-2' onClick={() => setClick(false)} >
+                                <Link href="#contact" className='hover:opacity-60 hover:text-white transition-all ease-in delay-75  flex items-center space-x-2' onClick={() => setClick(false)} >
                                     <span>
                                         Contact
                                     </span>

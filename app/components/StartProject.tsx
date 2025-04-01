@@ -9,7 +9,7 @@ import Link from 'next/link';
 
 const StartProject = () => {
     return (
-        <section className='bg-[#0E0E0E] py-[90px] relative' >
+        <section className='py-[90px] relative' >
             <Container className='relative z-20'>
                 <p data-aos="fade-up" className='uppercase text-center text-sm font-medium'>
                     Let's talk
