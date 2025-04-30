@@ -42,14 +42,17 @@ const Footer = () => {
             </Container>
 
             <Container className=' mt-10 py-4 md:flex block w-full justify-around items-center'>
-                <div className=''>
-                    <Image src={logo} alt="logo" className='w-[100px]' />
-                    <p className='pt-4 text-xs opacity-80'>
+                <div>
+                    <div className='flex justify-center lg:justify-left'>
+                        <Image src={logo} alt="logo" className='w-[100px]' />
+                    </div>
+
+                    <p className='pt-4 lg:text-left text-center text-xs opacity-80'>
                         &copy; 2025 Lumixus Studio. All rights reserved.
                     </p>
                 </div>
 
-                <ul className=" text-center space-y-3 text-white">
+                <ul className="lg:my-0 my-4 text-center space-y-3 text-white">
                     <li >
                         <Link href="#">
                             Quick links
