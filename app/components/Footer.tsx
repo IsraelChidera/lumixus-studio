@@ -72,7 +72,7 @@ const Footer = () => {
                         <FaInstagram className="w-6 h-6 md:text-base " />
                     </a>
 
-                    <a href="https://www.instagram.com/lumixus_studio/" className='block'>
+                    <a href="https://www.facebook.com/profile.php?id=61563258786419&mibextid=ZbWKwL" className='block'>
                         <FaFacebook className="w-6 h-6 md:text-base " />
                     </a>
                 </div>
