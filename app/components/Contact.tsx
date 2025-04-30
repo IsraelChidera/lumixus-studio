@@ -78,7 +78,7 @@ const Contact = () => {
 
     return (
         <section id="contact">
-            <Container className='mt-[154px] relative pb-[100px]'>
+            <Container className='mt-[154px] relative pb-10'>
 
 
                 <div className='flex justify-center mb-12 items-center'>

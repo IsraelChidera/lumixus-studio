@@ -14,14 +14,13 @@ export default function Home() {
   return (
     <main className='relative'>
       <div className="relative">
-        <Navbar />
         <Hero />
 
-        <Image src="/nav-blur.webp" alt="blur" className='absolute top-0 left-0 z-10' width={1300} height={200} />
+        {/* <Image src="/nav-blur.webp" alt="blur" className='absolute top-0 left-0 z-10' width={1300} height={200} /> */}
       </div>
       <div className="relative">
         <Services />
-        <Works />        
+        <Works />
         <Pricing />
         <StartProject />
         <Testimonial />

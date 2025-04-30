@@ -16,6 +16,11 @@ const Faq = () => {
 
     const faqs = [
         {
+            id: 0,
+            question: `What is this service best for?`,
+            answer: `We partner with B2B companies, SaaS businesses, and digital brands that need fast, reliable creative support—whether it's branding, web applications, high-converting landing pages, or compelling marketing copy. We also love partnering with creatives to help them scale their output and grow their business.`
+        },
+        {
             id: 1,
             question: `What services does Lumixus Studio offer?`,
             answer: `Lumixus Studio specializes in web. application, SEO, branding, marketing, and business automation for service-based entrepreneurs.`
@@ -76,8 +81,8 @@ const Faq = () => {
                         faqs.map((faq, _) => (
                             <div key={faq.id} className={` pb-4 px-6 mb-[32px] ${active === _ ? "bg-[#0e0e0e] rounded-[6px] py-8" : ""} `}>
                                 <div className="flex items-center justify-between">
-                                    <p className="text-text text-lg lg:text-[20px] font-semibold">
-                                        <p
+                                    <p className=" text-text text-lg lg:text-[24px] font-semibold">
+                                        <span
                                             dangerouslySetInnerHTML={{ __html: faq.question }}
                                         />
                                     </p>
@@ -107,7 +112,7 @@ const Faq = () => {
                                                 y: 0,
                                                 opacity: 1
                                             }}
-                                            className='mt-6 text-base lg:text-[17px] font-normal text-text'
+                                            className='mt-6 text-base lg:text-[20px] font-normal text-text'
                                         >
                                             <p
                                                 dangerouslySetInnerHTML={{ __html: faq.answer }}

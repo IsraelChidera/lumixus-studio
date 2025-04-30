@@ -53,6 +53,11 @@ const Navbar = () => {
                             </Link>
                         </li>
 
+                        <li className="hover:opacity-60 hover:text-white transition-all ease-in delay-75 ">
+                            <Link href="/resources">
+                                Resources
+                            </Link>
+                        </li>
                     </ul>
                 </div>
 

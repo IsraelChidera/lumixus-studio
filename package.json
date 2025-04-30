@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@calcom/embed-react": "^1.5.3",
     "aos": "^2.3.4",
     "formik": "^2.4.5",
     "motion": "^12.6.2",

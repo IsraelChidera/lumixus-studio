@@ -3,6 +3,8 @@ import './globals.css';
 import localFont from 'next/font/local'
 import FloatingButton from './components/FloatingButton';
 import CustomCursor from './components/CustomCursor';
+import Navbar from './components/Navbar';
+import Footer from './components/Footer';
 
 export const metadata: Metadata = {
   title: {
@@ -98,7 +100,9 @@ export default function RootLayout({
         <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
       </head>
       <body className="relative">
+        <Navbar />
         {children}
+        <Footer />
         <FloatingButton />
         <CustomCursor />
 
