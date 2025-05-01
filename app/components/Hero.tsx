@@ -32,12 +32,11 @@ const Hero = () => {
                     <span className='gradient-animation-dark'>Close Deals, Drive Sales</span>
                 </h1>
 
-                {/* <div className='mx-auto w-full hidden items-center justify-center text-center'>
+                <div className='mx-auto w-full hidden items-center justify-center text-center'>
                     <p className='p-3 sm:text-base text-sm mt-[8px] md:w-[582px]'>
-                        We craft user-centric websites that not only drive growth but also solidify
-                        your presence and influence in the ever-evolving digital space.
+                        We handle all your marketing needs—in record time.
                     </p>
-                </div> */}
+                </div>
 
                 <div className='mt-4 sm:mt-[40px] flex items-center justify-center w-full'>
                     <div className='md:grid grid-cols-2 md:space-y-0 space-y-4 space-x-0 md:space-x-4'>

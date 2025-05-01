@@ -45,7 +45,7 @@ const Testimonial = () => {
                                     ref={swiperRef}
                                     modules={[Navigation, Pagination, A11y]}
                                     pagination={true}
-                                    loop={true}                                    
+                                    loop={true}
                                     spaceBetween={30}
                                     slidesPerView={1}
                                     className='relative swiper-pagination-top swiper-container'
@@ -64,6 +64,7 @@ const Testimonial = () => {
 
                                             <div className=''>
                                                 <p className='font-light text-[13px] uppercase'> CEO | Ayuda Content</p>
+                                                <p className='font-light text-[13px] uppercase opacity-80'> William Oharisi</p>
                                             </div>
                                         </div>
                                     </SwiperSlide>
@@ -71,16 +72,16 @@ const Testimonial = () => {
                                     <SwiperSlide>
                                         <div>
                                             <p className='text-[17px] mb-[30px] pb-[30px]'>
-                                                Lumixus Studio crafted a website 
-                                                that not only stands out in the crowd but also positions 
-                                                us as thought leaders in our niche. We've seen a surge in 
-                                                website traffic, qualified leads, and industry recognition,
-                                                all thanks to the strategic design and impactful messaging 
-                                                Lumixus Studio implemented
+                                                Lumixus Studio crafted a strategy
+                                                that not only stands out in the crowd but also positions
+                                                us as thought leaders in our niche. We've seen a surge in
+                                                social media presence, qualified leads, and industry recognition,
+                                                all thanks to the strategic design and impactful messaging
                                             </p>
 
-                                            <div className=''>                                                
-                                                <p className='font-light text-[13px] uppercase'> CTO | Vertis Technologies</p>
+                                            <div className=''>
+                                                <p className='font-light text-[13px] uppercase'> Founder | Connectivia </p>
+                                                <p className='font-light text-[13px] uppercase opacity-80'> Glory Ebere </p>
                                             </div>
                                         </div>
                                     </SwiperSlide>
@@ -88,18 +89,19 @@ const Testimonial = () => {
                                     <SwiperSlide>
                                         <div>
                                             <p className='text-[17px] mb-[30px] pb-[30px]'>
-                                                We knew our website needed a makeover, but Lumixus 
-                                                Studio went above and beyond. They completely revamped 
-                                                our user experience, making it intuitive, engaging, and 
-                                                optimized for conversions. Our customer satisfaction scores 
-                                                have soared, and we've seen a significant increase in sales 
-                                                directly attributed to the new website's seamless functionality. 
-                                                They truly understand how to bridge the gap between design and 
+                                                We knew our website needed a makeover, but Lumixus
+                                                Studio went above and beyond. They completely revamped
+                                                our user experience, making it intuitive, engaging, and
+                                                optimized for conversions. Our customer satisfaction scores
+                                                have soared, and we've seen a significant increase in sales
+                                                directly attributed to the new website's seamless functionality.
+                                                They truly understand how to bridge the gap between design and
                                                 business goals
                                             </p>
 
-                                            <div className=''>                                            
-                                                <p className='font-light text-[13px] uppercase'> MD | Najec Limited</p>
+                                            <div className=''>  
+                                                <p className='font-light text-[13px] uppercase'> Co-Founder | Nexo Tech</p>
+                                                <p className='font-light text-[13px] uppercase opacity-80'> James Oladele</p>
                                             </div>
                                         </div>
                                     </SwiperSlide>

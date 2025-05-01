@@ -32,8 +32,8 @@ const Services = () => {
                                 </div>
 
                                 <div className="pt-2">
-                                    <h4 className='text-xl'>Website Design & Development</h4>
-                                    <p className='text-sm pt-1'>
+                                    <h4 className='text-2xl font-medium'>Website Design & Development</h4>
+                                    <p className='text-base pt-1'>
                                         We transform digital ideas into engaging, user-friendly experiences—whether it's crafting sleek websites or building seamless mobile apps.
                                     </p>
                                 </div>
@@ -45,8 +45,8 @@ const Services = () => {
                                 </div>
 
                                 <div className="pt-2">
-                                    <h4 className='text-xl'>Branding</h4>
-                                    <p className='text-sm pt-1'>
+                                    <h4 className='text-2xl font-medium'>Branding</h4>
+                                    <p className='text-base pt-1'>
                                         We will develop your brand identity from concept to launch.
                                     </p>
                                 </div>
@@ -58,8 +58,8 @@ const Services = () => {
                                 </div>
 
                                 <div className='pt-2'>
-                                    <h4 className='text-xl'>Automation</h4>
-                                    <p className='text-sm pt-1'>
+                                    <h4 className='text-2xl font-medium'>Automation</h4>
+                                    <p className='text-base pt-1'>
                                         Leverage automation tools to streamline operations, enhance efficiency, and drive business growth.
                                     </p>
                                 </div>
@@ -71,8 +71,8 @@ const Services = () => {
                                 </div>
 
                                 <div className='pt-2'>
-                                    <h4 className='text-xl'>Growth Strategy</h4>
-                                    <p className='text-sm pt-1'>
+                                    <h4 className='text-2xl font-medium'>Growth Strategy</h4>
+                                    <p className='text-base pt-1'>
                                         We will help grow your business by creating a growth strategy that aligns with your goals and objectives.
                                     </p>
                                 </div>
@@ -84,8 +84,8 @@ const Services = () => {
                                 </div>
 
                                 <div className='pt-2'>
-                                    <h4 className='text-xl'>Social Media & Marketing</h4>
-                                    <p className='text-sm pt-1'>
+                                    <h4 className='text-2xl font-medium'>Social Media & Marketing</h4>
+                                    <p className='text-base pt-1'>
                                         Boost your brand's online presence with strategic content marketing, social media management, and paid advertising campaigns.
                                     </p>
                                 </div>
@@ -97,8 +97,8 @@ const Services = () => {
                                 </div>
 
                                 <div className='pt-2'>
-                                    <h4 className='text-xl'>Conversion Optimization</h4>
-                                    <p className='text-sm pt-1'>
+                                    <h4 className='text-2xl font-medium'>Conversion Optimization</h4>
+                                    <p className='text-base pt-1'>
                                         Analyze user behavior and refine your website to maximize conversions and sales.
                                     </p>
                                 </div>

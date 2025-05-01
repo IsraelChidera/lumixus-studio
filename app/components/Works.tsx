@@ -126,7 +126,7 @@ const Works = () => {
                                     </div>
                                 </SwiperSlide>
 
-                                <SwiperSlide>
+                                {/* <SwiperSlide>
                                     <div className='relative' >
                                         <Image src={ninolynks} alt="web project" />
                                         <div className='centered-bottom bg-[#0E0E0E]  pt-2 px-6 lg:px-10 pb-4'>
@@ -136,7 +136,7 @@ const Works = () => {
                                             </h3>
                                         </div>
                                     </div>
-                                </SwiperSlide>
+                                </SwiperSlide> */}
 
                                 <SwiperSlide>
                                     <div className='relative' >
