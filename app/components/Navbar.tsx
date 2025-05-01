@@ -22,13 +22,7 @@ const Navbar = () => {
                 <div className="flex items-center space-x-6">
                     <Image src={logo} alt="Lumixus studio logo" className='pr-6 w-16 xl:w-28 xl:border-r xl:border-r-white ' />
 
-                    <ul className='ml-4 xl:flex hidden tracking-wide items-center justify-between space-x-6 text-sm'>
-                        <li className="hover:opacity-60 hover:text-white transition-all ease-in delay-75 ">
-                            <Link href="#about">
-                                Resources
-                            </Link>
-                        </li>
-
+                    <ul className='ml-4 xl:flex hidden tracking-wide items-center justify-between space-x-6 text-sm'>                       
                         <li className="hover:opacity-60 hover:text-white transition-all ease-in delay-75 ">
                             <Link href="#about">
                                 About
