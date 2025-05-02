@@ -19,7 +19,11 @@ import najec from '@/public/najec.png';
 import nextcash from '@/public/nextcash.png';
 import ninolynks from '@/public/ninolynks.png';
 import goodhomes from '@/public/good-homes.png';
+import graft from '@/public/graft.png';
+import rdjestates from '@/public/rdj-estates.png';
 
+// projects
+// bayo adams page, graft, 
 const Works = () => {
 
     const swiperRef: any = useRef(null);
@@ -80,8 +84,30 @@ const Works = () => {
                             >
                                 <SwiperSlide>
                                     <div className='relative' >
+                                        <Image src={graft} alt="web project" />
+                                        <div className='hidden centered-bottom bg-[#0E0E0E]  pt-2 px-6 lg:px-10 pb-4'>
+                                            <p className='gradient-animation-light text-center text-sm font-semibold'>Web design | Branding | SEO | CRO</p>
+                                            <h3 className='pt-4 text-sm lg:text-[17px] font-semibold text-center text-white'>
+                                                Good Homes - real estate website
+                                            </h3>
+                                        </div>
+                                    </div>
+                                </SwiperSlide>
+                                <SwiperSlide>
+                                    <div className='relative' >
+                                        <Image src={rdjestates} alt="web project" />
+                                        <div className='hidden centered-bottom bg-[#0E0E0E]  pt-2 px-6 lg:px-10 pb-4'>
+                                            <p className='gradient-animation-light text-center text-sm font-semibold'>Web design | Branding | SEO | CRO</p>
+                                            <h3 className='pt-4 text-sm lg:text-[17px] font-semibold text-center text-white'>
+                                                Good Homes - real estate website
+                                            </h3>
+                                        </div>
+                                    </div>
+                                </SwiperSlide>
+                                <SwiperSlide>
+                                    <div className='relative' >
                                         <Image src={goodhomes} alt="web project" />
-                                        <div className='centered-bottom bg-[#0E0E0E]  pt-2 px-6 lg:px-10 pb-4'>
+                                        <div className='hidden centered-bottom bg-[#0E0E0E]  pt-2 px-6 lg:px-10 pb-4'>
                                             <p className='gradient-animation-light text-center text-sm font-semibold'>Web design | Branding | SEO | CRO</p>
                                             <h3 className='pt-4 text-sm lg:text-[17px] font-semibold text-center text-white'>
                                                 Good Homes - real estate website
@@ -93,7 +119,7 @@ const Works = () => {
                                 <SwiperSlide>
                                     <div className='relative' >
                                         <Image src={chris} alt="web project" />
-                                        <div className='centered-bottom bg-[#0E0E0E]  pt-2 px-6 lg:px-10 pb-4'>
+                                        <div className='hidden centered-bottom bg-[#0E0E0E]  pt-2 px-6 lg:px-10 pb-4'>
                                             <p className='gradient-animation-light text-center text-sm font-semibold'>Branding | Web design | Social Media </p>
                                             <h3 className='pt-4 text-sm lg:text-[17px] font-semibold text-center text-white'>
                                                 Chris Global Limited
@@ -105,7 +131,7 @@ const Works = () => {
                                 <SwiperSlide>
                                     <div className='relative' >
                                         <Image src={ayuda} alt="web project" />
-                                        <div className='centered-bottom bg-[#0E0E0E]  pt-2 px-6 lg:px-10 pb-4'>
+                                        <div className='hidden centered-bottom bg-[#0E0E0E]  pt-2 px-6 lg:px-10 pb-4'>
                                             <p className='gradient-animation-light text-center text-sm font-semibold'>Branding | Web Design | Social Media</p>
                                             <h3 className='pt-4 text-sm lg:text-[17px] font-semibold text-center text-white'>
                                                 Ayuda Content
@@ -117,7 +143,7 @@ const Works = () => {
                                 <SwiperSlide>
                                     <div className='relative' >
                                         <Image src={pharmabolt} alt="web project" />
-                                        <div className='centered-bottom bg-[#0E0E0E]  pt-2 px-6 lg:px-10 pb-4'>
+                                        <div className='hidden centered-bottom bg-[#0E0E0E]  pt-2 px-6 lg:px-10 pb-4'>
                                             <p className='gradient-animation-light text-center text-sm font-semibold'>Ecommerce | Web. | CRO</p>
                                             <h3 className='pt-4 text-sm lg:text-[17px] font-semibold text-center text-white'>
                                                 Pharmabolt
@@ -129,7 +155,7 @@ const Works = () => {
                                 {/* <SwiperSlide>
                                     <div className='relative' >
                                         <Image src={ninolynks} alt="web project" />
-                                        <div className='centered-bottom bg-[#0E0E0E]  pt-2 px-6 lg:px-10 pb-4'>
+                                        <div className='hidden centered-bottom bg-[#0E0E0E]  pt-2 px-6 lg:px-10 pb-4'>
                                             <p className='gradient-animation-light text-center text-sm font-semibold'>Ecommerce | CRO</p>
                                             <h3 className='pt-4 text-sm lg:text-[17px] font-semibold text-center text-white'>
                                                 Ninolynks
@@ -141,7 +167,7 @@ const Works = () => {
                                 <SwiperSlide>
                                     <div className='relative' >
                                         <Image src={icystore} alt="web project" />
-                                        <div className='centered-bottom bg-[#0E0E0E]  pt-2 px-6 lg:px-10 pb-4'>
+                                        <div className='hidden centered-bottom bg-[#0E0E0E]  pt-2 px-6 lg:px-10 pb-4'>
                                             <p className='gradient-animation-light text-center text-sm font-semibold'>E-commerce | Web Development | Branding | CRO</p>
                                             <h3 className='pt-4 text-sm lg:text-[17px] font-semibold text-center text-white'>
                                                 Icy Store
