@@ -1,15 +1,11 @@
 import React from 'react';
 import Container from '@/app/components/Elements/Container';
-import Button from '@/app/components/Elements/Button';
 import Image from 'next/image';
-import { FaArrowRight } from "react-icons/fa";
 import web from '@/public/web.png';
-import strategy from '@/public/strategy.png';
 import ball from '@/public/ball.png';
 import { MdWeb } from "react-icons/md";
 import { GrOptimize } from "react-icons/gr";
 import { IoStorefrontOutline } from "react-icons/io5";
-import Link from 'next/link';
 
 const Services = () => {
     return (
