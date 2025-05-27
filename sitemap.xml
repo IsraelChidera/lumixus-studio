@@ -4,14 +4,14 @@
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
   <url>
-    <loc>lumixus-studio.com/</loc>
-    <lastmod>2025-05-12</lastmod>
+    <loc>lumixus-studio.com</loc>
+    <lastmod>2022-06-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.00</priority>
   </url>
   <url>
     <loc>lumixus-studio.com/resources</loc>
-    <lastmod>2025-05-12</lastmod>
+    <lastmod>2025-06-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.80</priority>
   </url>
