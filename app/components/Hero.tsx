@@ -27,13 +27,13 @@ const Hero = () => {
                         <span>2/5 SLOTS REMAINING</span>
                     </Link>
                 </div>
-                <h1 className='text-center text-[30px] sm:text-[67px] text-5xl font-semibold -leading-4 mt-2'>
+                <h1 className='text-center sm:text-[67px] text-5xl font-semibold -leading-4 mt-2'>
                     <span className='gradient-animation-light'>Double Leads</span><br />
                     <span className='gradient-animation-dark'>Close Deals, Drive Sales</span>
                 </h1>
 
                 <div className='mx-auto w-full flex items-center justify-center text-center'>
-                    <p className='leading-[32px] p-3 font-normal sm:text-[20px] text-sm mt-[8px] md:w-[589px]'>
+                    <p className='lg:leading-[32px] leading-normal lg:p-3 font-normal sm:text-[20px] text-base mt-[8px] md:w-[589px]'>
                         Your business should work as hard as you do.
                         Without agency bloat or unnecessary fluff,
                         we focus on clean design, smart strategy,

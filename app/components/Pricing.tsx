@@ -32,7 +32,7 @@ const Pricing = () => {
             className='py-[80px]'
         >
             <Container>
-                <div className='flex justify-center mb-12 items-center'>
+                <div className='flex justify-center mb-2 items-center'>
                     <h2 className='text-base lg:text-lg  w-fit py-2 px-4 rounded-[6px]'>
                         Pricing
                     </h2>
@@ -163,7 +163,7 @@ const Pricing = () => {
                                     <li className='flex items-center text[17px] space-x-2'>
                                         <IoCheckmarkCircleOutline />
                                         <span>Paid Ads Strategy</span>
-                                    </li>                                    
+                                    </li>
                                 </ul>
                             </div>
                         </div>

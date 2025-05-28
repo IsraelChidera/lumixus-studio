@@ -11,17 +11,19 @@
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
 body {
-background: #000;
-  /* background: #161616; */
-  /* background: #151419;   */
-  /* background: #1d1c22; */
-  /* background: #242426; */
+  background: #000;
   scroll-behavior: smooth;
   color: #ffffff;
   /* font-family: "Mulish", sans-serif; */
   font-family: "Inter", sans-serif;
   overflow-x: hidden;
+  scroll-behavior: smooth;
 }
 
 .centered-element {

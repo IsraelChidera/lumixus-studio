@@ -21,7 +21,7 @@ const Navbar = () => {
             <Container className='flex justify-between items-center'>
                 <div className="flex items-center space-x-6">
                     <Link href="/">
-                        <Image src={logo} alt="Lumixus studio logo" className='pr-6 w-16 xl:w-28 xl:border-r xl:border-r-white ' />
+                        <Image src={logo} alt="Lumixus studio logo" className='pr-6 w-20 xl:w-28 xl:border-r xl:border-r-white ' />
                     </Link>
 
                     <ul className='ml-4 xl:flex hidden tracking-wide items-center justify-between space-x-6 text-sm'>
@@ -65,7 +65,7 @@ const Navbar = () => {
                 {/* Mobile navigation */}
                 <FaBarsStaggered
                     className="xl:hidden block cursor-pointer"
-                    style={{ width: "20px", height: "20px" }}
+                    style={{ width: "16px", height: "16px" }}
                     onClick={handleClick}
                 />
             </Container>
@@ -110,6 +110,14 @@ const Navbar = () => {
                             <li className="text-[34px]">
                                 <Link href="#testimonials" className='hover:opacity-60 hover:text-white transition-all ease-in delay-75  flex items-center space-x-2' onClick={() => setClick(false)} >
                                     <span>Testimonials</span>
+
+                                    <MdArrowOutward />
+                                </Link>
+                            </li>
+
+                            <li className="text-[34px]">
+                                <Link href="/resources" className='hover:opacity-60 hover:text-white transition-all ease-in delay-75  flex items-center space-x-2' onClick={() => setClick(false)} >
+                                    <span>Resources</span>
 
                                     <MdArrowOutward />
                                 </Link>

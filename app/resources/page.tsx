@@ -8,13 +8,15 @@ const page = () => {
     return (
         <main>
             <Container className='relative z-20 mt-10'>
-                <p className='mt-20 uppercase text-center text-[20px] font-medium'>
+                <p className='mt-20 uppercase text-center lg:text-[20px] font-medium'>
                     Available Resources
                 </p>
-                <p className='mt-1 text-center text-sm font-medium'>
-                    Resources for Content Creators & Business Owners
-                </p>
 
+                <div className='flex justify-center mt-2'>
+                    <h2 className='w-[800px] text-3xl lg:text-5xl text-center font-medium'>
+                        Resources for Content Creators & Business Owners
+                    </h2>
+                </div>
 
                 <div className='mt-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8'>
                     <div className='group'>

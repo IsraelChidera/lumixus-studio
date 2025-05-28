@@ -41,9 +41,9 @@ const Footer = () => {
                 </div>
             </Container>
 
-            <Container className=' mt-10 py-4 md:flex block w-full justify-around items-center'>
+            <Container className='space-y-6 lg:space-y-0 mt-10 py-4 md:flex block w-full justify-around items-center'>
                 <div>
-                    <div className='flex justify-center lg:justify-left'>
+                    <div className='lg:block flex justify-center lg:justify-left'>
                         <Image src={logo} alt="logo" className='w-[100px]' />
                     </div>
 
@@ -54,30 +54,36 @@ const Footer = () => {
 
                 <ul className="lg:my-0 my-4 text-center space-y-3 text-white">
                     <li >
-                        <Link href="#">
+                        <Link href="#" className='text-base lg:text-lg font-semibold'>
                             Quick links
                         </Link>
                     </li>
 
                     <li>
-                        <Link href="/resources" className="text-[15px] hover:underline underline-offset-4 hover:text-white transition-all ease-linear delay-75 opacity-70">
+                        <Link href="/" className="text-[15px] hover:border-b border-b-white hover:pb-1 hover:text-white transition-all ease-linear delay-75 hover:opacity-100 opacity-70">
+                            Home
+                        </Link>
+                    </li>
+
+                    <li>
+                        <Link href="/resources" className="text-[15px] hover:border-b border-b-white hover:pb-1 hover:text-white transition-all ease-linear delay-75 hover:opacity-100 opacity-70">
                             Resources
                         </Link>
                     </li>
                 </ul>
 
                 <div className='flex md:pt-0 pt-3 items-center justify-center space-x-6'>
-                    <a href="mailto:lumixusstudio@gmail.com" className='block'>
-                        <MdMarkEmailRead className="w-6 h-6 md:text-base " />
-                    </a>
+                    <Link href="mailto:lumixusstudio@gmail.com" className='group block opacity-70 hover:opacity-100 transition-all ease-in delay-75'>
+                        <MdMarkEmailRead className="w-6 h-6 md:text-base group-hover:scale-110" />
+                    </Link>
 
-                    <a href="https://www.instagram.com/lumixus_studio/" className='block'>
-                        <FaInstagram className="w-6 h-6 md:text-base " />
-                    </a>
+                    <Link href="https://www.instagram.com/lumixus_studio/" className='group block opacity-70 hover:opacity-100 transition-all ease-in delay-75'>
+                        <FaInstagram className="w-6 h-6 md:text-base group-hover:scale-110" />
+                    </Link>
 
-                    <a href="https://www.facebook.com/profile.php?id=61563258786419&mibextid=ZbWKwL" className='block'>
-                        <FaFacebook className="w-6 h-6 md:text-base " />
-                    </a>
+                    <Link href="https://www.facebook.com/profile.php?id=61563258786419&mibextid=ZbWKwL" className='group block opacity-70 hover:opacity-100 transition-all ease-in delay-75'>
+                        <FaFacebook className="w-6 h-6 md:text-base group-hover:scale-110" />
+                    </Link>
                 </div>
             </Container>
         </footer>
