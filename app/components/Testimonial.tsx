@@ -109,7 +109,7 @@ const Testimonial = () => {
                                     <SwiperSlide>
                                         <div>
                                             <p className='text-[17px] mb-[30px] pb-[30px]'>
-                                                Partnering with Lumixus Studio was one of the best decisions we made for our business. They didn't just build a website for najecfmcg.com, they created a powerful digital platform that truly reflects our brand and vision. The site is fast, user-friendly, and designed with our customers in mind. Since launching, we’ve noticed a huge improvement in customer engagement and inquiries, and it has become a strong asset in our growth strategy. Lumixus Studio delivered with professionalism, creativity, and a clear understanding of our business goals. I highly recommend them to any business serious about scaling online.
+                                                Partnering with Lumixus Studio was one of the best decisions we made for our business. The site is fast, user-friendly, and designed with our customers in mind. Since launching, we've noticed a huge improvement in customer engagement and inquiries, and it has become a strong asset in our growth strategy. Lumixus Studio delivered with professionalism, creativity, and a clear understanding of our business goals. I highly recommend them to any business serious about scaling online.
                                             </p>
 
                                             <div className=''>
