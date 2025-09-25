@@ -22,7 +22,7 @@ const Services = () => {
 
                     <div className='mt-10 flex justify-center'>
                         <div className="lg:w-[800px] grid lg:grid-cols-2 gap-4 ">
-                            <div className='rounded-[6px] bg-[#0e0e0e] pt-[29px] pb-[29px] px-[35px]'>
+                            <div className='rounded-[6px] bg-[#303030] pt-[29px] pb-[29px] px-[35px]'>
                                 <div>
                                     <Image src={web} alt="web dev icon" />
                                 </div>
@@ -35,7 +35,7 @@ const Services = () => {
                                 </div>
                             </div>
 
-                            <div className='rounded-[6px] bg-[#0e0e0e] pt-[29px] pb-[29px] px-[35px]'>
+                            <div className='rounded-[6px] bg-[#303030] pt-[29px] pb-[29px] px-[35px]'>
                                 <div>
                                     <Image src={web} alt="web dev icon" />
                                 </div>
@@ -48,7 +48,7 @@ const Services = () => {
                                 </div>
                             </div>
 
-                            <div className='rounded-[6px] bg-[#0e0e0e] pt-[29px] pb-[29px] px-[35px]'>
+                            <div className='rounded-[6px] bg-[#303030] pt-[29px] pb-[29px] px-[35px]'>
                                 <div>
                                     <MdWeb className="text-blue text-[40px]" />
                                 </div>
@@ -61,7 +61,7 @@ const Services = () => {
                                 </div>
                             </div>
 
-                            <div className='rounded-[6px] bg-[#0e0e0e] pt-[29px] pb-[29px] px-[35px]'>
+                            <div className='rounded-[6px] bg-[#303030] pt-[29px] pb-[29px] px-[35px]'>
                                 <div>
                                     <GrOptimize className="text-blue text-[40px]" />
                                 </div>
@@ -74,7 +74,7 @@ const Services = () => {
                                 </div>
                             </div>
 
-                            <div className='rounded-[6px] bg-[#0e0e0e] pt-[29px] pb-[29px] px-[35px]'>
+                            <div className='rounded-[6px] bg-[#303030] pt-[29px] pb-[29px] px-[35px]'>
                                 <div>
                                     <IoStorefrontOutline className="text-blue text-[40px]" />
                                 </div>
@@ -87,7 +87,7 @@ const Services = () => {
                                 </div>
                             </div>
 
-                            <div className='rounded-[6px] bg-[#0e0e0e] pt-[29px] pb-[29px] px-[35px]'>
+                            <div className='rounded-[6px] bg-[#303030] pt-[29px] pb-[29px] px-[35px]'>
                                 <div>
                                     <GrOptimize className="text-blue text-[40px]" />
                                 </div>

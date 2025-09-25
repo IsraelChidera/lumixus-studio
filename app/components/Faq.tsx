@@ -79,7 +79,7 @@ const Faq = () => {
                 <div className='mt-6 lg:mt-[68px] '>
                     {
                         faqs.map((faq, _) => (
-                            <div key={faq.id} className={` pb-4 px-6 mb-[32px] ${active === _ ? "bg-[#0e0e0e] rounded-[6px] py-8" : ""} `}>
+                            <div key={faq.id} className={` pb-4 px-6 mb-[32px] ${active === _ ? "bg-[#171717] rounded-[6px] py-8" : ""} `}>
                                 <div className="flex items-center justify-between">
                                     <p className=" text-text text-lg lg:text-[24px] font-semibold">
                                         <span

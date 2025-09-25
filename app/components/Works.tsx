@@ -13,7 +13,7 @@ import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import pharmabolt from '@/public/pharmabolt.png';
 import icystore from '@/public/icystore.png';
-import ayuda from '@/public/ayuda.png';
+import najecFmcg from '@/public/najec-fmcg.png';
 import chris from '@/public/chris-global.png';
 import najec from '@/public/najec.png';
 import nextcash from '@/public/nextcash.png';
@@ -130,11 +130,11 @@ const Works = () => {
 
                                 <SwiperSlide>
                                     <div className='relative' >
-                                        <Image src={ayuda} alt="web project" />
+                                        <Image src={najecFmcg} alt="web project" />
                                         <div className='hidden centered-bottom bg-[#0E0E0E]  pt-2 px-6 lg:px-10 pb-4'>
                                             <p className='gradient-animation-light text-center text-sm font-semibold'>Branding | Web Design | Social Media</p>
                                             <h3 className='pt-4 text-sm lg:text-[17px] font-semibold text-center text-white'>
-                                                Ayuda Content
+                                                Najec FMCG
                                             </h3>
                                         </div>
                                     </div>

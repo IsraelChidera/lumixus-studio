@@ -44,7 +44,7 @@ const Pricing = () => {
 
                 <div className='relative mt-[56px]'>
                     <div className='relative z-20 mt-20 grid lg:grid-cols-3 gap-10'>
-                        <div className='bg-[#0e0e0e] py-8 px-4 rounded-[6px]'>
+                        <div className='bg-[#303030] py-8 px-4 rounded-[6px]'>
                             <div className=''>
                                 <p className='text-[24px] lg:text-[28px] mb-4'>Starter Package</p>
                                 {/* <p className='text[40px] lg:text-[48px] mb-6'>$0</p> */}
@@ -90,7 +90,7 @@ const Pricing = () => {
                             </div> */}
                         </div>
 
-                        <div className='bg-[#0e0e0e] py-8 px-4 rounded-[6px]'>
+                        <div className='bg-[#303030] py-8 px-4 rounded-[6px]'>
                             <div className=''>
                                 <p className='text-[24px] lg:text-[28px] mb-4 text-white'>Growth Package</p>
                                 {/* <p className='text-[40px] lg:text-[48px] mb-6'>$2</p> */}
@@ -136,7 +136,7 @@ const Pricing = () => {
                             </div> */}
                         </div>
 
-                        <div className='bg-[#0e0e0e] py-8 px-4 rounded-[6px]'>
+                        <div className='bg-[#303030] py-8 px-4 rounded-[6px]'>
                             <div className=''>
                                 <p className='text-[24px] lg:text-[28px] mb-4 text-white'>Scale Package</p>
                                 {/* <p className='text-[40px] lg:text-[48px] mb-6'>$8<span className='text-[#757577] text-[17px]'>/month</span></p> */}
