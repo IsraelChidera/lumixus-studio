@@ -57,10 +57,13 @@ const Navbar = () => {
                     </ul>
                 </div>
 
-                <Button className="hidden xl:flex items-center space-x-2">
-                    <span>Start Now</span>
-                    <MdArrowOutward className='text-white' />
-                </Button>
+                <Link href={`href="https://cal.com/lumixus-studio/30min"`}>
+                    <Button className="hidden xl:flex items-center space-x-2">
+                        <span>Start Now</span>
+                        <MdArrowOutward className='text-white' />
+                    </Button>
+                </Link>
+
 
                 {/* Mobile navigation */}
                 <FaBarsStaggered
