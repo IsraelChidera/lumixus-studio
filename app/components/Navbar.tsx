@@ -4,7 +4,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import Container from '@/app/components/Elements/Container';
 import Button from '@/app/components/Elements/Button';
-import logo from '@/public/logo-white.png';
+import logo from '@/public/logo-blue.png';
 import { FaBarsStaggered, FaXmark } from "react-icons/fa6";
 import { MdArrowOutward } from "react-icons/md";
 
