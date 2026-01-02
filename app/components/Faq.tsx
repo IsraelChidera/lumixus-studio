@@ -64,7 +64,7 @@ const Faq = () => {
 
   return (
     <section className="py-[80px]">
-      <Container className="w-1/2 ">
+      <Container className="lg:w-1/2 ">
         <div className="flex justify-center items-center">
           <p className="text-sm lg:text-base text-text w-fit">
             Frequently Asked Questions

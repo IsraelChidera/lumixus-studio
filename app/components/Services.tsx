@@ -33,11 +33,11 @@ const Services = () => {
                   <Image src={web} alt="web dev icon" />
                 </div>
 
-                <div className="pt-2">
-                  <h4 className="text-2xl font-medium">
+                <div className="mt-3">
+                  <h4 className="text-xl font-medium">
                     Website Design & Development
                   </h4>
-                  <p className="text-base pt-1">
+                  <p className="lg:text-[15px] text-sm pt-1">
                     We transform digital ideas into engaging, user-friendly
                     experiences—whether it's crafting sleek websites or building
                     seamless mobile apps.
@@ -50,9 +50,9 @@ const Services = () => {
                   <Image src={web} alt="web dev icon" />
                 </div>
 
-                <div className="pt-2">
-                  <h4 className="text-2xl font-medium">Branding</h4>
-                  <p className="text-base pt-1">
+                <div className="mt-3">
+                  <h4 className="text-xl font-medium">Branding</h4>
+                  <p className="lg:text-[15px] text-sm pt-1">
                     We will develop your brand identity from concept to launch.
                   </p>
                 </div>
@@ -63,9 +63,9 @@ const Services = () => {
                   <MdWeb className="text-blue text-[40px]" />
                 </div>
 
-                <div className="pt-2">
-                  <h4 className="text-2xl font-medium">Automation</h4>
-                  <p className="text-base pt-1">
+                <div className="mt-3">
+                  <h4 className="text-xl font-medium">Automation</h4>
+                  <p className="lg:text-[15px] text-sm pt-1">
                     Leverage automation tools to streamline operations, enhance
                     efficiency, and drive business growth.
                   </p>
@@ -77,9 +77,9 @@ const Services = () => {
                   <GrOptimize className="text-blue text-[40px]" />
                 </div>
 
-                <div className="pt-2">
-                  <h4 className="text-2xl font-medium">Growth Strategy</h4>
-                  <p className="text-base pt-1">
+                <div className="mt-3">
+                  <h4 className="text-xl font-medium">Growth Strategy</h4>
+                  <p className="lg:text-[15px] text-sm pt-1">
                     We will help grow your business by creating a growth
                     strategy that aligns with your goals and objectives.
                   </p>
@@ -91,11 +91,11 @@ const Services = () => {
                   <IoStorefrontOutline className="text-blue text-[40px]" />
                 </div>
 
-                <div className="pt-2">
-                  <h4 className="text-2xl font-medium">
+                <div className="mt-3">
+                  <h4 className="text-xl font-medium">
                     Social Media & Marketing
                   </h4>
-                  <p className="text-base pt-1">
+                  <p className="lg:text-[15px] text-sm pt-1">
                     Boost your brand's online presence with strategic content
                     marketing, social media management, and paid advertising
                     campaigns.
@@ -108,11 +108,11 @@ const Services = () => {
                   <GrOptimize className="text-blue text-[40px]" />
                 </div>
 
-                <div className="pt-2">
-                  <h4 className="text-2xl font-medium">
+                <div className="mt-3">
+                  <h4 className="text-xl font-medium">
                     Conversion Optimization
                   </h4>
-                  <p className="text-base pt-1">
+                  <p className="lg:text-[15px] text-sm pt-1">
                     Analyze user behavior and refine your website to maximize
                     conversions and sales.
                   </p>
