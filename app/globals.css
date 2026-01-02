@@ -18,6 +18,7 @@ html {
 
 body {
   scroll-behavior: smooth;
+  background: #f5f7ff;
   /* font-family: "Mulish", sans-serif; */
   font-family: "Inter", sans-serif;
   overflow-x: hidden;

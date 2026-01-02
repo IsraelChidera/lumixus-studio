@@ -5,7 +5,7 @@ const index = ({ children, className, onClick }: { children: React.ReactNode, cl
         <button 
             onClick={onClick} 
             style={{ boxShadow: "0px 4px 31px 0px rgba(0, 0, 0, 0.15)" }} 
-            className={`${className} rounded-[5px] hover:bg-violet-600 hover:text-white transition-colors delay-150 ease-in w-fit py-[10px] px-[30px] bg-primary text-white`}
+            className={`${className} rounded-[5px] text-sm hover:bg-accent hover:text-white transition-colors delay-150 ease-in w-fit py-[10px] px-[30px] bg-secondary text-white`}
         >
             {children}
         </button>

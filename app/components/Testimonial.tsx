@@ -29,7 +29,7 @@ const Testimonial = () => {
         <section id="testimonials" className='mt-[100px]'>
             <div className='bg-image h-screen'>
                 <div className='md:flex relative z-30 p-6 items-center h-full md:justify-end'>
-                    <div className='bg-[#181818] px-6 py-10'>
+                    <div className='bg-white px-6 py-10'>
                         <div>
                             <p data-aos="fade-up" className='uppercase text-left text-sm font-medium'>
                                 Our clients
@@ -52,7 +52,7 @@ const Testimonial = () => {
                                 >
                                     <SwiperSlide>
                                         <div>
-                                            <p className='text-[17px] mb-[30px] pb-[30px]'>
+                                            <p className='text-[15px] mb-[30px] pb-[30px]'>
                                                 We approached Lumixus Studio with a strategic
                                                 vision for our online presence, and they became
                                                 invaluable partners in bringing it to life.
@@ -71,7 +71,7 @@ const Testimonial = () => {
 
                                     <SwiperSlide>
                                         <div>
-                                            <p className='text-[17px] mb-[30px] pb-[30px]'>
+                                            <p className='text-[15px] mb-[30px] pb-[30px]'>
                                                 Lumixus Studio crafted a strategy
                                                 that not only stands out in the crowd but also positions
                                                 us as thought leaders in our niche. We've seen a surge in
@@ -88,7 +88,7 @@ const Testimonial = () => {
 
                                     <SwiperSlide>
                                         <div>
-                                            <p className='text-[17px] mb-[30px] pb-[30px]'>
+                                            <p className='text-[15px] mb-[30px] pb-[30px]'>
                                                 We knew our website needed a makeover, but Lumixus
                                                 Studio went above and beyond. They completely revamped
                                                 our user experience, making it intuitive, engaging, and
@@ -108,7 +108,7 @@ const Testimonial = () => {
 
                                     <SwiperSlide>
                                         <div>
-                                            <p className='text-[17px] mb-[30px] pb-[30px]'>
+                                            <p className='text-[15px] mb-[30px] pb-[30px]'>
                                                 Partnering with Lumixus Studio was one of the best decisions we made for our business. The site is fast, user-friendly, and designed with our customers in mind. Since launching, we've noticed a huge improvement in customer engagement and inquiries, and it has become a strong asset in our growth strategy. Lumixus Studio delivered with professionalism, creativity, and a clear understanding of our business goals. I highly recommend them to any business serious about scaling online.
                                             </p>
 
@@ -121,7 +121,7 @@ const Testimonial = () => {
 
                                     {/* <SwiperSlide>
                                         <div>
-                                            <p className='text-[17px] mb-[30px] pb-[30px]'>
+                                            <p className='text-[15px] mb-[30px] pb-[30px]'>
                                                 Lorem ipsum dolor sit amet consectetur adipisicing
                                                 elit. Possimus in optio molestiae velit soluta
                                                 repudiandae libero cupiditate quod dicta itaque.

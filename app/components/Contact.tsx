@@ -81,7 +81,7 @@ const Contact = () => {
             <Container className='mt-[154px] relative pb-10'>
 
 
-                <div className='flex justify-center mb-12 items-center'>
+                <div className='flex justify-center items-center'>
                     <p data-aos="fade-up" className='text-sm lg:text-base text-text w-fit'>
                         Contact us
                     </p>
@@ -89,11 +89,11 @@ const Contact = () => {
 
                 <div className="flex justify-center">
                     <div className="flex items-center space-x-1">
-                        <h2 className='uppercase gradient-animation-light text-text text-[30px] lg:text-[70px] text-center font-bold mt-4'>
+                        <h2 className='uppercase g-light text-text text-[30px] lg:text-[70px] text-center font-bold'>
                             Walk with us
                         </h2>
 
-                        <FiArrowDownRight className='text-white text-[60px]' />
+                        <FiArrowDownRight className='text-primary text-[60px]' />
                     </div>
                 </div>
 

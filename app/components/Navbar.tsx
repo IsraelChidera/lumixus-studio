@@ -25,31 +25,31 @@ const Navbar = () => {
                     </Link>
 
                     <ul className='ml-4 xl:flex hidden tracking-wide items-center justify-between space-x-6 text-sm'>
-                        <li className="hover:border-b hover:pb-2 hover:border-b-white hover:text-white transition-all ease-in delay-75 ">
+                        <li className="hover:border-b-2 hover:pb-2 text-text hover:border-b-primary hover:text-primary transition-all ease-in delay-75 ">
                             <Link href="#about">
                                 About
                             </Link>
                         </li>
 
-                        <li className="hover:border-b hover:pb-2 hover:border-b-white hover:text-white transition-all ease-in delay-75 ">
+                        <li className="hover:border-b-2 hover:pb-2 text-text hover:border-b-primary hover:text-primary transition-all ease-in delay-75 ">
                             <Link href="#services">
                                 Services
                             </Link>
                         </li>
 
-                        <li className="hover:border-b hover:pb-2 hover:border-b-white hover:text-white transition-all ease-in delay-75 ">
+                        <li className="hover:border-b-2 hover:pb-2 text-text hover:border-b-primary hover:text-primary transition-all ease-in delay-75 ">
                             <Link href="#works">
                                 Portfolio
                             </Link>
                         </li>
 
-                        <li className="hover:border-b hover:pb-2 hover:border-b-white hover:text-white transition-all ease-in delay-75 ">
+                        <li className="hover:border-b-2 hover:pb-2 text-text hover:border-b-primary hover:text-primary transition-all ease-in delay-75 ">
                             <Link href="#testimonials">
                                 Testimonials
                             </Link>
                         </li>
 
-                        <li className="hover:border-b hover:pb-2 hover:border-b-white hover:text-white transition-all ease-in delay-75 ">
+                        <li className="hover:border-b-2 hover:pb-2 text-text hover:border-b-primary hover:text-primary transition-all ease-in delay-75 ">
                             <Link href="/resources">
                                 Resources
                             </Link>

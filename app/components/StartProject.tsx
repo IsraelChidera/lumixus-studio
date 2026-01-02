@@ -15,7 +15,7 @@ const StartProject = () => {
                     Let's talk
                 </p>
 
-                <h2 data-aos="fade-up" className='mt-[22px] leading-normal text-center text-[36px] font-medium'>
+                <h2 data-aos="fade-up" className='text-text leading-normal text-center text-[36px] font-medium'>
                     About your next project
                 </h2>
 

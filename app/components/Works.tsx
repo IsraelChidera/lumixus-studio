@@ -40,7 +40,7 @@ const Works = () => {
     }, []);
 
     return (
-        <section id="works" className='mt-[154px] pt-10px relative pb-[100px]'>
+        <section id="works" className='mt-[154px] pt-10px relative py-[100px] bg-white'>
             <div className='relative z-20'>
                 <div className='lg:px-0 px-3  lg:ml-[97px] lg:grid grid-cols-4 gap-x-10'>
                     <div data-aos="fade-up" className='col-span-1 flex items-center'>
@@ -57,7 +57,7 @@ const Works = () => {
                         </div>
                     </div>
 
-                    <div data-aos="fade-up" className='mt-4 lg:mt-0 col-span-3 w-full'>
+                    <div className='mt-4 lg:mt-0 col-span-3 w-full'>
                         <div className='relative z-30'>
                             <Swiper
                                 ref={swiperRef}
@@ -186,7 +186,6 @@ const Works = () => {
                 </div>
             </div>
 
-            <Image className='absolute z-10 top-0 left-0' src={balls} alt="spheres svgs" />
         </section>
     )
 }
