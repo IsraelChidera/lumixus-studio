@@ -82,7 +82,7 @@ const Contact = () => {
 
 
                 <div className='flex justify-center items-center'>
-                    <p data-aos="fade-up" className='text-sm lg:text-base text-text w-fit'>
+                    <p className='text-sm lg:text-base text-text w-fit'>
                         Contact us
                     </p>
                 </div>

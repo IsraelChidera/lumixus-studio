@@ -12,17 +12,11 @@ const Services = () => {
     <section className="mt-[10px] pb-[50px]">
       <div id="services" className="pt-[114px]  relative ">
         <Container className="relative z-20">
-          <p
-            data-aos="fade-up"
-            className="text-text uppercase text-center lg:text-base text-sm font-medium"
-          >
+          <p className="text-text uppercase text-center lg:text-base text-sm font-medium">
             Why Choose Us?
           </p>
 
-          <h2
-            data-aos="fade-up"
-            className="text-text text-4xl text-center font-medium"
-          >
+          <h2 className="text-text text-4xl text-center font-medium">
             We provide end-to-end solutions
           </h2>
 
