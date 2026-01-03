@@ -22,7 +22,6 @@ import goodhomes from "@/public/good-homes.png";
 import graft from "@/public/graft.png";
 import rdjestates from "@/public/rdj-estates.png";
 
-
 // projects
 // bayo adams page, graft,
 const Works = () => {
@@ -85,10 +84,10 @@ const Works = () => {
                 }}
                 spaceBetween={30}
                 // slidesPerView={2.5}
-                className="relative"
+                className="relative bg-white"
               >
                 <SwiperSlide>
-                  <div className="relative">
+                  <div className="relative bg-white">
                     <Image src={graft} alt="web project" />
                     <div className="hidden centered-bottom bg-[#0E0E0E]  pt-2 px-6 lg:px-10 pb-4">
                       <p className="gradient-animation-light text-center text-sm font-semibold">
@@ -101,7 +100,7 @@ const Works = () => {
                   </div>
                 </SwiperSlide>
                 <SwiperSlide>
-                  <div className="relative">
+                  <div className="relative bg-white">
                     <Image src={rdjestates} alt="web project" />
                     <div className="hidden centered-bottom bg-[#0E0E0E]  pt-2 px-6 lg:px-10 pb-4">
                       <p className="gradient-animation-light text-center text-sm font-semibold">
@@ -114,7 +113,7 @@ const Works = () => {
                   </div>
                 </SwiperSlide>
                 <SwiperSlide>
-                  <div className="relative">
+                  <div className="relative bg-white">
                     <Image src={goodhomes} alt="web project" />
                     <div className="hidden centered-bottom bg-[#0E0E0E]  pt-2 px-6 lg:px-10 pb-4">
                       <p className="gradient-animation-light text-center text-sm font-semibold">
@@ -128,7 +127,7 @@ const Works = () => {
                 </SwiperSlide>
 
                 <SwiperSlide>
-                  <div className="relative">
+                  <div className="relative bg-white">
                     <Image src={chris} alt="web project" />
                     <div className="hidden centered-bottom bg-[#0E0E0E]  pt-2 px-6 lg:px-10 pb-4">
                       <p className="gradient-animation-light text-center text-sm font-semibold">
@@ -142,7 +141,7 @@ const Works = () => {
                 </SwiperSlide>
 
                 <SwiperSlide>
-                  <div className="relative">
+                  <div className="relative bg-white">
                     <Image src={najecFmcg} alt="web project" />
                     <div className="hidden centered-bottom bg-[#0E0E0E]  pt-2 px-6 lg:px-10 pb-4">
                       <p className="gradient-animation-light text-center text-sm font-semibold">
@@ -156,7 +155,7 @@ const Works = () => {
                 </SwiperSlide>
 
                 <SwiperSlide>
-                  <div className="relative">
+                  <div className="relative bg-white">
                     <Image src={pharmabolt} alt="web project" />
                     <div className="hidden centered-bottom bg-[#0E0E0E]  pt-2 px-6 lg:px-10 pb-4">
                       <p className="gradient-animation-light text-center text-sm font-semibold">
@@ -169,7 +168,7 @@ const Works = () => {
                   </div>
                 </SwiperSlide>
 
-                {/* <SwiperSlide>
+                {/* <SwiperSlide >
                                     <div className='relative' >
                                         <Image src={ninolynks} alt="web project" />
                                         <div className='hidden centered-bottom bg-[#0E0E0E]  pt-2 px-6 lg:px-10 pb-4'>
@@ -182,7 +181,7 @@ const Works = () => {
                                 </SwiperSlide> */}
 
                 <SwiperSlide>
-                  <div className="relative">
+                  <div className="relative bg-white">
                     <Image src={icystore} alt="web project" />
                     <div className="hidden centered-bottom bg-[#0E0E0E]  pt-2 px-6 lg:px-10 pb-4">
                       <p className="gradient-animation-light text-center text-sm font-semibold">

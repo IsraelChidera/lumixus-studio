@@ -15,11 +15,6 @@ const Faq = () => {
 
   const faqs = [
     {
-      id: 0,
-      question: `What is this service best for?`,
-      answer: `We partner with B2B companies, SaaS businesses, and digital brands that need fast, reliable creative support—whether it's branding, web applications, high-converting landing pages, or compelling marketing copy. We also love partnering with creatives to help them scale their output and grow their business.`
-    },
-    {
       id: 1,
       question: `What services does Lumixus Studio offer?`,
       answer: `Lumixus Studio specializes in web. application, SEO, branding, marketing, and business automation for service-based entrepreneurs.`
