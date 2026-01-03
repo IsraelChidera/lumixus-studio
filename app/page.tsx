@@ -11,6 +11,7 @@ import Faq from "./components/Faq";
 import Pricing from "./components/Pricing";
 import Process from "./components/Process";
 import PainPoints from "./components/PainPoints";
+import BookACall from "./components/BookACall";
 
 export default function Home() {
   return (
@@ -29,6 +30,7 @@ export default function Home() {
         <StartProject />
         <Testimonial />
         <Faq />
+        <BookACall />
         <Image
           src="/body-blur.webp"
           alt="blur"

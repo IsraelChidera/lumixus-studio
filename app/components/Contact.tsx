@@ -89,7 +89,7 @@ const Contact = () => {
 
                 <div className="flex justify-center">
                     <div className="flex items-center space-x-1">
-                        <h2 className='uppercase g-light text-text text-[30px] lg:text-[70px] text-center font-bold'>
+                        <h2 className='uppercase text-text text-[30px] lg:text-[70px] text-center font-bold'>
                             Walk with us
                         </h2>
 
