@@ -1,3 +1,5 @@
+"use client";
+
 import React from "react";
 import Container from "@/app/components/Elements/Container";
 import Image from "next/image";
@@ -6,7 +8,7 @@ import ball from "@/public/ball.png";
 import { MdWeb } from "react-icons/md";
 import { GrOptimize } from "react-icons/gr";
 import { IoStorefrontOutline } from "react-icons/io5";
-
+import { motion } from "motion/react";
 const Services = () => {
   return (
     <section className="mt-[10px] pb-[50px]">
@@ -20,7 +22,23 @@ const Services = () => {
             We provide end-to-end solutions
           </h2>
 
-          <div className="mt-10 flex justify-center">
+          <motion.div
+            initial={{
+              y: 100,
+              opacity: 0
+            }}
+            transition={{
+              type: "spring",
+              stiffness: 100,
+              // damping: 70,
+              duration: 5
+            }}
+            whileInView={{
+              y: 0,
+              opacity: 1
+            }}
+            className="mt-10 flex justify-center"
+          >
             <div className="lg:w-full grid lg:grid-cols-3 gap-4 ">
               <div className="rounded-[6px] bg-[#f6f7ff] pt-[29px] pb-[29px] px-[35px]">
                 <div>
@@ -113,14 +131,31 @@ const Services = () => {
                 </div>
               </div>
             </div>
-          </div>
+          </motion.div>
         </Container>
 
-        <Image
-          src={ball}
-          className="absolute bottom-0 z-10 right-0"
-          alt="ball svg"
-        />
+        <motion.div
+          initial={{
+            x: -100,
+            opacity: 0
+          }}
+          transition={{
+            type: "spring",
+            stiffness: 100,
+            // damping: 70,
+            duration: 4
+          }}
+          whileInView={{
+            x: 0,
+            opacity: 1
+          }}
+        >
+          <Image
+            src={ball}
+            className="absolute bottom-0 z-10 right-0"
+            alt="ball svg"
+          />
+        </motion.div>
       </div>
     </section>
   );

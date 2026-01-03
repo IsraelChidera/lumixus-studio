@@ -1,6 +1,8 @@
+"use client";
+
 import React from "react";
 import Container from "@/app/components/Elements/Container";
-
+import { motion } from "motion/react";
 const details = [
   {
     id: 1,
@@ -35,13 +37,30 @@ const Process = () => {
   return (
     <section>
       <Container>
-        <p className="text-text uppercase text-center lg:text-base text-sm font-medium">
-          Our approach
-        </p>
+        <motion.div
+          initial={{
+            y: 100,
+            opacity: 0
+          }}
+          transition={{
+            type: "spring",
+            stiffness: 100,
+            // damping: 70,
+            duration: 5
+          }}
+          whileInView={{
+            y: 0,
+            opacity: 1
+          }}
+        >
+          <p className="text-text uppercase text-center lg:text-base text-sm font-medium">
+            Our approach
+          </p>
 
-        <h2 className="text-text text-4xl text-center font-medium">
-          Our Simple 4 Step Process
-        </h2>
+          <h2 className="text-text text-4xl text-center font-medium">
+            Our Simple 4 Step Process
+          </h2>
+        </motion.div>
 
         <div className="mt-20 grid lg:grid-cols-4 lg:gap-x-3 gap-x-0">
           {details.map((item) => (

@@ -1,14 +1,33 @@
+"use client";
+
 import React from "react";
 import Container from "@/app/components/Elements/Container";
 import { FaArrowRight } from "react-icons/fa6";
 import Button from "@/app/components/Elements/Button";
 import { MdArrowOutward } from "react-icons/md";
+import { motion } from "motion/react";
 
 const BookACall = () => {
   return (
     <section className="bg-accent py-[100px]">
       <Container className="">
-        <div className="lg:px-0 px-3  lg:ml-[97px] lg:grid grid-cols-4 gap-x-10">
+        <motion.div
+          initial={{
+            y: 100,
+            opacity: 0
+          }}
+          transition={{
+            type: "spring",
+            stiffness: 100,
+            // damping: 70,
+            duration: 4
+          }}
+          whileInView={{
+            y: 0,
+            opacity: 1
+          }}
+          className="lg:px-0 px-3  lg:ml-[97px] lg:grid grid-cols-4 gap-x-10"
+        >
           <div className="col-span-1 flex items-center">
             <div>
               <h2 className="text-[31px] font-bold lg:text-[61px] text-white lg:leading-[61px]">
@@ -76,7 +95,7 @@ const BookACall = () => {
               </div>
             </form>
           </div>
-        </div>
+        </motion.div>
       </Container>
     </section>
   );

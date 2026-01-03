@@ -1,14 +1,16 @@
+"use client";
+
 import React from "react";
 import Container from "@/app/components/Elements/Container";
 import { TfiFaceSad } from "react-icons/tfi";
-
+import { motion } from "motion/react";
 const PainPoints = () => {
   return (
     <section className="py-[100px]">
       <Container>
         <p className="text-text uppercase text-center lg:text-base text-sm font-medium">
-          <span className="text-primary font-semibold">Running a business</span> shouldn't
-          feel this hard
+          <span className="text-primary font-semibold">Running a business</span>{" "}
+          shouldn't feel this hard
         </p>
 
         <h2 className="pt-1 text-text lg:text-[55px] text-[36px] leading-[120%] text-center font-medium">
@@ -16,10 +18,28 @@ const PainPoints = () => {
           <span className="text-accent font-semibold">business?</span>
         </h2>
 
-        <div className="mt-14 flex justify-center items-center w-full">
+        <motion.div
+          initial={{
+            y: 100,
+            opacity: 0
+          }}
+          transition={{
+            type: "spring",
+            stiffness: 100,
+            // damping: 70,
+            duration: 5
+          }}
+          whileInView={{
+            y: 0,
+            opacity: 1
+          }}
+          className="mt-14 flex justify-center items-center w-full"
+        >
           <div className="lg:w-3/4">
             <div className="bg-accent text-white rounded-t-[28px] py-2.5 px-5 text-center">
-              <p className="text-sm lg:text-[base]">Does this sound and feel familiar?</p>
+              <p className="text-sm lg:text-[base]">
+                Does this sound and feel familiar?
+              </p>
             </div>
             <div className="bg-white p-5 border border- rounded-b-[28px]">
               <ul className="grid lg:grid-cols-2 gap-4">
@@ -93,7 +113,7 @@ const PainPoints = () => {
               </ul>
             </div>
           </div>
-        </div>
+        </motion.div>
       </Container>
     </section>
   );
