@@ -21,7 +21,7 @@ const Services = () => {
           </h2>
 
           <div className="mt-10 flex justify-center">
-            <div className="lg:w-[800px] grid lg:grid-cols-2 gap-4 ">
+            <div className="lg:w-full grid lg:grid-cols-3 gap-4 ">
               <div className="rounded-[6px] bg-[#f6f7ff] pt-[29px] pb-[29px] px-[35px]">
                 <div>
                   <Image src={web} alt="web dev icon" />

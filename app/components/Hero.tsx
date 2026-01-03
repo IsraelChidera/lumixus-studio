@@ -14,7 +14,7 @@ const Hero = () => {
   return (
     <header className="pt-[80px] pb-[100px] bg-[#f8f8fb] relative">
       <Container>
-        <div className="text-center mb-1 flex justify-center ">
+        <div className="text-center mb-2 flex justify-center ">
           <p
             className=" bg-accent text-white rounded-[5px] px-4 md:py-1 py-1 text-[12px] w-fit flex items-center space-x-3"
             // href="https://cal.com/lumixus-studio/15min"
@@ -26,7 +26,7 @@ const Hero = () => {
             <span>2/5 SLOTS REMAINING</span>
           </p>
         </div>
-        <h1 className="text-center sm:text-[67px] text-5xl font-semibold -leading-4 mt-2">
+        <h1 className="text-center text-[48px]  font-semibold leading-[120%] mt-2">
           <span className="text-primary">Double Leads</span>
           <br />
           <span className="text-primary">Close Deals, Drive Sales</span>
