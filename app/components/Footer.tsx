@@ -52,7 +52,7 @@ const Footer = () => {
                     </p>
                 </div>
 
-                <ul className="lg:my-0 my-4 text-center space-y-3 text-white">
+                <ul className="lg:my-0 my-4 text-center space-y-3 text-text">
                     <li >
                         <Link href="#" className='text-base lg:text-lg font-semibold'>
                             Quick links
@@ -66,7 +66,7 @@ const Footer = () => {
                     </li>
 
                     <li>
-                        <Link href="/resources" className="text-[15px] hover:border-b border-b-white hover:pb-1 hover:text-white transition-all ease-linear delay-75 hover:opacity-100 opacity-70">
+                        <Link href="/resources" className="text-[15px] hover:border-b border-b-accent hover:pb-1 hover:text-text transition-all ease-linear delay-75 hover:opacity-100 opacity-70">
                             Resources
                         </Link>
                     </li>

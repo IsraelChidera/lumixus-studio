@@ -75,10 +75,9 @@ const Navbar = () => {
 
             {
                 click &&
-                <div className='h-screen w-full fixed bg-secondary z-50 top-0 left-0'>
+                <div className='h-screen w-full fixed bg-white z-50 top-0 left-0'>
 
                     <Container className=''>
-
                         <div className='pt-10 flex items-center justify-between'>
                             <Image src={logo} alt="Lumixus studio logo" className='w-16 md:w-28' />
 
