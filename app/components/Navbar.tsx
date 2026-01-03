@@ -85,7 +85,7 @@ const Navbar = () => {
                         </div>
 
                         <ul className='mt-10 space-y-6'>
-                            <li className="text-[34px]">
+                            <li className="text-[24px]">
                                 <Link href="#about" className='hover:opacity-60 hover:text-white transition-all ease-in delay-75  flex items-center space-x-2' onClick={() => setClick(false)} >
                                     <span>About</span>
 
@@ -93,7 +93,7 @@ const Navbar = () => {
                                 </Link>
                             </li>
 
-                            <li className="text-[34px]">
+                            <li className="text-[24px]">
                                 <Link href="#services" className='hover:opacity-60 hover:text-white transition-all ease-in delay-75  flex items-center space-x-2' onClick={() => setClick(false)} >
                                     <span>Services</span>
 
@@ -101,7 +101,7 @@ const Navbar = () => {
                                 </Link>
                             </li>
 
-                            <li className="text-[34px]">
+                            <li className="text-[24px]">
                                 <Link href="#works" className='hover:opacity-60 hover:text-white transition-all ease-in delay-75  flex items-center space-x-2' onClick={() => setClick(false)} >
                                     <span>Portfolio</span>
 
@@ -109,7 +109,7 @@ const Navbar = () => {
                                 </Link>
                             </li>
 
-                            <li className="text-[34px]">
+                            <li className="text-[24px]">
                                 <Link href="#testimonials" className='hover:opacity-60 hover:text-white transition-all ease-in delay-75  flex items-center space-x-2' onClick={() => setClick(false)} >
                                     <span>Testimonials</span>
 
@@ -117,7 +117,7 @@ const Navbar = () => {
                                 </Link>
                             </li>
 
-                            <li className="text-[34px]">
+                            <li className="text-[24px]">
                                 <Link href="/resources" className='hover:opacity-60 hover:text-white transition-all ease-in delay-75  flex items-center space-x-2' onClick={() => setClick(false)} >
                                     <span>Resources</span>
 
@@ -125,7 +125,7 @@ const Navbar = () => {
                                 </Link>
                             </li>
 
-                            <li className="text-[34px]">
+                            <li className="text-[24px]">
                                 <Link href="#contact" className='hover:opacity-60 hover:text-white transition-all ease-in delay-75  flex items-center space-x-2' onClick={() => setClick(false)} >
                                     <span>
                                         Contact
