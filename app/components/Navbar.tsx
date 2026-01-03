@@ -44,8 +44,8 @@ const Navbar = () => {
                         </li>
 
                         <li className="hover:border-b-2 hover:pb-2 text-text hover:border-b-primary hover:text-primary transition-all ease-in delay-75 ">
-                            <Link href="#testimonials">
-                                Testimonials
+                            <Link href="#contact">
+                                Contact
                             </Link>
                         </li>
 
