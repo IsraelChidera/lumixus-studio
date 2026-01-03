@@ -21,7 +21,7 @@ const page = () => {
         <div className="mt-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
           <div className="group">
             <Link href="https://selar.com/0f3k23" target="_blank">
-              <div className="p-8 rounded-lg border border-white/10 hover:bg-accent transition-all duration-300 relative flex flex-col">
+              <div className="p-8 rounded-lg border border-white/10 hover:bg-white bg-white transition-all duration-300 relative flex flex-col">
                 <p className="text-text text-sm mb-6 font-sans max-w-xs">
                   The Notion Content Bank Template is a content repository
                   template that allows you to store, organize, and repurpose all
@@ -30,7 +30,7 @@ const page = () => {
                   will help you stay consistent, track performance, and create
                   high-quality content effortlessly
                 </p>
-                <h3 className="text-3xl text-white">Content bank template</h3>
+                <h3 className="text-3xl text-text">Content bank template</h3>
 
                 <div className="mt-3 pb-8 overflow-hidden rounded-md w-full aspect-[16/9]">
                   <Image
@@ -50,7 +50,7 @@ const page = () => {
               href="https://cal.com/lumixus-studio/30min?overlayCalendar=true"
               target="_blank"
             >
-              <div className="p-8 rounded-lg border border-white/10 hover:bg-accent transition-all duration-300 relative flex flex-col">
+              <div className="p-8 rounded-lg border border-white/10 hover:bg-white bg-white transition-all duration-300 relative flex flex-col">
                 <p className="text-text text-sm mb-6 font-sans max-w-xs">
                   We help businesses, creators, and entrepreneurs go live with
                   stunning, high-converting websites in 7 days or less. Whether
@@ -58,7 +58,7 @@ const page = () => {
                   delivers everything from strategy and copy to design and
                   development without the long wait.
                 </p>
-                <h3 className="text-3xl text-white">Book Discovery Call</h3>
+                <h3 className="text-3xl text-text">Book Discovery Call</h3>
 
                 <div className="mt-3 pb-8 overflow-hidden rounded-md w-full aspect-[16/9]">
                   <Image
