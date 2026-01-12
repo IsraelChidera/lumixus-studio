@@ -9,7 +9,7 @@ import Link from 'next/link';
 
 const StartProject = () => {
     return (
-        <section id="contact" className='py-[90px] relative' >
+        <section  className='py-[90px] relative' >
             <Container className='relative z-20'>
                 <p  className='uppercase text-center text-sm font-medium'>
                     Let's talk
