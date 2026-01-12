@@ -9,7 +9,7 @@ import { MdArrowOutward } from "react-icons/md";
 const page = () => {
   return (
     <main>
-      <Container className="relative z-20 mt-10">
+      <Container className="mt-10">
         <p className="mt-20 uppercase text-center lg:text-[20px] font-medium">
           Available Resources
         </p>

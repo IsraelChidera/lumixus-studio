@@ -33,19 +33,19 @@ const Navbar = () => {
 
           <ul className="ml-4 xl:flex hidden tracking-wide items-center justify-between space-x-6 text-sm">
             <li className="hover:border-b-2 hover:pb-2 text-text hover:border-b-primary hover:text-primary transition-all ease-in delay-75 ">
-              <Link href="#about">About</Link>
+              <Link href="/#about">About</Link>
             </li>
 
             <li className="hover:border-b-2 hover:pb-2 text-text hover:border-b-primary hover:text-primary transition-all ease-in delay-75 ">
-              <Link href="#services">Services</Link>
+              <Link href="/#services">Services</Link>
             </li>
 
             <li className="hover:border-b-2 hover:pb-2 text-text hover:border-b-primary hover:text-primary transition-all ease-in delay-75 ">
-              <Link href="#works">Portfolio</Link>
+              <Link href="/#works">Portfolio</Link>
             </li>
 
             <li className="hover:border-b-2 hover:pb-2 text-text hover:border-b-primary hover:text-primary transition-all ease-in delay-75 ">
-              <Link href="#contact">Contact</Link>
+              <Link href="/#contact">Contact</Link>
             </li>
 
             <li className="hover:border-b-2 hover:pb-2 text-text hover:border-b-primary hover:text-primary transition-all ease-in delay-75 ">
@@ -83,9 +83,9 @@ const Navbar = () => {
             </div>
 
             <ul className="mt-10 space-y-6">
-              <li className="text-[24px]">
+              <li className="text-base">
                 <Link
-                  href="#about"
+                  href="/#about"
                   className="hover:opacity-60 hover:text-white transition-all ease-in delay-75  flex items-center space-x-2"
                   onClick={() => setClick(false)}
                 >
@@ -95,9 +95,9 @@ const Navbar = () => {
                 </Link>
               </li>
 
-              <li className="text-[24px]">
+              <li className="text-base">
                 <Link
-                  href="#services"
+                  href="/#services"
                   className="hover:opacity-60 hover:text-white transition-all ease-in delay-75  flex items-center space-x-2"
                   onClick={() => setClick(false)}
                 >
@@ -107,9 +107,9 @@ const Navbar = () => {
                 </Link>
               </li>
 
-              <li className="text-[24px]">
+              <li className="text-base">
                 <Link
-                  href="#works"
+                  href="/#works"
                   className="hover:opacity-60 hover:text-white transition-all ease-in delay-75  flex items-center space-x-2"
                   onClick={() => setClick(false)}
                 >
@@ -119,9 +119,9 @@ const Navbar = () => {
                 </Link>
               </li>
 
-              <li className="text-[24px]">
+              <li className="text-base">
                 <Link
-                  href="#testimonials"
+                  href="/#testimonials"
                   className="hover:opacity-60 hover:text-white transition-all ease-in delay-75  flex items-center space-x-2"
                   onClick={() => setClick(false)}
                 >
@@ -131,7 +131,7 @@ const Navbar = () => {
                 </Link>
               </li>
 
-              <li className="text-[24px]">
+              <li className="text-base">
                 <Link
                   href="/resources"
                   className="hover:opacity-60 hover:text-white transition-all ease-in delay-75  flex items-center space-x-2"
@@ -143,7 +143,7 @@ const Navbar = () => {
                 </Link>
               </li>
 
-              <li className="text-[24px]">
+              <li className="text-base">
                 <Link
                   href="#contact"
                   className="hover:opacity-60 hover:text-white transition-all ease-in delay-75  flex items-center space-x-2"
@@ -168,7 +168,7 @@ const Navbar = () => {
             </ul>
 
             <div className="mt-4">
-              <p className="text-text text-base">
+              <p className="text-text text-xs">
                 We're Lumixus Studio, and we partner with B2B businesses to
                 close more deals and increase their customer pipeline
               </p>
@@ -176,16 +176,16 @@ const Navbar = () => {
               <div className="flex pt-3 items-center justify-start space-x-6">
                 <Link
                   href="https://www.instagram.com/lumixus_studio/"
-                  className="group block bg-primary rounded-full p-4 opacity-70 hover:opacity-100 transition-all ease-in delay-75"
+                  className="group block bg-primary rounded-full p-2 opacity-70 hover:opacity-100 transition-all ease-in delay-75"
                 >
-                  <FaInstagram className="w-6 h-6 text-white md:text-base group-hover:scale-110" />
+                  <FaInstagram className="w-4 h-4 text-white text-xs group-hover:scale-110" />
                 </Link>
 
                 <Link
                   href="https://www.facebook.com/profile.php?id=61563258786419&mibextid=ZbWKwL"
-                  className="group block bg-primary rounded-full p-4 opacity-70 hover:opacity-100 transition-all ease-in delay-75"
+                  className="group block bg-primary rounded-full p-2 opacity-70 hover:opacity-100 transition-all ease-in delay-75"
                 >
-                  <FaFacebook className="w-6 h-6 text-white md:text-base group-hover:scale-110" />
+                  <FaFacebook className="w-4 h-4 text-white text-xs group-hover:scale-110" />
                 </Link>
               </div>
             </div>
