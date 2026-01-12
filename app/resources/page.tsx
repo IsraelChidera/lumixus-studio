@@ -44,7 +44,7 @@ const page = () => {
               </div>
 
               <Link href="https://selar.com/0f3k23" target="_blank">
-                <Button className="justify-center hidden xl:flex items-center space-x-2 w-full">
+                <Button className="justify-center flex items-center space-x-2 w-full">
                   <span className="block">View Details</span>
                 </Button>
               </Link>
@@ -76,7 +76,7 @@ const page = () => {
                 href="https://cal.com/lumixus-studio/30min?overlayCalendar=true"
                 target="_blank"
               >
-                <Button className="justify-center hidden xl:flex items-center space-x-2 w-full">
+                <Button className="justify-center flex items-center space-x-2 w-full">
                   <span className="block">View Details</span>
                 </Button>
               </Link>
