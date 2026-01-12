@@ -1,68 +1,73 @@
 "use client";
-import React, { useRef, useState } from "react";
+import React, { useState } from "react";
 import Container from "@/app/components/Elements/Container";
 import { FaArrowRight } from "react-icons/fa6";
 import { MdArrowOutward } from "react-icons/md";
 import { motion } from "motion/react";
 import Button from "@/app/components/Elements/Button";
+import * as yup from "yup";
+import { useForm } from "react-hook-form";
+import { yupResolver } from "@hookform/resolvers/yup";
 
-const initialState = {
-  name: "",
-  email: "",
-  phone: "",
-  business: "",
-  message: ""
-};
+const schema = yup.object().shape({
+  fullName: yup.string().required("Full name is required."),
+  email: yup
+    .string()
+    .email("Invalid email address.")
+    .required("Email is required."),
+  phoneNumber: yup
+    .string()
+    .transform((val) => (val === "" ? undefined : val))
+    .notRequired()
+    .min(9, "Phone must be 9 digits or more")
+    .max(14, "Phone must be 14 digits or less"),
+  business: yup.string().required("Business name is required."),
+  message: yup.string().required("Please describe your needs.")
+});
 
 const BookACall = () => {
-  const [form, setForm] = useState(initialState);
-  const [errors, setErrors] = useState<any>({});
-  const mailtoRef = useRef<HTMLAnchorElement>(null);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isSubmitted, setIsSubmitted] = useState(false);
+  const [submitError, setSubmitError] = useState<string | null>(null);
 
-  const validate = () => {
-    const newErrors: any = {};
-    if (!form.name.trim()) newErrors.name = "Full name is required.";
-    if (!form.email.trim()) {
-      newErrors.email = "Email is required.";
-    } else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(form.email)) {
-      newErrors.email = "Invalid email address.";
+  const {
+    register,
+    handleSubmit,
+    reset,
+    formState: { errors }
+  } = useForm({
+    resolver: yupResolver(schema)
+  });
+
+  const handleContactForm = async (data: any) => {
+    setIsSubmitting(true);
+    try {
+      const GOOGLE_SHEET_URL = `https://script.google.com/macros/s/AKfycbwGn_TqgZJKXSYekTZJ8Ta1qCdy7XHFs277mXY9gY_TUP2SSMBAOc6rFDJEIhZ2xVAFVQ/exec`;
+
+      await fetch(GOOGLE_SHEET_URL, {
+        method: "POST",
+        mode: "no-cors",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+          date: new Date().toLocaleString(),
+          fullName: data.fullName,
+          email: data.email,
+          phoneNumber: data.phoneNumber ? `+234${data.phoneNumber}` : "N/A",
+          businessName: data.business,
+          description: data.message
+        })
+      });
+
+      setIsSubmitted(true);
+      reset();
+    } catch (error) {
+      console.error("Error submitting form:", error);
+      setSubmitError("Failed to submit form. Please try again.");
+    } finally {
+      setIsSubmitting(false);
     }
-    if (!form.phone.trim()) newErrors.phone = "Phone number is required.";
-    if (!form.business.trim())
-      newErrors.business = "Business name is required.";
-    if (!form.message.trim()) newErrors.message = "Please describe your needs.";
-    return newErrors;
-  };
-
-  const handleChange = (e: any) => {
-    setForm({ ...form, [e.target.name]: e.target.value });
-    setErrors({ ...errors, [e.target.name]: "" });
-  };
-
-  const handleSubmit = (e: any) => {
-    e.preventDefault();
-    const validationErrors = validate();
-    if (Object.keys(validationErrors).length > 0) {
-      setErrors(validationErrors);
-      return;
-    }
-
-    const subject = encodeURIComponent("New Book a Call Submission");
-    const body = encodeURIComponent(
-      `Full Name: ${form.name}\n` +
-        `Email: ${form.email}\n` +
-        `Phone Number: ${form.phone}\n` +
-        `Business Name: ${form.business}\n` +
-        `Message: ${form.message}`
-    );
-    const mailtoLink = `mailto:info@lumixus-studio.com?subject=${subject}&body=${body}`;
-
-    // Set the href and trigger click
-    if (mailtoRef.current) {
-      mailtoRef.current.href = mailtoLink;
-      mailtoRef.current.click();
-    }
-    setForm(initialState);
   };
 
   return (
@@ -92,88 +97,95 @@ const BookACall = () => {
             </p>
             <form
               className="lg:grid lg:grid-cols-2 grid-cols-1 space-y-2 lg:space-y-0 gap-4 mt-10"
-              onSubmit={handleSubmit}
-              noValidate
+              onSubmit={handleSubmit(handleContactForm)}
             >
               <div>
                 <input
                   type="text"
-                  name="name"
-                  value={form.name}
-                  onChange={handleChange}
+                  {...register("fullName")}
                   className="w-full border-0 text-white rounded-[4px] placeholder:text-opacity-100 placeholder:text-white text-opacity-50 py-[20px] px-4 bg-[#ffffff0d] focus:border-none"
                   placeholder="Full Name"
                 />
-                {errors.name && (
-                  <span className="text-red-400 text-xs">{errors.name}</span>
+                {errors.fullName?.message && (
+                  <p className="text-red-400 text-xs">
+                    {errors?.fullName?.message}
+                  </p>
                 )}
               </div>
+
               <div>
                 <input
                   type="email"
-                  name="email"
-                  value={form.email}
-                  onChange={handleChange}
+                  {...register("email")}
                   className="w-full border-0 text-white rounded-[4px] placeholder:text-opacity-100 placeholder:text-white text-opacity-50 py-[20px] px-4 bg-[#ffffff0d] focus:border-none"
                   placeholder="Email"
                 />
-                {errors.email && (
-                  <span className="text-red-400 text-xs">{errors.email}</span>
-                )}
-              </div>
-              <div>
-                <input
-                  type="text"
-                  name="phone"
-                  value={form.phone}
-                  onChange={handleChange}
-                  className="w-full border-0 text-white rounded-[4px] placeholder:text-opacity-100 placeholder:text-white text-opacity-50 py-[20px] px-4 bg-[#ffffff0d] focus:border-none"
-                  placeholder="Phone Number"
-                />
-                {errors.phone && (
-                  <span className="text-red-400 text-xs">{errors.phone}</span>
-                )}
-              </div>
-              <div>
-                <input
-                  type="text"
-                  name="business"
-                  value={form.business}
-                  onChange={handleChange}
-                  className="w-full border-0 text-white rounded-[4px] placeholder:text-opacity-100 placeholder:text-white text-opacity-50 py-[20px] px-4 bg-[#ffffff0d] focus:border-none"
-                  placeholder="Business Name"
-                />
-                {errors.business && (
+                {errors.email?.message && (
                   <span className="text-red-400 text-xs">
-                    {errors.business}
+                    {errors.email.message}
                   </span>
                 )}
               </div>
+
+              <div>
+                <input
+                  type="text"
+                  {...register("phoneNumber")}
+                  className="w-full border-0 text-white rounded-[4px] placeholder:text-opacity-100 placeholder:text-white text-opacity-50 py-[20px] px-4 bg-[#ffffff0d] focus:border-none"
+                  placeholder="Phone Number"
+                />
+                {errors.phoneNumber?.message && (
+                  <span className="text-red-400 text-xs">
+                    {errors.phoneNumber.message}
+                  </span>
+                )}
+              </div>
+
+              <div>
+                <input
+                  type="text"
+                  {...register("business")}
+                  className="w-full border-0 text-white rounded-[4px] placeholder:text-opacity-100 placeholder:text-white text-opacity-50 py-[20px] px-4 bg-[#ffffff0d] focus:border-none"
+                  placeholder="Business Name"
+                />
+                {errors.business?.message && (
+                  <span className="text-red-400 text-xs">
+                    {errors.business.message}
+                  </span>
+                )}
+              </div>
+
               <textarea
                 rows={4}
                 cols={4}
-                name="message"
-                value={form.message}
-                onChange={handleChange}
+                {...register("message")}
                 className="col-span-2 w-full border-0 text-white rounded-[4px] placeholder:text-opacity-100 placeholder:text-white text-opacity-50 py-[20px] px-4 bg-[#ffffff0d] focus:border-none"
                 placeholder="Describe what your business needs (More leads, sales, automations, handling appointments etc.)"
               ></textarea>
-              {errors.message && (
+              {errors.message?.message && (
                 <span className="text-red-400 text-xs col-span-2">
-                  {errors.message}
+                  {errors.message.message}
                 </span>
               )}
+
               <div className="flex justify-start col-span-2 pt-4">
                 <Button className="flex items-center space-x-2" type="submit">
-                  <span>Submit your Form</span>
+                  {isSubmitting ? (
+                    <span>Submitting...</span>
+                  ) : (
+                    <span>Submit your Form</span>
+                  )}
                   <MdArrowOutward className="text-white" />
                 </Button>
-                {/* Hidden anchor for mailto */}
-                <a ref={mailtoRef} style={{ display: "none" }}>
-                  Mailto
-                </a>
               </div>
             </form>
+
+            {isSubmitted && (
+              <p className="text-white text-sm mt-4">
+                Form submitted successfully.
+              </p>
+            )}
+            {submitError && <p className="text-red-400 mt-4">{submitError}</p>}
           </div>
         </motion.div>
       </Container>
