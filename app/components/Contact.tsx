@@ -22,16 +22,6 @@ type ErrorsProps = {
 
 const Contact = () => {
 
-    const [success, setSuccess] = useState(false);
-    const [submitting, setSubmitting] = useState(false);
-
-    const initialValues: InitialValuesProps = {
-        email: "",
-        firstname: "",
-        lastname: "",
-        message: ""
-    }
-
     const validateForm = (values: InitialValuesProps) => {
         const errors: ErrorsProps = {}
 
@@ -62,18 +52,6 @@ const Contact = () => {
         }
 
         return errors;
-    }
-
-    const onContactFormSubmission = async (values: any) => {
-        console.log(values);
-        setSubmitting(true);
-        setSuccess(true);
-
-        if (values) {
-            setSubmitting(false);
-            window.open(`mailto:lumixusstudio@gmail.com?subject=${`Contact%20Form%20Message%20-%20${values.firstname}%20${values.lastname}`}&body=${`${values.message}`}`, '_blank');
-        }
-
     }
 
     return (

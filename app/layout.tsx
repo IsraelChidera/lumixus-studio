@@ -6,12 +6,6 @@ import CustomCursor from "./components/CustomCursor";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 
-declare global {
-  interface Window {
-    dataLayer: any[];
-  }
-}
-
 export const metadata: Metadata = {
   title: {
     default: "Branding, Marketing & Web Development for B2B Businesses",
@@ -135,15 +129,6 @@ export default function RootLayout({
         <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
       </head>
 
-      <script
-        async
-        src="https://www.googletagmanager.com/gtag/js?id=G-4L34R5DLZB"
-      ></script>
-      <script type="text/javascript">
-        window.dataLayer = window.dataLayer || []; function gtag()
-        {window.dataLayer.push(arguments)}
-        gtag('js', new Date()); gtag('config', 'G-4L34R5DLZB');
-      </script>
       <body className="relative">
         <Navbar />
         {children}
