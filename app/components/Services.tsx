@@ -50,9 +50,8 @@ const Services = () => {
                     Website Design & Development
                   </h4>
                   <p className="lg:text-[15px] text-sm pt-1">
-                    We transform digital ideas into engaging, user-friendly
-                    experiences—whether it's crafting sleek websites or building
-                    seamless mobile apps.
+                    We take your digital ideas and turn them into
+                    high-performing and optimized websites
                   </p>
                 </div>
               </div>
