@@ -1,2 +1,13 @@
+# robots.txt — Lumixus Studio
+# https://lumixus.studio
+
 User-agent: *
 Allow: /
+
+# Block private/internal paths
+Disallow: /api/
+Disallow: /_next/
+Disallow: /private/
+
+# Sitemap location
+Sitemap: https://lumixus.studio/sitemap.xml

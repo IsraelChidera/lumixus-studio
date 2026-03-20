@@ -1,8 +1,34 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import React from "react";
 import Container from "@/app/components/Elements/Container";
 import Image from "next/image";
 import { MdArrowOutward } from "react-icons/md";
+
+export const metadata: Metadata = {
+  title: "Free Business Resources — Templates & Tools for Entrepreneurs",
+  description:
+    "Download free Notion templates, content systems, and strategy guides built by Lumixus Studio for B2B business owners and content creators in Nigeria.",
+  keywords: [
+    "free business templates Nigeria",
+    "free Notion template for business",
+    "content calendar template Nigeria",
+    "free digital marketing resources",
+    "business growth tools",
+    "free consultation Lagos",
+    "Lumixus Studio resources"
+  ],
+  alternates: {
+    canonical: "https://lumixus.studio/resources"
+  },
+  openGraph: {
+    title: "Free Business Resources — Templates & Tools | Lumixus Studio",
+    description:
+      "Free Notion templates, content systems, and strategy guides for B2B business owners and content creators. Built by the Lumixus Studio team.",
+    url: "https://lumixus.studio/resources",
+    type: "website"
+  }
+};
 
 const resources = [
   {
