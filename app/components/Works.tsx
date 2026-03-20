@@ -1,29 +1,58 @@
 "use client";
 import React, { useRef, useCallback } from "react";
 import Image from "next/image";
-import Link from "next/link";
-import balls from "@/public/balls.png";
-import { FaArrowRight } from "react-icons/fa";
-import Button from "@/app/components/Elements/Button";
 import { A11y, Navigation, Pagination } from "swiper/modules";
-// import Swiper and modules styles
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
+import Container from "@/app/components/Elements/Container";
 import pharmabolt from "@/public/pharmabolt.png";
 import icystore from "@/public/icystore.png";
 import najecFmcg from "@/public/najec-fmcg.png";
 import chris from "@/public/chris-global.png";
-import najec from "@/public/najec.png";
-import nextcash from "@/public/nextcash.png";
-import ninolynks from "@/public/ninolynks.png";
 import goodhomes from "@/public/good-homes.png";
 import graft from "@/public/graft.png";
 import rdjestates from "@/public/rdj-estates.png";
 
-// projects
-// bayo adams page, graft,
+const projects = [
+  {
+    image: graft,
+    name: "Graft",
+    tags: ["Web Design", "Branding", "SEO"]
+  },
+  {
+    image: rdjestates,
+    name: "RDJ Estates",
+    tags: ["Web Design", "CRO", "SEO"]
+  },
+  {
+    image: goodhomes,
+    name: "Good Homes",
+    tags: ["Web Design", "Branding", "CRO"]
+  },
+  {
+    image: chris,
+    name: "Chris Global Limited",
+    tags: ["Branding", "Web Design", "Social Media"]
+  },
+  {
+    image: najecFmcg,
+    name: "Najec FMCG",
+    tags: ["Branding", "Web Design", "Social Media"]
+  },
+  {
+    image: pharmabolt,
+    name: "Pharmabolt",
+    tags: ["E-commerce", "Web Dev", "CRO"]
+  },
+  {
+    image: icystore,
+    name: "Icy Store",
+    tags: ["E-commerce", "Branding", "CRO"]
+  }
+];
+
 const Works = () => {
   const swiperRef: any = useRef(null);
 
@@ -38,171 +67,109 @@ const Works = () => {
   }, []);
 
   return (
-    <section
-      id="works"
-      className="mt-[154px] pt-10px relative py-[100px] bg-white"
-    >
-      <div className="relative z-20">
-        <div className="lg:px-0 px-3  lg:ml-[97px] lg:grid grid-cols-4 gap-x-10">
-          <div className="col-span-1 flex items-center">
-            <div>
-              <h2
-                style={{ lineHeight: "100px" }}
-                className="text-[81px] font-medium "
-              >
-                <span>Our Latest</span> <br />
-                <span>Work</span>
-              </h2>
-
-              <p className="-pt-10 flex space-x-4 items-center">
-                <span>Our Portfolio</span>
-                <FaArrowRight className="text-white lg:block hidden" />
-              </p>
-            </div>
+    <section id="works" className="py-28 bg-white">
+      <Container>
+        {/* Header */}
+        <div className="flex flex-col md:flex-row md:items-end justify-between mb-14 gap-6">
+          <div>
+            <span className="section-label mb-4 inline-flex">
+              <span className="w-1 h-1 rounded-full bg-primary" />
+              Our Portfolio
+            </span>
+            <h2
+              className="font-bold text-text tracking-tight mt-2"
+              style={{ fontSize: "clamp(32px, 4vw, 52px)", letterSpacing: "-0.02em" }}
+            >
+              Work we're
+              <span className="gradient-text-primary"> proud of</span>
+            </h2>
           </div>
+          <p className="text-muted text-[15px] max-w-xs leading-relaxed md:text-right">
+            Real projects, real results. Every build is crafted to perform.
+          </p>
+        </div>
 
-          <div className="mt-4 lg:mt-0 col-span-3 w-full">
-            <div className="relative z-30">
-              <Swiper
-                ref={swiperRef}
-                modules={[Navigation, Pagination, A11y]}
-                pagination={true}
-                loop={true}
-                breakpoints={{
-                  640: {
-                    slidesPerView: 2,
-                    spaceBetween: 10
-                  },
-                  768: {
-                    slidesPerView: 1.5,
-                    spaceBetween: 10
-                  },
-                  1024: {
-                    slidesPerView: 1.5,
-                    spaceBetween: 10
-                  }
-                }}
-                spaceBetween={30}
-                // slidesPerView={2.5}
-                className="relative bg-white"
+        {/* Carousel */}
+        <div className="relative">
+          <Swiper
+            ref={swiperRef}
+            modules={[Navigation, Pagination, A11y]}
+            pagination={false}
+            loop={true}
+            breakpoints={{
+              0: { slidesPerView: 1, spaceBetween: 16 },
+              640: { slidesPerView: 1.5, spaceBetween: 20 },
+              1024: { slidesPerView: 2.2, spaceBetween: 24 }
+            }}
+          >
+            {projects.map((project, i) => (
+              <SwiperSlide key={i}>
+                <div className="group relative rounded-2xl overflow-hidden bg-surface aspect-[4/3]">
+                  <Image
+                    src={project.image}
+                    alt={project.name}
+                    fill
+                    className="object-cover object-top transition-transform duration-500 group-hover:scale-105"
+                  />
+                  {/* Overlay */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-dark/90 via-dark/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
+                    <h3 className="text-white font-semibold text-lg">{project.name}</h3>
+                    <div className="flex flex-wrap gap-2 mt-2">
+                      {project.tags.map((tag) => (
+                        <span
+                          key={tag}
+                          className="text-xs font-medium text-white/70 bg-white/10 px-2.5 py-1 rounded-full backdrop-blur-sm"
+                        >
+                          {tag}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+
+                  {/* Always-visible label */}
+                  <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-dark/70 to-transparent p-4 group-hover:opacity-0 transition-opacity duration-300">
+                    <p className="text-white/90 text-sm font-medium">{project.name}</p>
+                  </div>
+                </div>
+              </SwiperSlide>
+            ))}
+          </Swiper>
+
+          {/* Navigation */}
+          <div className="flex items-center justify-between mt-8">
+            <div className="flex items-center gap-3">
+              <button
+                onClick={slidePrev}
+                className="w-11 h-11 rounded-full border border-border hover:border-primary hover:bg-primary hover:text-white text-text flex items-center justify-center transition-all"
+                aria-label="Previous"
               >
-                <SwiperSlide>
-                  <div className="relative bg-white">
-                    <Image src={graft} alt="web project" />
-                    <div className="hidden centered-bottom bg-[#0E0E0E]  pt-2 px-6 lg:px-10 pb-4">
-                      <p className="gradient-animation-light text-center text-sm font-semibold">
-                        Web design | Branding | SEO | CRO
-                      </p>
-                      <h3 className="pt-4 text-sm lg:text-[17px] font-semibold text-center text-white">
-                        Good Homes - real estate website
-                      </h3>
-                    </div>
-                  </div>
-                </SwiperSlide>
-                <SwiperSlide>
-                  <div className="relative bg-white">
-                    <Image src={rdjestates} alt="web project" />
-                    <div className="hidden centered-bottom bg-[#0E0E0E]  pt-2 px-6 lg:px-10 pb-4">
-                      <p className="gradient-animation-light text-center text-sm font-semibold">
-                        Web design | Branding | SEO | CRO
-                      </p>
-                      <h3 className="pt-4 text-sm lg:text-[17px] font-semibold text-center text-white">
-                        Good Homes - real estate website
-                      </h3>
-                    </div>
-                  </div>
-                </SwiperSlide>
-                <SwiperSlide>
-                  <div className="relative bg-white">
-                    <Image src={goodhomes} alt="web project" />
-                    <div className="hidden centered-bottom bg-[#0E0E0E]  pt-2 px-6 lg:px-10 pb-4">
-                      <p className="gradient-animation-light text-center text-sm font-semibold">
-                        Web design | Branding | SEO | CRO
-                      </p>
-                      <h3 className="pt-4 text-sm lg:text-[17px] font-semibold text-center text-white">
-                        Good Homes - real estate website
-                      </h3>
-                    </div>
-                  </div>
-                </SwiperSlide>
-
-                <SwiperSlide>
-                  <div className="relative bg-white">
-                    <Image src={chris} alt="web project" />
-                    <div className="hidden centered-bottom bg-[#0E0E0E]  pt-2 px-6 lg:px-10 pb-4">
-                      <p className="gradient-animation-light text-center text-sm font-semibold">
-                        Branding | Web design | Social Media{" "}
-                      </p>
-                      <h3 className="pt-4 text-sm lg:text-[17px] font-semibold text-center text-white">
-                        Chris Global Limited
-                      </h3>
-                    </div>
-                  </div>
-                </SwiperSlide>
-
-                <SwiperSlide>
-                  <div className="relative bg-white">
-                    <Image src={najecFmcg} alt="web project" />
-                    <div className="hidden centered-bottom bg-[#0E0E0E]  pt-2 px-6 lg:px-10 pb-4">
-                      <p className="gradient-animation-light text-center text-sm font-semibold">
-                        Branding | Web Design | Social Media
-                      </p>
-                      <h3 className="pt-4 text-sm lg:text-[17px] font-semibold text-center text-white">
-                        Najec FMCG
-                      </h3>
-                    </div>
-                  </div>
-                </SwiperSlide>
-
-                <SwiperSlide>
-                  <div className="relative bg-white">
-                    <Image src={pharmabolt} alt="web project" />
-                    <div className="hidden centered-bottom bg-[#0E0E0E]  pt-2 px-6 lg:px-10 pb-4">
-                      <p className="gradient-animation-light text-center text-sm font-semibold">
-                        Ecommerce | Web. | CRO
-                      </p>
-                      <h3 className="pt-4 text-sm lg:text-[17px] font-semibold text-center text-white">
-                        Pharmabolt
-                      </h3>
-                    </div>
-                  </div>
-                </SwiperSlide>
-
-                {/* <SwiperSlide >
-                                    <div className='relative' >
-                                        <Image src={ninolynks} alt="web project" />
-                                        <div className='hidden centered-bottom bg-[#0E0E0E]  pt-2 px-6 lg:px-10 pb-4'>
-                                            <p className='gradient-animation-light text-center text-sm font-semibold'>Ecommerce | CRO</p>
-                                            <h3 className='pt-4 text-sm lg:text-[17px] font-semibold text-center text-white'>
-                                                Ninolynks
-                                            </h3>
-                                        </div>
-                                    </div>
-                                </SwiperSlide> */}
-
-                <SwiperSlide>
-                  <div className="relative bg-white">
-                    <Image src={icystore} alt="web project" />
-                    <div className="hidden centered-bottom bg-[#0E0E0E]  pt-2 px-6 lg:px-10 pb-4">
-                      <p className="gradient-animation-light text-center text-sm font-semibold">
-                        E-commerce | Web Development | Branding | CRO
-                      </p>
-                      <h3 className="pt-4 text-sm lg:text-[17px] font-semibold text-center text-white">
-                        Icy Store
-                      </h3>
-                    </div>
-                  </div>
-                </SwiperSlide>
-              </Swiper>
-
-              <div className="mt-4 flex justify-between items-center">
-                <Button onClick={slidePrev}>Prev</Button>
-                <Button onClick={slideNext}>Next</Button>
-              </div>
+                <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" />
+                </svg>
+              </button>
+              <button
+                onClick={slideNext}
+                className="w-11 h-11 rounded-full border border-border hover:border-primary hover:bg-primary hover:text-white text-text flex items-center justify-center transition-all"
+                aria-label="Next"
+              >
+                <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
+                </svg>
+              </button>
             </div>
+
+            <a
+              href="https://cal.com/lumixus-studio/30min"
+              className="inline-flex items-center gap-2 text-sm font-semibold text-primary hover:underline underline-offset-4"
+            >
+              Start your project
+              <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M7 17L17 7M17 7H7M17 7v10" />
+              </svg>
+            </a>
           </div>
         </div>
-      </div>
+      </Container>
     </section>
   );
 };

@@ -34,11 +34,11 @@ const FloatingButton = () => {
 
     return (
         <button
-            className={`fixed bottom-[90px] md:right-4 right-4 p-4 md:p-6 z-30 drop-shadow-2xl rounded-full bg-primary animate-bounce text-white ${showButton ? "block" : "hidden"}`}
+            className={`fixed bottom-8 right-6 w-11 h-11 z-40 rounded-full bg-dark border border-white/10 shadow-xl flex items-center justify-center text-white hover:bg-primary transition-all duration-200 ${showButton ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4 pointer-events-none"}`}
             onClick={scrollToTop}
             aria-label="Scroll to top"
         >
-            <IoIosArrowUp />
+            <IoIosArrowUp className="w-4 h-4" />
         </button>
     );
 };

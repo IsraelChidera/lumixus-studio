@@ -1,151 +1,113 @@
-"use client"
-import React, { useRef, useCallback } from 'react';
+"use client";
+import React from "react";
+import Container from "@/app/components/Elements/Container";
+import { motion } from "motion/react";
 
-import Button from '@/app/components/Elements/Button';
+const testimonials = [
+  {
+    quote:
+      "Lumixus Studio went beyond building a beautiful website — they collaborated on SEO, social media integration, and ongoing performance analysis. Invaluable partners in bringing our vision to life.",
+    name: "William Oharisi",
+    role: "CEO",
+    company: "Ayuda Content"
+  },
+  {
+    quote:
+      "They crafted a strategy that positions us as thought leaders in our niche. We've seen a surge in social media presence, qualified leads, and industry recognition.",
+    name: "Glory Ebere",
+    role: "Founder",
+    company: "Connectivia"
+  },
+  {
+    quote:
+      "They revamped our entire user experience — intuitive, engaging, and optimized for conversions. Customer satisfaction scores soared and sales increased significantly. They truly bridge design and business goals.",
+    name: "James Oladele",
+    role: "Co-Founder",
+    company: "Nexo Tech"
+  },
+  {
+    quote:
+      "Partnering with Lumixus Studio was one of the best decisions we made. The site is fast, user-friendly, and has become a strong asset in our growth strategy. Professionalism, creativity, and clear business understanding.",
+    name: "Mr. Nebolisa",
+    role: "Managing Director",
+    company: "NAJEC FMCG"
+  }
+];
 
-import { A11y, Navigation, Pagination } from 'swiper/modules';
-// import Swiper and modules styles
-import { Swiper, SwiperSlide } from 'swiper/react';
-import 'swiper/css';
-import 'swiper/css/navigation';
-import 'swiper/css/pagination';
+const StarRow = () => (
+  <div className="flex items-center gap-0.5 mb-4">
+    {[...Array(5)].map((_, i) => (
+      <svg key={i} className="w-4 h-4 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+      </svg>
+    ))}
+  </div>
+);
 
 const Testimonial = () => {
+  return (
+    <section id="testimonials" className="py-28 bg-dark">
+      <Container>
+        {/* Header */}
+        <div className="text-center mb-16">
+          <span className="inline-flex items-center gap-2 text-xs font-semibold tracking-widest uppercase text-white/30 mb-4">
+            <span className="w-1 h-1 rounded-full bg-accent" />
+            Client Stories
+          </span>
+          <h2
+            className="font-bold text-white mt-3 tracking-tight"
+            style={{ fontSize: "clamp(32px, 4vw, 52px)", letterSpacing: "-0.02em" }}
+          >
+            What our clients{" "}
+            <span className="gradient-text-light">actually say</span>
+          </h2>
+          <p className="mt-4 text-white/40 text-[17px] max-w-md mx-auto leading-relaxed">
+            Don't take our word for it. Here's what businesses say after working with us.
+          </p>
+        </div>
 
-    const swiperRef: any = useRef(null);
+        {/* Grid */}
+        <motion.div
+          initial={{ y: 40, opacity: 0 }}
+          whileInView={{ y: 0, opacity: 1 }}
+          transition={{ duration: 0.55, ease: "easeOut" }}
+          viewport={{ once: true }}
+          className="grid md:grid-cols-2 gap-5"
+        >
+          {testimonials.map((t, i) => (
+            <div
+              key={i}
+              className={`rounded-2xl border border-white/8 p-7 flex flex-col justify-between ${
+                i === 0 ? "bg-primary/10" : "bg-white/[0.03]"
+              } hover:bg-white/[0.06] transition-colors duration-200`}
+            >
+              <div>
+                <StarRow />
+                <p className="text-white/70 text-[15px] leading-relaxed italic">
+                  &ldquo;{t.quote}&rdquo;
+                </p>
+              </div>
 
-
-    const slidePrev: any = useCallback(() => {
-        if (!swiperRef.current) return;
-        swiperRef.current.swiper.slidePrev();
-    }, []);
-
-    const slideNext: any = useCallback(() => {
-        if (!swiperRef.current) return;
-        swiperRef.current.swiper.slideNext();
-    }, []);
-
-    return (
-        <section id="testimonials" className='mt-[100px]'>
-            <div className='bg-image h-screen'>
-                <div className='md:flex relative z-30 p-6 items-center h-full md:justify-end'>
-                    <div className='bg-white px-6 py-10'>
-                        <div>
-                            <p  className='uppercase text-left text-sm font-medium'>
-                                Our clients
-                            </p>
-
-                            <h2  className='mt-[2px] leading-normal text-left text-[30px] font-medium'>
-                                What does our <br /> client have to say?
-                            </h2>
-
-                            <div  className='md:w-[470px] w-full mt-10'>
-
-                                <Swiper
-                                    ref={swiperRef}
-                                    modules={[Navigation, Pagination, A11y]}
-                                    pagination={true}
-                                    loop={true}
-                                    spaceBetween={30}
-                                    slidesPerView={1}
-                                    className='relative swiper-pagination-top swiper-container'
-                                >
-                                    <SwiperSlide>
-                                        <div>
-                                            <p className='text-[15px] mb-[30px] pb-[30px]'>
-                                                We approached Lumixus Studio with a strategic
-                                                vision for our online presence, and they became
-                                                invaluable partners in bringing it to life.
-                                                They didn't just create a beautiful website,
-                                                they collaborated with us on SEO optimization,
-                                                social media integration, and ongoing performance
-                                                analysis.
-                                            </p>
-
-                                            <div className=''>
-                                                <p className='font-light text-[13px] uppercase'> CEO | Ayuda Content</p>
-                                                <p className='font-light text-[13px] uppercase opacity-80'> William Oharisi</p>
-                                            </div>
-                                        </div>
-                                    </SwiperSlide>
-
-                                    <SwiperSlide>
-                                        <div>
-                                            <p className='text-[15px] mb-[30px] pb-[30px]'>
-                                                Lumixus Studio crafted a strategy
-                                                that not only stands out in the crowd but also positions
-                                                us as thought leaders in our niche. We've seen a surge in
-                                                social media presence, qualified leads, and industry recognition,
-                                                all thanks to the strategic design and impactful messaging
-                                            </p>
-
-                                            <div className=''>
-                                                <p className='font-light text-[13px] uppercase'> Founder | Connectivia </p>
-                                                <p className='font-light text-[13px] uppercase opacity-80'> Glory Ebere </p>
-                                            </div>
-                                        </div>
-                                    </SwiperSlide>
-
-                                    <SwiperSlide>
-                                        <div>
-                                            <p className='text-[15px] mb-[30px] pb-[30px]'>
-                                                We knew our website needed a makeover, but Lumixus
-                                                Studio went above and beyond. They completely revamped
-                                                our user experience, making it intuitive, engaging, and
-                                                optimized for conversions. Our customer satisfaction scores
-                                                have soared, and we've seen a significant increase in sales
-                                                directly attributed to the new website's seamless functionality.
-                                                They truly understand how to bridge the gap between design and
-                                                business goals
-                                            </p>
-
-                                            <div className=''>
-                                                <p className='font-light text-[13px] uppercase'> Co-Founder | Nexo Tech</p>
-                                                <p className='font-light text-[13px] uppercase opacity-80'> James Oladele</p>
-                                            </div>
-                                        </div>
-                                    </SwiperSlide>
-
-                                    <SwiperSlide>
-                                        <div>
-                                            <p className='text-[15px] mb-[30px] pb-[30px]'>
-                                                Partnering with Lumixus Studio was one of the best decisions we made for our business. The site is fast, user-friendly, and designed with our customers in mind. Since launching, we've noticed a huge improvement in customer engagement and inquiries, and it has become a strong asset in our growth strategy. Lumixus Studio delivered with professionalism, creativity, and a clear understanding of our business goals. I highly recommend them to any business serious about scaling online.
-                                            </p>
-
-                                            <div className=''>
-                                                <p className='font-light text-[13px] uppercase'> Managing Director | NAJEC FMCG</p>
-                                                <p className='font-light text-[13px] uppercase opacity-80'>Mr. Nebolisa</p>
-                                            </div>
-                                        </div>
-                                    </SwiperSlide>
-
-                                    {/* <SwiperSlide>
-                                        <div>
-                                            <p className='text-[15px] mb-[30px] pb-[30px]'>
-                                                Lorem ipsum dolor sit amet consectetur adipisicing
-                                                elit. Possimus in optio molestiae velit soluta
-                                                repudiandae libero cupiditate quod dicta itaque.
-                                            </p>
-
-                                            <div className=''>
-                                                <h4 className='text-base mb-1 uppercase' style={{ letterSpacing: '2px' }}> Lorem Ipseum </h4>
-                                                <p className='font-light text-[13px] uppercase'> Founder | Parish</p>
-                                            </div>
-                                        </div>
-                                    </SwiperSlide> */}
-                                </Swiper>
-
-                                <div className='flex justify-between items-center mt-6'>
-                                    <Button onClick={slidePrev}>Prev</Button>
-                                    <Button onClick={slideNext}>Next</Button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+              <div className="mt-8 flex items-center gap-4">
+                {/* Avatar placeholder */}
+                <div className="w-10 h-10 rounded-full bg-primary/20 border border-primary/30 flex items-center justify-center flex-shrink-0">
+                  <span className="text-sm font-bold text-primary">
+                    {t.name.charAt(0)}
+                  </span>
                 </div>
+                <div>
+                  <p className="text-white text-sm font-semibold">{t.name}</p>
+                  <p className="text-white/40 text-xs mt-0.5">
+                    {t.role} · {t.company}
+                  </p>
+                </div>
+              </div>
             </div>
-        </section>
-    )
-}
+          ))}
+        </motion.div>
+      </Container>
+    </section>
+  );
+};
 
-export default Testimonial
+export default Testimonial;

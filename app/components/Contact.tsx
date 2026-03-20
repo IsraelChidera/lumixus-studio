@@ -1,101 +1,83 @@
-"use client"
-import React, { useState } from 'react';
-import Container from '@/app/components/Elements/Container';
-import Button from '@/app/components/Elements/Button';
-import { FiArrowDownRight } from "react-icons/fi";
-import Link from 'next/link';
-
-
-type InitialValuesProps = {
-    email: string,
-    firstname: string,
-    lastname: string,
-    message: string
-}
-
-type ErrorsProps = {
-    email?: string,
-    firstname?: string,
-    lastname?: string,
-    message?: string
-}
+import React from "react";
+import Container from "@/app/components/Elements/Container";
+import Link from "next/link";
+import { MdArrowOutward } from "react-icons/md";
 
 const Contact = () => {
+  return (
+    <section className="relative py-32 bg-dark overflow-hidden">
+      {/* Background glow */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-primary/12 rounded-full blur-[120px] pointer-events-none" />
+      <div className="absolute inset-0 dot-grid opacity-20" />
 
-    const validateForm = (values: InitialValuesProps) => {
-        const errors: ErrorsProps = {}
+      <Container className="relative z-10 text-center">
+        {/* Label */}
+        <span className="inline-flex items-center gap-2 text-xs font-semibold tracking-widest uppercase text-white/30 mb-8">
+          <span className="w-1 h-1 rounded-full bg-accent" />
+          Let's Build Together
+        </span>
 
-        if (!values.firstname) {
-            errors.firstname = "First name is required";
-        } else if (values.firstname.length <= 3) {
-            errors.firstname = 'Must be 3 characters or more';
-        }
+        {/* Headline */}
+        <h2
+          className="font-bold text-white mx-auto tracking-tight"
+          style={{
+            fontSize: "clamp(40px, 6vw, 80px)",
+            letterSpacing: "-0.03em",
+            maxWidth: "800px"
+          }}
+        >
+          Ready to grow your{" "}
+          <span className="gradient-text-primary">business online?</span>
+        </h2>
 
-        if (!values.lastname) {
-            errors.lastname = "Last name is required";
-        } else if (values.lastname.length <= 3) {
-            errors.lastname = 'Must be 3 characters or more';
-        }
+        <p className="mt-6 text-white/40 text-[18px] max-w-lg mx-auto leading-relaxed">
+          Join 50+ businesses that trust Lumixus Studio to deliver measurable digital growth.
+        </p>
 
-        if (!values.message) {
-            errors.message = "Message is required";
-        } else if (values.message.length <= 3) {
-            errors.message = 'Must be 3 characters or more';
-        }
+        {/* CTAs */}
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mt-12">
+          <Link
+            href="https://cal.com/lumixus-studio/30min"
+            className="inline-flex items-center gap-2 bg-primary hover:bg-secondary text-white font-semibold px-9 py-4 rounded-full text-[16px] transition-colors shadow-xl shadow-primary/30 w-full sm:w-auto justify-center"
+          >
+            Book Your Free Strategy Call
+            <MdArrowOutward className="text-xl" />
+          </Link>
 
-        if (!values.email) {
-            errors.email = "Email is required";
-        } else if (
-            !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(values.email)
-        ) {
-            errors.email = "Invalid email address";
-        }
+          <Link
+            href="#contact"
+            className="inline-flex items-center gap-2 bg-white/5 hover:bg-white/10 border border-white/10 text-white font-medium px-8 py-4 rounded-full text-[15px] transition-colors w-full sm:w-auto justify-center"
+          >
+            Send a Message
+          </Link>
+        </div>
 
-        return errors;
-    }
+        {/* Social links */}
+        <div className="flex items-center justify-center gap-6 mt-12">
+          <Link
+            href="https://www.instagram.com/lumixus_studio/"
+            className="text-white/30 hover:text-white transition-colors text-sm"
+          >
+            Instagram
+          </Link>
+          <span className="text-white/10">·</span>
+          <Link
+            href="mailto:lumixusstudio@gmail.com"
+            className="text-white/30 hover:text-white transition-colors text-sm"
+          >
+            Email Us
+          </Link>
+          <span className="text-white/10">·</span>
+          <Link
+            href="https://www.facebook.com/profile.php?id=61563258786419"
+            className="text-white/30 hover:text-white transition-colors text-sm"
+          >
+            Facebook
+          </Link>
+        </div>
+      </Container>
+    </section>
+  );
+};
 
-    return (
-        <section id="contact">
-            <Container className='mt-[154px] relative pb-10'>
-
-
-                <div className='flex justify-center items-center'>
-                    <p className='text-sm lg:text-base text-text w-fit'>
-                        Contact us
-                    </p>
-                </div>
-
-                <div className="flex justify-center">
-                    <div className="flex items-center space-x-1">
-                        <h2 className='uppercase text-text text-[30px] lg:text-[70px] text-center font-bold'>
-                            Walk with us
-                        </h2>
-
-                        <FiArrowDownRight className='text-primary text-[60px]' />
-                    </div>
-                </div>
-
-                <div className='flex justify-center mt-4 w-full'>
-                    <Link href="https://cal.com/lumixus-studio/30min" className=' block'>
-                        <Button className='w-fit text-[16px]'>
-                            <span className='block'>Get started for free</span>
-                        </Button>
-                    </Link>
-                </div>
-                <div className='flex justify-center mt-2'>
-                    <p className="flex items-center space-x-2 ">
-                        <Link className="block hover:underline underline-offset-4" href="https://www.instagram.com/lumixus_studio/">
-                            Instagram
-                        </Link>
-                        <span className="block ">|</span>
-                        <Link className="block hover:underline underline-offset-4" href="mailto:lumixusstudio@gmail.com">
-                            Email us
-                        </Link>
-                    </p>
-                </div>
-            </Container>
-        </section >
-    )
-}
-
-export default Contact
+export default Contact;

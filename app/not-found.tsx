@@ -15,9 +15,9 @@ export default function NotFound() {
       <div className="h-[60vh] flex items-center justify-center">
         <div className="text-center">
           <div className="flex items-center justify-center">
-            <MdOutlineFoundation className="text-[80px] lg:text-[160px] text-white" />
+            <MdOutlineFoundation className="text-[80px] lg:text-[160px] text-primary" />
           </div>
-          <h2 className="text-white text-2xl md:text-5xl font-extrabold">
+          <h2 className="text-primary text-2xl md:text-5xl font-extrabold">
             Not Found
           </h2>
           <p className="pt-4 md:text-base text-sm">

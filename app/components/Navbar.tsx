@@ -1,198 +1,162 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import Container from "@/app/components/Elements/Container";
-import Button from "@/app/components/Elements/Button";
-import logo from "@/public/logo-blue.png";
+import logo from "@/public/logo-white.png";
+import logoBlue from "@/public/logo-blue.png";
 import {
   FaBarsStaggered,
   FaFacebook,
   FaInstagram,
   FaXmark
 } from "react-icons/fa6";
-import { MdArrowOutward, MdMarkEmailRead } from "react-icons/md";
+import { MdArrowOutward } from "react-icons/md";
+
+const navLinks = [
+  { label: "Services", href: "/#services" },
+  { label: "Portfolio", href: "/#works" },
+  { label: "Process", href: "/#process" },
+  { label: "Testimonials", href: "/#testimonials" },
+  { label: "Resources", href: "/resources" }
+];
 
 const Navbar = () => {
-  const [click, setClick] = useState(false);
-  const handleClick = () => {
-    setClick(true);
-  };
+  const [mobileOpen, setMobileOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 60);
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
   return (
-    <nav className="pt-6 pb-4 relative z-20 bg-white ">
-      <Container className="flex justify-between items-center">
-        <div className="flex items-center space-x-6">
-          <Link href="/">
+    <>
+      <nav
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+          scrolled
+            ? "bg-white/95 backdrop-blur-xl border-b border-border shadow-sm"
+            : "bg-transparent"
+        }`}
+      >
+        <Container className="flex justify-between items-center py-4">
+          {/* Logo */}
+          <Link href="/" className="flex-shrink-0">
             <Image
-              src={logo}
-              alt="Lumixus studio logo"
-              className="pr-6 w-20 xl:w-28 xl:border-r xl:border-r-white "
+              src={scrolled ? logoBlue : logo}
+              alt="Lumixus Studio"
+              className="h-7 w-auto"
+              priority
             />
           </Link>
 
-          <ul className="ml-4 xl:flex hidden tracking-wide items-center justify-between space-x-6 text-sm">
-            <li className="hover:border-b-2 hover:pb-2 text-text hover:border-b-primary hover:text-primary transition-all ease-in delay-75 ">
-              <Link href="/#about">About</Link>
-            </li>
-
-            <li className="hover:border-b-2 hover:pb-2 text-text hover:border-b-primary hover:text-primary transition-all ease-in delay-75 ">
-              <Link href="/#services">Services</Link>
-            </li>
-
-            <li className="hover:border-b-2 hover:pb-2 text-text hover:border-b-primary hover:text-primary transition-all ease-in delay-75 ">
-              <Link href="/#works">Portfolio</Link>
-            </li>
-
-            <li className="hover:border-b-2 hover:pb-2 text-text hover:border-b-primary hover:text-primary transition-all ease-in delay-75 ">
-              <Link href="/#contact">Contact</Link>
-            </li>
-
-            <li className="hover:border-b-2 hover:pb-2 text-text hover:border-b-primary hover:text-primary transition-all ease-in delay-75 ">
-              <Link href="/resources">Resources</Link>
-            </li>
+          {/* Desktop nav */}
+          <ul className="hidden xl:flex items-center gap-8">
+            {navLinks.map((link) => (
+              <li key={link.href}>
+                <Link
+                  href={link.href}
+                  className={`text-sm font-medium transition-colors ${
+                    scrolled
+                      ? "text-text/70 hover:text-primary"
+                      : "text-white/70 hover:text-white"
+                  }`}
+                >
+                  {link.label}
+                </Link>
+              </li>
+            ))}
           </ul>
-        </div>
 
-        <Link href="https://cal.com/lumixus-studio/30min">
-          <Button className="hidden xl:flex items-center space-x-2">
-            <span>Start Now</span>
-            <MdArrowOutward className="text-white" />
-          </Button>
-        </Link>
+          {/* Desktop CTA */}
+          <Link
+            href="https://cal.com/lumixus-studio/30min"
+            className="hidden xl:inline-flex items-center gap-2 bg-primary hover:bg-secondary text-white text-sm font-medium px-5 py-2.5 rounded-full transition-colors"
+          >
+            Book a Call
+            <MdArrowOutward className="text-base" />
+          </Link>
 
-        {/* Mobile navigation */}
-        <FaBarsStaggered
-          className="xl:hidden block cursor-pointer"
-          style={{ width: "16px", height: "16px" }}
-          onClick={handleClick}
-        />
-      </Container>
+          {/* Mobile hamburger */}
+          <button
+            className={`xl:hidden p-2 rounded-lg transition-colors ${
+              scrolled ? "text-text" : "text-white"
+            }`}
+            onClick={() => setMobileOpen(true)}
+            aria-label="Open menu"
+          >
+            <FaBarsStaggered className="w-5 h-5" />
+          </button>
+        </Container>
+      </nav>
 
-      {click && (
-        <div className="h-screen w-full fixed bg-white z-50 top-0 left-0">
-          <Container className="">
-            <div className="pt-10 flex items-center justify-between">
-              <Image
-                src={logo}
-                alt="Lumixus studio logo"
-                className="w-16 md:w-28"
-              />
+      {/* Mobile menu overlay */}
+      {mobileOpen && (
+        <div className="fixed inset-0 z-[60] bg-white flex flex-col">
+          <Container className="pt-6 pb-4 flex items-center justify-between">
+            <Link href="/" onClick={() => setMobileOpen(false)}>
+              <Image src={logoBlue} alt="Lumixus Studio" className="h-7 w-auto" />
+            </Link>
+            <button
+              onClick={() => setMobileOpen(false)}
+              className="p-2 rounded-lg text-text hover:bg-surface transition-colors"
+              aria-label="Close menu"
+            >
+              <FaXmark className="w-5 h-5" />
+            </button>
+          </Container>
 
-              <FaXmark onClick={() => setClick(false)} />
-            </div>
-
-            <ul className="mt-10 space-y-6">
-              <li className="text-base">
-                <Link
-                  href="/#about"
-                  className="hover:opacity-60 hover:text-white transition-all ease-in delay-75  flex items-center space-x-2"
-                  onClick={() => setClick(false)}
-                >
-                  <span>About</span>
-
-                  <MdArrowOutward />
-                </Link>
-              </li>
-
-              <li className="text-base">
-                <Link
-                  href="/#services"
-                  className="hover:opacity-60 hover:text-white transition-all ease-in delay-75  flex items-center space-x-2"
-                  onClick={() => setClick(false)}
-                >
-                  <span>Services</span>
-
-                  <MdArrowOutward />
-                </Link>
-              </li>
-
-              <li className="text-base">
-                <Link
-                  href="/#works"
-                  className="hover:opacity-60 hover:text-white transition-all ease-in delay-75  flex items-center space-x-2"
-                  onClick={() => setClick(false)}
-                >
-                  <span>Portfolio</span>
-
-                  <MdArrowOutward />
-                </Link>
-              </li>
-
-              <li className="text-base">
-                <Link
-                  href="/#testimonials"
-                  className="hover:opacity-60 hover:text-white transition-all ease-in delay-75  flex items-center space-x-2"
-                  onClick={() => setClick(false)}
-                >
-                  <span>Testimonials</span>
-
-                  <MdArrowOutward />
-                </Link>
-              </li>
-
-              <li className="text-base">
-                <Link
-                  href="/resources"
-                  className="hover:opacity-60 hover:text-white transition-all ease-in delay-75  flex items-center space-x-2"
-                  onClick={() => setClick(false)}
-                >
-                  <span>Resources</span>
-
-                  <MdArrowOutward />
-                </Link>
-              </li>
-
-              <li className="text-base">
-                <Link
-                  href="#contact"
-                  className="hover:opacity-60 hover:text-white transition-all ease-in delay-75  flex items-center space-x-2"
-                  onClick={() => setClick(false)}
-                >
-                  <span>Contact</span>
-
-                  <MdArrowOutward />
-                </Link>
-              </li>
-
-              <li>
-                <Link
-                  href="https://cal.com/lumixus-studio/30min"
-                  className="w-full "
-                >
-                  <Button className="md:w-1/2 w-full text-[17px] ">
-                    Schedule a call
-                  </Button>
-                </Link>
-              </li>
+          <Container className="flex-1 flex flex-col py-8">
+            <ul className="space-y-1">
+              {navLinks.map((link) => (
+                <li key={link.href}>
+                  <Link
+                    href={link.href}
+                    onClick={() => setMobileOpen(false)}
+                    className="flex items-center justify-between py-4 text-lg font-medium text-text border-b border-border hover:text-primary transition-colors"
+                  >
+                    {link.label}
+                    <MdArrowOutward className="text-muted text-base" />
+                  </Link>
+                </li>
+              ))}
             </ul>
 
-            <div className="mt-4">
-              <p className="text-text text-xs">
-                We're Lumixus Studio, and we partner with B2B businesses to
-                close more deals and increase their customer pipeline
-              </p>
+            <div className="mt-8">
+              <Link
+                href="https://cal.com/lumixus-studio/30min"
+                onClick={() => setMobileOpen(false)}
+                className="w-full flex items-center justify-center gap-2 bg-primary text-white font-medium py-4 rounded-full text-base"
+              >
+                Book a Free Call
+                <MdArrowOutward />
+              </Link>
+            </div>
 
-              <div className="flex pt-3 items-center justify-start space-x-6">
+            <div className="mt-auto pt-8 border-t border-border">
+              <p className="text-sm text-muted mb-4">
+                B2B digital growth partner for ambitious businesses.
+              </p>
+              <div className="flex items-center gap-4">
                 <Link
                   href="https://www.instagram.com/lumixus_studio/"
-                  className="group block bg-primary rounded-full p-2 opacity-70 hover:opacity-100 transition-all ease-in delay-75"
+                  className="p-2.5 rounded-full bg-surface hover:bg-primary/10 text-text hover:text-primary transition-colors"
                 >
-                  <FaInstagram className="w-4 h-4 text-white text-xs group-hover:scale-110" />
+                  <FaInstagram className="w-4 h-4" />
                 </Link>
-
                 <Link
-                  href="https://www.facebook.com/profile.php?id=61563258786419&mibextid=ZbWKwL"
-                  className="group block bg-primary rounded-full p-2 opacity-70 hover:opacity-100 transition-all ease-in delay-75"
+                  href="https://www.facebook.com/profile.php?id=61563258786419"
+                  className="p-2.5 rounded-full bg-surface hover:bg-primary/10 text-text hover:text-primary transition-colors"
                 >
-                  <FaFacebook className="w-4 h-4 text-white text-xs group-hover:scale-110" />
+                  <FaFacebook className="w-4 h-4" />
                 </Link>
               </div>
             </div>
           </Container>
         </div>
       )}
-    </nav>
+    </>
   );
 };
 

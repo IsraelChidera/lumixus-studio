@@ -1,6 +1,4 @@
-/* @import url("https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap"); */
 @import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Playfair:ital,opsz,wght@0,5..1200,300..900;1,5..1200,300..900&display=swap");
 
 @tailwind base;
 @tailwind components;
@@ -18,15 +16,140 @@ html {
 }
 
 body {
-  scroll-behavior: smooth;
-  background: #f5f7ff;
-  /* font-family: "Mulish", sans-serif; */
+  background: #ffffff;
   font-family: "Inter", sans-serif;
-  /* font-family: "Playfair", serif; */
   overflow-x: hidden;
-  scroll-behavior: smooth;
+  color: #0b0d17;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
+/* ─── Typography helpers ──────────────────────────── */
+.display {
+  font-size: clamp(52px, 7vw, 88px);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1.04;
+}
+
+.heading-2 {
+  font-size: clamp(32px, 4vw, 52px);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+}
+
+/* ─── Gradient text ───────────────────────────────── */
+.gradient-text-primary {
+  background: linear-gradient(135deg, #3600ff 0%, #5b5fff 60%, #8b9fff 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.gradient-text-light {
+  background: linear-gradient(135deg, #ffffff 0%, #c4c8ff 60%, #ffffff 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+/* Legacy gradient classes (preserved) */
+.gradient-animation-light {
+  background: radial-gradient(circle, #fff 14%, #42afe9 57%, #fff 100%);
+  background-size: 400%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  animation: gradientAnimation 15s linear infinite;
+}
+
+.gradient-animation-dark {
+  background: linear-gradient(81deg, #4452fe 33%, #3600ff 57%, #4452fe 69%);
+  background-size: 400%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  animation: gradientAnimation 10s linear infinite;
+}
+
+@keyframes gradientAnimation {
+  0% { background-position: 100% 0; }
+  100% { background-position: -100% 0; }
+}
+
+/* ─── Hero dot grid ───────────────────────────────── */
+.dot-grid {
+  background-image: radial-gradient(circle, rgba(255,255,255,0.12) 1px, transparent 1px);
+  background-size: 32px 32px;
+}
+
+/* ─── Noise texture overlay ───────────────────────── */
+.noise::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ─── Marquee ─────────────────────────────────────── */
+.marquee-track {
+  display: flex;
+  width: max-content;
+  animation: marquee 28s linear infinite;
+}
+
+@keyframes marquee {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+/* ─── Card hover glow ─────────────────────────────── */
+.card-glow {
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+.card-glow:hover {
+  box-shadow: 0 0 0 1px rgba(54, 0, 255, 0.15), 0 8px 40px rgba(54, 0, 255, 0.08);
+  transform: translateY(-2px);
+}
+
+/* ─── Section label ───────────────────────────────── */
+.section-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #3600ff;
+}
+
+/* ─── Swiper overrides ────────────────────────────── */
+.swiper-pagination-fraction,
+.swiper-pagination-custom,
+.swiper-horizontal > .swiper-pagination-bullets,
+.swiper-pagination-bullets.swiper-pagination-horizontal {
+  bottom: -4px;
+  left: 0;
+  width: 100%;
+  position: relative;
+  z-index: 10;
+}
+
+.swiper-pagination-bullet {
+  background: #3600ff;
+  opacity: 0.3;
+}
+
+.swiper-pagination-bullet-active {
+  opacity: 1;
+  background: #3600ff;
+}
+
+/* ─── Utility ─────────────────────────────────────── */
 .centered-element {
   position: absolute;
   top: 50%;
@@ -47,7 +170,7 @@ body {
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
-  background-position: center -31.875px;
+  background-position: center;
 }
 
 .bg-image:before {
@@ -57,52 +180,12 @@ body {
   height: 100%;
   top: 0;
   left: 0;
-  background: #121319;
-  opacity: 0.6;
+  background: #05050f;
+  opacity: 0.85;
   z-index: 1;
 }
 
-.gradient-animation-light {
-  background: radial-gradient(circle, #fff 14%, #42afe9 57%, #fff 100%);
-  background-size: 400%;
-  background-clip: text;
-  -webkit-background-clip: text;
-  color: transparent;
-  animation: gradientAnimation 15s linear infinite;
-}
-
-.gradient-animation-dark {
-  background: linear-gradient(81deg, #4452fe 33%, #3600ff 57%, #4452fe 69%);
-  background-size: 400%;
-  background-clip: text;
-  -webkit-background-clip: text;
-  color: transparent;
-  animation: gradientAnimation 10s linear infinite;
-}
-
-@keyframes gradientAnimation {
-  0% {
-    background-position: 100% 0;
-  }
-
-  100% {
-    background-position: -100% 0;
-  }
-}
-
-.swiper-container {
-  position: relative;
-}
-
-/* Style for pagination at the bottom */
-.swiper-pagination {
-  position: absolute;
-  bottom: 0px;
-  /* Adjust this value to control the distance from the bottom */
-  left: 0%;
-  transform: translateX(-50%);
-}
-
+/* ─── Custom cursor ───────────────────────────────── */
 .cursor {
   width: 20px;
   height: 20px;
@@ -126,48 +209,23 @@ body {
 }
 
 @keyframes cursorAnim {
-  0% {
-    transform: scale(1);
-  }
-
-  50% {
-    transform: scale(5);
-  }
-
-  100% {
-    transform: scale(1);
-    opacity: 0;
-  }
+  0%   { transform: scale(1); }
+  50%  { transform: scale(5); }
+  100% { transform: scale(1); opacity: 0; }
 }
 
 .expand {
   animation: cursorAnim 0.5s forwards;
 }
 
-.swiper-pagination-fraction,
-.swiper-pagination-custom,
-.swiper-horizontal > .swiper-pagination-bullets,
-.swiper-pagination-bullets.swiper-pagination-horizontal {
-  bottom: var(--swiper-pagination-bottom, 8px);
-  /* top: var(--swiper-pagination-top, auto); */
-  left: 0;
-  bottom: -10px;
-  width: 100%;
-  position: relative;
-  z-index: 999;
+/* ─── Input focus ─────────────────────────────────── */
+input:focus,
+textarea:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(54, 0, 255, 0.25);
 }
 
-.swiper-pagination-fraction,
-.swiper-pagination-custom,
-.swiper-horizontal > .swiper-pagination-bullets,
-.swiper-pagination-bullets.swiper-pagination-horizontal {
-  bottom: var(--swiper-pagination-bottom, 8px);
-  /* top: var(--swiper-pagination-top, auto); */
-  left: 0;
-  width: 100%;
-  bottom: -8px;
-}
-
-html {
-  scroll-behavior: smooth;
+/* ─── Smooth transitions ──────────────────────────── */
+a, button {
+  transition: all 0.2s ease;
 }

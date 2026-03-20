@@ -2,160 +2,124 @@
 
 import React from "react";
 import Container from "@/app/components/Elements/Container";
-import Image from "next/image";
-import web from "@/public/web.png";
-import ball from "@/public/ball.png";
-import { MdWeb } from "react-icons/md";
-import { GrOptimize } from "react-icons/gr";
-import { IoStorefrontOutline } from "react-icons/io5";
 import { motion } from "motion/react";
+
+const services = [
+  {
+    number: "01",
+    title: "Website Design & Development",
+    description:
+      "High-performing, pixel-perfect websites engineered to convert visitors into qualified leads and paying clients.",
+    tag: "Web"
+  },
+  {
+    number: "02",
+    title: "Brand Identity",
+    description:
+      "From logo to full visual system — we build brand identities that communicate trust, authority, and differentiation.",
+    tag: "Branding"
+  },
+  {
+    number: "03",
+    title: "Business Automation",
+    description:
+      "Leverage intelligent automation to streamline operations, reduce manual work, and let your business run without you.",
+    tag: "Automation"
+  },
+  {
+    number: "04",
+    title: "Growth Strategy",
+    description:
+      "Data-driven strategies tailored to your goals — from market positioning to lead generation that actually converts.",
+    tag: "Strategy"
+  },
+  {
+    number: "05",
+    title: "Social Media & Content",
+    description:
+      "Strategic content creation, social media management, and paid ad campaigns that build authority and drive inbound leads.",
+    tag: "Marketing"
+  },
+  {
+    number: "06",
+    title: "Conversion Optimization",
+    description:
+      "Analyze user behavior, eliminate friction, and systematically improve your site's ability to turn traffic into revenue.",
+    tag: "CRO"
+  }
+];
+
 const Services = () => {
   return (
-    <section className="mt-[10px] pb-[50px]">
-      <div id="services" className="pt-[114px]  relative ">
-        <Container className="relative z-20">
-          <p className="text-text uppercase text-center lg:text-base text-sm font-medium">
-            Why Choose Us?
-          </p>
-
-          <h2 className="text-text text-4xl text-center font-medium">
-            We provide end-to-end solutions
-          </h2>
-
-          <motion.div
-            initial={{
-              y: 100,
-              opacity: 0
-            }}
-            transition={{
-              type: "spring",
-              stiffness: 100,
-              // damping: 70,
-              duration: 5
-            }}
-            whileInView={{
-              y: 0,
-              opacity: 1
-            }}
-            className="mt-10 flex justify-center"
+    <section id="services" className="py-28 bg-surface">
+      <Container>
+        {/* Header */}
+        <div className="text-center mb-16">
+          <span className="section-label mb-4 inline-flex">
+            <span className="w-1 h-1 rounded-full bg-primary" />
+            What We Do
+          </span>
+          <h2
+            className="font-bold text-text mt-3 tracking-tight"
+            style={{ fontSize: "clamp(32px, 4vw, 52px)", letterSpacing: "-0.02em" }}
           >
-            <div className="lg:w-full grid lg:grid-cols-3 gap-4 ">
-              <div className="rounded-[6px] bg-[#f6f7ff] pt-[29px] pb-[29px] px-[35px]">
-                <div>
-                  <Image src={web} alt="web dev icon" />
-                </div>
+            End-to-end solutions for{" "}
+            <span className="gradient-text-primary">B2B growth</span>
+          </h2>
+          <p className="mt-4 text-muted text-[17px] max-w-xl mx-auto leading-relaxed">
+            Every service we offer is built around one outcome: more qualified leads,
+            better conversions, and faster revenue growth.
+          </p>
+        </div>
 
-                <div className="mt-3">
-                  <h4 className="text-xl font-medium">
-                    Website Design & Development
-                  </h4>
-                  <p className="lg:text-[15px] text-sm pt-1">
-                    We take your digital ideas and turn them into
-                    high-performing and optimized websites
-                  </p>
-                </div>
-              </div>
-
-              <div className="rounded-[6px] bg-[#f6f7ff] pt-[29px] pb-[29px] px-[35px]">
-                <div>
-                  <Image src={web} alt="web dev icon" />
-                </div>
-
-                <div className="mt-3">
-                  <h4 className="text-xl font-medium">Branding</h4>
-                  <p className="lg:text-[15px] text-sm pt-1">
-                    We will develop your brand identity from concept to launch.
-                  </p>
-                </div>
-              </div>
-
-              <div className="rounded-[6px] bg-[#f6f7ff] pt-[29px] pb-[29px] px-[35px]">
-                <div>
-                  <MdWeb className="text-blue text-[40px]" />
-                </div>
-
-                <div className="mt-3">
-                  <h4 className="text-xl font-medium">Automation</h4>
-                  <p className="lg:text-[15px] text-sm pt-1">
-                    Leverage automation tools to streamline operations, enhance
-                    efficiency, and drive business growth.
-                  </p>
-                </div>
-              </div>
-
-              <div className="rounded-[6px] bg-[#f6f7ff] pt-[29px] pb-[29px] px-[35px]">
-                <div>
-                  <GrOptimize className="text-blue text-[40px]" />
-                </div>
-
-                <div className="mt-3">
-                  <h4 className="text-xl font-medium">Growth Strategy</h4>
-                  <p className="lg:text-[15px] text-sm pt-1">
-                    We will help grow your business by creating a growth
-                    strategy that aligns with your goals and objectives.
-                  </p>
-                </div>
-              </div>
-
-              <div className="rounded-[6px] bg-[#f6f7ff] pt-[29px] pb-[29px] px-[35px]">
-                <div>
-                  <IoStorefrontOutline className="text-blue text-[40px]" />
-                </div>
-
-                <div className="mt-3">
-                  <h4 className="text-xl font-medium">
-                    Social Media & Marketing
-                  </h4>
-                  <p className="lg:text-[15px] text-sm pt-1">
-                    Boost your brand's online presence with strategic content
-                    marketing, social media management, and paid advertising
-                    campaigns.
-                  </p>
-                </div>
-              </div>
-
-              <div className="rounded-[6px] bg-[#f6f7ff] pt-[29px] pb-[29px] px-[35px]">
-                <div>
-                  <GrOptimize className="text-blue text-[40px]" />
-                </div>
-
-                <div className="mt-3">
-                  <h4 className="text-xl font-medium">
-                    Conversion Optimization
-                  </h4>
-                  <p className="lg:text-[15px] text-sm pt-1">
-                    Analyze user behavior and refine your website to maximize
-                    conversions and sales.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </motion.div>
-        </Container>
-
+        {/* Services grid */}
         <motion.div
-          initial={{
-            x: -100,
-            opacity: 0
-          }}
-          transition={{
-            type: "spring",
-            stiffness: 100,
-            // damping: 70,
-            duration: 4
-          }}
-          whileInView={{
-            x: 0,
-            opacity: 1
-          }}
+          initial={{ y: 48, opacity: 0 }}
+          whileInView={{ y: 0, opacity: 1 }}
+          transition={{ duration: 0.55, ease: "easeOut" }}
+          viewport={{ once: true }}
+          className="grid md:grid-cols-2 lg:grid-cols-3 gap-5"
         >
-          <Image
-            src={ball}
-            className="absolute bottom-0 z-10 right-0"
-            alt="ball svg"
-          />
+          {services.map((service, i) => (
+            <div
+              key={service.number}
+              className="group bg-white border border-border rounded-2xl p-7 card-glow cursor-default"
+            >
+              {/* Top row */}
+              <div className="flex items-start justify-between mb-6">
+                <span className="text-xs font-semibold text-primary/60 tracking-widest uppercase">
+                  {service.number}
+                </span>
+                <span className="text-xs font-medium text-muted bg-surface border border-border px-2.5 py-1 rounded-full">
+                  {service.tag}
+                </span>
+              </div>
+
+              {/* Icon line */}
+              <div className="w-8 h-0.5 bg-primary/20 group-hover:bg-primary transition-colors duration-300 mb-5 rounded-full" />
+
+              {/* Content */}
+              <h3 className="text-lg font-semibold text-text leading-snug mb-3">
+                {service.title}
+              </h3>
+              <p className="text-sm text-muted leading-relaxed">{service.description}</p>
+            </div>
+          ))}
         </motion.div>
-      </div>
+
+        {/* CTA row */}
+        <div className="text-center mt-14">
+          <a
+            href="https://cal.com/lumixus-studio/30min"
+            className="inline-flex items-center gap-2 bg-primary hover:bg-secondary text-white font-semibold px-8 py-4 rounded-full text-[15px] transition-colors shadow-lg shadow-primary/20"
+          >
+            Discuss Your Project
+            <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+              <path strokeLinecap="round" strokeLinejoin="round" d="M7 17L17 7M17 7H7M17 7v10" />
+            </svg>
+          </a>
+        </div>
+      </Container>
     </section>
   );
 };

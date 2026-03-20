@@ -1,44 +1,49 @@
-import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
+import StartProject from "./components/StartProject";
+import PainPoints from "./components/PainPoints";
 import Services from "./components/Services";
 import Works from "./components/Works";
-import StartProject from "./components/StartProject";
-import Testimonial from "./components/Testimonial";
-import Contact from "./components/Contact";
-import Footer from "./components/Footer";
-import Image from "next/image";
-import Faq from "./components/Faq";
-import Pricing from "./components/Pricing";
 import Process from "./components/Process";
-import PainPoints from "./components/PainPoints";
+import Pricing from "./components/Pricing";
+import Testimonial from "./components/Testimonial";
+import Faq from "./components/Faq";
 import BookACall from "./components/BookACall";
+import Contact from "./components/Contact";
 
 export default function Home() {
   return (
-    <main className="relative">
-      <div className="relative">
-        <Hero />
+    <main>
+      {/* 1. Hero — dark, full-screen, conversion-first */}
+      <Hero />
 
-        {/* <Image src="/nav-blur.webp" alt="blur" className='absolute top-0 left-0 z-10' width={1300} height={200} /> */}
-      </div>
-      <div className="relative">
-        <PainPoints />
-        <Process />
-        <Services />
-        <Works />
-        <Pricing />
-        <StartProject />
-        <Testimonial />
-        <Faq />
-        <BookACall />
-        <Image
-          src="/body-blur.webp"
-          alt="blur"
-          className="absolute top-0 left-0 z-10"
-          width={1300}
-          height={1866}
-        />
-      </div>
+      {/* 2. Social Proof — marquee of client names */}
+      <StartProject />
+
+      {/* 3. Pain Points — problem agitation */}
+      <PainPoints />
+
+      {/* 4. Services — numbered premium cards */}
+      <Services />
+
+      {/* 5. Portfolio — hover-overlay carousel */}
+      <Works />
+
+      {/* 6. Process — 4-step connected timeline */}
+      <Process />
+
+      {/* 7. Pricing — tiered packages */}
+      <Pricing />
+
+      {/* 8. Testimonials — dark card grid */}
+      <Testimonial />
+
+      {/* 9. FAQ — minimal accordion */}
+      <Faq />
+
+      {/* 10. Contact Form — split layout */}
+      <BookACall />
+
+      {/* 11. Final CTA — dark full-width section */}
       <Contact />
     </main>
   );

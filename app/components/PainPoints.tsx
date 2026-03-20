@@ -2,116 +2,83 @@
 
 import React from "react";
 import Container from "@/app/components/Elements/Container";
-import { TfiFaceSad } from "react-icons/tfi";
 import { motion } from "motion/react";
+
+const problems = [
+  "Leads come in, but follow-ups are inconsistent",
+  "Your online presence doesn't build trust fast enough",
+  "You post online, but it doesn't bring real customers",
+  "People ask for price, then disappear",
+  "Your processes aren't automated — everything relies on you",
+  "You're busy, but growth isn't consistent",
+  "Your business looks good offline, but weak online",
+  "Referrals are your only source of new business",
+  "You want to scale, but your systems aren't built for it",
+  "You want more sales, but don't know where to start"
+];
+
 const PainPoints = () => {
   return (
-    <section className="py-[100px]">
+    <section className="py-24 bg-white" id="about">
       <Container>
-        <p className="text-text uppercase text-center lg:text-base text-sm font-medium">
-          <span className="text-primary font-semibold">Running a business</span>{" "}
-          shouldn't feel this hard
-        </p>
+        {/* Label */}
+        <div className="flex justify-center mb-6">
+          <span className="section-label">
+            <span className="w-1 h-1 rounded-full bg-primary inline-block" />
+            Sound Familiar?
+          </span>
+        </div>
 
-        <h2 className="pt-1 text-text lg:text-[55px] text-[36px] leading-[120%] text-center font-medium">
-          Does this sound like your{" "}
-          <span className="text-accent font-semibold">business?</span>
-        </h2>
+        {/* Headline */}
+        <div className="text-center max-w-2xl mx-auto mb-16">
+          <h2
+            className="font-bold text-text tracking-tight"
+            style={{ fontSize: "clamp(32px, 4vw, 52px)", letterSpacing: "-0.02em" }}
+          >
+            Running a business{" "}
+            <span className="gradient-text-primary">shouldn't feel this hard.</span>
+          </h2>
+          <p className="mt-4 text-muted text-[17px] leading-relaxed">
+            If any of these sound like your reality, you're not alone — and you're
+            in the right place.
+          </p>
+        </div>
 
+        {/* Problem grid */}
         <motion.div
-          initial={{
-            y: 100,
-            opacity: 0
-          }}
-          transition={{
-            type: "spring",
-            stiffness: 100,
-            // damping: 70,
-            duration: 5
-          }}
-          whileInView={{
-            y: 0,
-            opacity: 1
-          }}
-          className="mt-14 flex justify-center items-center w-full"
+          initial={{ y: 40, opacity: 0 }}
+          whileInView={{ y: 0, opacity: 1 }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
+          viewport={{ once: true }}
+          className="max-w-3xl mx-auto"
         >
-          <div className="lg:w-3/4">
-            <div className="bg-accent text-white rounded-t-[28px] py-2.5 px-5 text-center">
-              <p className="text-sm lg:text-[base]">
-                Does this sound and feel familiar?
-              </p>
-            </div>
-            <div className="bg-white p-5 border border- rounded-b-[28px]">
-              <ul className="grid lg:grid-cols-2 gap-4">
-                <li className="flex items-center space-x-2">
-                  <TfiFaceSad className="w-[21px] h-[21px]" />
-                  <p className="text-base">
-                    Leads come in, but follow-ups are inconsistent
-                  </p>
-                </li>
+          <div className="grid sm:grid-cols-2 gap-3">
+            {problems.map((problem, i) => (
+              <div
+                key={i}
+                className="flex items-start gap-3 bg-surface border border-border rounded-xl px-5 py-4 group hover:border-primary/30 hover:bg-primary/[0.02] transition-all duration-200"
+              >
+                <span className="mt-0.5 w-5 h-5 rounded-full bg-red-50 border border-red-200 flex-shrink-0 flex items-center justify-center">
+                  <svg className="w-2.5 h-2.5 text-red-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+                  </svg>
+                </span>
+                <p className="text-sm text-text/80 leading-snug">{problem}</p>
+              </div>
+            ))}
+          </div>
 
-                <li className="flex items-center space-x-2">
-                  <TfiFaceSad className="w-[21px] h-[21px]" />
-                  <p className="text-base">You want more sales</p>
-                </li>
-
-                <li className="flex items-center space-x-2">
-                  <TfiFaceSad className="w-[21px] h-[21px]" />
-                  <p className="text-base">
-                    Your online presence doesn't build trust fast enough
-                  </p>
-                </li>
-
-                <li className="flex items-center space-x-2">
-                  <TfiFaceSad className="w-[21px] h-[21px]" />
-                  <p className="text-base">
-                    You're busy, but growth isn't consistent
-                  </p>
-                </li>
-
-                <li className="flex items-center space-x-2">
-                  <TfiFaceSad className="w-[21px] h-[21px]" />
-                  <p className="text-base">
-                    You post online, but it doesn't bring real customers
-                  </p>
-                </li>
-
-                <li className="flex items-center space-x-2">
-                  <TfiFaceSad className="w-[21px] h-[21px]" />
-                  <p className="text-base">
-                    Your business looks good offline, but weak online
-                  </p>
-                </li>
-
-                <li className="flex items-center space-x-2">
-                  <TfiFaceSad className="w-[21px] h-[21px]" />
-                  <p className="text-base">
-                    People ask for price, then disappear
-                  </p>
-                </li>
-
-                <li className="flex items-center space-x-2">
-                  <TfiFaceSad className="w-[21px] h-[21px]" />
-                  <p className="text-base">
-                    Referrals are your main source of sales
-                  </p>
-                </li>
-
-                <li className="flex items-center space-x-2">
-                  <TfiFaceSad className="w-[21px] h-[21px]" />
-                  <p className="text-base">
-                    Your processes aren't automated, so everything relies on you
-                  </p>
-                </li>
-
-                <li className="flex items-center space-x-2">
-                  <TfiFaceSad className="w-[21px] h-[21px]" />
-                  <p className="text-base">
-                    You want to scale but your business isn't built for it
-                  </p>
-                </li>
-              </ul>
-            </div>
+          {/* Resolution line */}
+          <div className="mt-10 text-center">
+            <p className="text-muted text-sm">
+              We solve every single one of these.{" "}
+              <a
+                href="#services"
+                className="text-primary font-semibold hover:underline underline-offset-4"
+              >
+                See how →
+              </a>
+            </p>
           </div>
         </motion.div>
       </Container>

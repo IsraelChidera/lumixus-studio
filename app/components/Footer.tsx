@@ -3,15 +3,12 @@
 import Image from "next/image";
 import React from "react";
 import Container from "@/app/components/Elements/Container";
-import { FaInstagram } from "react-icons/fa";
-import { SiGmail } from "react-icons/si";
-import logo2 from "@/public/logo-blue.png";
-import { FaFacebookSquare } from "react-icons/fa";
+import logo from "@/public/logo-blue.png";
+import { FaInstagram, FaFacebook } from "react-icons/fa6";
+import { MdMarkEmailRead } from "react-icons/md";
 import Cal, { getCalApi } from "@calcom/embed-react";
 import { useEffect } from "react";
 import Link from "next/link";
-import { FaFacebook } from "react-icons/fa6";
-import { MdMarkEmailRead } from "react-icons/md";
 
 const Footer = () => {
   useEffect(() => {
@@ -20,85 +17,130 @@ const Footer = () => {
       cal("ui", {
         theme: "dark",
         cssVarsPerTheme: {
-          dark: { "cal-brand": "#161616" },
-          light: {} // Add an empty light theme to satisfy the type
+          dark: { "cal-brand": "#3600ff" },
+          light: {}
         },
         hideEventTypeDetails: false,
         layout: "month_view"
       });
     })();
   }, []);
+
   return (
-    <footer className="mt-20 py-4  ">
-      <Container>
-        <div>
+    <footer className="bg-white border-t border-border">
+      {/* Cal.com embed */}
+      <div className="border-b border-border py-10 bg-surface">
+        <Container>
+          <div className="text-center mb-8">
+            <p className="text-xs font-semibold tracking-widest uppercase text-muted mb-2">
+              Book a Time That Works for You
+            </p>
+            <h3 className="text-2xl font-bold text-text tracking-tight">
+              Schedule a Free Consultation
+            </h3>
+          </div>
           <Cal
             namespace="30min"
             calLink="lumixus-studio/30min"
             style={{ width: "100%", height: "100%", overflow: "scroll" }}
             config={{ layout: "month_view", theme: "dark" }}
           />
-        </div>
-      </Container>
+        </Container>
+      </div>
 
-      <Container className="space-y-6 lg:space-y-0 mt-10 py-4 md:flex block w-full justify-around items-center">
-        <div>
-          <div className="lg:block flex justify-center lg:justify-left">
-            <Image src={logo2} alt="logo" className="w-[100px]" />
+      {/* Footer content */}
+      <Container className="py-12">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-10">
+          {/* Brand */}
+          <div className="lg:col-span-2">
+            <Link href="/">
+              <Image src={logo} alt="Lumixus Studio" className="h-7 w-auto mb-4" />
+            </Link>
+            <p className="text-sm text-muted leading-relaxed max-w-xs">
+              We're Lumixus Studio — your B2B digital growth partner. We build systems that attract leads, close deals, and scale your revenue.
+            </p>
+            <div className="flex items-center gap-3 mt-6">
+              <Link
+                href="mailto:lumixusstudio@gmail.com"
+                className="w-9 h-9 rounded-full border border-border flex items-center justify-center text-muted hover:text-primary hover:border-primary transition-colors"
+              >
+                <MdMarkEmailRead className="w-4 h-4" />
+              </Link>
+              <Link
+                href="https://www.instagram.com/lumixus_studio/"
+                className="w-9 h-9 rounded-full border border-border flex items-center justify-center text-muted hover:text-primary hover:border-primary transition-colors"
+              >
+                <FaInstagram className="w-4 h-4" />
+              </Link>
+              <Link
+                href="https://www.facebook.com/profile.php?id=61563258786419"
+                className="w-9 h-9 rounded-full border border-border flex items-center justify-center text-muted hover:text-primary hover:border-primary transition-colors"
+              >
+                <FaFacebook className="w-4 h-4" />
+              </Link>
+            </div>
           </div>
 
-          <p className="pt-4 lg:text-left text-center text-xs opacity-80">
-            &copy; 2025 Lumixus Studio. All rights reserved.
-          </p>
+          {/* Quick links */}
+          <div>
+            <p className="text-xs font-semibold tracking-widest uppercase text-text mb-5">
+              Navigation
+            </p>
+            <ul className="space-y-3">
+              {[
+                { label: "Home", href: "/" },
+                { label: "Services", href: "/#services" },
+                { label: "Portfolio", href: "/#works" },
+                { label: "Process", href: "/#process" },
+                { label: "Testimonials", href: "/#testimonials" }
+              ].map((link) => (
+                <li key={link.href}>
+                  <Link
+                    href={link.href}
+                    className="text-sm text-muted hover:text-primary transition-colors"
+                  >
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Services */}
+          <div>
+            <p className="text-xs font-semibold tracking-widest uppercase text-text mb-5">
+              Services
+            </p>
+            <ul className="space-y-3">
+              {[
+                "Web Design & Dev",
+                "Brand Identity",
+                "Automation",
+                "Growth Strategy",
+                "Social Media",
+                "Conversion CRO"
+              ].map((s) => (
+                <li key={s}>
+                  <span className="text-sm text-muted">{s}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
 
-        <ul className="lg:my-0 my-4 text-center space-y-3 text-text">
-          <li>
-            <Link href="#" className="text-base lg:text-lg font-semibold">
-              Quick links
-            </Link>
-          </li>
-
-          <li>
-            <Link
-              href="/"
-              className="text-[14px] hover:border-b-2 border-b-accent hover:pb-1 hover:text-text transition-all ease-linear delay-75 hover:opacity-100 opacity-70"
-            >
-              Home
-            </Link>
-          </li>
-
-          <li>
-            <Link
-              href="/resources"
-              className="text-[14px] hover:border-b-2 border-b-accent hover:pb-1 hover:text-text transition-all ease-linear delay-75 hover:opacity-100 opacity-70"
-            >
+        {/* Bottom bar */}
+        <div className="mt-12 pt-6 border-t border-border flex flex-col sm:flex-row items-center justify-between gap-4">
+          <p className="text-xs text-muted">
+            &copy; {new Date().getFullYear()} Lumixus Studio. All rights reserved.
+          </p>
+          <div className="flex items-center gap-6">
+            <Link href="/resources" className="text-xs text-muted hover:text-primary transition-colors">
               Resources
             </Link>
-          </li>
-        </ul>
-
-        <div className="flex md:pt-0 pt-3 items-center justify-center space-x-6">
-          <Link
-            href="mailto:lumixusstudio@gmail.com"
-            className="group block opacity-70 hover:opacity-100 transition-all ease-in delay-75"
-          >
-            <MdMarkEmailRead className="w-6 h-6 md:text-base group-hover:scale-110" />
-          </Link>
-
-          <Link
-            href="https://www.instagram.com/lumixus_studio/"
-            className="group block opacity-70 hover:opacity-100 transition-all ease-in delay-75"
-          >
-            <FaInstagram className="w-6 h-6 md:text-base group-hover:scale-110" />
-          </Link>
-
-          <Link
-            href="https://www.facebook.com/profile.php?id=61563258786419&mibextid=ZbWKwL"
-            className="group block opacity-70 hover:opacity-100 transition-all ease-in delay-75"
-          >
-            <FaFacebook className="w-6 h-6 md:text-base group-hover:scale-110" />
-          </Link>
+            <Link href="mailto:lumixusstudio@gmail.com" className="text-xs text-muted hover:text-primary transition-colors">
+              Contact
+            </Link>
+          </div>
         </div>
       </Container>
     </footer>

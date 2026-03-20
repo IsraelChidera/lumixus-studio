@@ -1,42 +1,64 @@
-import React from 'react';
-import Container from '@/app/components/Elements/Container';
-import Button from '@/app/components/Elements/Button';
-import { FaArrowRight } from "react-icons/fa";
-import Image from 'next/image';
-import ring from '@/public/ring.png';
-import ring2 from '@/public/ring-2.png';
-import Link from 'next/link';
+import React from "react";
+import Container from "@/app/components/Elements/Container";
 
-const StartProject = () => {
-    return (
-        <section  className='py-[90px] relative' >
-            <Container className='relative z-20'>
-                <p  className='uppercase text-center text-sm font-medium'>
-                    Let's talk
-                </p>
+const clients = [
+  "Ayuda Content",
+  "Connectivia",
+  "Scris Enterprise",
+  "NAJEC FMCG",
+  "Katampe Heights Apartments",
+  "Good Homes",
+  "RDJ Estates",
+  "Chris Global",
+  "Graft",
+  "Market dash",
+  "Najec Limited",
+  "KSOM",
+  "PMAT",
+  "Ayuda Content",
+  "Connectivia",
+  "Scris Enterprise",
+  "NAJEC FMCG",
+  "Katampe Heights Apartments",
+  "Good Homes",
+  "RDJ Estates",
+  "Chris Global",
+  "Graft",
+  "Market dash",
+  "Najec Limited",
+  "KSOM",
+  "PMAT",
+];
 
-                <h2  className='text-text leading-normal text-center text-[36px] font-medium'>
-                    About your next project
-                </h2>
+const SocialProof = () => {
+  return (
+    <section className="py-20 bg-surface border-y border-border overflow-hidden">
+      <Container>
+        <p className="text-center text-xs font-semibold tracking-widest uppercase text-muted mb-10">
+          Trusted by growing businesses across Nigeria
+        </p>
+      </Container>
 
-                <div className='flex items-center justify-center'>
-                    <Link href="https://cal.com/lumixus-studio/30min">
-                        <Button className='flex items-center text-[17px] space-x-2 mt-[28px]'>
-                            <span>
-                                Schedule a call
-                            </span>
+      {/* Marquee */}
+      <div className="relative">
+        {/* Fade masks */}
+        <div className="absolute left-0 top-0 bottom-0 w-24 bg-gradient-to-r from-surface to-transparent z-10 pointer-events-none" />
+        <div className="absolute right-0 top-0 bottom-0 w-24 bg-gradient-to-l from-surface to-transparent z-10 pointer-events-none" />
 
-                            <FaArrowRight className="text-white" />
-                        </Button>
-                    </Link>
+        <div className="marquee-track">
+          {clients.map((name, i) => (
+            <div
+              key={i}
+              className="flex-shrink-0 mx-6 flex items-center gap-3 text-text/50 hover:text-text transition-colors"
+            >
+              <span className="w-1.5 h-1.5 rounded-full bg-primary/30 flex-shrink-0" />
+              <span className="text-sm font-semibold whitespace-nowrap">{name}</span>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+};
 
-                </div>
-            </Container>
-
-            <Image className='opacity-60 absolute top-0 right-0 z-10' src={ring} alt="ring svg" />
-            <Image className='opacity-60 absolute top-0 left-0 z-10' src={ring2} alt="ring svg" />
-        </section>
-    )
-}
-
-export default StartProject
+export default SocialProof;
