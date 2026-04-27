@@ -1,6 +1,7 @@
 export type Project = {
   slug: string
   name: string
+  link?: string
   tagline: string
   image: string
   tags: string[]
@@ -16,6 +17,7 @@ export type Project = {
 export const projects: Project[] = [
   {
     slug: "graft",
+    link: "https://graft.africa",
     name: "Graft",
     tagline: "Rebranding a talent acquisition platform for the African market",
     image: "/graft.png",
@@ -43,6 +45,7 @@ export const projects: Project[] = [
   {
     slug: "rdj-estates",
     name: "RDJ Estates",
+    link: "https://rdjestates.com/",
     tagline: "A conversion-focused website for a premium real estate firm",
     image: "/rdj-estates.png",
     tags: ["Web Design", "CRO", "SEO"],
@@ -69,6 +72,7 @@ export const projects: Project[] = [
   {
     slug: "good-homes",
     name: "Good Homes",
+    link: "https://goodhomes.com.ng",
     tagline: "Brand identity and web design for a residential property developer",
     image: "/good-homes.png",
     tags: ["Web Design", "Branding", "CRO"],
@@ -92,35 +96,11 @@ export const projects: Project[] = [
     ],
     relatedSlugs: ["rdj-estates", "chris-global"],
   },
-  {
-    slug: "chris-global",
-    name: "Chris Global Limited",
-    tagline: "Digital brand overhaul for an international trading company",
-    image: "/chris-global.png",
-    tags: ["Branding", "Web Design", "Social Media"],
-    problem:
-      "Chris Global's online presence didn't reflect the scale of their operations — they were trading internationally but looked like a local business online, costing them credibility with new partners.",
-    scope: ["Rebrand", "Web Design", "Social Media Strategy", "Content System"],
-    features: [
-      "International-grade brand identity",
-      "Multi-service web architecture",
-      "Content calendar and social templates",
-      "Partner and client showcase section",
-      "News and updates module",
-    ],
-    stack: ["Figma", "WordPress"],
-    process:
-      "Interviewed leadership to extract true competitive differentiators, then built a premium identity system that scaled consistently across web, print, and social media.",
-    results: [
-      "Brand perceived as 'much larger' by 3 new international partners",
-      "Social media following grew 4× in 90 days",
-      "3 inbound partnership inquiries in first 60 days",
-    ],
-    relatedSlugs: ["najec-fmcg", "good-homes"],
-  },
+
   {
     slug: "najec-fmcg",
     name: "Najec FMCG",
+    link: "https://najecfmcg.com/",
     tagline: "Social-first brand system for a fast-growing FMCG distributor",
     image: "/najec-fmcg.png",
     tags: ["Branding", "Web Design", "Social Media"],
@@ -143,6 +123,33 @@ export const projects: Project[] = [
       "Brand recognised at 2 industry trade shows",
     ],
     relatedSlugs: ["chris-global", "pharmabolt"],
+  },
+  {
+    slug: "chris-global",
+    name: "Chris Global Limited",
+    link: "https://chrisglobal.netlify.app/",
+    tagline: "Digital brand overhaul for an international trading company",
+    image: "/chris-global.png",
+    tags: ["Branding", "Web Design", "Social Media"],
+    problem:
+      "Chris Global's online presence didn't reflect the scale of their operations — they were trading internationally but looked like a local business online, costing them credibility with new partners.",
+    scope: ["Rebrand", "Web Design", "Social Media Strategy", "Content System"],
+    features: [
+      "International-grade brand identity",
+      "Multi-service web architecture",
+      "Content calendar and social templates",
+      "Partner and client showcase section",
+      "News and updates module",
+    ],
+    stack: ["Figma", "WordPress"],
+    process:
+      "Interviewed leadership to extract true competitive differentiators, then built a premium identity system that scaled consistently across web, print, and social media.",
+    results: [
+      "Brand perceived as 'much larger' by 3 new international partners",
+      "Social media following grew 4× in 90 days",
+      "3 inbound partnership inquiries in first 60 days",
+    ],
+    relatedSlugs: ["najec-fmcg", "good-homes"],
   },
   {
     slug: "pharmabolt",

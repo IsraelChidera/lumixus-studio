@@ -63,7 +63,7 @@ const PainPoints = () => {
                     <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
                   </svg>
                 </span>
-                <p className="text-sm text-text/80 leading-snug">{problem}</p>
+                <p className="text-base text-text/80 leading-snug">{problem}</p>
               </div>
             ))}
           </div>

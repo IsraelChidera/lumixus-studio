@@ -46,7 +46,7 @@ const StarRow = () => (
 
 const Testimonial = () => {
   return (
-    <section id="testimonials" className="py-28 bg-dark">
+    <section id="testimonials" className="py-28 bg-[#181818]">
       <Container>
         {/* Header */}
         <div className="text-center mb-16">

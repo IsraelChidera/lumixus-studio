@@ -96,7 +96,7 @@ const Process = () => {
         </motion.div>
 
         {/* CTA */}
-        <div className="text-center mt-14">
+        <div className="text-center mt-20">
           <a
             href="https://cal.com/lumixus-studio/30min"
             className="inline-flex items-center gap-2 text-sm font-semibold text-primary hover:underline underline-offset-4"

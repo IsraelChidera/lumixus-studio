@@ -94,7 +94,7 @@ const Pricing = () => {
               key={plan.name}
               className={`relative rounded-2xl border p-8 flex flex-col h-full ${
                 plan.highlight
-                  ? "bg-dark border-transparent shadow-2xl shadow-primary/20"
+                  ? "bg-[#181818] border-transparent shadow-2xl shadow-primary/20"
                   : "bg-white border-border"
               }`}
             >
