@@ -179,11 +179,11 @@ const ProjectDetailPanel = ({ project, onClose }: Props) => {
               <MdArrowOutward className="text-base" />
             </Link>
             <Link
-              href={project.link}
+              href={`${project.link}`}
               target="_blank"
               className="inline-flex items-center justify-center gap-2 border border-border hover:border-primary/30 hover:text-primary text-text text-sm font-medium px-5 py-3.5 rounded-full transition-colors"
             >
-              View the Live Project
+              View the live project
               <MdArrowOutward className="text-sm text-muted" />
             </Link>
           </div>
