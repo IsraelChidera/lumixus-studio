@@ -5,6 +5,7 @@ import Link from "next/link";
 import { MdArrowOutward } from "react-icons/md";
 import Container from "@/app/components/Elements/Container";
 import { getProjectBySlug, getRelatedProjects, projects } from "@/app/lib/projects";
+import GalleryCarousel from "@/app/components/GalleryCarousel";
 
 type Props = { params: { slug: string } };
 
@@ -89,21 +90,23 @@ export default function ProjectPage({ params }: Props) {
         </Container>
       </section>
 
-      {/* ── Featured image ───────────────────────────────────────── */}
-      <section className="bg-surface py-16">
-        <Container>
-          <div className="relative w-full aspect-[16/9] rounded-2xl overflow-hidden shadow-2xl shadow-dark/10">
-            <Image
-              src={project!.image}
-              alt={project!.name}
-              fill
-              priority
-              sizes="(max-width: 1300px) 91vw, 1300px"
-              className="object-cover object-top"
-            />
-          </div>
-        </Container>
-      </section>
+      {/* ── Featured image (only when available) ────────────────── */}
+      {project!.image && (
+        <section className="bg-surface py-16">
+          <Container>
+            <div className="relative w-full aspect-[16/9] rounded-2xl overflow-hidden shadow-2xl shadow-dark/10">
+              <Image
+                src={project!.image}
+                alt={project!.name}
+                fill
+                priority
+                sizes="(max-width: 1300px) 91vw, 1300px"
+                className="object-cover object-top"
+              />
+            </div>
+          </Container>
+        </section>
+      )}
 
       {/* ── Project details ──────────────────────────────────────── */}
       <section className="py-20 bg-white">
@@ -154,6 +157,28 @@ export default function ProjectPage({ params }: Props) {
                 </ul>
               </div>
             </div>
+
+            {/* Gallery — only renders when images are available */}
+            {project!.gallery && project!.gallery.length > 0 && (() => {
+              const isBrand = project!.tags.some((t) =>
+                ["Branding", "Social Media"].includes(t)
+              );
+              return (
+                <div className="mb-16">
+                  <span className="section-label mb-5 inline-flex">
+                    <span className="w-1 h-1 rounded-full bg-primary" />
+                    {isBrand ? "Brand Assets" : "Gallery"}
+                  </span>
+                  <div className="mt-4">
+                    <GalleryCarousel
+                      images={project!.gallery}
+                      name={project!.name}
+                      fit={isBrand ? "contain" : "cover"}
+                    />
+                  </div>
+                </div>
+              );
+            })()}
 
             {/* Problem */}
             <div className="mb-16">

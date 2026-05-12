@@ -4,6 +4,7 @@ import Link from "next/link";
 import { motion } from "motion/react";
 import { MdArrowOutward, MdClose } from "react-icons/md";
 import { type Project } from "@/app/lib/projects";
+import GalleryCarousel from "./GalleryCarousel";
 
 type Props = {
   project: Project;
@@ -107,6 +108,31 @@ const ProjectDetailPanel = ({ project, onClose }: Props) => {
             </div>
           </div>
 
+          {/* Gallery — only renders when images are available */}
+          {project.gallery && project.gallery.length > 0 && (
+            <div className="px-7 py-6 border-b border-border">
+              <p className="text-[10px] font-semibold text-muted/50 tracking-widest uppercase mb-4">
+                {project.tags.some((t) =>
+                  ["Branding", "Social Media"].includes(t)
+                )
+                  ? "Brand Assets"
+                  : "Gallery"}
+              </p>
+              <GalleryCarousel
+                images={project.gallery}
+                name={project.name}
+                compact
+                fit={
+                  project.tags.some((t) =>
+                    ["Branding", "Social Media"].includes(t)
+                  )
+                    ? "contain"
+                    : "cover"
+                }
+              />
+            </div>
+          )}
+
           {/* Results */}
           <div className="px-7 py-6 border-b border-border">
             <p className="text-[10px] font-semibold text-muted/50 tracking-widest uppercase mb-4">
@@ -178,14 +204,17 @@ const ProjectDetailPanel = ({ project, onClose }: Props) => {
               Start a Similar Project
               <MdArrowOutward className="text-base" />
             </Link>
-            <Link
-              href={`${project.link}`}
-              target="_blank"
-              className="inline-flex items-center justify-center gap-2 border border-border hover:border-primary/30 hover:text-primary text-text text-sm font-medium px-5 py-3.5 rounded-full transition-colors"
-            >
-              View the live project
-              <MdArrowOutward className="text-sm text-muted" />
-            </Link>
+            {project.link && (
+              <Link
+                href={project.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center gap-2 border border-border hover:border-primary/30 hover:text-primary text-text text-sm font-medium px-5 py-3.5 rounded-full transition-colors"
+              >
+                View live project
+                <MdArrowOutward className="text-sm text-muted" />
+              </Link>
+            )}
           </div>
         </div>
       </motion.aside>

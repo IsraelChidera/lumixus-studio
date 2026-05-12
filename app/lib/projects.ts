@@ -3,7 +3,9 @@ export type Project = {
   name: string
   link?: string
   tagline: string
-  image: string
+  image?: string
+  /** Brand asset / screenshot gallery — shown as a carousel on detail page and panel */
+  gallery?: string[]
   tags: string[]
   problem: string
   scope: string[]
@@ -16,38 +18,96 @@ export type Project = {
 
 export const projects: Project[] = [
   {
-    slug: "graft",
-    link: "https://graft.africa",
-    name: "Graft",
-    tagline: "Rebranding a talent acquisition platform for the African market",
-    image: "/graft.png",
-    tags: ["Web Design", "Branding", "SEO"],
+    slug: "core360analytics",
+    name: "Core360 Analytics",
+    link: "https://core360analytics.tech/",
+    tagline: "A unified academic management platform consolidating six campus systems into one",
+    gallery: ["/core360analytics.png"],
+    tags: ["Web Design", "Web Dev"],
     problem:
-      "Graft needed a digital presence that communicated credibility to enterprise hiring managers while staying approachable for job seekers - two very different audiences, one website.",
-    scope: ["Brand Strategy", "Visual Identity", "Web Design", "On-page SEO"],
+      "University departments were running on six disconnected systems. Students, lecturers, administrators, wellness staff, student union officials, and executives each had separate tools that couldn't communicate — duplicated data, administrative chaos, and a frustrating experience for everyone on campus.",
+    scope: ["UI/UX Design", "Web Development", "Design System", "Multi-portal Architecture"],
     features: [
-      "Dual-audience homepage architecture",
-      "Trust-building social proof sections",
-      "Mobile-first responsive layouts",
-      "SEO-optimized content structure",
-      "Clear conversion funnels for both user types",
+      "Portal modules - Student, Lecturer, Admin, Wellness, SUG, Executive",
+      "Student dashboard: GPA analytics, course tracking, and petition management",
+      "Lecturer dashboard: grade moderation, material uploads, and performance tracking",
+      "Wellness portal: peer tutoring marketplace and mental health resource library",
+      "Executive analytics: institution-wide reporting and oversight tools",
     ],
-    stack: ["Figma", "Next.js", "Tailwind CSS"],
+    stack: ["Figma", "Next.js", "Tailwind CSS", "TypeScript"],
     process:
-      "Started with stakeholder interviews to map both user journeys, then developed a unified visual language that spoke to enterprise clients and candidates equally. Three design iterations before final launch.",
+      "Started by mapping all six user personas and their distinct journeys before designing a single screen. Built a shared component library first, then layered each portal on top — ensuring brand consistency while preserving each role's unique functionality. Three full rounds of stakeholder review before launch.",
     results: [
-      "Launched in 3 weeks",
-      "Mobile bounce rate reduced by 35%",
-      "Top-5 Google ranking for target keywords within 60 days",
+      "Six fragmented campus systems unified into one coherent platform",
+      "Admin overhead significantly reduced across all departments",
+      "Full institution rollout delivered on schedule",
     ],
-    relatedSlugs: ["rdj-estates", "pharmabolt"],
+    relatedSlugs: ["market-run", "graft"],
   },
+
+  {
+    slug: "market-run",
+    name: "Market Run",
+    link: "https://market-run.netlify.app/",
+    tagline: "Cross-border logistics platform making African trade transparent and trustworthy",
+    gallery: ["/market-run.png"],
+    tags: ["Web Dev", "CRO"],
+    problem:
+      "Trust is the biggest barrier in African cross-border logistics. Informal agents, hidden fees, lost packages, and zero accountability were costing diaspora customers real money. Market Run needed a digital presence that made formal logistics feel as accessible as WhatsApp — without sacrificing the professionalism that justifies the premium.",
+    scope: ["Web Design", "UX Strategy", "CRO", "Conversion Architecture"],
+    features: [
+      "Quote-first pricing model with 2-hour turnaround guarantee",
+      "Four distinct service flows: Export, Import, Market Run, Warehousing",
+      "Real-time order tracking visible at every logistics stage",
+      "Paystack-secured payment infrastructure with instant confirmation",
+      "NCS-licensed clearing agents with upfront duty estimation",
+      "Formal dispute resolution system with a 48-hour SLA",
+    ],
+    stack: ["Figma", "Next.js", "Tailwind CSS", "Paystack"],
+    process:
+      "The entire design strategy was built around trust signals. Every section was engineered to reduce perceived risk and counter the mental model of unreliable informal agents. Copy, layout, and conversion architecture were all tested against the question: 'does this make me feel safe enough to pay?'",
+    results: [
+      "10+ countries served across 3 continents at launch",
+      "2-hour quote turnaround SLA met consistently post-launch",
+      "Zero payment disputes reported in the first 90 days",
+    ],
+    relatedSlugs: ["core360analytics", "rdj-estates"],
+  },
+  // {
+  //   slug: "graft",
+  //   link: "https://graft.africa",
+  //   name: "Graft",
+  //   tagline: "Rebranding a talent acquisition platform for the African market",
+  //   image: "/graft.png",
+  //   gallery: ["/graft.png", "/getlinked.png"],
+  //   tags: ["Web Design", "Branding", "SEO"],
+  //   problem:
+  //     "Graft needed a digital presence that communicated credibility to enterprise hiring managers while staying approachable for job seekers - two very different audiences, one website.",
+  //   scope: ["Brand Strategy", "Visual Identity", "Web Design", "On-page SEO"],
+  //   features: [
+  //     "Dual-audience homepage architecture",
+  //     "Trust-building social proof sections",
+  //     "Mobile-first responsive layouts",
+  //     "SEO-optimized content structure",
+  //     "Clear conversion funnels for both user types",
+  //   ],
+  //   stack: ["Figma", "Next.js", "Tailwind CSS"],
+  //   process:
+  //     "Started with stakeholder interviews to map both user journeys, then developed a unified visual language that spoke to enterprise clients and candidates equally. Three design iterations before final launch.",
+  //   results: [
+  //     "Launched in 3 weeks",
+  //     "Mobile bounce rate reduced by 35%",
+  //     "Top-5 Google ranking for target keywords within 60 days",
+  //   ],
+  //   relatedSlugs: ["core360analytics", "market-run"],
+  // },
   {
     slug: "rdj-estates",
     name: "RDJ Estates",
     link: "https://rdjestates.com/",
     tagline: "A conversion-focused website for a premium real estate firm",
     image: "/rdj-estates.png",
+    gallery: ["/rdj-estates.png"],
     tags: ["Web Design", "CRO", "SEO"],
     problem:
       "RDJ Estates was generating traffic but losing potential buyers at every step - unclear CTAs, a dated design, and no trust signals to justify premium pricing.",
@@ -67,62 +127,89 @@ export const projects: Project[] = [
       "Average session duration increased 2.1×",
       "3 high-value property sales attributed to the new site within 45 days",
     ],
-    relatedSlugs: ["good-homes", "graft"],
+    relatedSlugs: ["market-run", "good-homes"],
+  },
+  // {
+  //   slug: "good-homes",
+  //   name: "Good Homes",
+  //   link: "https://goodhomes.com.ng",
+  //   tagline: "Brand identity and web design for a residential property developer",
+  //   image: "/good-homes.png",
+  //   gallery: ["/good-homes.png"],
+  //   tags: ["Web Design", "Branding", "CRO"],
+  //   problem:
+  //     "Good Homes was competing with well-funded developers but had no distinct visual identity - their brand blended into a saturated market and failed to communicate the quality of their builds.",
+  //   scope: ["Brand Identity", "Logo Design", "Web Design", "Marketing Collateral"],
+  //   features: [
+  //     "Full brand identity system",
+  //     "Project showcase pages",
+  //     "Interactive floor plan displays",
+  //     "Lead capture system",
+  //     "Development timeline section",
+  //   ],
+  //   stack: ["Figma", "Webflow"],
+  //   process:
+  //     "Brand positioning workshop first, then built the visual language around 'warm premium' - earthy tones, clean typography, and photography direction showing real lives in quality spaces.",
+  //   results: [
+  //     "Brand launched in 4 weeks",
+  //     "Property enquiries tripled in first month",
+  //     "Featured in 2 local property publications",
+  //   ],
+  //   relatedSlugs: ["rdj-estates", "global-value-pedestal"],
+  // },
+{
+    slug: "gloren-ateliers",
+    name: "Gloren Ateliers",
+    tagline: "Luxury brand identity and digital presence for an African fashion atelier",
+    image: "/vertis.png",
+    gallery: ["/gloreen.png", "/gloreen1.png, gloreen2.png"],
+    tags: ["Branding", "Social Media"],
+    problem:
+      "Gloren Ateliers was producing world-class bespoke fashion but presenting it through inconsistent, informal channels. Their brand needed to match the craftsmanship of their garments — premium, intentional, and immediately recognisable — but nothing in their visual identity communicated that.",
+    scope: ["Brand Identity", "Visual Language", "Social Media Strategy", "Content Templates"],
+    features: [
+      "Luxury logo and wordmark with custom lettering direction",
+      "Instagram content system with 40+ branded templates",
+      "Brand story and tone of voice document",
+      "Launch campaign creative direction",
+    ],
+    stack: ["Figma", "Adobe Illustrator", "Canva Pro"],
+    process:
+      "Fashion branding demands restraint. We stripped everything back to the atelier's core truth — meticulous craft. The visual identity was built around negative space, texture, and precision, letting the garments speak without competing visual noise. Every element earns its place.",
+    results: [
+      "Brand identity and content system launched in 3 weeks",
+      "Instagram following grew 3× in the first 60 days post-launch",
+      "Featured in 2 Lagos fashion editorial pieces within the first quarter",
+    ],
+    relatedSlugs: ["global-value-pedestal", "najec-fmcg"],
   },
   {
-    slug: "good-homes",
-    name: "Good Homes",
-    link: "https://goodhomes.com.ng",
-    tagline: "Brand identity and web design for a residential property developer",
-    image: "/good-homes.png",
-    tags: ["Web Design", "Branding", "CRO"],
+    slug: "global-value-pedestal",
+    name: "Global Value Pedestal",
+    tagline: "Brand identity system for an HR consultancy building Africa's executive talent pipeline",
+    image: "/strategy.png",
+    gallery: ["/pvg.jpeg", "/pvg1.png"],
+    tags: ["Branding", "Social Media"],
     problem:
-      "Good Homes was competing with well-funded developers but had no distinct visual identity - their brand blended into a saturated market and failed to communicate the quality of their builds.",
-    scope: ["Brand Identity", "Logo Design", "Web Design", "Marketing Collateral"],
+      "In a professional services market where trust is everything, GVP's generic visual identity was undermining their credibility before a single conversation was had. Prospects couldn't distinguish them from dozens of similar firms, and their social media presence was inconsistent and forgettable.",
+    scope: ["Brand Strategy", "Logo Design", "Brand Identity", "Social Media Templates"],
     features: [
-      "Full brand identity system",
-      "Project showcase pages",
-      "Interactive floor plan displays",
-      "Lead capture system",
-      "Development timeline section",
+      "Full logo suite - primary, secondary, and icon mark variants",
+      "Color system, typography scale, and usage guidelines",
+      "Brand voice and tone framework tailored to corporate B2B",
+      "30+ branded social media templates for LinkedIn and Instagram",
+      "Business stationery and pitch deck templates",
+      "Brand guidelines document for internal and agency use",
     ],
-    stack: ["Figma", "Webflow"],
+    stack: ["Figma", "Adobe Illustrator", "Canva Pro"],
     process:
-      "Brand positioning workshop first, then built the visual language around 'warm premium' - earthy tones, clean typography, and photography direction showing real lives in quality spaces.",
+      "Ran a brand positioning workshop with leadership to extract GVP's real differentiators — not what they thought they were, but what their clients consistently came back for. Built the identity around precision and elevation: every touchpoint had to feel as calibrated as the talent they placed.",
     results: [
-      "Brand launched in 4 weeks",
-      "Property enquiries tripled in first month",
-      "Featured in 2 local property publications",
+      "Full brand identity delivered and adopted in 2 weeks",
+      "Immediately rolled out across all client-facing materials",
+      "Reported increase in perception of premium positioning by new prospects",
     ],
-    relatedSlugs: ["rdj-estates", "chris-global"],
-  },
-
-  {
-    slug: "najec-fmcg",
-    name: "Najec FMCG",
-    link: "https://najecfmcg.com/",
-    tagline: "Social-first brand system for a fast-growing FMCG distributor",
-    image: "/najec-fmcg.png",
-    tags: ["Branding", "Web Design", "Social Media"],
-    problem:
-      "Najec FMCG had strong distribution relationships but no consistent brand voice - their social media was scattered and their website didn't communicate the breadth of their product range.",
-    scope: ["Brand Guidelines", "Web Design", "Social Media Templates", "Content Strategy"],
-    features: [
-      "Product catalogue website",
-      "Full brand guidelines document",
-      "50+ social media templates",
-      "Content strategy framework",
-      "Distributor partner portal design",
-    ],
-    stack: ["Figma", "WordPress", "Canva Pro"],
-    process:
-      "Built the brand around their core value - reliability at scale. Every touchpoint was designed to reinforce trust with both retail partners and end consumers.",
-    results: [
-      "Social media engagement up 220%",
-      "New retail partner onboarding time reduced by 40%",
-      "Brand recognised at 2 industry trade shows",
-    ],
-    relatedSlugs: ["chris-global", "pharmabolt"],
+    relatedSlugs: ["gloren-ateliers", "chris-global"],
   },
   {
     slug: "chris-global",
@@ -130,6 +217,7 @@ export const projects: Project[] = [
     link: "https://chrisglobal.netlify.app/",
     tagline: "Digital brand overhaul for an international trading company",
     image: "/chris-global.png",
+    gallery: ["/chris-global.png", "/nextcash.png"],
     tags: ["Branding", "Web Design", "Social Media"],
     problem:
       "Chris Global's online presence didn't reflect the scale of their operations - they were trading internationally but looked like a local business online, costing them credibility with new partners.",
@@ -149,60 +237,93 @@ export const projects: Project[] = [
       "Social media following grew 4× in 90 days",
       "3 inbound partnership inquiries in first 60 days",
     ],
-    relatedSlugs: ["najec-fmcg", "good-homes"],
+    relatedSlugs: ["global-value-pedestal", "najec-fmcg"],
   },
+
   {
-    slug: "pharmabolt",
-    name: "Pharmabolt",
-    tagline: "E-commerce and growth strategy for a pharmaceutical distributor",
-    image: "/pharmabolt.png",
-    tags: ["E-commerce", "Web Dev", "CRO"],
+    slug: "najec-fmcg",
+    name: "Najec FMCG",
+    link: "https://najecfmcg.com/",
+    tagline: "Social-first brand system for a fast-growing FMCG distributor",
+    image: "/najec-fmcg.png",
+    gallery: ["/najec-fmcg.png", "/najec.png"],
+    tags: ["Branding", "Web Design", "Social Media"],
     problem:
-      "Pharmabolt needed to move from purely offline B2B sales to a digital ordering system - while maintaining the trust standards required in the pharmaceutical industry.",
-    scope: ["E-commerce Development", "UX Design", "CRO", "Payment Integration"],
+      "Najec FMCG had strong distribution relationships but no consistent brand voice - their social media was scattered and their website didn't communicate the breadth of their product range.",
+    scope: ["Brand Guidelines", "Web Design", "Social Media Templates", "Content Strategy"],
     features: [
-      "B2B e-commerce with account-based pricing",
-      "Bulk order management system",
-      "Secure payment gateway integration",
-      "Order tracking dashboard",
-      "Product search with category filters",
+      "Product catalogue website",
+      "Full brand guidelines document",
+      "50+ social media templates",
+      "Content strategy framework",
+      "Distributor partner portal design",
     ],
-    stack: ["Figma", "WooCommerce", "WordPress", "Stripe"],
+    stack: ["Figma", "WordPress", "Canva Pro"],
     process:
-      "Mapped the existing offline ordering workflow in detail, then rebuilt it digitally with the same familiar steps - minimizing the behavior change required from existing clients.",
+      "Built the brand around their core value - reliability at scale. Every touchpoint was designed to reinforce trust with both retail partners and end consumers.",
     results: [
-      "Online orders processed from day one",
-      "Order processing time reduced by 70%",
-      "₦12M in online orders in first 90 days",
+      "Social media engagement up 220%",
+      "New retail partner onboarding time reduced by 40%",
+      "Brand recognised at 2 industry trade shows",
     ],
-    relatedSlugs: ["icystore", "graft"],
+    relatedSlugs: ["gloren-ateliers", "chris-global"],
   },
-  {
-    slug: "icystore",
-    name: "Icy Store",
-    tagline: "Premium e-commerce experience for a fashion-forward retail brand",
-    image: "/icystore.png",
-    tags: ["E-commerce", "Branding", "CRO"],
-    problem:
-      "Icy Store was selling through Instagram DMs - losing orders, lacking trust signals, and unable to scale without a proper storefront.",
-    scope: ["Brand Identity", "E-commerce Design", "CRO", "Social Media Integration"],
-    features: [
-      "Full Shopify storefront",
-      "Instagram Shop integration",
-      "Custom brand identity",
-      "Size guide and rich product detail pages",
-      "Abandoned cart recovery flows",
-    ],
-    stack: ["Figma", "Shopify", "Klaviyo"],
-    process:
-      "Started with the brand identity to establish the premium feel, then built a Shopify store that matched it - every product page optimized for conversion with strong imagery and clear trust signals.",
-    results: [
-      "Revenue 3× within 60 days of launch",
-      "Instagram DM orders fully migrated to the storefront",
-      "Average order value up 45%",
-    ],
-    relatedSlugs: ["pharmabolt", "rdj-estates"],
-  },
+
+  // {
+  //   slug: "pharmabolt",
+  //   name: "Pharmabolt",
+  //   tagline: "E-commerce and growth strategy for a pharmaceutical distributor",
+  //   image: "/pharmabolt.png",
+  //   gallery: ["/pharmabolt.png"],
+  //   tags: ["E-commerce", "Web Dev", "CRO"],
+  //   problem:
+  //     "Pharmabolt needed to move from purely offline B2B sales to a digital ordering system - while maintaining the trust standards required in the pharmaceutical industry.",
+  //   scope: ["E-commerce Development", "UX Design", "CRO", "Payment Integration"],
+  //   features: [
+  //     "B2B e-commerce with account-based pricing",
+  //     "Bulk order management system",
+  //     "Secure payment gateway integration",
+  //     "Order tracking dashboard",
+  //     "Product search with category filters",
+  //   ],
+  //   stack: ["Figma", "WooCommerce", "WordPress", "Stripe"],
+  //   process:
+  //     "Mapped the existing offline ordering workflow in detail, then rebuilt it digitally with the same familiar steps - minimizing the behavior change required from existing clients.",
+  //   results: [
+  //     "Online orders processed from day one",
+  //     "Order processing time reduced by 70%",
+  //     "₦12M in online orders in first 90 days",
+  //   ],
+  //   relatedSlugs: ["icystore", "core360analytics"],
+  // },
+
+  // {
+  //   slug: "icystore",
+  //   name: "Icy Store",
+  //   tagline: "Premium e-commerce experience for a fashion-forward retail brand",
+  //   image: "/icystore.png",
+  //   gallery: ["/icystore.png"],
+  //   tags: ["E-commerce", "Branding", "CRO"],
+  //   problem:
+  //     "Icy Store was selling through Instagram DMs - losing orders, lacking trust signals, and unable to scale without a proper storefront.",
+  //   scope: ["Brand Identity", "E-commerce Design", "CRO", "Social Media Integration"],
+  //   features: [
+  //     "Full Shopify storefront",
+  //     "Instagram Shop integration",
+  //     "Custom brand identity",
+  //     "Size guide and rich product detail pages",
+  //     "Abandoned cart recovery flows",
+  //   ],
+  //   stack: ["Figma", "Shopify", "Klaviyo"],
+  //   process:
+  //     "Started with the brand identity to establish the premium feel, then built a Shopify store that matched it - every product page optimized for conversion with strong imagery and clear trust signals.",
+  //   results: [
+  //     "Revenue 3× within 60 days of launch",
+  //     "Instagram DM orders fully migrated to the storefront",
+  //     "Average order value up 45%",
+  //   ],
+  //   relatedSlugs: ["pharmabolt", "gloren-ateliers"],
+  // },
 ]
 
 export function getProjectBySlug(slug: string): Project | undefined {

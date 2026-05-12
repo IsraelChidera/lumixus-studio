@@ -10,6 +10,7 @@ import ProjectDetailPanel from "./ProjectDetailPanel";
 const CATEGORIES = [
   "All",
   "Web Design",
+  "Web Dev",
   "Branding",
   "E-commerce",
   "CRO",
