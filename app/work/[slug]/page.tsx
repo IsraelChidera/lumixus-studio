@@ -248,38 +248,67 @@ export default function ProjectPage({ params }: Props) {
                 <Link
                   key={rel.slug}
                   href={`/work/${rel.slug}`}
-                  className="group relative rounded-2xl overflow-hidden bg-white block card-glow"
+                  className="group rounded-2xl overflow-hidden bg-white block card-glow"
                 >
-                  <div className="relative aspect-[4/3]">
-                    <Image
-                      src={rel.image}
-                      alt={rel.name}
-                      fill
-                      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                      className="object-cover object-top transition-transform duration-500 group-hover:scale-[1.04]"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-dark/75 via-dark/15 to-transparent" />
-                    <div className="absolute bottom-0 left-0 right-0 p-5 flex items-end justify-between gap-3">
-                      <div>
-                        <div className="flex flex-wrap gap-1.5 mb-2">
-                          {rel.tags.map((tag) => (
-                            <span
-                              key={tag}
-                              className="text-[10px] font-medium text-white/60 bg-white/10 px-2.5 py-0.5 rounded-full backdrop-blur-sm"
-                            >
-                              {tag}
-                            </span>
-                          ))}
+                  {rel.image ? (
+                    /* Image card — for projects with a screenshot */
+                    <div className="relative aspect-[4/3]">
+                      <Image
+                        src={rel.image}
+                        alt={rel.name}
+                        fill
+                        sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                        className="object-cover object-top transition-transform duration-500 group-hover:scale-[1.04]"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-dark/75 via-dark/15 to-transparent" />
+                      <div className="absolute bottom-0 left-0 right-0 p-5 flex items-end justify-between gap-3">
+                        <div>
+                          <div className="flex flex-wrap gap-1.5 mb-2">
+                            {rel.tags.map((tag) => (
+                              <span
+                                key={tag}
+                                className="text-[10px] font-medium text-white/60 bg-white/10 px-2.5 py-0.5 rounded-full backdrop-blur-sm"
+                              >
+                                {tag}
+                              </span>
+                            ))}
+                          </div>
+                          <h3 className="text-white font-semibold text-base leading-tight">
+                            {rel.name}
+                          </h3>
                         </div>
-                        <h3 className="text-white font-semibold text-base leading-tight">
-                          {rel.name}
-                        </h3>
+                        <span className="flex-shrink-0 w-8 h-8 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 flex items-center justify-center opacity-0 translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300">
+                          <MdArrowOutward className="text-white text-xs" />
+                        </span>
                       </div>
-                      <span className="flex-shrink-0 w-8 h-8 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 flex items-center justify-center opacity-0 translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300">
-                        <MdArrowOutward className="text-white text-xs" />
-                      </span>
                     </div>
-                  </div>
+                  ) : (
+                    /* Text card — for projects without a screenshot */
+                    <div className="p-6 flex flex-col min-h-[160px]">
+                      <div className="flex flex-wrap gap-1.5 mb-3">
+                        {rel.tags.map((tag) => (
+                          <span
+                            key={tag}
+                            className="text-[10px] font-medium text-muted bg-surface border border-border px-2.5 py-0.5 rounded-full"
+                          >
+                            {tag}
+                          </span>
+                        ))}
+                      </div>
+                      <h3 className="text-lg font-bold text-text leading-tight mb-2">
+                        {rel.name}
+                      </h3>
+                      <p className="text-sm text-muted leading-relaxed flex-1">
+                        {rel.tagline}
+                      </p>
+                      <div className="flex items-center justify-end pt-4 mt-2 border-t border-border">
+                        <span className="inline-flex items-center gap-1.5 text-xs font-semibold text-primary opacity-0 group-hover:opacity-100 transition-opacity duration-200">
+                          View case study
+                          <MdArrowOutward className="text-sm" />
+                        </span>
+                      </div>
+                    </div>
+                  )}
                 </Link>
               ))}
             </div>
