@@ -66,7 +66,7 @@ export const metadata: Metadata = {
         url: "https://lumixus.studio/og-image.png",
         width: 1200,
         height: 630,
-        alt: "Lumixus Studio — B2B Digital Marketing Agency in Lagos, Nigeria"
+        alt: "Lumixus Studio - B2B Digital Marketing Agency in Lagos, Nigeria"
       }
     ]
   },
@@ -295,7 +295,7 @@ export default function RootLayout({
         name: "What services does Lumixus Studio offer?",
         acceptedAnswer: {
           "@type": "Answer",
-          text: "Lumixus Studio offers web design & development, brand identity, business automation, growth strategy, social media management, and conversion rate optimization — all focused on B2B businesses in Nigeria and globally."
+          text: "Lumixus Studio offers web design & development, brand identity, business automation, growth strategy, social media management, and conversion rate optimization - all focused on B2B businesses in Nigeria and globally."
         }
       },
       {
@@ -319,7 +319,7 @@ export default function RootLayout({
         name: "Do you offer payment plans?",
         acceptedAnswer: {
           "@type": "Answer",
-          text: "Yes — we offer flexible payment options including installments for higher-tier packages. Book a free strategy call and we'll structure a plan that works for your budget."
+          text: "Yes - we offer flexible payment options including installments for higher-tier packages. Book a free strategy call and we'll structure a plan that works for your budget."
         }
       },
       {
@@ -385,7 +385,7 @@ export default function RootLayout({
           async
         ></script>
 
-        {/* Structured Data — Organization */}
+        {/* Structured Data - Organization */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
@@ -393,7 +393,7 @@ export default function RootLayout({
           }}
         />
 
-        {/* Structured Data — LocalBusiness */}
+        {/* Structured Data - LocalBusiness */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
@@ -401,13 +401,13 @@ export default function RootLayout({
           }}
         />
 
-        {/* Structured Data — WebSite */}
+        {/* Structured Data - WebSite */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
         />
 
-        {/* Structured Data — FAQPage */}
+        {/* Structured Data - FAQPage */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}

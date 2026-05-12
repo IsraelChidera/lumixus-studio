@@ -197,7 +197,7 @@ const BookACall = () => {
                   <textarea
                     rows={5}
                     {...register("message")}
-                    placeholder="Tell us about your business needs — more leads, better conversions, automation, etc."
+                    placeholder="Tell us about your business needs - more leads, better conversions, automation, etc."
                     className={`w-full rounded-xl border px-4 py-3.5 text-sm text-text placeholder:text-muted bg-surface focus:bg-white transition-colors resize-none ${
                       errors.message ? "border-red-300" : "border-border"
                     }`}

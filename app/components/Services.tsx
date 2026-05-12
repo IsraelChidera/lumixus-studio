@@ -16,7 +16,7 @@ const services = [
     number: "02",
     title: "Brand Identity",
     description:
-      "From logo to full visual system — we build brand identities that communicate trust, authority, and differentiation.",
+      "From logo to full visual system - we build brand identities that communicate trust, authority, and differentiation.",
     tag: "Branding"
   },
   {
@@ -30,7 +30,7 @@ const services = [
     number: "04",
     title: "Growth Strategy",
     description:
-      "Data-driven strategies tailored to your goals — from market positioning to lead generation that actually converts.",
+      "Data-driven strategies tailored to your goals - from market positioning to lead generation that actually converts.",
     tag: "Strategy"
   },
   {

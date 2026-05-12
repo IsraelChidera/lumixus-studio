@@ -4,7 +4,7 @@ import Container from "@/app/components/Elements/Container";
 import { MdArrowOutward } from "react-icons/md";
 
 export const metadata: Metadata = {
-  title: "Blog — Digital Marketing, Web Design & Business Growth Tips",
+  title: "Blog - Digital Marketing, Web Design & Business Growth Tips",
   description:
     "Expert insights on web design, branding, digital marketing, and business automation from the Lumixus Studio team. Practical guides for B2B businesses in Nigeria.",
   keywords: [
@@ -21,7 +21,7 @@ export const metadata: Metadata = {
     canonical: "https://lumixus.studio/blog"
   },
   openGraph: {
-    title: "Blog — Digital Marketing & Business Growth Tips | Lumixus Studio",
+    title: "Blog - Digital Marketing & Business Growth Tips | Lumixus Studio",
     description:
       "Practical guides on web design, branding, digital marketing, and business automation for B2B businesses in Nigeria and globally.",
     url: "https://lumixus.studio/blog",
@@ -35,7 +35,7 @@ const posts = [
     category: "Lead Generation",
     title: "How to Generate Consistent B2B Leads in Nigeria (2026 Guide)",
     excerpt:
-      "Stop relying on referrals. Learn 7 proven strategies B2B businesses in Nigeria are using to generate qualified leads consistently — from LinkedIn outreach to SEO-optimized landing pages.",
+      "Stop relying on referrals. Learn 7 proven strategies B2B businesses in Nigeria are using to generate qualified leads consistently - from LinkedIn outreach to SEO-optimized landing pages.",
     date: "March 1, 2026",
     readTime: "8 min read"
   },
@@ -53,7 +53,7 @@ const posts = [
     category: "Branding",
     title: "Brand Identity vs. Logo Design: What's the Difference and Why It Matters",
     excerpt:
-      "Most businesses spend money on a logo and call it branding. Here's why that's a costly mistake — and what a real brand identity actually includes.",
+      "Most businesses spend money on a logo and call it branding. Here's why that's a costly mistake - and what a real brand identity actually includes.",
     date: "March 10, 2026",
     readTime: "5 min read"
   },
@@ -62,7 +62,7 @@ const posts = [
     category: "Automation",
     title: "How to Automate Your Business Operations in Nigeria Without a Tech Team",
     excerpt:
-      "CRM setup, email sequences, WhatsApp automation — discover the tools and workflows that let Nigerian businesses run 24/7 without manual follow-ups.",
+      "CRM setup, email sequences, WhatsApp automation - discover the tools and workflows that let Nigerian businesses run 24/7 without manual follow-ups.",
     date: "March 15, 2026",
     readTime: "10 min read"
   },
@@ -122,7 +122,7 @@ export default function BlogPage() {
               style={{ fontSize: "clamp(16px, 1.5vw, 18px)" }}
             >
               Practical guides on web design, branding, digital marketing, and
-              business automation — written for B2B business owners who want
+              business automation - written for B2B business owners who want
               results, not fluff.
             </p>
           </div>
@@ -190,7 +190,7 @@ export default function BlogPage() {
                 Let us build your growth system
               </h3>
               <p className="text-white/40 text-[15px] mb-8 max-w-md mx-auto leading-relaxed">
-                Reading is great — but results come from execution. Let's build
+                Reading is great - but results come from execution. Let's build
                 a full strategy tailored to your business.
               </p>
               <Link

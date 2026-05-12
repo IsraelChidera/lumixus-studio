@@ -32,37 +32,37 @@ import Contact from "./components/Contact";
 export default function Home() {
   return (
     <main>
-      {/* 1. Hero — dark, full-screen, conversion-first */}
+      {/* 1. Hero - dark, full-screen, conversion-first */}
       <Hero />
 
-      {/* 2. Social Proof — marquee of client names */}
+      {/* 2. Social Proof - marquee of client names */}
       <StartProject />
 
-      {/* 3. Pain Points — problem agitation */}
+      {/* 3. Pain Points - problem agitation */}
       <PainPoints />
 
-      {/* 4. Services — numbered premium cards */}
+      {/* 4. Services - numbered premium cards */}
       <Services />
 
-      {/* 5. Portfolio — hover-overlay carousel */}
+      {/* 5. Portfolio - hover-overlay carousel */}
       <Works />
 
-      {/* 6. Process — 4-step connected timeline */}
+      {/* 6. Process - 4-step connected timeline */}
       <Process />
 
-      {/* 7. Pricing — tiered packages */}
+      {/* 7. Pricing - tiered packages */}
       <Pricing />
 
-      {/* 8. Testimonials — dark card grid */}
+      {/* 8. Testimonials - dark card grid */}
       <Testimonial />
 
-      {/* 9. FAQ — minimal accordion */}
+      {/* 9. FAQ - minimal accordion */}
       <Faq />
 
-      {/* 10. Contact Form — split layout */}
+      {/* 10. Contact Form - split layout */}
       <BookACall />
 
-      {/* 11. Final CTA — dark full-width section */}
+      {/* 11. Final CTA - dark full-width section */}
       <Contact />
     </main>
   );

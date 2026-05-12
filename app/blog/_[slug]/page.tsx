@@ -26,7 +26,7 @@ const posts: Record<
   "how-to-generate-leads-for-b2b-business-nigeria": {
     title: "How to Generate Consistent B2B Leads in Nigeria (2026 Guide)",
     description:
-      "Stop relying on referrals. Learn 7 proven strategies B2B businesses in Nigeria are using to generate qualified leads consistently — from LinkedIn outreach to SEO-optimized landing pages.",
+      "Stop relying on referrals. Learn 7 proven strategies B2B businesses in Nigeria are using to generate qualified leads consistently - from LinkedIn outreach to SEO-optimized landing pages.",
     category: "Lead Generation",
     date: "March 1, 2026",
     readTime: "8 min read",
@@ -34,7 +34,7 @@ const posts: Record<
     authorRole: "B2B Digital Marketing Agency",
     content: {
       intro:
-        "Most B2B businesses in Nigeria rely on one channel for new clients: referrals. When referrals are flowing, growth feels effortless. But when they dry up — and they always do — the business stalls. This guide breaks down 7 proven lead generation strategies that work specifically in the Nigerian B2B market.",
+        "Most B2B businesses in Nigeria rely on one channel for new clients: referrals. When referrals are flowing, growth feels effortless. But when they dry up - and they always do - the business stalls. This guide breaks down 7 proven lead generation strategies that work specifically in the Nigerian B2B market.",
       sections: [
         {
           heading: "1. Optimize Your Website for Search Intent",
@@ -46,7 +46,7 @@ const posts: Record<
         },
         {
           heading: "3. Create a Lead Magnet That Solves a Real Problem",
-          body: "Offer something valuable for free — a checklist, template, mini-audit, or guide — in exchange for an email address. This builds your list of warm prospects who have already shown interest in your expertise. A well-positioned lead magnet can generate dozens of qualified leads per month without paid ads."
+          body: "Offer something valuable for free - a checklist, template, mini-audit, or guide - in exchange for an email address. This builds your list of warm prospects who have already shown interest in your expertise. A well-positioned lead magnet can generate dozens of qualified leads per month without paid ads."
         },
         {
           heading: "4. Set Up Email Nurture Sequences",
@@ -58,15 +58,15 @@ const posts: Record<
         },
         {
           heading: "6. Run Targeted LinkedIn or Meta Ads (Even on a Small Budget)",
-          body: "Paid ads accelerate lead generation when your organic engine is still building. LinkedIn Ads let you target by job title, company size, and industry — perfect for B2B. Even ₦50,000/month allocated strategically can generate qualified discovery calls when paired with a strong landing page."
+          body: "Paid ads accelerate lead generation when your organic engine is still building. LinkedIn Ads let you target by job title, company size, and industry - perfect for B2B. Even ₦50,000/month allocated strategically can generate qualified discovery calls when paired with a strong landing page."
         },
         {
           heading: "7. Ask for Referrals Systematically",
-          body: "Referrals don't have to be passive. Create a simple referral programme — offer a discount, cash incentive, or gift — and actively ask satisfied clients to introduce you to two business owners they know. This turns your existing clients into a predictable lead source."
+          body: "Referrals don't have to be passive. Create a simple referral programme - offer a discount, cash incentive, or gift - and actively ask satisfied clients to introduce you to two business owners they know. This turns your existing clients into a predictable lead source."
         }
       ],
       conclusion:
-        "Consistent B2B lead generation isn't magic — it's a system. Start by fixing your website, then build one or two of these channels into a repeatable process. If you'd like help building this system for your business, book a free strategy call with the Lumixus Studio team."
+        "Consistent B2B lead generation isn't magic - it's a system. Start by fixing your website, then build one or two of these channels into a repeatable process. If you'd like help building this system for your business, book a free strategy call with the Lumixus Studio team."
     }
   },
   "web-design-tips-for-nigerian-businesses": {
@@ -81,7 +81,7 @@ const posts: Record<
     authorRole: "B2B Digital Marketing Agency",
     content: {
       intro:
-        "After reviewing over 50 Nigerian business websites, we found a clear pattern: the same mistakes showing up again and again. These aren't cosmetic issues — they're conversion killers that cause visitors to leave before taking any action. Here are the 10 most common and how to fix each one.",
+        "After reviewing over 50 Nigerian business websites, we found a clear pattern: the same mistakes showing up again and again. These aren't cosmetic issues - they're conversion killers that cause visitors to leave before taking any action. Here are the 10 most common and how to fix each one.",
       sections: [
         {
           heading: "1. No Clear Value Proposition Above the Fold",
@@ -93,7 +93,7 @@ const posts: Record<
         },
         {
           heading: "3. No Mobile Optimization",
-          body: "Over 80% of Nigerian internet users browse on mobile. If your website isn't designed for mobile first, you're turning away the majority of your traffic. Test your site on multiple Android devices — the most common in Nigeria."
+          body: "Over 80% of Nigerian internet users browse on mobile. If your website isn't designed for mobile first, you're turning away the majority of your traffic. Test your site on multiple Android devices - the most common in Nigeria."
         },
         {
           heading: "4. Buried or Weak Calls to Action",
@@ -101,11 +101,11 @@ const posts: Record<
         },
         {
           heading: "5. Stock Photos That Destroy Trust",
-          body: "Generic stock photos — especially the ones with American office workers — erode trust immediately. Use real photos of your team, your office, and your work. If you must use stock images, choose African-specific libraries like Nappy or Afrikimages."
+          body: "Generic stock photos - especially the ones with American office workers - erode trust immediately. Use real photos of your team, your office, and your work. If you must use stock images, choose African-specific libraries like Nappy or Afrikimages."
         },
         {
           heading: "6. No Social Proof",
-          body: "Testimonials, case studies, client logos, and review counts all signal that others have trusted you and benefited from doing so. Nigerian buyers are sceptical by default — social proof is your most powerful trust-builder."
+          body: "Testimonials, case studies, client logos, and review counts all signal that others have trusted you and benefited from doing so. Nigerian buyers are sceptical by default - social proof is your most powerful trust-builder."
         },
         {
           heading: "7. Confusing Navigation",
@@ -125,14 +125,14 @@ const posts: Record<
         }
       ],
       conclusion:
-        "Fixing even half of these issues can dramatically increase the number of leads your website generates. Start with the ones that apply to your site today. If you'd like a professional audit and rebuild, the Lumixus Studio team is ready — book a free strategy call to get started."
+        "Fixing even half of these issues can dramatically increase the number of leads your website generates. Start with the ones that apply to your site today. If you'd like a professional audit and rebuild, the Lumixus Studio team is ready - book a free strategy call to get started."
     }
   },
   "brand-identity-vs-logo-design-whats-the-difference": {
     title:
       "Brand Identity vs. Logo Design: What's the Difference and Why It Matters",
     description:
-      "Most businesses spend money on a logo and call it branding. Here's why that's a costly mistake — and what a real brand identity actually includes.",
+      "Most businesses spend money on a logo and call it branding. Here's why that's a costly mistake - and what a real brand identity actually includes.",
     category: "Branding",
     date: "March 10, 2026",
     readTime: "5 min read",
@@ -144,7 +144,7 @@ const posts: Record<
       sections: [
         {
           heading: "What Is a Logo?",
-          body: "A logo is a mark — a visual symbol that represents your business. It might be a wordmark (your business name in a custom typeface), a pictorial mark (a symbol or icon), or a combination of both. A logo alone tells a viewer little beyond the name of your business."
+          body: "A logo is a mark - a visual symbol that represents your business. It might be a wordmark (your business name in a custom typeface), a pictorial mark (a symbol or icon), or a combination of both. A logo alone tells a viewer little beyond the name of your business."
         },
         {
           heading: "What Is a Brand Identity?",
@@ -152,7 +152,7 @@ const posts: Record<
         },
         {
           heading: "Why the Distinction Matters for Nigerian Businesses",
-          body: "In a market where trust is hard-won, visual consistency builds credibility. When your logo, website, social media posts, business cards, and proposals all look cohesive and intentional, prospects perceive you as more established and reliable — even if you're a young business. Inconsistency, on the other hand, signals disorganisation."
+          body: "In a market where trust is hard-won, visual consistency builds credibility. When your logo, website, social media posts, business cards, and proposals all look cohesive and intentional, prospects perceive you as more established and reliable - even if you're a young business. Inconsistency, on the other hand, signals disorganisation."
         },
         {
           heading: "What a Strong Brand Identity Delivers",
@@ -160,18 +160,18 @@ const posts: Record<
         },
         {
           heading: "The Cost of Getting It Wrong",
-          body: "Businesses that invest only in a cheap logo often find themselves rebranding within 2–3 years as the limitations become apparent. The real cost isn't just money — it's the brand equity and recognition you have to rebuild from scratch. Doing it right the first time is almost always cheaper."
+          body: "Businesses that invest only in a cheap logo often find themselves rebranding within 2–3 years as the limitations become apparent. The real cost isn't just money - it's the brand equity and recognition you have to rebuild from scratch. Doing it right the first time is almost always cheaper."
         }
       ],
       conclusion:
-        "If your business is ready to build a brand that commands trust and premium prices, start with a brand identity system — not just a logo. The Lumixus Studio branding service delivers a complete visual identity that positions you as the authority in your market. Book a free strategy call to discuss your brand."
+        "If your business is ready to build a brand that commands trust and premium prices, start with a brand identity system - not just a logo. The Lumixus Studio branding service delivers a complete visual identity that positions you as the authority in your market. Book a free strategy call to discuss your brand."
     }
   },
   "how-to-automate-your-business-operations-nigeria": {
     title:
       "How to Automate Your Business Operations in Nigeria Without a Tech Team",
     description:
-      "CRM setup, email sequences, WhatsApp automation — discover the tools and workflows that let Nigerian businesses run 24/7 without manual follow-ups.",
+      "CRM setup, email sequences, WhatsApp automation - discover the tools and workflows that let Nigerian businesses run 24/7 without manual follow-ups.",
     category: "Automation",
     date: "March 15, 2026",
     readTime: "10 min read",
@@ -179,7 +179,7 @@ const posts: Record<
     authorRole: "B2B Digital Marketing Agency",
     content: {
       intro:
-        "Business owners who want to scale in Nigeria face a common trap: as the business grows, so does the manual workload. Follow-ups get missed, invoices are delayed, leads fall through the cracks, and the founder becomes the bottleneck. Automation is the solution — and it's more accessible than most people think, even without a dedicated tech team.",
+        "Business owners who want to scale in Nigeria face a common trap: as the business grows, so does the manual workload. Follow-ups get missed, invoices are delayed, leads fall through the cracks, and the founder becomes the bottleneck. Automation is the solution - and it's more accessible than most people think, even without a dedicated tech team.",
       sections: [
         {
           heading: "Start With a CRM: The Foundation of Automation",
@@ -187,7 +187,7 @@ const posts: Record<
         },
         {
           heading: "Automate Your Lead Follow-Up Sequences",
-          body: "The single biggest revenue leak in most Nigerian businesses is inconsistent follow-up. When a lead submits your contact form or sends a WhatsApp message, they should automatically receive a response within minutes — not days. Tools like Mailchimp, Brevo (formerly Sendinblue), or ActiveCampaign let you send automated email sequences triggered by specific actions. Set up a 5-email nurture sequence for every new lead."
+          body: "The single biggest revenue leak in most Nigerian businesses is inconsistent follow-up. When a lead submits your contact form or sends a WhatsApp message, they should automatically receive a response within minutes - not days. Tools like Mailchimp, Brevo (formerly Sendinblue), or ActiveCampaign let you send automated email sequences triggered by specific actions. Set up a 5-email nurture sequence for every new lead."
         },
         {
           heading: "WhatsApp Business API for Automated Customer Communication",
@@ -199,7 +199,7 @@ const posts: Record<
         },
         {
           heading: "Appointment Booking Without the Back-and-Forth",
-          body: "Eliminate the WhatsApp ping-pong of scheduling calls by using a booking tool like Calendly or Cal.com. Share your booking link and prospects choose a time that works for both parties automatically. At Lumixus Studio, we use Cal.com for all discovery calls — it saves hours every week."
+          body: "Eliminate the WhatsApp ping-pong of scheduling calls by using a booking tool like Calendly or Cal.com. Share your booking link and prospects choose a time that works for both parties automatically. At Lumixus Studio, we use Cal.com for all discovery calls - it saves hours every week."
         },
         {
           heading: "Use Zapier or Make to Connect Your Tools",
@@ -211,7 +211,7 @@ const posts: Record<
         }
       ],
       conclusion:
-        "You don't need a technical co-founder or an in-house dev team to automate your business. Start with one tool — a CRM or a booking link — and build from there. If you'd like Lumixus Studio to design and implement a complete automation system for your business, book a free strategy call today."
+        "You don't need a technical co-founder or an in-house dev team to automate your business. Start with one tool - a CRM or a booking link - and build from there. If you'd like Lumixus Studio to design and implement a complete automation system for your business, book a free strategy call today."
     }
   },
   "digital-marketing-agency-nigeria-complete-guide": {
@@ -226,7 +226,7 @@ const posts: Record<
     authorRole: "B2B Digital Marketing Agency",
     content: {
       intro:
-        "The Nigerian digital marketing industry has grown rapidly — and so has the number of agencies claiming to deliver results. Choosing the wrong one can cost you time, money, and momentum. This guide gives you a clear framework for evaluating and selecting the right agency for your business.",
+        "The Nigerian digital marketing industry has grown rapidly - and so has the number of agencies claiming to deliver results. Choosing the wrong one can cost you time, money, and momentum. This guide gives you a clear framework for evaluating and selecting the right agency for your business.",
       sections: [
         {
           heading: "Define What 'Results' Mean for Your Business",
@@ -254,11 +254,11 @@ const posts: Record<
         },
         {
           heading: "What to Expect to Pay",
-          body: "Quality digital marketing in Nigeria typically costs between ₦150,000 and ₦800,000+ per month depending on the scope. Agencies offering comprehensive SEO, content, social media, and ads for ₦50,000/month are almost certainly cutting corners. You get what you pay for — and in marketing, the cost of poor execution is missed revenue."
+          body: "Quality digital marketing in Nigeria typically costs between ₦150,000 and ₦800,000+ per month depending on the scope. Agencies offering comprehensive SEO, content, social media, and ads for ₦50,000/month are almost certainly cutting corners. You get what you pay for - and in marketing, the cost of poor execution is missed revenue."
         }
       ],
       conclusion:
-        "The right agency becomes a genuine growth partner — one that understands your business as well as you do and brings both strategy and execution to the table. If you're looking for an agency that works specifically with B2B businesses and is transparent about what it takes to grow, we'd love to talk. Book a free strategy call with Lumixus Studio today."
+        "The right agency becomes a genuine growth partner - one that understands your business as well as you do and brings both strategy and execution to the table. If you're looking for an agency that works specifically with B2B businesses and is transparent about what it takes to grow, we'd love to talk. Book a free strategy call with Lumixus Studio today."
     }
   }
 };

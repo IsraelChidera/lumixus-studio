@@ -7,7 +7,7 @@ const faqs = [
   {
     question: "What services does Lumixus Studio offer?",
     answer:
-      "We specialize in web design & development, brand identity, business automation, growth strategy, social media management, and conversion optimization — all focused on B2B businesses."
+      "We specialize in web design & development, brand identity, business automation, growth strategy, social media management, and conversion optimization - all focused on B2B businesses."
   },
   {
     question: "How long does it take to build a website?",
@@ -22,7 +22,7 @@ const faqs = [
   {
     question: "Do you offer payment plans?",
     answer:
-      "Yes — we offer flexible payment options including installments for higher-tier packages. Book a call and we'll structure a plan that works for your budget."
+      "Yes - we offer flexible payment options including installments for higher-tier packages. Book a call and we'll structure a plan that works for your budget."
   },
   {
     question: "Will my website be mobile-friendly?",

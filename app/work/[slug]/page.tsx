@@ -16,7 +16,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const project = getProjectBySlug(params.slug);
   if (!project) return {};
   return {
-    title: `${project.name} — Case Study`,
+    title: `${project.name} - Case Study`,
     description: project.tagline,
     alternates: { canonical: `https://lumixus.studio/work/${project.slug}` },
     openGraph: {

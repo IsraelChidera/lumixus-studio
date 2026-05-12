@@ -23,7 +23,7 @@ export const projects: Project[] = [
     image: "/graft.png",
     tags: ["Web Design", "Branding", "SEO"],
     problem:
-      "Graft needed a digital presence that communicated credibility to enterprise hiring managers while staying approachable for job seekers — two very different audiences, one website.",
+      "Graft needed a digital presence that communicated credibility to enterprise hiring managers while staying approachable for job seekers - two very different audiences, one website.",
     scope: ["Brand Strategy", "Visual Identity", "Web Design", "On-page SEO"],
     features: [
       "Dual-audience homepage architecture",
@@ -50,7 +50,7 @@ export const projects: Project[] = [
     image: "/rdj-estates.png",
     tags: ["Web Design", "CRO", "SEO"],
     problem:
-      "RDJ Estates was generating traffic but losing potential buyers at every step — unclear CTAs, a dated design, and no trust signals to justify premium pricing.",
+      "RDJ Estates was generating traffic but losing potential buyers at every step - unclear CTAs, a dated design, and no trust signals to justify premium pricing.",
     scope: ["UX Audit", "Web Design", "Conversion Optimization", "SEO"],
     features: [
       "Property listing pages with detailed specs",
@@ -77,7 +77,7 @@ export const projects: Project[] = [
     image: "/good-homes.png",
     tags: ["Web Design", "Branding", "CRO"],
     problem:
-      "Good Homes was competing with well-funded developers but had no distinct visual identity — their brand blended into a saturated market and failed to communicate the quality of their builds.",
+      "Good Homes was competing with well-funded developers but had no distinct visual identity - their brand blended into a saturated market and failed to communicate the quality of their builds.",
     scope: ["Brand Identity", "Logo Design", "Web Design", "Marketing Collateral"],
     features: [
       "Full brand identity system",
@@ -88,7 +88,7 @@ export const projects: Project[] = [
     ],
     stack: ["Figma", "Webflow"],
     process:
-      "Brand positioning workshop first, then built the visual language around 'warm premium' — earthy tones, clean typography, and photography direction showing real lives in quality spaces.",
+      "Brand positioning workshop first, then built the visual language around 'warm premium' - earthy tones, clean typography, and photography direction showing real lives in quality spaces.",
     results: [
       "Brand launched in 4 weeks",
       "Property enquiries tripled in first month",
@@ -105,7 +105,7 @@ export const projects: Project[] = [
     image: "/najec-fmcg.png",
     tags: ["Branding", "Web Design", "Social Media"],
     problem:
-      "Najec FMCG had strong distribution relationships but no consistent brand voice — their social media was scattered and their website didn't communicate the breadth of their product range.",
+      "Najec FMCG had strong distribution relationships but no consistent brand voice - their social media was scattered and their website didn't communicate the breadth of their product range.",
     scope: ["Brand Guidelines", "Web Design", "Social Media Templates", "Content Strategy"],
     features: [
       "Product catalogue website",
@@ -116,7 +116,7 @@ export const projects: Project[] = [
     ],
     stack: ["Figma", "WordPress", "Canva Pro"],
     process:
-      "Built the brand around their core value — reliability at scale. Every touchpoint was designed to reinforce trust with both retail partners and end consumers.",
+      "Built the brand around their core value - reliability at scale. Every touchpoint was designed to reinforce trust with both retail partners and end consumers.",
     results: [
       "Social media engagement up 220%",
       "New retail partner onboarding time reduced by 40%",
@@ -132,7 +132,7 @@ export const projects: Project[] = [
     image: "/chris-global.png",
     tags: ["Branding", "Web Design", "Social Media"],
     problem:
-      "Chris Global's online presence didn't reflect the scale of their operations — they were trading internationally but looked like a local business online, costing them credibility with new partners.",
+      "Chris Global's online presence didn't reflect the scale of their operations - they were trading internationally but looked like a local business online, costing them credibility with new partners.",
     scope: ["Rebrand", "Web Design", "Social Media Strategy", "Content System"],
     features: [
       "International-grade brand identity",
@@ -158,7 +158,7 @@ export const projects: Project[] = [
     image: "/pharmabolt.png",
     tags: ["E-commerce", "Web Dev", "CRO"],
     problem:
-      "Pharmabolt needed to move from purely offline B2B sales to a digital ordering system — while maintaining the trust standards required in the pharmaceutical industry.",
+      "Pharmabolt needed to move from purely offline B2B sales to a digital ordering system - while maintaining the trust standards required in the pharmaceutical industry.",
     scope: ["E-commerce Development", "UX Design", "CRO", "Payment Integration"],
     features: [
       "B2B e-commerce with account-based pricing",
@@ -169,7 +169,7 @@ export const projects: Project[] = [
     ],
     stack: ["Figma", "WooCommerce", "WordPress", "Stripe"],
     process:
-      "Mapped the existing offline ordering workflow in detail, then rebuilt it digitally with the same familiar steps — minimizing the behavior change required from existing clients.",
+      "Mapped the existing offline ordering workflow in detail, then rebuilt it digitally with the same familiar steps - minimizing the behavior change required from existing clients.",
     results: [
       "Online orders processed from day one",
       "Order processing time reduced by 70%",
@@ -184,7 +184,7 @@ export const projects: Project[] = [
     image: "/icystore.png",
     tags: ["E-commerce", "Branding", "CRO"],
     problem:
-      "Icy Store was selling through Instagram DMs — losing orders, lacking trust signals, and unable to scale without a proper storefront.",
+      "Icy Store was selling through Instagram DMs - losing orders, lacking trust signals, and unable to scale without a proper storefront.",
     scope: ["Brand Identity", "E-commerce Design", "CRO", "Social Media Integration"],
     features: [
       "Full Shopify storefront",
@@ -195,7 +195,7 @@ export const projects: Project[] = [
     ],
     stack: ["Figma", "Shopify", "Klaviyo"],
     process:
-      "Started with the brand identity to establish the premium feel, then built a Shopify store that matched it — every product page optimized for conversion with strong imagery and clear trust signals.",
+      "Started with the brand identity to establish the premium feel, then built a Shopify store that matched it - every product page optimized for conversion with strong imagery and clear trust signals.",
     results: [
       "Revenue 3× within 60 days of launch",
       "Instagram DM orders fully migrated to the storefront",

@@ -6,7 +6,7 @@ import Image from "next/image";
 import { MdArrowOutward } from "react-icons/md";
 
 export const metadata: Metadata = {
-  title: "Free Business Resources — Templates & Tools for Entrepreneurs",
+  title: "Free Business Resources - Templates & Tools for Entrepreneurs",
   description:
     "Download free Notion templates, content systems, and strategy guides built by Lumixus Studio for B2B business owners and content creators in Nigeria.",
   keywords: [
@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     canonical: "https://lumixus.studio/resources"
   },
   openGraph: {
-    title: "Free Business Resources — Templates & Tools | Lumixus Studio",
+    title: "Free Business Resources - Templates & Tools | Lumixus Studio",
     description:
       "Free Notion templates, content systems, and strategy guides for B2B business owners and content creators. Built by the Lumixus Studio team.",
     url: "https://lumixus.studio/resources",
@@ -45,7 +45,7 @@ const resources = [
     tag: "Free Consultation",
     title: "Book a Discovery Call",
     description:
-      "We help businesses and entrepreneurs launch stunning, high-converting websites in 7 days or less. Starting fresh or rebranding — our proven process covers strategy, copy, design, and development without the long wait.",
+      "We help businesses and entrepreneurs launch stunning, high-converting websites in 7 days or less. Starting fresh or rebranding - our proven process covers strategy, copy, design, and development without the long wait.",
     image: "/resouce2.png",
     cta: "Book Free Call",
     href: "https://cal.com/lumixus-studio/30min?overlayCalendar=true",
@@ -58,7 +58,7 @@ const page = () => {
     <main className="min-h-screen bg-white">
       {/* Page header */}
       <section className="relative bg-dark overflow-hidden flex items-center" style={{ minHeight: "60vh" }}>
-        {/* Background elements — mirrors Hero */}
+        {/* Background elements - mirrors Hero */}
         <div className="absolute inset-0 dot-grid opacity-40" />
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-primary/10 rounded-full blur-[140px] pointer-events-none" />
         <div className="absolute top-0 right-0 w-[350px] h-[350px] bg-accent/8 rounded-full blur-[100px] pointer-events-none" />
@@ -91,7 +91,7 @@ const page = () => {
               className="text-white/50 mt-7 max-w-xl mx-auto leading-relaxed"
               style={{ fontSize: "clamp(16px, 1.5vw, 18px)" }}
             >
-              Free templates, guides, and consultations from the Lumixus Studio team — built for content creators and B2B business owners.
+              Free templates, guides, and consultations from the Lumixus Studio team - built for content creators and B2B business owners.
             </p>
           </div>
         </Container>

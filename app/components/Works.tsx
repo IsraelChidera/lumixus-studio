@@ -244,7 +244,7 @@ const Works = () => {
                 No projects in this category yet
               </p>
               <p className="text-sm text-muted">
-                We're always adding new work — check back soon.
+                We're always adding new work - check back soon.
               </p>
             </div>
           )}

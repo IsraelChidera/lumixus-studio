@@ -9,7 +9,7 @@ const problems = [
   "Your online presence doesn't build trust fast enough",
   "You post online, but it doesn't bring real customers",
   "People ask for price, then disappear",
-  "Your processes aren't automated — everything relies on you",
+  "Your processes aren't automated - everything relies on you",
   "You're busy, but growth isn't consistent",
   "Your business looks good offline, but weak online",
   "Referrals are your only source of new business",
@@ -39,7 +39,7 @@ const PainPoints = () => {
             <span className="gradient-text-primary">shouldn't feel this hard.</span>
           </h2>
           <p className="mt-4 text-muted text-[17px] leading-relaxed">
-            If any of these sound like your reality, you're not alone — and you're
+            If any of these sound like your reality, you're not alone - and you're
             in the right place.
           </p>
         </div>

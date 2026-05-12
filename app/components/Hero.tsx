@@ -41,8 +41,8 @@ const Hero = () => {
         {/* Subheading */}
         <p className="text-center text-white/50 mt-7 max-w-xl mx-auto leading-relaxed"
            style={{ fontSize: "clamp(16px, 1.5vw, 18px)" }}>
-          We build high-converting digital systems for B2B businesses — websites,
-          branding, automation, and strategy — engineered to fill your pipeline and
+          We build high-converting digital systems for B2B businesses - websites,
+          branding, automation, and strategy - engineered to fill your pipeline and
           close more sales.
         </p>
 
