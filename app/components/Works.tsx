@@ -252,7 +252,7 @@ const Works = () => {
 
           {/* ── Footer row ───────────────────────────────────────── */}
           <div className="flex flex-col sm:flex-row sm:items-center justify-between mt-12 pt-8 border-t border-border gap-5">
-            <p className="text-muted text-sm">{projects.length} completed projects</p>
+            <p className="text-muted text-sm">{projects.length} selected projects</p>
             <Link
               href="https://cal.com/lumixus-studio/30min"
               className="inline-flex items-center gap-2 bg-primary hover:bg-secondary text-white font-semibold px-6 py-3 rounded-full text-sm transition-colors shadow-lg shadow-primary/20"
