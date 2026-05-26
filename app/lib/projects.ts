@@ -4,7 +4,7 @@ export type Project = {
   link?: string
   tagline: string
   image?: string
-  /** Brand asset / screenshot gallery — shown as a carousel on detail page and panel */
+  /** Brand asset / screenshot gallery - shown as a carousel on detail page and panel */
   gallery?: string[]
   tags: string[]
   problem: string
@@ -25,7 +25,7 @@ export const projects: Project[] = [
     gallery: ["/core360analytics.png"],
     tags: ["Web Design", "Web Dev"],
     problem:
-      "University departments were running on six disconnected systems. Students, lecturers, administrators, wellness staff, student union officials, and executives each had separate tools that couldn't communicate — duplicated data, administrative chaos, and a frustrating experience for everyone on campus.",
+      "University departments were running on six disconnected systems. Students, lecturers, administrators, wellness staff, student union officials, and executives each had separate tools that couldn't communicate - duplicated data, administrative chaos, and a frustrating experience for everyone on campus.",
     scope: ["UI/UX Design", "Web Development", "Design System", "Multi-portal Architecture"],
     features: [
       "Portal modules - Student, Lecturer, Admin, Wellness, SUG, Executive",
@@ -36,7 +36,7 @@ export const projects: Project[] = [
     ],
     stack: ["Figma", "Next.js", "Tailwind CSS", "TypeScript"],
     process:
-      "Started by mapping all six user personas and their distinct journeys before designing a single screen. Built a shared component library first, then layered each portal on top — ensuring brand consistency while preserving each role's unique functionality. Three full rounds of stakeholder review before launch.",
+      "Started by mapping all six user personas and their distinct journeys before designing a single screen. Built a shared component library first, then layered each portal on top - ensuring brand consistency while preserving each role's unique functionality. Three full rounds of stakeholder review before launch.",
     results: [
       "Six fragmented campus systems unified into one coherent platform",
       "Admin overhead significantly reduced across all departments",
@@ -53,7 +53,7 @@ export const projects: Project[] = [
     gallery: ["/market-run.png"],
     tags: ["Web Dev", "CRO"],
     problem:
-      "Trust is the biggest barrier in African cross-border logistics. Informal agents, hidden fees, lost packages, and zero accountability were costing diaspora customers real money. Market Run needed a digital presence that made formal logistics feel as accessible as WhatsApp — without sacrificing the professionalism that justifies the premium.",
+      "Trust is the biggest barrier in African cross-border logistics. Informal agents, hidden fees, lost packages, and zero accountability were costing diaspora customers real money. Market Run needed a digital presence that made formal logistics feel as accessible as WhatsApp - without sacrificing the professionalism that justifies the premium.",
     scope: ["Web Design", "UX Strategy", "CRO", "Conversion Architecture"],
     features: [
       "Quote-first pricing model with 2-hour turnaround guarantee",
@@ -165,7 +165,7 @@ export const projects: Project[] = [
     gallery: ["/gloreen.png", "/gloreen1.png, gloreen2.png"],
     tags: ["Branding", "Social Media"],
     problem:
-      "Gloren Ateliers was producing world-class bespoke fashion but presenting it through inconsistent, informal channels. Their brand needed to match the craftsmanship of their garments — premium, intentional, and immediately recognisable — but nothing in their visual identity communicated that.",
+      "Gloren Ateliers was producing world-class bespoke fashion but presenting it through inconsistent, informal channels. Their brand needed to match the craftsmanship of their garments - premium, intentional, and immediately recognisable - but nothing in their visual identity communicated that.",
     scope: ["Brand Identity", "Visual Language", "Social Media Strategy", "Content Templates"],
     features: [
       "Luxury logo and wordmark with custom lettering direction",
@@ -175,7 +175,7 @@ export const projects: Project[] = [
     ],
     stack: ["Figma", "Adobe Illustrator", "Canva Pro"],
     process:
-      "Fashion branding demands restraint. We stripped everything back to the atelier's core truth — meticulous craft. The visual identity was built around negative space, texture, and precision, letting the garments speak without competing visual noise. Every element earns its place.",
+      "Fashion branding demands restraint. We stripped everything back to the atelier's core truth - meticulous craft. The visual identity was built around negative space, texture, and precision, letting the garments speak without competing visual noise. Every element earns its place.",
     results: [
       "Brand identity and content system launched in 3 weeks",
       "Instagram following grew 3× in the first 60 days post-launch",
@@ -203,7 +203,7 @@ export const projects: Project[] = [
     ],
     stack: ["Figma", "Adobe Illustrator", "Canva Pro"],
     process:
-      "Ran a brand positioning workshop with leadership to extract GVP's real differentiators — not what they thought they were, but what their clients consistently came back for. Built the identity around precision and elevation: every touchpoint had to feel as calibrated as the talent they placed.",
+      "Ran a brand positioning workshop with leadership to extract GVP's real differentiators - not what they thought they were, but what their clients consistently came back for. Built the identity around precision and elevation: every touchpoint had to feel as calibrated as the talent they placed.",
     results: [
       "Full brand identity delivered and adopted in 2 weeks",
       "Immediately rolled out across all client-facing materials",

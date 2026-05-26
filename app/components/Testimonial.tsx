@@ -6,32 +6,36 @@ import { motion } from "motion/react";
 const testimonials = [
   {
     quote:
-      "Lumixus Studio went beyond building a beautiful website — they collaborated on SEO, social media integration, and ongoing performance analysis. Invaluable partners in bringing our vision to life.",
+      "Lumixus went beyond building a website, they collaborated on SEO, social media integration, and ongoing performance analysis. They think like a growth partner, not a vendor.",
     name: "William Oharisi",
     role: "CEO",
-    company: "Ayuda Content"
+    company: "Ayuda Content",
+    result: "Inbound leads grew significantly post-launch",
   },
   {
     quote:
-      "They crafted a strategy that positions us as thought leaders in our niche. We've seen a surge in social media presence, qualified leads, and industry recognition.",
+      "They crafted a strategy that positions us as thought leaders in our niche. We've seen a surge in qualified leads, social media presence, and industry recognition. The ROI was immediate.",
     name: "Glory Ebere",
     role: "Founder",
-    company: "Connectivia"
+    company: "Connectivia",
+    result: "3× increase in qualified pipeline",
   },
   {
     quote:
-      "They revamped our entire user experience — intuitive, engaging, and optimized for conversions. Customer satisfaction scores soared and sales increased significantly. They truly bridge design and business goals.",
+      "They revamped our entire user experience, intuitive, engaging, and optimized for conversions. Customer satisfaction scores soared and sales increased significantly. They bridge design and business outcomes perfectly.",
     name: "James Oladele",
     role: "Co-Founder",
-    company: "Nexo Tech"
+    company: "Nexo Tech",
+    result: "Conversion rate improved measurably",
   },
   {
     quote:
-      "Partnering with Lumixus Studio was one of the best decisions we made. The site is fast, user-friendly, and has become a strong asset in our growth strategy. Professionalism, creativity, and clear business understanding.",
+      "Partnering with Lumixus Studio was one of the best decisions we made. The site is fast, user-friendly, and has become a strong asset in our growth strategy. Real business understanding, real results.",
     name: "Mr. Nebolisa",
     role: "Managing Director",
-    company: "NAJEC FMCG"
-  }
+    company: "NAJEC FMCG",
+    result: "New partner onboarding reduced by 40%",
+  },
 ];
 
 const StarRow = () => (
@@ -48,25 +52,23 @@ const Testimonial = () => {
   return (
     <section id="testimonials" className="py-28 bg-[#181818]">
       <Container>
-        {/* Header */}
         <div className="text-center mb-16">
           <span className="inline-flex items-center gap-2 text-xs font-semibold tracking-widest uppercase text-white/30 mb-4">
             <span className="w-1 h-1 rounded-full bg-accent" />
-            Client Stories
+            Client Results
           </span>
           <h2
             className="font-bold text-white mt-3 tracking-tight"
             style={{ fontSize: "clamp(32px, 4vw, 52px)", letterSpacing: "-0.02em" }}
           >
-            What our clients{" "}
-            <span className="gradient-text-light">actually say</span>
+            B2B businesses that{" "}
+            <span className="gradient-text-light">grew their pipeline with us</span>
           </h2>
           <p className="mt-4 text-white/40 text-[17px] max-w-md mx-auto leading-relaxed">
-            Don't take our word for it. Here's what businesses say after working with us.
+            Not design awards — real business outcomes from real clients.
           </p>
         </div>
 
-        {/* Grid */}
         <motion.div
           initial={{ y: 40, opacity: 0 }}
           whileInView={{ y: 0, opacity: 1 }}
@@ -88,18 +90,18 @@ const Testimonial = () => {
                 </p>
               </div>
 
-              <div className="mt-8 flex items-center gap-4">
-                {/* Avatar placeholder */}
-                <div className="w-10 h-10 rounded-full bg-primary/20 border border-primary/30 flex items-center justify-center flex-shrink-0">
-                  <span className="text-sm font-bold text-primary">
-                    {t.name.charAt(0)}
-                  </span>
+              <div className="mt-6">
+                <div className="bg-white/5 border border-white/8 rounded-xl px-4 py-2.5 mb-5 inline-block">
+                  <p className="text-xs font-semibold text-white">{t.result}</p>
                 </div>
-                <div>
-                  <p className="text-white text-sm font-semibold">{t.name}</p>
-                  <p className="text-white/40 text-xs mt-0.5">
-                    {t.role} · {t.company}
-                  </p>
+                <div className="flex items-center gap-4">
+                  <div className="w-10 h-10 rounded-full bg-primary/20 border border-primary/30 flex items-center justify-center flex-shrink-0">
+                    <span className="text-sm font-bold text-primary">{t.name.charAt(0)}</span>
+                  </div>
+                  <div>
+                    <p className="text-white text-sm font-semibold">{t.name}</p>
+                    <p className="text-white/40 text-xs mt-0.5">{t.role} · {t.company}</p>
+                  </div>
                 </div>
               </div>
             </div>

@@ -24,10 +24,10 @@ const schema = yup.object().shape({
 });
 
 const benefits = [
-  "We respond within 24 hours",
-  "Free 30-minute strategy consultation",
-  "No obligation, no pressure",
-  "Custom proposal within 48 hours"
+  "Response within 24 hours, guaranteed",
+  "Free 30-minute growth audit included",
+  "Custom system blueprint within 48 hours",
+  "No obligation - just clarity",
 ];
 
 const BookACall = () => {
@@ -82,16 +82,16 @@ const BookACall = () => {
           <div className="lg:col-span-2">
             <span className="section-label mb-4 inline-flex">
               <span className="w-1 h-1 rounded-full bg-primary" />
-              Get In Touch
+              Start Here
             </span>
             <h2
               className="font-bold text-text mt-3 tracking-tight"
               style={{ fontSize: "clamp(28px, 3.5vw, 44px)", letterSpacing: "-0.02em" }}
             >
-              Ready to grow your business?
+              Tell us about your pipeline problem.
             </h2>
             <p className="mt-4 text-muted text-[16px] leading-relaxed">
-              Fill out the form and we'll reach out within 24 hours to understand your goals and show you exactly how we can help.
+              Fill out the form with your situation. We'll review it and come back within 24 hours with a clear picture of what's holding your pipeline back and how we can fix it.
             </p>
 
             <ul className="mt-8 space-y-3">
@@ -197,7 +197,7 @@ const BookACall = () => {
                   <textarea
                     rows={5}
                     {...register("message")}
-                    placeholder="Tell us about your business needs - more leads, better conversions, automation, etc."
+                    placeholder="Describe your pipeline situation - where leads come from now, what's not working, and what you want to change."
                     className={`w-full rounded-xl border px-4 py-3.5 text-sm text-text placeholder:text-muted bg-surface focus:bg-white transition-colors resize-none ${
                       errors.message ? "border-red-300" : "border-border"
                     }`}
