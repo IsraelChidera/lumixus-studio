@@ -30,7 +30,7 @@ const Hero = () => {
 
         {/* Main headline */}
         <h1
-          className="text-center font-bold tracking-tight text-white leading-[74px]  max-w-4xl mx-auto"
+          className="text-center font-bold tracking-tight text-white lg:leading-[74px] leading-[40px]  max-w-4xl mx-auto"
           style={{ fontSize: "clamp(42px, 6.2vw, 78px)", letterSpacing: "-0.03em" }}
         >
           Your B2B Business Should Be{" "}
