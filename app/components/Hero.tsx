@@ -18,7 +18,7 @@ const Hero = () => {
 
       <Container className="relative z-10 pt-36 pb-28">
         {/* Availability badge */}
-        <div className="flex justify-center mb-10">
+        <div className="flex justify-center lg:mb-10 mb-2">
           <span className="inline-flex items-center gap-2.5 bg-white/5 border border-white/10 text-white/80 text-xs font-medium px-4 py-2 rounded-full backdrop-blur-sm">
             <span className="relative flex h-2 w-2">
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75" />
@@ -30,8 +30,18 @@ const Hero = () => {
 
         {/* Main headline */}
         <h1
-          className="text-center font-bold tracking-tight text-white lg:leading-[74px] leading-[40px]  max-w-4xl mx-auto"
+          className="lg:block hidden text-center font-bold tracking-tight text-white lg:leading-[74px] leading-[40px]  max-w-4xl mx-auto"
           style={{ fontSize: "clamp(42px, 6.2vw, 78px)", letterSpacing: "-0.03em" }}
+        >
+          Your B2B Business Should Be{" "}
+          <span className="gradient-text-primary">Generating Leads Online.</span>
+          <br />
+          If It Isn&apos;t, Something Is Broken.
+        </h1>
+
+        <h1
+          className="block lg:hidden text-center font-bold tracking-tight text-white lg:leading-[74px] leading-[40px]  max-w-4xl mx-auto"
+          style={{ fontSize: "clamp(32px, 6.2vw, 78px)", letterSpacing: "-0.03em" }}
         >
           Your B2B Business Should Be{" "}
           <span className="gradient-text-primary">Generating Leads Online.</span>
@@ -41,18 +51,26 @@ const Hero = () => {
 
         {/* Subheadline */}
         <p
-          className="text-center text-white mt-7 max-w-2xl mx-auto leading-relaxed"
+          className="lg:block hidden text-center text-white lg:mt-7 mt-2 max-w-2xl mx-auto leading-relaxed"
           style={{ fontSize: "clamp(15px, 1.4vw, 17px)" }}
         >
-          Lumixus Studio builds lead generation systems and client acquisition infrastructure
+          We build lead generation systems and client acquisition infrastructure
           for B2B service businesses so your website stops being a brochure and starts filling your pipeline.
         </p>
 
-  
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mt-10">
+        <p
+          className="block lg:hidden text-center text-white lg:mt-7 mt-2 max-w-2xl mx-auto leading-relaxed"
+          style={{ fontSize: "clamp(14px, 1.4vw, 17px)" }}
+        >
+          We build lead generation systems and client acquisition infrastructure
+          for B2B service businesses so your website stops being a brochure and starts filling your pipeline.
+        </p>
+
+
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mt-4 lg:mt-10">
           <Link
             href="https://cal.com/lumixus-studio/30min"
-            className="inline-flex items-center gap-2 bg-primary hover:bg-secondary text-white font-semibold px-8 py-4 rounded-full text-[15px] transition-colors shadow-lg shadow-primary/30 w-full sm:w-auto justify-center"
+            className="text-center inline-flex items-center gap-2 bg-primary hover:bg-secondary text-white font-semibold lg:px-8 px-4 lg:py-4 py-4 rounded-full text-sm lg:text-[15px] transition-colors shadow-lg shadow-primary/30 w-full sm:w-auto justify-center"
           >
             Get Your Free Lead Generation Audit
             <MdArrowOutward className="text-lg" />
@@ -60,7 +78,7 @@ const Hero = () => {
 
           <Link
             href="#works"
-            className="inline-flex items-center gap-2 bg-white/5 hover:bg-white/10 border border-white/10 text-white font-medium px-8 py-4 rounded-full text-[15px] transition-colors w-full sm:w-auto justify-center"
+            className="inline-flex items-center gap-2 bg-white/5 hover:bg-white/10 border border-white/10 text-white font-medium px-8 lg:py-4 py-4 rounded-full text-sm lg:text-[15px] transition-colors w-full sm:w-auto justify-center"
           >
             See How We&apos;ve Done It
           </Link>
