@@ -124,12 +124,12 @@ const Pricing = () => {
 
               <div className="mb-8">
                 <div className="flex items-center justify-between mb-4">
-                  <p className={`text-[11px] font-semibold tracking-[0.18em] uppercase ${plan.highlight ? "text-white/35" : "text-muted"}`}>
+                  <p className={`text-[11px] font-semibold tracking-[0.18em] uppercase ${plan.highlight ? "text-white/100" : "text-muted"}`}>
                     {plan.name}
                   </p>
                   <span className={`text-[10px] font-semibold tracking-widest uppercase px-2.5 py-1 rounded-full border ${
                     plan.highlight
-                      ? "border-white/10 text-white/35 bg-white/5"
+                      ? "border-white/30 text-white/55 bg-white/5"
                       : "border-border text-muted bg-surface"
                   }`}>
                     {plan.deliverable}

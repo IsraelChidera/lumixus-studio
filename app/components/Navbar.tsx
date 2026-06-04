@@ -61,7 +61,7 @@ const Navbar = () => {
             <Image
               src={scrolled ? logoBlue : logo}
               alt="Lumixus Studio"
-              className="h-7 w-auto"
+              className="h-5 w-auto"
               priority
             />
           </Link>
