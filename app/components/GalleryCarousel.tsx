@@ -58,7 +58,7 @@ const GalleryCarousel = ({
               <div className={`relative w-full ${slideAspect} bg-white`}>
                 <Image
                   src={src}
-                  alt={`${name} — ${i + 1}`}
+                  alt={`${name} - ${i + 1}`}
                   fill
                   sizes={
                     compact

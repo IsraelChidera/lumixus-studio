@@ -7,17 +7,17 @@ const faqs = [
   {
     question: "We already have a website. Can you still help us?",
     answer:
-      "Absolutely — and this is where we add the most value. Most B2B websites we audit have the same problem: they were built to look good, not to generate leads. We run a full conversion audit, identify exactly why your site isn't converting visitors into qualified enquiries, and fix it. You don't always need a rebuild — sometimes you need a strategic overhaul.",
+      "Absolutely, and this is where we add the most value. Most B2B websites we audit have the same problem: they were built to look good, not to generate leads. We run a full conversion audit, identify exactly why your site isn't converting visitors into qualified enquiries, and fix it. You don't always need a rebuild, sometimes you need a strategic overhaul.",
   },
   {
     question: "What types of B2B businesses do you work with?",
     answer:
-      "We partner with professional service and B2B service businesses — logistics companies, HR consultancies, accounting firms, legal practices, IT service providers, management consultancies, and commercial design firms. If you sell services to other businesses and need a reliable digital pipeline, we're built for you.",
+      "We partner with professional service and B2B service businesses like logistics companies, HR consultancies, accounting firms, legal practices, IT service providers, management consultancies, and commercial design firms. If you sell services to other businesses and need a reliable digital pipeline, we're built for you.",
   },
   {
     question: "How is this different from hiring a web design agency?",
     answer:
-      "We're not a web design agency. A web agency builds you a website. We build you a client acquisition system — which includes your website, but also your positioning, messaging, lead capture flows, SEO foundation, CRM integration, and follow-up automation. The goal isn't a website you're proud of. It's a pipeline you can count on.",
+      "We're not a web design agency. A web agency builds you a website. We build you a client acquisition system which includes your website, but also your positioning, messaging, lead capture flows, SEO foundation, CRM integration, and follow-up automation. The goal isn't a website you're proud of. It's a pipeline you can count on.",
   },
   {
     question: "How long before we see results?",
@@ -27,12 +27,12 @@ const faqs = [
   {
     question: "Do you offer monthly retainers or just one-off projects?",
     answer:
-      "Both. Our Foundation package is a one-time project to get your infrastructure right. Our Growth Partner and Scale packages are monthly retainers where we operate as your external growth team — managing SEO, content, conversion optimization, and strategy on an ongoing basis. Most clients start with a Foundation build and move to a retainer.",
+      "Both. Our Foundation package is a one-time project to get your infrastructure right. Our Growth Partner and Scale packages are monthly retainers where we operate as your external growth team, managing SEO, content, conversion optimization, and strategy on an ongoing basis. Most clients start with a Foundation build and move to a retainer.",
   },
   {
     question: "What's included in the free growth audit?",
     answer:
-      "It's a 30-minute working session where we assess your current website conversion rate, your pipeline health, your positioning vs. competitors, and the specific gaps costing you leads. You'll leave with a clear picture of what to fix and in what order — whether or not we end up working together. No pitch decks. No sales pressure.",
+      "It's a 30-minute working session where we assess your current website conversion rate, your pipeline health, your positioning vs. competitors, and the specific gaps costing you leads. You'll leave with a clear picture of what to fix and in what order, whether or not we end up working together. No pitch decks. No sales pressure.",
   },
   {
     question: "Do you work with businesses outside Nigeria?",
@@ -127,7 +127,7 @@ const Faq = () => {
               href="https://cal.com/lumixus-studio/30min"
               className="inline-flex items-center gap-2 bg-primary hover:bg-secondary text-white font-semibold px-7 py-3.5 rounded-full text-sm transition-colors"
             >
-              Ask Us Directly — Free 30-min Audit
+              Ask Us Directly. Free 30-min Audit
             </a>
           </div>
 

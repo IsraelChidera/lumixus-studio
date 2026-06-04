@@ -58,7 +58,7 @@ const Hero = () => {
               <p className="text-white/40 text-[15px] leading-[1.7] font-light">
                 Lead generation infrastructure, client acquisition systems,
                 and conversion strategy for service businesses that need a
-                predictable pipeline — not just a website.
+                predictable pipeline, not just a website.
               </p>
 
               <div className="flex flex-col sm:flex-row lg:flex-col xl:flex-row gap-3">

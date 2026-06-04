@@ -6,7 +6,7 @@ import Container from "@/app/components/Elements/Container";
 const testimonials = [
   {
     quote:
-      "Lumixus went beyond building a website — they collaborated on SEO, social media integration, and ongoing performance analysis. They think like a growth partner, not a vendor.",
+      "Lumixus went beyond building a website - they collaborated on SEO, social media integration, and ongoing performance analysis. They think like a growth partner, not a vendor.",
     name: "William Oharisi",
     role: "CEO",
     company: "Ayuda Content",
@@ -22,7 +22,7 @@ const testimonials = [
   },
   {
     quote:
-      "They revamped our entire user experience — intuitive, engaging, and optimized for conversions. Customer satisfaction scores soared and sales increased significantly. They bridge design and business outcomes perfectly.",
+      "They revamped our entire user experience - intuitive, engaging, and optimized for conversions. Customer satisfaction scores soared and sales increased significantly. They bridge design and business outcomes perfectly.",
     name: "James Oladele",
     role: "Co-Founder",
     company: "Nexo Tech",
@@ -73,7 +73,7 @@ const Testimonial = () => {
               <span className="gradient-text-light">grew their pipeline with us</span>
             </h2>
             <p className="text-white/35 text-[16px] leading-relaxed lg:pb-1">
-              Not design awards — real business outcomes from real clients.
+              Not design awards - real business outcomes from real clients.
             </p>
           </div>
         </div>

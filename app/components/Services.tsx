@@ -8,7 +8,7 @@ const services = [
     number: "01",
     title: "Lead Generation System",
     description:
-      "We engineer your entire digital funnel — landing pages, SEO, LinkedIn presence, and lead capture flows — to deliver a consistent stream of qualified B2B prospects without relying on referrals.",
+      "We engineer your entire digital funnel - landing pages, SEO, LinkedIn presence, and lead capture flows - to deliver a consistent stream of qualified B2B prospects without relying on referrals.",
     tag: "Lead Gen",
     outcome: "Predictable pipeline",
   },
@@ -16,7 +16,7 @@ const services = [
     number: "02",
     title: "Client Acquisition Website",
     description:
-      "Not a brochure — a conversion machine. Every page is architected to build trust, communicate authority, and turn visitors into booked discovery calls. Designed for B2B buyers, not general audiences.",
+      "Not a brochure - a conversion machine. Every page is architected to build trust, communicate authority, and turn visitors into booked discovery calls. Designed for B2B buyers, not general audiences.",
     tag: "Web",
     outcome: "More booked calls",
   },
@@ -32,7 +32,7 @@ const services = [
     number: "04",
     title: "Conversion Optimization",
     description:
-      "Systematic analysis and improvement of every touchpoint in your funnel. We identify exactly where prospects drop off and fix it — turning your existing traffic into booked meetings.",
+      "Systematic analysis and improvement of every touchpoint in your funnel. We identify exactly where prospects drop off and fix it - turning your existing traffic into booked meetings.",
     tag: "CRO",
     outcome: "Higher close rates",
   },
@@ -40,7 +40,7 @@ const services = [
     number: "05",
     title: "Business Automation",
     description:
-      "CRM setup, follow-up sequences, proposal automation, and workflow systems that keep leads warm and moving through your pipeline — without your team doing it all manually.",
+      "CRM setup, follow-up sequences, proposal automation, and workflow systems that keep leads warm and moving through your pipeline - without your team doing it all manually.",
     tag: "Automation",
     outcome: "Zero manual follow-up",
   },
@@ -48,7 +48,7 @@ const services = [
     number: "06",
     title: "B2B Content & SEO",
     description:
-      "Long-form content, LinkedIn strategy, and technical SEO that positions you as the authority in your niche — so ideal clients find you before they find your competitors.",
+      "Long-form content, LinkedIn strategy, and technical SEO that positions you as the authority in your niche - so ideal clients find you before they find your competitors.",
     tag: "SEO & Content",
     outcome: "Inbound authority",
   },
@@ -80,7 +80,7 @@ const Services = () => {
             </h2>
             <p className="text-muted text-[16px] leading-relaxed lg:pb-1">
               Every engagement is scoped around one metric: qualified leads into your pipeline.
-              Nothing we build is decorative — it&apos;s all engineered to convert.
+              Nothing we build is decorative - it&apos;s all engineered to convert.
             </p>
           </div>
         </div>

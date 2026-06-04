@@ -57,7 +57,7 @@ const Footer = () => {
               <Image src={logo} alt="Lumixus Studio" className="h-7 w-auto mb-4" />
             </Link>
             <p className="text-sm text-muted leading-relaxed max-w-xs">
-              We're Lumixus Studio — your B2B digital growth partner. We build systems that attract leads, close deals, and scale your revenue.
+              Lumixus Studio is your B2B digital growth partner. We build systems that attract leads, close deals, and scale your revenue.
             </p>
             <div className="flex items-center gap-3 mt-6">
               <Link

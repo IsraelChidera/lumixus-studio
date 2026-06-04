@@ -8,7 +8,7 @@ const steps = [
     number: "01",
     title: "Free Growth Audit",
     description:
-      "A focused 30-minute audit call. We assess your current pipeline, digital presence, and the specific gaps costing you clients. You leave with clarity — whether or not we work together.",
+      "A focused 30-minute audit call. We assess your current pipeline, digital presence, and the specific gaps costing you clients. You leave with clarity, whether or not we work together.",
     duration: "30 min",
     label: "No cost, no commitment",
   },
@@ -16,7 +16,7 @@ const steps = [
     number: "02",
     title: "Growth System Blueprint",
     description:
-      "We map your custom client acquisition system — what to build, what to fix, and in what order. You receive a clear proposal with projected outcomes, timelines, and investment.",
+      "We map your custom client acquisition system, what to build, what to fix, and in what order. You receive a clear proposal with projected outcomes, timelines, and investment.",
     duration: "2–3 days",
     label: "Strategy before execution",
   },
@@ -24,7 +24,7 @@ const steps = [
     number: "03",
     title: "System Build & Launch",
     description:
-      "Execution begins the moment you're ready. We build fast, keep you informed at every stage, and launch with precision — no delays, no surprises, no scope creep.",
+      "Execution begins the moment you're ready. We build fast, keep you informed at every stage, and launch with precision - no delays, no surprises, no scope creep.",
     duration: "2–6 weeks",
     label: "Full-service delivery",
   },
@@ -58,7 +58,7 @@ const Process = () => {
               className="font-bold text-text tracking-tight"
               style={{ fontSize: "clamp(32px, 4vw, 52px)", letterSpacing: "-0.03em" }}
             >
-              From audit to revenue —
+              From audit to revenue -
               <br />
               <span className="gradient-text-primary">in four steps.</span>
             </h2>

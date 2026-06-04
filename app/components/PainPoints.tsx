@@ -5,11 +5,11 @@ import Container from "@/app/components/Elements/Container";
 
 const problems = [
   "You have a website, but it brings in zero qualified leads",
-  "Your pipeline runs on referrals — and dries up when they stop",
+  "Your pipeline runs on referrals and dries up when they stop",
   "Sales conversations start with \"how much?\" not \"how can you help me?\"",
   "You're invisible on Google and LinkedIn in your own industry",
-  "Your brand looks generic — no one can tell why you're different",
-  "You follow up manually with every prospect — it doesn't scale",
+  "Your brand looks generic - no one can tell why you're different",
+  "You follow up manually with every prospect - it doesn't scale",
   "Prospects visit your site and leave without contacting you",
   "You spend on ads but can't track what actually converts",
   "Every new client feels like luck, not a system working",
