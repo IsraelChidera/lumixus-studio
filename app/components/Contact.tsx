@@ -4,76 +4,75 @@ import { MdArrowOutward } from "react-icons/md";
 
 const Contact = () => {
   return (
-    <section className="relative py-32 bg-[#181818] overflow-hidden">
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-primary/12 rounded-full blur-[120px] pointer-events-none" />
-      <div className="absolute inset-0 dot-grid opacity-20" />
+    <section className="relative py-32 bg-deep overflow-hidden">
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-primary/10 rounded-full blur-[140px] pointer-events-none" />
 
-      <Container className="relative z-10 text-center">
-        <span className="inline-flex items-center gap-2 text-xs font-semibold tracking-widest uppercase text-white/30 mb-8">
-          <span className="w-1 h-1 rounded-full bg-accent" />
-          Ready to Grow
-        </span>
+      <Container className="relative z-10">
 
-        <h2
-          className="font-bold text-white mx-auto tracking-tight"
-          style={{
-            fontSize: "clamp(40px, 6vw, 80px)",
-            letterSpacing: "-0.03em",
-            maxWidth: "820px",
-          }}
-        >
-          Your pipeline shouldn't{" "}
-          <span className="gradient-text-primary">depend on luck.</span>
-        </h2>
-
-        <p className="mt-6 text-white/40 text-[18px] max-w-lg mx-auto leading-relaxed">
-          Book a free 30-minute growth audit. We'll show you exactly what's costing
-          you leads - and what to do about it. No pitch. Just clarity.
-        </p>
-
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mt-12">
-          <Link
-            href="https://cal.com/lumixus-studio/30min"
-            className="inline-flex items-center gap-2 bg-primary hover:bg-secondary text-white font-semibold px-9 py-4 rounded-full text-[16px] transition-colors shadow-xl shadow-primary/30 w-full sm:w-auto justify-center"
-          >
-            Book Your Free Growth Audit
-            <MdArrowOutward className="text-xl" />
-          </Link>
-
-          <Link
-            href="#contact"
-            className="inline-flex items-center gap-2 bg-white/5 hover:bg-white/10 border border-white/10 text-white font-medium px-8 py-4 rounded-full text-[15px] transition-colors w-full sm:w-auto justify-center"
-          >
-            Send a Message
-          </Link>
+        {/* ── Section header ─────────────────────────────────────── */}
+        <div className="flex items-center gap-4 mb-12">
+          <span className="inline-flex items-center gap-2 text-[11px] font-semibold tracking-[0.18em] uppercase text-white/30">
+            <span className="w-1 h-1 rounded-full bg-accent" />
+            Ready to Grow
+          </span>
+          <div className="flex-1 h-px bg-white/8" />
         </div>
 
-        <p className="text-white/20 text-xs mt-6">
-          Free audit · No obligation · Response within 24 hours
-        </p>
-
-        <div className="flex items-center justify-center gap-6 mt-12">
-          <Link
-            href="https://www.instagram.com/lumixus_studio/"
-            className="text-white/30 hover:text-white transition-colors text-sm"
+        {/* ── Headline ───────────────────────────────────────────── */}
+        <div className="grid lg:grid-cols-[1fr_380px] gap-12 items-end">
+          <h2
+            className="font-bold text-white tracking-tight"
+            style={{ fontSize: "clamp(40px, 5.5vw, 72px)", letterSpacing: "-0.03em" }}
           >
+            Your pipeline shouldn&apos;t
+            <br />
+            <span className="gradient-text-primary">depend on luck.</span>
+          </h2>
+
+          <div className="flex flex-col gap-6 lg:pb-2">
+            <p className="text-white/35 text-[16px] leading-relaxed">
+              Book a free 30-minute growth audit. We&apos;ll show you exactly what&apos;s costing
+              you leads and what to do about it. No pitch. Just clarity.
+            </p>
+
+            <div className="flex flex-col sm:flex-row gap-3">
+              <Link
+                href="https://cal.com/lumixus-studio/30min"
+                className="inline-flex items-center justify-center gap-2 bg-white text-[#0f0e1a] hover:bg-white/90 font-semibold px-7 py-4 rounded-full text-[15px] transition-colors w-full sm:w-auto"
+              >
+                Book Your Free Growth Audit
+                <MdArrowOutward className="text-base" />
+              </Link>
+              <Link
+                href="#contact"
+                className="inline-flex items-center justify-center gap-2 border border-white/12 text-white/50 hover:text-white hover:border-white/30 px-7 py-4 rounded-full text-[15px] font-medium transition-colors w-full sm:w-auto"
+              >
+                Send a Message
+              </Link>
+            </div>
+
+            <p className="text-white/20 text-xs">
+              Free audit · No obligation · Response within 24 hours
+            </p>
+          </div>
+        </div>
+
+        {/* ── Bottom rule + socials ──────────────────────────────── */}
+        <div className="flex items-center gap-6 mt-16 pt-8 border-t border-white/8">
+          <div className="flex-1" />
+          <Link href="https://www.instagram.com/lumixus_studio/" className="text-white/25 hover:text-white transition-colors text-xs tracking-wide">
             Instagram
           </Link>
           <span className="text-white/10">·</span>
-          <Link
-            href="mailto:lumixusstudio@gmail.com"
-            className="text-white/30 hover:text-white transition-colors text-sm"
-          >
+          <Link href="mailto:lumixusstudio@gmail.com" className="text-white/25 hover:text-white transition-colors text-xs tracking-wide">
             Email Us
           </Link>
           <span className="text-white/10">·</span>
-          <Link
-            href="https://www.facebook.com/profile.php?id=61563258786419"
-            className="text-white/30 hover:text-white transition-colors text-sm"
-          >
+          <Link href="https://www.facebook.com/profile.php?id=61563258786419" className="text-white/25 hover:text-white transition-colors text-xs tracking-wide">
             Facebook
           </Link>
         </div>
+
       </Container>
     </section>
   );

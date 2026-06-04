@@ -71,6 +71,15 @@ const BookACall = () => {
   return (
     <section id="contact" className="py-28 bg-white">
       <Container>
+        {/* ── Section header ─────────────────────────────────────── */}
+        <div className="flex items-center gap-4 mb-14">
+          <span className="section-label">
+            <span className="w-1 h-1 rounded-full bg-primary" />
+            Start Here
+          </span>
+          <div className="flex-1 h-px bg-border" />
+        </div>
+
         <motion.div
           initial={{ y: 40, opacity: 0 }}
           whileInView={{ y: 0, opacity: 1 }}
@@ -80,13 +89,9 @@ const BookACall = () => {
         >
           {/* Left: Info */}
           <div className="lg:col-span-2">
-            <span className="section-label mb-4 inline-flex">
-              <span className="w-1 h-1 rounded-full bg-primary" />
-              Start Here
-            </span>
             <h2
-              className="font-bold text-text mt-3 tracking-tight"
-              style={{ fontSize: "clamp(28px, 3.5vw, 44px)", letterSpacing: "-0.02em" }}
+              className="font-bold text-text tracking-tight"
+              style={{ fontSize: "clamp(28px, 3.5vw, 44px)", letterSpacing: "-0.03em" }}
             >
               Tell us about your pipeline problem.
             </h2>

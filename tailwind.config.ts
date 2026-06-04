@@ -17,7 +17,8 @@ const config: Config = {
         primary: "#3600ff",
         secondary: "#2400b8",
         blue: "#4452FE",
-        dark: "#05050f",
+        dark: "#0f0e1a",
+        deep: "#16152a",
         accent: "#5b5fff",
         text: "#0b0d17",
         surface: "#f5f5fa",
@@ -25,7 +26,8 @@ const config: Config = {
         border: "#e4e4f0"
       },
       fontFamily: {
-        sans: ["Inter", "sans-serif"]
+        sans: ["var(--font-graphik)", "Graphik", "Inter", "sans-serif"],
+        display: ["var(--font-graphik)", "Graphik", "sans-serif"],
       },
       letterSpacing: {
         tighter: "-0.03em",

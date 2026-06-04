@@ -39,23 +39,26 @@ const Works = () => {
       <section id="works" className="py-28 bg-white">
         <Container>
           {/* ── Header ─────────────────────────────────────────── */}
-          <div className="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-6">
-            <div>
-              <span className="section-label mb-4 inline-flex">
+          <div className="mb-10">
+            <div className="flex items-center gap-4 mb-8">
+              <span className="section-label">
                 <span className="w-1 h-1 rounded-full bg-primary" />
                 Our Portfolio
               </span>
+              <div className="flex-1 h-px bg-border" />
+            </div>
+            <div className="grid lg:grid-cols-[1fr_320px] gap-8 items-end">
               <h2
-                className="font-bold text-text tracking-tight mt-2"
-                style={{ fontSize: "clamp(32px, 4vw, 52px)", letterSpacing: "-0.02em" }}
+                className="font-bold text-text tracking-tight"
+                style={{ fontSize: "clamp(32px, 4vw, 52px)", letterSpacing: "-0.03em" }}
               >
-                Work we're
+                Work we&apos;re
                 <span className="gradient-text-primary"> proud of</span>
               </h2>
+              <p className="text-muted text-[16px] leading-relaxed lg:pb-1">
+                Real projects, real results. Every build is crafted to perform.
+              </p>
             </div>
-            <p className="text-muted text-[15px] max-w-xs leading-relaxed md:text-right">
-              Real projects, real results. Every build is crafted to perform.
-            </p>
           </div>
 
           {/* ── Category filter ─────────────────────────────────── */}

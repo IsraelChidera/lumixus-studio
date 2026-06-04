@@ -1,8 +1,7 @@
 "use client";
 
-import React from "react";
-import Container from "@/app/components/Elements/Container";
 import { motion } from "motion/react";
+import Container from "@/app/components/Elements/Container";
 
 const steps = [
   {
@@ -43,24 +42,34 @@ const Process = () => {
   return (
     <section id="process" className="py-28 bg-white">
       <Container>
-        <div className="text-center mb-16">
-          <span className="section-label mb-4 inline-flex">
-            <span className="w-1 h-1 rounded-full bg-primary" />
-            How It Works
-          </span>
-          <h2
-            className="font-bold text-text mt-3 tracking-tight"
-            style={{ fontSize: "clamp(32px, 4vw, 52px)", letterSpacing: "-0.02em" }}
-          >
-            From audit to revenue —{" "}
-            <span className="gradient-text-primary">in four steps.</span>
-          </h2>
-          <p className="mt-4 text-muted text-[17px] max-w-md mx-auto leading-relaxed">
-            No vague timelines. No mysterious processes. Here's exactly how we take
-            your business from invisible to inevitable.
-          </p>
+
+        {/* ── Section header ─────────────────────────────────────── */}
+        <div className="mb-14">
+          <div className="flex items-center gap-4 mb-8">
+            <span className="section-label">
+              <span className="w-1 h-1 rounded-full bg-primary" />
+              How It Works
+            </span>
+            <div className="flex-1 h-px bg-border" />
+          </div>
+
+          <div className="grid lg:grid-cols-[1fr_360px] gap-8 items-end">
+            <h2
+              className="font-bold text-text tracking-tight"
+              style={{ fontSize: "clamp(32px, 4vw, 52px)", letterSpacing: "-0.03em" }}
+            >
+              From audit to revenue —
+              <br />
+              <span className="gradient-text-primary">in four steps.</span>
+            </h2>
+            <p className="text-muted text-[16px] leading-relaxed lg:pb-1">
+              No vague timelines. No mysterious processes. Here&apos;s exactly how we take
+              your business from invisible to inevitable.
+            </p>
+          </div>
         </div>
 
+        {/* ── Steps ──────────────────────────────────────────────── */}
         <motion.div
           initial={{ y: 40, opacity: 0 }}
           whileInView={{ y: 0, opacity: 1 }}
@@ -68,21 +77,21 @@ const Process = () => {
           viewport={{ once: true }}
           className="relative"
         >
-          <div className="hidden lg:block absolute top-10 left-[12.5%] right-[12.5%] h-px bg-gradient-to-r from-transparent via-border to-transparent" />
+          <div className="hidden lg:block absolute top-5 left-[12.5%] right-[12.5%] h-px bg-gradient-to-r from-transparent via-border to-transparent" />
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {steps.map((step) => (
               <div key={step.number} className="relative">
-                <div className="w-10 h-10 rounded-full bg-white border-2 border-primary/20 flex items-center justify-center mb-6 relative z-10">
+                <div className="w-10 h-10 rounded-full bg-white border border-border flex items-center justify-center mb-6 relative z-10">
                   <span className="text-xs font-bold text-primary">{step.number}</span>
                 </div>
 
-                <div className="bg-surface border border-border rounded-2xl p-6 h-full card-glow">
-                  <span className="inline-flex text-xs font-medium text-primary bg-primary/8 px-2.5 py-1 rounded-full mb-3">
+                <div className="bg-surface border border-border rounded-2xl p-6 h-full">
+                  <span className="inline-flex text-xs font-semibold text-primary bg-primary/8 px-2.5 py-1 rounded-full mb-4">
                     {step.duration}
                   </span>
 
-                  <h3 className="text-base font-semibold text-text mb-3 leading-snug">
+                  <h3 className="text-[15px] font-semibold text-text mb-3 leading-snug">
                     {step.title}
                   </h3>
                   <p className="text-sm text-muted leading-relaxed mb-4">
@@ -97,14 +106,17 @@ const Process = () => {
           </div>
         </motion.div>
 
-        <div className="text-center mt-20">
+        {/* ── Footer ─────────────────────────────────────────────── */}
+        <div className="flex items-center gap-4 mt-16">
+          <div className="flex-1 h-px bg-border" />
           <a
             href="https://cal.com/lumixus-studio/30min"
-            className="inline-flex items-center gap-2 text-sm font-semibold text-primary hover:underline underline-offset-4"
+            className="shrink-0 text-sm font-semibold text-primary hover:underline underline-offset-4"
           >
             Start with a free growth audit →
           </a>
         </div>
+
       </Container>
     </section>
   );

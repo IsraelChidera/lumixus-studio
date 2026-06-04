@@ -119,7 +119,8 @@ const myFont = localFont({
       weight: "700",
       style: "normal"
     }
-  ]
+  ],
+  variable: "--font-graphik"
 });
 
 export default function RootLayout({
@@ -358,7 +359,7 @@ export default function RootLayout({
   };
 
   return (
-    <html lang="en" className={myFont.className}>
+    <html lang="en" className={`${myFont.variable} ${myFont.className}`}>
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link

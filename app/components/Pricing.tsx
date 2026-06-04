@@ -1,9 +1,8 @@
 "use client";
 
-import React from "react";
+import { motion } from "motion/react";
 import Container from "@/app/components/Elements/Container";
 import Link from "next/link";
-import { motion } from "motion/react";
 
 const plans = [
   {
@@ -70,24 +69,34 @@ const Pricing = () => {
   return (
     <section className="py-28 bg-surface">
       <Container>
-        <div className="text-center mb-16">
-          <span className="section-label mb-4 inline-flex">
-            <span className="w-1 h-1 rounded-full bg-primary" />
-            Engagement Models
-          </span>
-          <h2
-            className="font-bold text-text mt-3 tracking-tight"
-            style={{ fontSize: "clamp(32px, 4vw, 52px)", letterSpacing: "-0.02em" }}
-          >
-            Choose how we{" "}
-            <span className="gradient-text-primary">grow together</span>
-          </h2>
-          <p className="mt-4 text-muted text-[17px] max-w-lg mx-auto leading-relaxed">
-            Whether you need the foundation built right or a long-term growth partner,
-            we have an engagement model that fits your stage and ambition.
-          </p>
+
+        {/* ── Section header ─────────────────────────────────────── */}
+        <div className="mb-14">
+          <div className="flex items-center gap-4 mb-8">
+            <span className="section-label">
+              <span className="w-1 h-1 rounded-full bg-primary" />
+              Engagement Models
+            </span>
+            <div className="flex-1 h-px bg-border" />
+          </div>
+
+          <div className="grid lg:grid-cols-[1fr_400px] gap-8 items-end">
+            <h2
+              className="font-bold text-text tracking-tight"
+              style={{ fontSize: "clamp(32px, 4vw, 52px)", letterSpacing: "-0.03em" }}
+            >
+              Choose how we
+              <br />
+              <span className="gradient-text-primary">grow together</span>
+            </h2>
+            <p className="text-muted text-[16px] leading-relaxed lg:pb-1">
+              Whether you need the foundation built right or a long-term growth partner,
+              we have an engagement model that fits your stage and ambition.
+            </p>
+          </div>
         </div>
 
+        {/* ── Plans ──────────────────────────────────────────────── */}
         <motion.div
           initial={{ y: 40, opacity: 0 }}
           whileInView={{ y: 0, opacity: 1 }}
@@ -100,7 +109,7 @@ const Pricing = () => {
               key={plan.name}
               className={`relative rounded-2xl border p-8 flex flex-col h-full ${
                 plan.highlight
-                  ? "bg-[#181818] border-transparent shadow-2xl shadow-primary/20"
+                  ? "bg-deep border-transparent shadow-2xl shadow-primary/15"
                   : "bg-white border-border"
               }`}
             >
@@ -114,35 +123,34 @@ const Pricing = () => {
               )}
 
               <div className="mb-8">
-                <div className="flex items-center justify-between mb-3">
-                  <p className={`text-xs font-semibold tracking-widest uppercase ${plan.highlight ? "text-white/40" : "text-muted"}`}>
+                <div className="flex items-center justify-between mb-4">
+                  <p className={`text-[11px] font-semibold tracking-[0.18em] uppercase ${plan.highlight ? "text-white/35" : "text-muted"}`}>
                     {plan.name}
                   </p>
                   <span className={`text-[10px] font-semibold tracking-widest uppercase px-2.5 py-1 rounded-full border ${
                     plan.highlight
-                      ? "border-white/10 text-white/40 bg-white/5"
+                      ? "border-white/10 text-white/35 bg-white/5"
                       : "border-border text-muted bg-surface"
                   }`}>
                     {plan.deliverable}
                   </span>
                 </div>
-                <h3 className={`text-2xl font-bold mb-3 ${plan.highlight ? "text-white" : "text-text"}`}>
+                <div className={`w-8 h-px mb-5 ${plan.highlight ? "bg-primary/40" : "bg-border"}`} />
+                <h3 className={`text-2xl font-bold mb-3 tracking-tight ${plan.highlight ? "text-white" : "text-text"}`}>
                   {plan.name}
                 </h3>
-                <p className={`text-sm leading-relaxed ${plan.highlight ? "text-white/50" : "text-muted"}`}>
+                <p className={`text-sm leading-relaxed ${plan.highlight ? "text-white/40" : "text-muted"}`}>
                   {plan.tagline}
                 </p>
               </div>
 
-              <div className={`h-px mb-8 ${plan.highlight ? "bg-white/10" : "bg-border"}`} />
+              <div className={`h-px mb-8 ${plan.highlight ? "bg-white/8" : "bg-border"}`} />
 
               <ul className="space-y-4 flex-1 mb-8">
                 {plan.features.map((feature) => (
                   <li key={feature} className="flex items-start gap-3">
-                    <span className={`mt-0.5 ${plan.highlight ? "text-accent" : ""}`}>
-                      <CheckIcon />
-                    </span>
-                    <span className={`text-sm ${plan.highlight ? "text-white/70" : "text-text/70"}`}>
+                    <CheckIcon />
+                    <span className={`text-sm ${plan.highlight ? "text-white/65" : "text-text/70"}`}>
                       {feature}
                     </span>
                   </li>
@@ -153,7 +161,7 @@ const Pricing = () => {
                 href={plan.ctaHref}
                 className={`w-full flex items-center justify-center gap-2 py-3.5 px-6 rounded-full font-semibold text-sm transition-all ${
                   plan.highlight
-                    ? "bg-primary hover:bg-secondary text-white shadow-lg shadow-primary/30"
+                    ? "bg-primary hover:bg-secondary text-white shadow-lg shadow-primary/25"
                     : "bg-surface hover:bg-primary hover:text-white text-text border border-border"
                 }`}
               >
@@ -166,23 +174,17 @@ const Pricing = () => {
           ))}
         </motion.div>
 
-        <div className="mt-12 max-w-2xl mx-auto bg-white border border-border rounded-2xl p-6 flex flex-col sm:flex-row items-start sm:items-center gap-4">
-          <div className="w-10 h-10 rounded-full bg-primary/10 flex-shrink-0 flex items-center justify-center">
-            <svg className="w-5 h-5 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-              <path strokeLinecap="round" strokeLinejoin="round" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
-            </svg>
-          </div>
-          <div className="flex-1">
-            <p className="text-sm font-semibold text-text mb-0.5">Not sure which engagement fits your situation?</p>
-            <p className="text-sm text-muted">We'll recommend the right starting point on the audit call - no upsell pressure.</p>
-          </div>
-          <a
-            href="https://cal.com/lumixus-studio/30min"
-            className="flex-shrink-0 text-sm font-semibold text-primary hover:underline underline-offset-4 whitespace-nowrap"
-          >
-            Book free audit →
-          </a>
+        {/* ── Footer row ─────────────────────────────────────────── */}
+        <div className="flex items-center gap-4 mt-12">
+          <div className="flex-1 h-px bg-border" />
+          <p className="shrink-0 text-sm text-muted">
+            Not sure which fits you?{" "}
+            <a href="https://cal.com/lumixus-studio/30min" className="text-primary font-semibold hover:underline underline-offset-4">
+              Book a free audit and we&apos;ll recommend the right starting point →
+            </a>
+          </p>
         </div>
+
       </Container>
     </section>
   );
