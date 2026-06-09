@@ -20,7 +20,7 @@ const Hero = () => {
         {/* ── Top row ──────────────────────────────────────────────── */}
         <div className="flex items-center justify-between">
           <span className="text-white/30 text-[11px] tracking-[0.2em] uppercase font-medium">
-            B2B Growth Agency
+            Growth Agency
           </span>
           <div className="flex items-center gap-2">
             <span className="relative flex h-1.5 w-1.5">
@@ -49,7 +49,7 @@ const Hero = () => {
               That Generate
               <br />
               <span  className="text-primary">
-                B2B Clients.
+                Qualified Leads
               </span>
             </h1>
 
