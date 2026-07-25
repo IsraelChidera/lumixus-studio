@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import Script from "next/script";
 import localFont from "next/font/local";
 import FloatingButton from "./components/FloatingButton";
 import CustomCursor from "./components/CustomCursor";
@@ -373,6 +374,17 @@ export default function RootLayout({
         />
         <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
       </head>
+
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-MJN0GECS0H"></script>
+
+      <Script id="google-analytics" strategy="afterInteractive">
+        {`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){window.dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-MJN0GECS0H');
+        `}
+      </Script>
 
       <body className="relative">
         <Navbar />
