@@ -24,21 +24,6 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* ─── Typography helpers ──────────────────────────── */
-.display {
-  font-size: clamp(52px, 7vw, 88px);
-  font-weight: 700;
-  letter-spacing: -0.03em;
-  line-height: 1.04;
-}
-
-.heading-2 {
-  font-size: clamp(32px, 4vw, 52px);
-  font-weight: 700;
-  letter-spacing: -0.02em;
-  line-height: 1.1;
-}
-
 /* ─── Gradient text ───────────────────────────────── */
 .gradient-text-primary {
   background: linear-gradient(135deg, #3600ff 0%, #5b5fff 60%, #8b9fff 100%);
@@ -52,30 +37,6 @@ body {
   background-clip: text;
   -webkit-background-clip: text;
   color: transparent;
-}
-
-/* Legacy gradient classes (preserved) */
-.gradient-animation-light {
-  background: radial-gradient(circle, #fff 14%, #42afe9 57%, #fff 100%);
-  background-size: 400%;
-  background-clip: text;
-  -webkit-background-clip: text;
-  color: transparent;
-  animation: gradientAnimation 15s linear infinite;
-}
-
-.gradient-animation-dark {
-  background: linear-gradient(81deg, #4452fe 33%, #3600ff 57%, #4452fe 69%);
-  background-size: 400%;
-  background-clip: text;
-  -webkit-background-clip: text;
-  color: transparent;
-  animation: gradientAnimation 10s linear infinite;
-}
-
-@keyframes gradientAnimation {
-  0% { background-position: 100% 0; }
-  100% { background-position: -100% 0; }
 }
 
 /* ─── Hero dot grid ───────────────────────────────── */
@@ -149,42 +110,6 @@ body {
   background: #3600ff;
 }
 
-/* ─── Utility ─────────────────────────────────────── */
-.centered-element {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-
-.centered-bottom {
-  position: absolute;
-  bottom: 0%;
-  left: 50%;
-  transform: translate(-50%, 0%);
-}
-
-.bg-image {
-  position: relative;
-  background-image: url("../public/bgg.png");
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-position: center;
-}
-
-.bg-image:before {
-  content: "";
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  background: #05050f;
-  opacity: 0.85;
-  z-index: 1;
-}
-
 /* ─── Custom cursor ───────────────────────────────── */
 .cursor {
   width: 20px;
@@ -218,6 +143,13 @@ body {
   animation: cursorAnim 0.5s forwards;
 }
 
+/* Touch/coarse-pointer devices have no hover cursor to track */
+@media (pointer: coarse) {
+  .cursor {
+    display: none;
+  }
+}
+
 /* ─── Input focus ─────────────────────────────────── */
 input:focus,
 textarea:focus {
@@ -228,4 +160,16 @@ textarea:focus {
 /* ─── Smooth transitions ──────────────────────────── */
 a, button {
   transition: all 0.2s ease;
+}
+
+/* ─── Reduced motion ──────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  html {
+    scroll-behavior: auto;
+  }
 }

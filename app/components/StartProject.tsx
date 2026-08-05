@@ -32,10 +32,10 @@ const clients = [
 
 const SocialProof = () => {
   return (
-    <section className="py-20 bg-surface border-y border-border overflow-hidden">
+    <section className="py-16 bg-surface border-y border-border overflow-hidden">
       <Container>
         <p className="text-center text-xs font-semibold tracking-widest uppercase text-muted mb-10">
-          Trusted by growing businesses across Nigeria
+          Brands we&apos;ve helped grow
         </p>
       </Container>
 

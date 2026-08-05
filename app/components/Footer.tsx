@@ -33,10 +33,10 @@ const Footer = () => {
         <Container>
           <div className="text-center mb-8">
             <p className="text-xs font-semibold tracking-widest uppercase text-muted mb-2">
-              Book a Time That Works for You
+              Prefer To Talk It Through?
             </p>
             <h3 className="text-2xl font-bold text-text tracking-tight">
-              Schedule a Free Consultation
+              Book a time that works for you
             </h3>
           </div>
           <Cal
@@ -57,7 +57,7 @@ const Footer = () => {
               <Image src={logo} alt="Lumixus Studio" className="h-7 w-auto mb-4" />
             </Link>
             <p className="text-sm text-muted leading-relaxed max-w-xs">
-              Lumixus Studio is your B2B digital growth partner. We build systems that attract leads, close deals, and scale your revenue.
+              A full-service marketing agency. Strategy, branding, web design, content and advertising for ambitious brands.
             </p>
             <div className="flex items-center gap-3 mt-6">
               <Link
@@ -90,9 +90,9 @@ const Footer = () => {
               {[
                 { label: "Home", href: "/" },
                 { label: "Services", href: "/#services" },
-                { label: "Portfolio", href: "/#works" },
+                { label: "Work", href: "/#works" },
                 { label: "Process", href: "/#process" },
-                { label: "Testimonials", href: "/#testimonials" }
+                { label: "Journal", href: "/resources" }
               ].map((link) => (
                 <li key={link.href}>
                   <Link
@@ -113,12 +113,12 @@ const Footer = () => {
             </p>
             <ul className="space-y-3">
               {[
-                "Web Design & Dev",
+                "Strategy & Positioning",
                 "Brand Identity",
-                "Automation",
-                "Growth Strategy",
-                "Social Media",
-                "Conversion CRO"
+                "Web & Digital",
+                "Content & Storytelling",
+                "Advertising & Media",
+                "Growth & Optimization"
               ].map((s) => (
                 <li key={s}>
                   <span className="text-sm text-muted">{s}</span>

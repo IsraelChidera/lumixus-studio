@@ -1,68 +1,62 @@
 import type { Metadata } from "next";
 import Hero from "./components/Hero";
+import StartProject from "./components/StartProject";
+import Philosophy from "./components/PainPoints";
+import Services from "./components/Services";
+import Works from "./components/Works";
+import Process from "./components/Process";
+import HowWeWork from "./components/Pricing";
+import Testimonial from "./components/Testimonial";
+import Faq from "./components/Faq";
+import Contact from "./components/BookACall";
 
 export const metadata: Metadata = {
-  title:
-    "Lumixus Studio | B2B Web Design, Branding & Digital Marketing Agency Nigeria",
+  title: "Lumixus Studio | Marketing, Branding & Web Design Agency",
   description:
-    "Lumixus Studio helps B2B businesses in Lagos, Nigeria stop losing leads and start closing deals. We build high-converting websites, brand identities, automation systems, and growth strategies. Book a free strategy call today.",
+    "A full-service marketing agency. Strategy, branding, web design, content and advertising for ambitious brands who want to grow.",
   alternates: {
     canonical: "https://lumixus.studio"
   },
   openGraph: {
-    title:
-      "Lumixus Studio | Stop Losing Leads. Start Closing Deals.",
+    title: "Lumixus Studio | Marketing, Branding & Web Design Agency",
     description:
-      "High-converting websites, brand identities & marketing systems for B2B businesses in Nigeria. 20+ businesses served. 4-week avg. launch time. 5★ satisfaction. Book your free strategy call.",
+      "We help ambitious brands grow through strategy, branding, web design, content and advertising. Good marketing is good business.",
     url: "https://lumixus.studio",
     type: "website"
   }
 };
-import StartProject from "./components/StartProject";
-import PainPoints from "./components/PainPoints";
-import Services from "./components/Services";
-import Works from "./components/Works";
-import Process from "./components/Process";
-import Pricing from "./components/Pricing";
-import Testimonial from "./components/Testimonial";
-import Faq from "./components/Faq";
-import BookACall from "./components/BookACall";
-import Contact from "./components/Contact";
 
 export default function Home() {
   return (
     <main>
-      {/* 1. Hero - dark, full-screen, conversion-first */}
+      {/* 1. Hero - dark, editorial, typography-led */}
       <Hero />
 
       {/* 2. Social Proof - marquee of client names */}
       <StartProject />
 
-      {/* 3. Pain Points - problem agitation */}
-      <PainPoints />
+      {/* 3. Philosophy - short editorial manifesto */}
+      <Philosophy />
 
-      {/* 4. Services - numbered premium cards */}
+      {/* 4. Services - interactive editorial list */}
       <Services />
 
-      {/* 5. Portfolio - hover-overlay carousel */}
+      {/* 5. Portfolio - large image-led tiles */}
       <Works />
 
-      {/* 6. Process - 4-step connected timeline */}
+      {/* 6. Process - connected editorial story */}
       <Process />
 
-      {/* 7. Pricing - tiered packages */}
-      <Pricing />
+      {/* 7. How We Work - project vs partnership, no pricing table */}
+      <HowWeWork />
 
-      {/* 8. Testimonials - dark card grid */}
+      {/* 8. Testimonials - single featured quote */}
       <Testimonial />
 
-      {/* 9. FAQ - minimal accordion */}
+      {/* 9. FAQ - plain editorial list */}
       <Faq />
 
-      {/* 10. Contact Form - split layout */}
-      <BookACall />
-
-      {/* 11. Final CTA - dark full-width section */}
+      {/* 10. Contact - dramatic CTA + form, dark full-width */}
       <Contact />
     </main>
   );

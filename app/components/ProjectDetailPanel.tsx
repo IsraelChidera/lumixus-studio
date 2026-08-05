@@ -12,6 +12,8 @@ type Props = {
 };
 
 const ProjectDetailPanel = ({ project, onClose }: Props) => {
+  const isWebProject = Boolean(project.link);
+
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
       if (e.key === "Escape") onClose();
@@ -96,7 +98,7 @@ const ProjectDetailPanel = ({ project, onClose }: Props) => {
             </div>
             <div className="px-7 py-5">
               <p className="text-[10px] font-semibold text-muted/50 tracking-widest uppercase mb-3">
-                Stack
+                Tools
               </p>
               <ul className="space-y-1.5">
                 {project.stack.map((s) => (
@@ -112,23 +114,13 @@ const ProjectDetailPanel = ({ project, onClose }: Props) => {
           {project.gallery && project.gallery.length > 0 && (
             <div className="px-7 py-6 border-b border-border">
               <p className="text-[10px] font-semibold text-muted/50 tracking-widest uppercase mb-4">
-                {project.tags.some((t) =>
-                  ["Branding", "Social Media"].includes(t)
-                )
-                  ? "Brand Assets"
-                  : "Gallery"}
+                {isWebProject ? "Gallery" : "Brand Assets"}
               </p>
               <GalleryCarousel
                 images={project.gallery}
                 name={project.name}
                 compact
-                fit={
-                  project.tags.some((t) =>
-                    ["Branding", "Social Media"].includes(t)
-                  )
-                    ? "contain"
-                    : "cover"
-                }
+                fit={isWebProject ? "cover" : "contain"}
               />
             </div>
           )}

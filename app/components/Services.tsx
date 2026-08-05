@@ -1,143 +1,156 @@
 "use client";
 
-import { motion } from "motion/react";
+import { useState } from "react";
+import { AnimatePresence, motion } from "motion/react";
 import Container from "@/app/components/Elements/Container";
+import Button from "@/app/components/Elements/Button";
 
 const services = [
   {
     number: "01",
-    title: "Lead Generation System",
+    title: "Strategy & Positioning",
     description:
-      "We engineer your entire digital funnel - landing pages, SEO, LinkedIn presence, and lead capture flows - to deliver a consistent stream of qualified B2B prospects without relying on referrals.",
-    tag: "Lead Gen",
-    outcome: "Predictable pipeline",
+      "Before a single pixel, we figure out what makes you different and why anyone should care. A clear plan everyone on your team can point to.",
+    includes: ["Brand strategy", "Market positioning", "Messaging framework"],
   },
   {
     number: "02",
-    title: "Client Acquisition Website",
+    title: "Brand Identity",
     description:
-      "Not a brochure - a conversion machine. Every page is architected to build trust, communicate authority, and turn visitors into booked discovery calls. Designed for B2B buyers, not general audiences.",
-    tag: "Web",
-    outcome: "More booked calls",
+      "Logos are the easy part. We build full identity systems, color, type, voice, and the rules that keep it consistent as you grow.",
+    includes: ["Visual identity", "Brand guidelines", "Naming & voice"],
   },
   {
     number: "03",
-    title: "Brand Authority System",
+    title: "Web & Digital Experience",
     description:
-      "Positioning, visual identity, and messaging that makes you the obvious choice in your market. When prospects land on your site or social, they should immediately think: these are the people I need.",
-    tag: "Branding",
-    outcome: "Premium perception",
+      "Websites and digital products that look like you and work like they mean it. Design and development, done properly, not just prettily.",
+    includes: ["Web design", "Development", "Product design"],
   },
   {
     number: "04",
-    title: "Conversion Optimization",
+    title: "Content & Storytelling",
     description:
-      "Systematic analysis and improvement of every touchpoint in your funnel. We identify exactly where prospects drop off and fix it - turning your existing traffic into booked meetings.",
-    tag: "CRO",
-    outcome: "Higher close rates",
+      "The words and visuals that carry your brand everywhere it shows up, written to sound like a person, not a press release.",
+    includes: ["Copywriting", "Content systems", "Creative direction"],
   },
   {
     number: "05",
-    title: "Business Automation",
+    title: "Advertising & Media",
     description:
-      "CRM setup, follow-up sequences, proposal automation, and workflow systems that keep leads warm and moving through your pipeline - without your team doing it all manually.",
-    tag: "Automation",
-    outcome: "Zero manual follow-up",
+      "Paid campaigns across search, social, and display, built on the strategy underneath them instead of guesswork.",
+    includes: ["Paid social", "Search & display", "Campaign creative"],
   },
   {
     number: "06",
-    title: "B2B Content & SEO",
+    title: "Growth & Optimization",
     description:
-      "Long-form content, LinkedIn strategy, and technical SEO that positions you as the authority in your niche - so ideal clients find you before they find your competitors.",
-    tag: "SEO & Content",
-    outcome: "Inbound authority",
+      "The work that never really finishes. Testing, refining, and compounding results long after launch day.",
+    includes: ["Conversion optimization", "Analytics", "Ongoing iteration"],
   },
 ];
 
 const Services = () => {
+  const [active, setActive] = useState(0);
+
   return (
-    <section id="services" className="py-28 bg-surface">
+    <section id="services" className="py-24 sm:py-32 bg-surface">
       <Container>
-
         {/* ── Section header ─────────────────────────────────────── */}
-        <div className="mb-14">
-          <div className="flex items-center gap-4 mb-8">
-            <span className="section-label">
-              <span className="w-1 h-1 rounded-full bg-primary" />
-              What We Build
-            </span>
-            <div className="flex-1 h-px bg-border" />
-          </div>
-
-          <div className="grid lg:grid-cols-[1fr_400px] gap-8 items-end">
-            <h2
-              className="font-bold text-text tracking-tight"
-              style={{ fontSize: "clamp(32px, 4vw, 52px)", letterSpacing: "-0.03em" }}
-            >
-              Six systems that turn your
-              <br />
-              <span className="gradient-text-primary">digital presence into revenue</span>
-            </h2>
-            <p className="text-muted text-[16px] leading-relaxed lg:pb-1">
-              Every engagement is scoped around one metric: qualified leads into your pipeline.
-              Nothing we build is decorative - it&apos;s all engineered to convert.
-            </p>
-          </div>
+        <div className="grid lg:grid-cols-[1fr_380px] gap-8 items-end mb-14">
+          <h2
+            className="font-bold text-text tracking-tight"
+            style={{ fontSize: "clamp(34px, 5vw, 60px)", letterSpacing: "-0.03em" }}
+          >
+            What we
+            <span className="font-serif italic font-normal"> actually do</span>
+          </h2>
+          <p className="text-muted text-[16px] leading-relaxed lg:pb-1">
+            Six disciplines, one team. Nothing we build is decorative, it&apos;s
+            all in service of a brand people remember.
+          </p>
         </div>
 
-        {/* ── Services grid ──────────────────────────────────────── */}
-        <motion.div
-          initial={{ y: 48, opacity: 0 }}
-          whileInView={{ y: 0, opacity: 1 }}
-          transition={{ duration: 0.55, ease: "easeOut" }}
-          viewport={{ once: true }}
-          className="grid md:grid-cols-2 lg:grid-cols-3 gap-5"
-        >
-          {services.map((service) => (
-            <div
-              key={service.number}
-              className="group bg-white border border-border rounded-2xl p-7 card-glow cursor-default flex flex-col"
-            >
-              <div className="flex items-start justify-between mb-6">
-                <span className="text-xs font-semibold text-primary/50 tracking-widest uppercase">
-                  {service.number}
-                </span>
-                <span className="text-xs font-medium text-muted bg-surface border border-border px-2.5 py-1 rounded-full">
-                  {service.tag}
-                </span>
+        {/* ── Interactive list ──────────────────────────────────── */}
+        <div className="border-t border-border">
+          {services.map((service, i) => {
+            const isOpen = active === i;
+            return (
+              <div key={service.number} className="border-b border-border">
+                <button
+                  onClick={() => setActive(isOpen ? -1 : i)}
+                  aria-expanded={isOpen}
+                  aria-controls={`service-panel-${service.number}`}
+                  className="w-full flex items-center gap-6 py-7 sm:py-9 text-left group focus:outline-none focus-visible:ring-2 focus-visible:ring-primary/40 rounded-lg"
+                >
+                  <span
+                    className={`text-sm font-semibold tracking-widest tabular-nums transition-colors flex-shrink-0 ${
+                      isOpen ? "text-primary" : "text-muted/50"
+                    }`}
+                  >
+                    {service.number}
+                  </span>
+                  <span
+                    className={`flex-1 font-bold tracking-tight transition-colors ${
+                      isOpen ? "text-primary" : "text-text group-hover:text-primary/70"
+                    }`}
+                    style={{ fontSize: "clamp(22px, 3.6vw, 40px)", letterSpacing: "-0.02em" }}
+                  >
+                    {service.title}
+                  </span>
+                  <span
+                    className={`flex-shrink-0 w-9 h-9 rounded-full border flex items-center justify-center transition-all duration-200 ${
+                      isOpen
+                        ? "bg-primary border-primary text-white rotate-45"
+                        : "border-border text-muted"
+                    }`}
+                  >
+                    <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M12 4v16M4 12h16" />
+                    </svg>
+                  </span>
+                </button>
+
+                <AnimatePresence initial={false}>
+                  {isOpen && (
+                    <motion.div
+                      id={`service-panel-${service.number}`}
+                      initial={{ height: 0, opacity: 0 }}
+                      animate={{ height: "auto", opacity: 1 }}
+                      exit={{ height: 0, opacity: 0 }}
+                      transition={{ duration: 0.3, ease: "easeOut" }}
+                      className="overflow-hidden"
+                    >
+                      <div className="pb-9 pl-0 sm:pl-[68px] grid sm:grid-cols-[1fr_260px] gap-6 sm:gap-10">
+                        <p className="text-muted text-[16px] leading-relaxed max-w-xl">
+                          {service.description}
+                        </p>
+                        <div className="flex flex-wrap content-start gap-2">
+                          {service.includes.map((item) => (
+                            <span
+                              key={item}
+                              className="text-xs font-medium text-text/70 bg-white border border-border px-3 py-1.5 rounded-full"
+                            >
+                              {item}
+                            </span>
+                          ))}
+                        </div>
+                      </div>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
               </div>
-
-              <div className="w-8 h-px bg-primary/20 group-hover:bg-primary group-hover:w-12 transition-all duration-300 mb-5" />
-
-              <h3 className="text-[17px] font-semibold text-text leading-snug mb-3">
-                {service.title}
-              </h3>
-              <p className="text-sm text-muted leading-relaxed flex-1">{service.description}</p>
-
-              <div className="mt-5 pt-4 border-t border-border">
-                <span className="inline-flex items-center gap-1.5 text-xs font-semibold text-primary bg-primary/8 px-3 py-1.5 rounded-full">
-                  <span className="w-1 h-1 rounded-full bg-primary" />
-                  {service.outcome}
-                </span>
-              </div>
-            </div>
-          ))}
-        </motion.div>
+            );
+          })}
+        </div>
 
         {/* ── Footer row ─────────────────────────────────────────── */}
         <div className="flex items-center gap-4 mt-14">
           <div className="flex-1 h-px bg-border" />
-          <a
-            href="https://cal.com/lumixus-studio/30min"
-            className="shrink-0 inline-flex items-center gap-2 bg-primary hover:bg-secondary text-white font-semibold px-7 py-3.5 rounded-full text-sm transition-colors shadow-lg shadow-primary/20"
-          >
-            Discuss Your Growth System
-            <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
-              <path strokeLinecap="round" strokeLinejoin="round" d="M7 17L17 7M17 7H7M17 7v10" />
-            </svg>
-          </a>
+          <Button href="#contact" variant="primary">
+            Talk through your project
+          </Button>
         </div>
-
       </Container>
     </section>
   );

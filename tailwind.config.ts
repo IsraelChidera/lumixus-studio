@@ -28,6 +28,7 @@ const config: Config = {
       fontFamily: {
         sans: ["var(--font-graphik)", "Graphik", "Inter", "sans-serif"],
         display: ["var(--font-graphik)", "Graphik", "sans-serif"],
+        serif: ["var(--font-serif)", "Georgia", "serif"],
       },
       letterSpacing: {
         tighter: "-0.03em",

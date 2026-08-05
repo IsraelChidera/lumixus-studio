@@ -4,17 +4,19 @@ import Image from "next/image";
 import Link from "next/link";
 import { MdArrowOutward } from "react-icons/md";
 import Container from "@/app/components/Elements/Container";
+import Button from "@/app/components/Elements/Button";
 import { getProjectBySlug, getRelatedProjects, projects } from "@/app/lib/projects";
 import GalleryCarousel from "@/app/components/GalleryCarousel";
 
-type Props = { params: { slug: string } };
+type Props = { params: Promise<{ slug: string }> };
 
 export function generateStaticParams() {
   return projects.map((p) => ({ slug: p.slug }));
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const project = getProjectBySlug(params.slug);
+  const { slug } = await params;
+  const project = getProjectBySlug(slug);
   if (!project) return {};
   return {
     title: `${project.name} - Case Study`,
@@ -29,24 +31,33 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   };
 }
 
-export default function ProjectPage({ params }: Props) {
-  const project = getProjectBySlug(params.slug);
+export default async function ProjectPage({ params }: Props) {
+  const { slug } = await params;
+  const project = getProjectBySlug(slug);
   if (!project) notFound();
 
   const related = getRelatedProjects(project.relatedSlugs);
+  // A live link is the one reliable signal that this was a website project.
+  // Everything else (gallery framing, tool labeling, the CTA below) adapts off it,
+  // so branding-only or social-only work doesn't inherit web-specific framing.
+  const isWebProject = Boolean(project.link);
+  // Non-web work leads with its curated gallery asset rather than `image`,
+  // which isn't guaranteed to be hero-shaped for brand-only projects.
+  const featuredImage = isWebProject
+    ? project.image || project.gallery?.[0]
+    : project.gallery?.[0] || project.image;
 
   return (
     <main>
       {/* ── Hero ─────────────────────────────────────────────────── */}
       <section
-        className="relative bg-dark overflow-hidden flex items-center"
-        style={{ minHeight: "72vh" }}
+        className="relative bg-dark overflow-hidden flex items-center noise"
+        style={{ minHeight: "68vh" }}
       >
-        <div className="absolute inset-0 dot-grid opacity-40" />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-primary/10 rounded-full blur-[140px] pointer-events-none" />
-        <div className="absolute top-0 right-0 w-[350px] h-[350px] bg-accent/8 rounded-full blur-[100px] pointer-events-none" />
+        <div className="absolute top-[-10%] right-[-10%] w-[500px] h-[500px] bg-primary/15 rounded-full blur-[150px] pointer-events-none" />
+        <div className="absolute bottom-[-15%] left-[-10%] w-[400px] h-[400px] bg-accent/10 rounded-full blur-[140px] pointer-events-none" />
 
-        <Container className="relative z-10 pt-40 pb-24">
+        <Container className="relative z-10 pt-40 pb-20">
           <Link
             href="/#works"
             className="inline-flex items-center gap-2 text-white/40 hover:text-white/80 text-sm font-medium transition-colors mb-12 group"
@@ -60,7 +71,7 @@ export default function ProjectPage({ params }: Props) {
             >
               <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" />
             </svg>
-            Back to Portfolio
+            Back to work
           </Link>
 
           <div className="flex flex-wrap gap-2 mb-6">
@@ -74,34 +85,43 @@ export default function ProjectPage({ params }: Props) {
             ))}
           </div>
 
-          <h1
-            className="font-bold text-white leading-[1.04] tracking-tight max-w-3xl"
-            style={{ fontSize: "clamp(40px, 6vw, 72px)", letterSpacing: "-0.03em" }}
-          >
-            {project!.name}
-          </h1>
+          <div className="flex flex-wrap items-end justify-between gap-8">
+            <div>
+              <h1
+                className="font-bold text-white leading-[1.04] tracking-tight max-w-3xl"
+                style={{ fontSize: "clamp(40px, 6vw, 72px)", letterSpacing: "-0.03em" }}
+              >
+                {project!.name}
+              </h1>
+              <p
+                className="text-white/50 mt-5 max-w-xl leading-relaxed"
+                style={{ fontSize: "clamp(16px, 1.5vw, 18px)" }}
+              >
+                {project!.tagline}
+              </p>
+            </div>
 
-          <p
-            className="text-white/50 mt-5 max-w-xl leading-relaxed"
-            style={{ fontSize: "clamp(16px, 1.5vw, 18px)" }}
-          >
-            {project!.tagline}
-          </p>
+            {isWebProject && (
+              <Button href={project!.link!} target="_blank" rel="noopener noreferrer" variant="outline-dark">
+                Visit the live site
+              </Button>
+            )}
+          </div>
         </Container>
       </section>
 
       {/* ── Featured image (only when available) ────────────────── */}
-      {project!.image && (
+      {featuredImage && (
         <section className="bg-surface py-16">
           <Container>
             <div className="relative w-full aspect-[16/9] rounded-2xl overflow-hidden shadow-2xl shadow-dark/10">
               <Image
-                src={project!.image}
+                src={featuredImage}
                 alt={project!.name}
                 fill
                 priority
                 sizes="(max-width: 1300px) 91vw, 1300px"
-                className="object-cover object-top"
+                className={isWebProject ? "object-cover object-top" : "object-contain bg-white p-8"}
               />
             </div>
           </Container>
@@ -130,7 +150,7 @@ export default function ProjectPage({ params }: Props) {
 
               <div>
                 <p className="text-xs font-semibold text-muted tracking-widest uppercase mb-3">
-                  Stack
+                  Tools
                 </p>
                 <ul className="space-y-1.5">
                   {project!.stack.map((s) => (
@@ -159,26 +179,21 @@ export default function ProjectPage({ params }: Props) {
             </div>
 
             {/* Gallery — only renders when images are available */}
-            {project!.gallery && project!.gallery.length > 0 && (() => {
-              const isBrand = project!.tags.some((t) =>
-                ["Branding", "Social Media"].includes(t)
-              );
-              return (
-                <div className="mb-16">
-                  <span className="section-label mb-5 inline-flex">
-                    <span className="w-1 h-1 rounded-full bg-primary" />
-                    {isBrand ? "Brand Assets" : "Gallery"}
-                  </span>
-                  <div className="mt-4">
-                    <GalleryCarousel
-                      images={project!.gallery}
-                      name={project!.name}
-                      fit={isBrand ? "contain" : "cover"}
-                    />
-                  </div>
+            {project!.gallery && project!.gallery.length > 0 && (
+              <div className="mb-16">
+                <span className="section-label mb-5 inline-flex">
+                  <span className="w-1 h-1 rounded-full bg-primary" />
+                  {isWebProject ? "Gallery" : "Brand Assets"}
+                </span>
+                <div className="mt-4">
+                  <GalleryCarousel
+                    images={project!.gallery}
+                    name={project!.name}
+                    fit={isWebProject ? "cover" : "contain"}
+                  />
                 </div>
-              );
-            })()}
+              </div>
+            )}
 
             {/* Problem */}
             <div className="mb-16">
@@ -251,14 +266,16 @@ export default function ProjectPage({ params }: Props) {
                   className="group rounded-2xl overflow-hidden bg-white block card-glow"
                 >
                   {rel.image ? (
-                    /* Image card — for projects with a screenshot */
-                    <div className="relative aspect-[4/3]">
+                    /* Image card — for projects with visuals to show */
+                    <div className={`relative aspect-[4/3] ${rel.link ? "" : "bg-white"}`}>
                       <Image
                         src={rel.image}
                         alt={rel.name}
                         fill
                         sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                        className="object-cover object-top transition-transform duration-500 group-hover:scale-[1.04]"
+                        className={`transition-transform duration-500 group-hover:scale-[1.04] ${
+                          rel.link ? "object-cover object-top" : "object-contain p-6"
+                        }`}
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-dark/75 via-dark/15 to-transparent" />
                       <div className="absolute bottom-0 left-0 right-0 p-5 flex items-end justify-between gap-3">
@@ -318,7 +335,7 @@ export default function ProjectPage({ params }: Props) {
                 href="/#works"
                 className="inline-flex items-center gap-2 text-sm font-semibold text-primary hover:underline underline-offset-4"
               >
-                View all projects
+                View all work
                 <MdArrowOutward className="text-sm" />
               </Link>
             </div>
@@ -329,29 +346,27 @@ export default function ProjectPage({ params }: Props) {
       {/* ── CTA ──────────────────────────────────────────────────── */}
       <section className="py-20 bg-white">
         <Container>
-          <div className="rounded-2xl bg-dark relative overflow-hidden p-12 md:p-16 text-center">
-            <div className="absolute inset-0 dot-grid opacity-20" />
+          <div className="rounded-2xl bg-dark relative overflow-hidden p-12 md:p-16 text-center noise">
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] bg-primary/15 rounded-full blur-[100px] pointer-events-none" />
             <div className="relative z-10">
-              <p className="text-xs font-semibold tracking-widest uppercase text-white/30 mb-4">
-                Next step
+              <p className="text-xs font-semibold tracking-widest uppercase text-white/40 mb-4">
+                Next Step
               </p>
               <h3
                 className="font-bold text-white mb-4 tracking-tight"
                 style={{ fontSize: "clamp(24px, 3vw, 40px)", letterSpacing: "-0.02em" }}
               >
-                Ready to get results like this?
+                Want something like this?
+                <span className="font-serif italic font-normal text-primary"> Let&apos;s talk.</span>
               </h3>
-              <p className="text-white/40 text-[15px] mb-8 max-w-md mx-auto leading-relaxed">
-                Book a free strategy call and let's map out what a project like this could look like for your business.
+              <p className="text-white/50 text-[15px] mb-8 max-w-md mx-auto leading-relaxed">
+                Tell us about your brand and what you&apos;re trying to do. We&apos;ll take it from there.
               </p>
-              <Link
-                href="https://cal.com/lumixus-studio/30min"
-                className="inline-flex items-center gap-2 bg-primary hover:bg-secondary text-white font-semibold px-8 py-4 rounded-full text-[15px] transition-colors shadow-lg shadow-primary/30"
-              >
-                Book a Free Strategy Call
-                <MdArrowOutward className="text-base" />
-              </Link>
+              <div className="flex justify-center">
+                <Button href="/#contact" variant="primary">
+                  Start a project
+                </Button>
+              </div>
             </div>
           </div>
         </Container>

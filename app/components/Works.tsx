@@ -1,9 +1,10 @@
 "use client";
 import React, { useState, useEffect } from "react";
-import Link from "next/link";
+import Image from "next/image";
 import { motion, AnimatePresence } from "motion/react";
 import { MdArrowOutward } from "react-icons/md";
 import Container from "@/app/components/Elements/Container";
+import Button from "@/app/components/Elements/Button";
 import { projects, type Project } from "@/app/lib/projects";
 import ProjectDetailPanel from "./ProjectDetailPanel";
 
@@ -36,33 +37,28 @@ const Works = () => {
 
   return (
     <>
-      <section id="works" className="py-28 bg-white">
+      <section id="works" className="py-24 sm:py-32 bg-white">
         <Container>
           {/* ── Header ─────────────────────────────────────────── */}
-          <div className="mb-10">
-            <div className="flex items-center gap-4 mb-8">
-              <span className="section-label">
-                <span className="w-1 h-1 rounded-full bg-primary" />
-                Our Portfolio
-              </span>
-              <div className="flex-1 h-px bg-border" />
-            </div>
-            <div className="grid lg:grid-cols-[1fr_320px] gap-8 items-end">
-              <h2
-                className="font-bold text-text tracking-tight"
-                style={{ fontSize: "clamp(32px, 4vw, 52px)", letterSpacing: "-0.03em" }}
-              >
-                Work we&apos;re
-                <span className="gradient-text-primary"> proud of</span>
-              </h2>
-              <p className="text-muted text-[16px] leading-relaxed lg:pb-1">
-                Real projects, real results. Every build is crafted to perform.
-              </p>
-            </div>
+          <div className="mb-10 text-center max-w-2xl mx-auto">
+            <span className="section-label justify-center mb-6">
+              <span className="w-1 h-1 rounded-full bg-primary" />
+              Selected Work
+            </span>
+            <h2
+              className="font-bold text-text tracking-tight"
+              style={{ fontSize: "clamp(34px, 5vw, 60px)", letterSpacing: "-0.03em" }}
+            >
+              Work we&apos;re
+              <span className="font-serif italic font-normal"> proud of.</span>
+            </h2>
+            <p className="mt-4 text-muted text-[16px] leading-relaxed">
+              A handful of the brands we&apos;ve built, rebuilt, and grown.
+            </p>
           </div>
 
           {/* ── Category filter ─────────────────────────────────── */}
-          <div className="flex flex-wrap gap-2 mb-12">
+          <div className="flex flex-wrap justify-center gap-2 mb-14">
             {CATEGORIES.map((cat) => (
               <button
                 key={cat}
@@ -84,156 +80,79 @@ const Works = () => {
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.3, ease: "easeOut" }}
-            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5"
+            className="grid grid-cols-1 sm:grid-cols-2 gap-5"
           >
             {filtered.map((project, i) => {
               const isFeatured = i === 0 && active === "All";
-              const num = String(
-                projects.findIndex((p) => p.slug === project.slug) + 1
-              ).padStart(2, "0");
+              // No live link means this wasn't a website - lead with the curated
+              // gallery asset rather than `image`, which isn't guaranteed to be
+              // hero-shaped for brand-only work, and contain it instead of cropping.
+              const isWebProject = Boolean(project.link);
+              const cover = isWebProject
+                ? project.image || project.gallery?.[0]
+                : project.gallery?.[0] || project.image;
 
-              return isFeatured ? (
-                /* ── Featured card (col-span-2, split layout) ── */
+              return (
                 <button
                   key={project.slug}
                   onClick={() => setSelected(project)}
-                  className="group text-left bg-white border border-border rounded-2xl card-glow sm:col-span-2 flex flex-col focus:outline-none focus-visible:ring-2 focus-visible:ring-primary/40"
+                  className={`group relative text-left rounded-2xl overflow-hidden bg-dark focus:outline-none focus-visible:ring-2 focus-visible:ring-primary/40 focus-visible:ring-offset-2 ${
+                    isFeatured ? "sm:col-span-2" : ""
+                  }`}
                 >
-                  <div className="p-8 flex-1 flex flex-col sm:flex-row gap-0">
-                    {/* Left — main info */}
-                    <div className="flex-1 flex flex-col sm:pr-8">
-                      <div className="flex items-start justify-between mb-8">
-                        <span className="text-xs font-semibold text-primary/30 tracking-[0.15em]">
-                          {num}
-                        </span>
-                        <div className="flex flex-wrap gap-1.5 justify-end">
-                          {project.tags.slice(0, 2).map((tag) => (
-                            <span
-                              key={tag}
-                              className="text-[10px] font-medium text-muted bg-surface border border-border px-2.5 py-1 rounded-full"
-                            >
-                              {tag}
-                            </span>
-                          ))}
-                        </div>
-                      </div>
-
-                      <div className="w-8 h-0.5 bg-primary/20 group-hover:bg-primary group-hover:w-16 transition-all duration-300 rounded-full mb-5" />
-
-                      <h3
-                        className="font-bold text-text leading-tight mb-3"
-                        style={{
-                          fontSize: "clamp(22px, 2.5vw, 30px)",
-                          letterSpacing: "-0.02em",
-                        }}
-                      >
-                        {project.name}
-                      </h3>
-                      <p className="text-sm text-muted leading-relaxed flex-1 mb-8">
-                        {project.tagline}
-                      </p>
-
-                      <div className="flex items-center justify-between pt-5 border-t border-border mt-auto">
-                        <div className="flex flex-wrap gap-1.5">
-                          {project.scope.slice(0, 3).map((s) => (
-                            <span
-                              key={s}
-                              className="text-[10px] font-medium text-primary bg-primary/10 px-2 py-0.5 rounded-full"
-                            >
-                              {s}
-                            </span>
-                          ))}
-                        </div>
-                        <span className="inline-flex items-center gap-1.5 text-xs font-semibold text-primary opacity-0 group-hover:opacity-100 transition-opacity duration-200 whitespace-nowrap flex-shrink-0 ml-3">
-                          View details
-                          <MdArrowOutward />
+                  <div className={`relative w-full ${isFeatured ? "aspect-[16/9]" : "aspect-[4/3]"}`}>
+                    {cover ? (
+                      <Image
+                        src={cover}
+                        alt={project.name}
+                        fill
+                        sizes={isFeatured ? "(max-width: 640px) 100vw, 1200px" : "(max-width: 640px) 100vw, 600px"}
+                        className={`transition-transform duration-500 group-hover:scale-[1.04] ${
+                          isWebProject ? "object-cover object-top" : "object-contain p-8 bg-white/[0.03]"
+                        }`}
+                      />
+                    ) : (
+                      <div className="absolute inset-0 bg-gradient-to-br from-deep to-dark flex items-center justify-center">
+                        <span className="font-serif italic text-white/15 text-6xl">
+                          {project.name.charAt(0)}
                         </span>
                       </div>
-                    </div>
+                    )}
 
-                    {/* Right — results (desktop only) */}
-                    <div className="hidden sm:flex flex-col border-l border-border pl-8 w-56 flex-shrink-0">
-                      <p className="text-[10px] font-semibold text-muted/50 tracking-widest uppercase mb-5">
-                        Results
-                      </p>
-                      <div className="space-y-4">
-                        {project.results.map((r) => (
-                          <div key={r} className="flex items-start gap-2.5">
-                            <span className="flex-shrink-0 mt-[3px] w-4 h-4 rounded-full bg-primary/10 flex items-center justify-center">
-                              <span className="w-1.5 h-1.5 rounded-full bg-primary" />
-                            </span>
-                            <p className="text-sm text-text/70 leading-snug">{r}</p>
-                          </div>
-                        ))}
-                      </div>
-                    </div>
-                  </div>
-                </button>
-              ) : (
-                /* ── Regular card ─────────────────────────────── */
-                <button
-                  key={project.slug}
-                  onClick={() => setSelected(project)}
-                  className="group text-left bg-white border border-border rounded-2xl card-glow flex flex-col focus:outline-none focus-visible:ring-2 focus-visible:ring-primary/40"
-                >
-                  <div className="p-7 flex-1 flex flex-col">
+                    {/* Gradient scrim */}
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/10 to-transparent" />
+
                     {/* Top row */}
-                    <div className="flex items-start justify-between mb-8">
-                      <span className="text-xs font-semibold text-primary/30 tracking-[0.15em]">
-                        {num}
-                      </span>
-                      <div className="flex flex-wrap gap-1.5 justify-end">
-                        {project.tags.slice(0, 2).map((tag) => (
+                    <div className="absolute top-5 left-5 right-5 flex items-start justify-between">
+                      <div className="flex flex-wrap gap-1.5">
+                        {project.tags.slice(0, isFeatured ? 3 : 2).map((tag) => (
                           <span
                             key={tag}
-                            className="text-[10px] font-medium text-muted bg-surface border border-border px-2.5 py-1 rounded-full"
+                            className="text-[10px] font-medium text-white/80 bg-white/10 backdrop-blur-sm border border-white/15 px-2.5 py-1 rounded-full"
                           >
                             {tag}
                           </span>
                         ))}
                       </div>
-                    </div>
-
-                    {/* Animated accent line */}
-                    <div className="w-8 h-0.5 bg-primary/20 group-hover:bg-primary group-hover:w-12 transition-all duration-300 rounded-full mb-5" />
-
-                    {/* Name + tagline */}
-                    <h3
-                      className="text-xl font-bold text-text leading-tight mb-2.5"
-                      style={{ letterSpacing: "-0.01em" }}
-                    >
-                      {project.name}
-                    </h3>
-                    <p className="text-sm text-muted leading-relaxed flex-1 mb-6">
-                      {project.tagline}
-                    </p>
-
-                    {/* Key result */}
-                    <div className="bg-surface border border-border rounded-xl px-4 py-3.5 mb-6">
-                      <p className="text-[10px] font-semibold text-muted/50 tracking-widest uppercase mb-1.5">
-                        Key Result
-                      </p>
-                      <p className="text-sm font-semibold text-text leading-snug">
-                        {project.results[0]}
-                      </p>
-                    </div>
-
-                    {/* Footer row */}
-                    <div className="flex items-center justify-between pt-5 border-t border-border">
-                      <div className="flex flex-wrap gap-1.5">
-                        {project.scope.slice(0, 2).map((s) => (
-                          <span
-                            key={s}
-                            className="text-[10px] font-medium text-primary bg-primary/10 px-2 py-0.5 rounded-full"
-                          >
-                            {s}
-                          </span>
-                        ))}
-                      </div>
-                      <span className="inline-flex items-center gap-1.5 text-xs font-semibold text-primary opacity-0 group-hover:opacity-100 transition-opacity duration-200 whitespace-nowrap flex-shrink-0 ml-3">
-                        View details
-                        <MdArrowOutward />
+                      <span className="w-9 h-9 rounded-full bg-white/10 backdrop-blur-sm border border-white/15 flex items-center justify-center text-white opacity-0 group-hover:opacity-100 group-focus-visible:opacity-100 transition-opacity duration-200 flex-shrink-0">
+                        <MdArrowOutward className="text-sm" />
                       </span>
+                    </div>
+
+                    {/* Bottom content */}
+                    <div className="absolute bottom-0 left-0 right-0 p-6">
+                      <h3
+                        className="font-bold text-white leading-tight mb-2"
+                        style={{
+                          fontSize: isFeatured ? "clamp(24px, 3vw, 34px)" : "clamp(19px, 2.2vw, 24px)",
+                          letterSpacing: "-0.02em",
+                        }}
+                      >
+                        {project.name}
+                      </h3>
+                      <p className="text-white/55 text-sm leading-relaxed max-w-md">
+                        {project.tagline}
+                      </p>
                     </div>
                   </div>
                 </button>
@@ -245,24 +164,20 @@ const Works = () => {
           {filtered.length === 0 && (
             <div className="text-center py-24 border border-dashed border-border rounded-2xl">
               <p className="text-base font-semibold text-text mb-2">
-                No projects in this category yet
+                Nothing in this category yet
               </p>
               <p className="text-sm text-muted">
-                We're always adding new work - check back soon.
+                We&apos;re always adding new work, check back soon.
               </p>
             </div>
           )}
 
           {/* ── Footer row ───────────────────────────────────────── */}
-          <div className="flex flex-col sm:flex-row sm:items-center justify-between mt-12 pt-8 border-t border-border gap-5">
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between mt-14 pt-8 border-t border-border gap-5">
             <p className="text-muted text-sm">{projects.length} selected projects</p>
-            <Link
-              href="https://cal.com/lumixus-studio/30min"
-              className="inline-flex items-center gap-2 bg-primary hover:bg-secondary text-white font-semibold px-6 py-3 rounded-full text-sm transition-colors shadow-lg shadow-primary/20"
-            >
+            <Button href="#contact" variant="primary">
               Start your project
-              <MdArrowOutward className="text-base" />
-            </Link>
+            </Button>
           </div>
         </Container>
       </section>

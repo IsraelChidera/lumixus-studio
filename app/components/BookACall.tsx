@@ -1,11 +1,12 @@
 "use client";
 import React, { useState } from "react";
-import Container from "@/app/components/Elements/Container";
+import Link from "next/link";
 import { MdArrowOutward } from "react-icons/md";
 import { motion } from "motion/react";
 import * as yup from "yup";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
+import Container from "@/app/components/Elements/Container";
 
 const schema = yup.object().shape({
   fullName: yup.string().required("Full name is required."),
@@ -17,18 +18,22 @@ const schema = yup.object().shape({
     .string()
     .transform((val) => (val === "" ? undefined : val))
     .notRequired()
-    .min(9, "Phone must be 9 digits or more")
-    .max(14, "Phone must be 14 digits or less"),
-  business: yup.string().required("Business name is required."),
-  message: yup.string().required("Please describe your needs.")
+    .min(7, "Phone number looks too short")
+    .max(16, "Phone number looks too long"),
+  business: yup.string().required("Brand or business name is required."),
+  message: yup.string().required("Tell us a little about what you need.")
 });
 
 const benefits = [
-  "Response within 24 hours, guaranteed",
-  "Free 30-minute growth audit included",
-  "Custom system blueprint within 48 hours",
-  "No obligation - just clarity",
+  "A reply within 24 hours, from a real person",
+  "A short call to figure out if we're a fit",
+  "No pitch decks, no pressure",
 ];
+
+const inputClasses = (hasError: boolean) =>
+  `w-full rounded-xl border px-4 py-3.5 text-sm text-white placeholder:text-white/30 bg-white/5 focus:bg-white/[0.08] transition-colors ${
+    hasError ? "border-red-400/50" : "border-white/15"
+  }`;
 
 const BookACall = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -54,7 +59,7 @@ const BookACall = () => {
           date: new Date().toLocaleString(),
           fullName: data.fullName,
           email: data.email,
-          phoneNumber: data.phoneNumber ? `+234${data.phoneNumber}` : "N/A",
+          phoneNumber: data.phoneNumber || "N/A",
           businessName: data.business,
           description: data.message
         })
@@ -69,16 +74,27 @@ const BookACall = () => {
   };
 
   return (
-    <section id="contact" className="py-28 bg-white">
-      <Container>
-        {/* ── Section header ─────────────────────────────────────── */}
-        <div className="flex items-center gap-4 mb-14">
-          <span className="section-label">
-            <span className="w-1 h-1 rounded-full bg-primary" />
-            Start Here
+    <section id="contact" className="relative py-24 sm:py-32 bg-dark overflow-hidden">
+      <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-primary/10 rounded-full blur-[160px] pointer-events-none" />
+
+      <Container className="relative z-10">
+        {/* ── Headline ─────────────────────────────────────────────── */}
+        <div className="flex items-center gap-4 mb-12">
+          <span className="inline-flex items-center gap-2 text-[11px] font-semibold tracking-[0.18em] uppercase text-white/45">
+            <span className="w-1 h-1 rounded-full bg-accent" />
+            Let&apos;s Talk
           </span>
-          <div className="flex-1 h-px bg-border" />
+          <div className="flex-1 h-px bg-white/8" />
         </div>
+
+        <h2
+          className="font-bold text-white tracking-tight max-w-3xl mb-16"
+          style={{ fontSize: "clamp(36px, 6vw, 76px)", letterSpacing: "-0.03em", lineHeight: 1.02 }}
+        >
+          Let&apos;s make your brand
+          <br />
+          <span className="font-serif italic font-normal text-primary">impossible to ignore.</span>
+        </h2>
 
         <motion.div
           initial={{ y: 40, opacity: 0 }}
@@ -89,20 +105,15 @@ const BookACall = () => {
         >
           {/* Left: Info */}
           <div className="lg:col-span-2">
-            <h2
-              className="font-bold text-text tracking-tight"
-              style={{ fontSize: "clamp(28px, 3.5vw, 44px)", letterSpacing: "-0.03em" }}
-            >
-              Tell us about your pipeline problem.
-            </h2>
-            <p className="mt-4 text-muted text-[16px] leading-relaxed">
-              Fill out the form with your situation. We'll review it and come back within 24 hours with a clear picture of what's holding your pipeline back and how we can fix it.
+            <p className="text-white/45 text-[16px] leading-relaxed">
+              Tell us a little about your brand and what you&apos;re trying to
+              do. We read every message ourselves and reply within a day.
             </p>
 
             <ul className="mt-8 space-y-3">
               {benefits.map((b, i) => (
-                <li key={i} className="flex items-center gap-3 text-sm text-text/70">
-                  <span className="w-5 h-5 rounded-full bg-primary/10 border border-primary/20 flex-shrink-0 flex items-center justify-center">
+                <li key={i} className="flex items-center gap-3 text-sm text-white/60">
+                  <span className="w-5 h-5 rounded-full bg-primary/15 border border-primary/25 flex-shrink-0 flex items-center justify-center">
                     <svg className="w-2.5 h-2.5 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
                       <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
                     </svg>
@@ -112,11 +123,11 @@ const BookACall = () => {
               ))}
             </ul>
 
-            <div className="mt-10 p-5 rounded-2xl bg-surface border border-border">
-              <p className="text-xs font-semibold tracking-wider uppercase text-muted mb-1">Prefer a quick call?</p>
+            <div className="mt-10 p-5 rounded-2xl bg-white/[0.04] border border-white/10">
+              <p className="text-xs font-semibold tracking-wider uppercase text-white/50 mb-1">Prefer a quick call?</p>
               <a
                 href="https://cal.com/lumixus-studio/30min"
-                className="text-sm font-semibold text-primary hover:underline underline-offset-4 flex items-center gap-1"
+                className="text-sm font-semibold text-white hover:text-primary transition-colors flex items-center gap-1"
               >
                 Book directly on our calendar <MdArrowOutward />
               </a>
@@ -126,32 +137,27 @@ const BookACall = () => {
           {/* Right: Form */}
           <div className="lg:col-span-3">
             {isSubmitted ? (
-              <div className="rounded-2xl bg-green-50 border border-green-200 p-10 text-center">
-                <div className="w-14 h-14 rounded-full bg-green-100 border border-green-200 flex items-center justify-center mx-auto mb-4">
-                  <svg className="w-7 h-7 text-green-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+              <div className="rounded-2xl bg-white/5 border border-white/10 p-10 text-center">
+                <div className="w-14 h-14 rounded-full bg-primary/15 border border-primary/25 flex items-center justify-center mx-auto mb-4">
+                  <svg className="w-7 h-7 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                     <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
                   </svg>
                 </div>
-                <h3 className="text-lg font-bold text-text mb-2">Message received!</h3>
-                <p className="text-sm text-muted">We'll be in touch within 24 hours. Check your inbox for a confirmation.</p>
+                <h3 className="text-lg font-bold text-white mb-2">Message received.</h3>
+                <p className="text-sm text-white/45">We&apos;ll get back to you within a day.</p>
               </div>
             ) : (
-              <form
-                onSubmit={handleSubmit(handleContactForm)}
-                className="space-y-4"
-              >
+              <form onSubmit={handleSubmit(handleContactForm)} className="space-y-4">
                 <div className="grid sm:grid-cols-2 gap-4">
                   <div>
                     <input
                       type="text"
                       {...register("fullName")}
                       placeholder="Full Name"
-                      className={`w-full rounded-xl border px-4 py-3.5 text-sm text-text placeholder:text-muted bg-surface focus:bg-white transition-colors ${
-                        errors.fullName ? "border-red-300" : "border-border"
-                      }`}
+                      className={inputClasses(!!errors.fullName)}
                     />
                     {errors.fullName && (
-                      <p className="text-red-500 text-xs mt-1.5">{errors.fullName.message}</p>
+                      <p className="text-red-400 text-xs mt-1.5">{errors.fullName.message}</p>
                     )}
                   </div>
                   <div>
@@ -159,12 +165,10 @@ const BookACall = () => {
                       type="email"
                       {...register("email")}
                       placeholder="Email Address"
-                      className={`w-full rounded-xl border px-4 py-3.5 text-sm text-text placeholder:text-muted bg-surface focus:bg-white transition-colors ${
-                        errors.email ? "border-red-300" : "border-border"
-                      }`}
+                      className={inputClasses(!!errors.email)}
                     />
                     {errors.email && (
-                      <p className="text-red-500 text-xs mt-1.5">{errors.email.message}</p>
+                      <p className="text-red-400 text-xs mt-1.5">{errors.email.message}</p>
                     )}
                   </div>
                 </div>
@@ -172,28 +176,24 @@ const BookACall = () => {
                 <div className="grid sm:grid-cols-2 gap-4">
                   <div>
                     <input
-                      type="text"
+                      type="tel"
                       {...register("phoneNumber")}
-                      placeholder="Phone Number"
-                      className={`w-full rounded-xl border px-4 py-3.5 text-sm text-text placeholder:text-muted bg-surface focus:bg-white transition-colors ${
-                        errors.phoneNumber ? "border-red-300" : "border-border"
-                      }`}
+                      placeholder="Phone Number (optional)"
+                      className={inputClasses(!!errors.phoneNumber)}
                     />
                     {errors.phoneNumber && (
-                      <p className="text-red-500 text-xs mt-1.5">{errors.phoneNumber.message}</p>
+                      <p className="text-red-400 text-xs mt-1.5">{errors.phoneNumber.message}</p>
                     )}
                   </div>
                   <div>
                     <input
                       type="text"
                       {...register("business")}
-                      placeholder="Business Name"
-                      className={`w-full rounded-xl border px-4 py-3.5 text-sm text-text placeholder:text-muted bg-surface focus:bg-white transition-colors ${
-                        errors.business ? "border-red-300" : "border-border"
-                      }`}
+                      placeholder="Brand / Business Name"
+                      className={inputClasses(!!errors.business)}
                     />
                     {errors.business && (
-                      <p className="text-red-500 text-xs mt-1.5">{errors.business.message}</p>
+                      <p className="text-red-400 text-xs mt-1.5">{errors.business.message}</p>
                     )}
                   </div>
                 </div>
@@ -202,19 +202,15 @@ const BookACall = () => {
                   <textarea
                     rows={5}
                     {...register("message")}
-                    placeholder="Describe your pipeline situation - where leads come from now, what's not working, and what you want to change."
-                    className={`w-full rounded-xl border px-4 py-3.5 text-sm text-text placeholder:text-muted bg-surface focus:bg-white transition-colors resize-none ${
-                      errors.message ? "border-red-300" : "border-border"
-                    }`}
+                    placeholder="What are you trying to do? A rebrand, a new site, ongoing marketing, tell us where you're stuck."
+                    className={`${inputClasses(!!errors.message)} resize-none`}
                   />
                   {errors.message && (
-                    <p className="text-red-500 text-xs mt-1.5">{errors.message.message}</p>
+                    <p className="text-red-400 text-xs mt-1.5">{errors.message.message}</p>
                   )}
                 </div>
 
-                {submitError && (
-                  <p className="text-red-500 text-sm">{submitError}</p>
-                )}
+                {submitError && <p className="text-red-400 text-sm">{submitError}</p>}
 
                 <button
                   type="submit"
@@ -225,13 +221,29 @@ const BookACall = () => {
                   {!isSubmitting && <MdArrowOutward className="text-lg" />}
                 </button>
 
-                <p className="text-xs text-center text-muted">
+                <p className="text-xs text-center text-white/30">
                   No spam, ever. We respect your privacy.
                 </p>
               </form>
             )}
           </div>
         </motion.div>
+
+        {/* ── Bottom rule + socials ──────────────────────────────── */}
+        <div className="flex items-center gap-6 mt-20 pt-8 border-t border-white/8">
+          <div className="flex-1" />
+          <Link href="https://www.instagram.com/lumixus_studio/" className="text-white/45 hover:text-white transition-colors text-xs tracking-wide">
+            Instagram
+          </Link>
+          <span className="text-white/10">·</span>
+          <Link href="mailto:lumixusstudio@gmail.com" className="text-white/45 hover:text-white transition-colors text-xs tracking-wide">
+            Email Us
+          </Link>
+          <span className="text-white/10">·</span>
+          <Link href="https://www.facebook.com/profile.php?id=61563258786419" className="text-white/45 hover:text-white transition-colors text-xs tracking-wide">
+            Facebook
+          </Link>
+        </div>
       </Container>
     </section>
   );
