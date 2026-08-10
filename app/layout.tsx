@@ -12,32 +12,32 @@ import Footer from "./components/Footer";
 export const metadata: Metadata = {
   metadataBase: new URL("https://lumixus.studio"),
   title: {
-    default: "Lumixus Studio | Marketing, Branding & Web Design Agency",
+    default: "Lumixus Studio | B2B Client Acquisition Systems",
     template: "%s | Lumixus Studio"
   },
   description:
-    "Lumixus Studio is a full-service marketing agency. We build brand identities, websites, content and campaigns for ambitious companies who want to grow, not just look busy.",
+    "Lumixus Studio builds client acquisition systems for B2B service businesses — positioning, brand identity, websites, content and follow-up engineered for qualified sales conversations, not just a nicer-looking brand.",
   applicationName: "Lumixus Studio",
   keywords: [
-    "marketing agency",
+    "B2B client acquisition",
+    "B2B lead generation agency",
+    "client acquisition system",
     "branding agency",
     "brand identity design",
     "web design agency",
-    "digital marketing agency",
-    "creative agency",
-    "content marketing agency",
-    "advertising agency",
+    "B2B marketing agency",
+    "conversion rate optimization",
     "brand strategy",
     "website design and development",
     "growth marketing",
-    "full-service marketing agency",
+    "B2B growth agency",
     "Lumixus Studio",
     "Lumixus"
   ],
   authors: [{ name: "Lumixus Studio", url: "https://lumixus.studio" }],
   creator: "Lumixus Studio",
   publisher: "Lumixus Studio",
-  category: "Marketing Agency",
+  category: "B2B Growth Agency",
   robots: {
     index: true,
     follow: true,
@@ -50,9 +50,9 @@ export const metadata: Metadata = {
     }
   },
   openGraph: {
-    title: "Lumixus Studio | Marketing, Branding & Web Design Agency",
+    title: "Lumixus Studio | B2B Client Acquisition Systems",
     description:
-      "Strategy, branding, web design, content and advertising for ambitious brands. Good marketing is good business.",
+      "Positioning, web design, content and follow-up for B2B service businesses. Good marketing is good business.",
     url: "https://lumixus.studio",
     siteName: "Lumixus Studio",
     locale: "en_US",
@@ -62,7 +62,7 @@ export const metadata: Metadata = {
         url: "https://lumixus.studio/og-image.png",
         width: 1200,
         height: 630,
-        alt: "Lumixus Studio - Marketing, Branding & Web Design Agency"
+        alt: "Lumixus Studio - B2B Client Acquisition Systems"
       }
     ]
   },
@@ -70,9 +70,9 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     site: "@lumixus_studio",
     creator: "@lumixus_studio",
-    title: "Lumixus Studio | Marketing, Branding & Web Design Agency",
+    title: "Lumixus Studio | B2B Client Acquisition Systems",
     description:
-      "Strategy, branding, web design, content and advertising for ambitious brands. Good marketing is good business.",
+      "Positioning, web design, content and follow-up for B2B service businesses. Good marketing is good business.",
     images: ["https://lumixus.studio/og-image.png"]
   },
   verification: {
@@ -147,7 +147,7 @@ export default function RootLayout({
       height: 60
     },
     description:
-      "Lumixus Studio is a full-service marketing agency specializing in brand strategy, identity design, web design and development, content, and advertising.",
+      "Lumixus Studio builds client acquisition systems for B2B service businesses, specializing in positioning, brand identity, web design and development, content, and conversion optimization.",
     foundingDate: "2022",
     email: "lumixusstudio@gmail.com",
     contactPoint: {
@@ -220,7 +220,7 @@ export default function RootLayout({
     "@id": "https://lumixus.studio/#website",
     url: "https://lumixus.studio",
     name: "Lumixus Studio",
-    description: "Marketing, Branding & Web Design Agency",
+    description: "B2B Client Acquisition Systems",
     publisher: {
       "@id": "https://lumixus.studio/#organization"
     },
@@ -245,7 +245,7 @@ export default function RootLayout({
         name: "What kind of brands do you work with?",
         acceptedAnswer: {
           "@type": "Answer",
-          text: "Ambitious ones, across a wide range of industries. What matters more than sector is whether a company is serious about growing the brand, not just the traffic."
+          text: "B2B service businesses — consulting, IT, logistics, HR & recruitment, professional services. What matters more than sector is whether you're serious about turning your digital presence into a source of qualified clients, not just traffic."
         }
       },
       {

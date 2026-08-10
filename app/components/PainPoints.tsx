@@ -6,7 +6,7 @@ import Container from "@/app/components/Elements/Container";
 const beliefs = [
   {
     number: "01",
-    text: "We help ambitious brands grow. Not just get noticed.",
+    text: "We turn your website into a source of clients. Not just a brochure.",
   },
   {
     number: "02",

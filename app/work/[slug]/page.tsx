@@ -206,6 +206,22 @@ export default async function ProjectPage({ params }: Props) {
               </p>
             </div>
 
+            {/* Discovery */}
+            <div className="mb-16">
+              <span className="section-label mb-5 inline-flex">
+                <span className="w-1 h-1 rounded-full bg-primary" />
+                What We Found
+              </span>
+              <ul className="mt-4 space-y-3">
+                {project!.discovery.map((d) => (
+                  <li key={d} className="flex items-start gap-3 text-[17px] text-text/75 leading-[1.6]">
+                    <span className="flex-shrink-0 mt-[9px] w-1.5 h-1.5 rounded-full bg-primary/40" />
+                    {d}
+                  </li>
+                ))}
+              </ul>
+            </div>
+
             {/* Features */}
             <div className="mb-16">
               <span className="section-label mb-5 inline-flex">

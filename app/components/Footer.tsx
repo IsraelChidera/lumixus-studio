@@ -57,7 +57,7 @@ const Footer = () => {
               <Image src={logo} alt="Lumixus Studio" className="h-7 w-auto mb-4" />
             </Link>
             <p className="text-sm text-muted leading-relaxed max-w-xs">
-              A full-service marketing agency. Strategy, branding, web design, content and advertising for ambitious brands.
+              We build client acquisition systems for B2B service businesses — positioning, web design, content and follow-up, engineered to turn visitors into sales conversations.
             </p>
             <div className="flex items-center gap-3 mt-6">
               <Link

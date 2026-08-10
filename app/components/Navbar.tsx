@@ -189,7 +189,7 @@ const Navbar = () => {
                 className="px-6 pb-8 pt-5 border-t border-white/[0.07]"
               >
                 <p className="text-[11px] text-white/45 tracking-[0.12em] uppercase font-medium mb-5">
-                  Full-Service Marketing Agency
+                  B2B Client Acquisition Studio
                 </p>
                 <div className="flex items-center gap-3">
                   <Link

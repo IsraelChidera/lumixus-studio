@@ -11,16 +11,16 @@ import Faq from "./components/Faq";
 import Contact from "./components/BookACall";
 
 export const metadata: Metadata = {
-  title: "Lumixus Studio | Marketing, Branding & Web Design Agency",
+  title: "Lumixus Studio | B2B Client Acquisition Systems",
   description:
-    "A full-service marketing agency. Strategy, branding, web design, content and advertising for ambitious brands who want to grow.",
+    "We build client acquisition systems for B2B service businesses — positioning, web design, content and follow-up engineered to generate qualified sales conversations.",
   alternates: {
     canonical: "https://lumixus.studio"
   },
   openGraph: {
-    title: "Lumixus Studio | Marketing, Branding & Web Design Agency",
+    title: "Lumixus Studio | B2B Client Acquisition Systems",
     description:
-      "We help ambitious brands grow through strategy, branding, web design, content and advertising. Good marketing is good business.",
+      "We help B2B service businesses turn their digital presence into a predictable source of qualified sales conversations. Good marketing is good business.",
     url: "https://lumixus.studio",
     type: "website"
   }

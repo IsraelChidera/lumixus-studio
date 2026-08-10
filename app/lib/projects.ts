@@ -1,3 +1,5 @@
+export type Outcome = "convert" | "authority" | "modernize"
+
 export type Project = {
   slug: string
   name: string
@@ -7,7 +9,11 @@ export type Project = {
   /** Brand asset / screenshot gallery - shown as a carousel on detail page and panel */
   gallery?: string[]
   tags: string[]
+  /** Business outcome this case study is the strongest evidence for - drives homepage grouping */
+  outcome: Outcome
   problem: string
+  /** What the audit/discovery phase surfaced - the bridge between the problem and what we built */
+  discovery: string[]
   scope: string[]
   features: string[]
   stack: string[]
@@ -24,8 +30,14 @@ export const projects: Project[] = [
     tagline: "A unified academic management platform consolidating six campus systems into one",
     gallery: ["/core360analytics.png"],
     tags: ["Web Design", "Web Dev"],
+    outcome: "modernize",
     problem:
       "University departments were running on six disconnected systems. Students, lecturers, administrators, wellness staff, student union officials, and executives each had separate tools that couldn't communicate - duplicated data, administrative chaos, and a frustrating experience for everyone on campus.",
+    discovery: [
+      "Six departments running six disconnected systems with no shared source of truth",
+      "Data was re-entered by hand across student, lecturer, admin, wellness, SUG, and executive tools",
+      "Each of the six user groups needed a genuinely different workflow, not one generic dashboard",
+    ],
     scope: ["UI/UX Design", "Web Development", "Design System", "Multi-portal Architecture"],
     features: [
       "Portal modules - Student, Lecturer, Admin, Wellness, SUG, Executive",
@@ -42,7 +54,7 @@ export const projects: Project[] = [
       "Admin overhead significantly reduced across all departments",
       "Full institution rollout delivered on schedule",
     ],
-    relatedSlugs: ["market-run", "graft"],
+    relatedSlugs: ["scris-enterprise", "myt40"],
   },
   {
     slug: "scris-enterprise",
@@ -52,8 +64,14 @@ export const projects: Project[] = [
     image: "/scris-enterprise.png",
     gallery: ["/scris-enterprise.png", "/scris-enterprise.png"],
     tags: ["Web Design", "Branding", "SEO"],
+    outcome: "modernize",
     problem:
       "Scris Enterprise needed a digital presence that communicated credibility to enterprise hiring managers while staying approachable for job seekers - two very different audiences, one website.",
+    discovery: [
+      "Enterprise hiring managers and individual job seekers were being served the same generic messaging on one homepage",
+      "Stakeholder interviews surfaced two distinct decision journeys that needed separate paths through the site",
+      "No dedicated trust-building content existed to reassure enterprise clients before a conversation started",
+    ],
     scope: ["Brand Strategy", "Visual Identity", "Web Design", "On-page SEO"],
     features: [
       "Professional copywriting and content strategy",
@@ -70,7 +88,7 @@ export const projects: Project[] = [
       "Mobile bounce rate reduced by 35%",
       "Top-5 Google ranking for target keywords within 60 days",
     ],
-    relatedSlugs: ["core360analytics", "market-run"],
+    relatedSlugs: ["core360analytics", "myt40"],
   },
   {
     slug: "myt40",
@@ -80,25 +98,31 @@ export const projects: Project[] = [
     image: "/myt40.png",
     gallery: ["/myt40.png", "/myt40.png"],
     tags: ["Web Design", "Branding", "SEO"],
+    outcome: "modernize",
     problem:
       "MyT40 needed a website that clearly communicated its expertise in transportation technology while showing logistics companies how its solutions simplify operations, improve efficiency, and support long-term growth.",
+    discovery: [
+      "Logistics decision-makers couldn't quickly tell how the platform applied to their day-to-day operations",
+      "The existing narrative leaned on generic tech language instead of transportation and logistics specifics",
+      "Efficiency and growth benefits weren't made tangible anywhere on the site",
+    ],
     scope: ["Brand Strategy", "Visual Identity", "Web Design", "On-page SEO"],
     features: [
       "Providing innovative tech solutions for the transportation industry",
       "Trust-building social proof sections",
       "Mobile-first responsive layouts",
       "SEO-optimized content structure",
-      "Clear conversion funnels for both user types",
+      "Clear conversion funnels for logistics decision-makers",
     ],
     stack: ["Figma", "Next.js", "Tailwind CSS"],
     process:
-      "Started with stakeholder interviews to map both user journeys, then developed a unified visual language that spoke to enterprise clients and candidates equally. Three design iterations before final launch.",
+      "Started with stakeholder interviews to map how logistics buyers actually evaluate a transportation-tech vendor, then developed a visual language that spoke directly to that audience. Three design iterations before final launch.",
     results: [      
       "Launched in 2 weeks",
       "Mobile bounce rate reduced by 35%",
       "Top-5 Google ranking for target keywords within 60 days",
     ],
-    relatedSlugs: ["market-run"],
+    relatedSlugs: ["core360analytics", "scris-enterprise"],
   },
   {
     slug: "rdj-estates",
@@ -108,8 +132,14 @@ export const projects: Project[] = [
     image: "/rdj-estates.png",
     gallery: ["/rdj-estates.png"],
     tags: ["Web Design", "CRO", "SEO"],
+    outcome: "convert",
     problem:
       "RDJ Estates was generating traffic but losing potential buyers at every step - unclear CTAs, a dated design, and no trust signals to justify premium pricing.",
+    discovery: [
+      "A full UX audit identified 11 distinct friction points across the enquiry flow",
+      "CTAs were inconsistent and buried, leaving visitors without a clear next step",
+      "Nothing on the site justified premium pricing - no trust signals, no social proof, no differentiation from lower-tier listings",
+    ],
     scope: ["UX Audit", "Web Design", "Conversion Optimization", "SEO"],
     features: [
       "Property listing pages with detailed specs",
@@ -126,7 +156,7 @@ export const projects: Project[] = [
       "Average session duration increased 2.1×",
       "3 high-value property sales attributed to the new site within 45 days",
     ],
-    relatedSlugs: ["market-run", "good-homes"],
+    relatedSlugs: ["global-value-pedestal", "chris-global"],
   },
   // {
   //   slug: "good-homes",
@@ -163,8 +193,14 @@ export const projects: Project[] = [
     image: "/gloreen.png",
     gallery: ["/gloreen.png", "/gloreen1.png", "/gloreen2.png"],
     tags: ["Branding", "Social Media"],
+    outcome: "authority",
     problem:
       "Gloren Ateliers was producing world-class bespoke fashion but presenting it through inconsistent, informal channels. Their brand needed to match the craftsmanship of their garments - premium, intentional, and immediately recognisable - but nothing in their visual identity communicated that.",
+    discovery: [
+      "Visual presentation was inconsistent across channels, with no single identity tying it together",
+      "The brand's craftsmanship wasn't reflected anywhere in its logo, content, or tone of voice",
+      "Informal, ad-hoc content was undercutting the premium positioning the garments themselves justified",
+    ],
     scope: ["Brand Identity", "Visual Language", "Social Media Strategy", "Content Templates"],
     features: [
       "Luxury logo and wordmark with custom lettering direction",
@@ -189,8 +225,14 @@ export const projects: Project[] = [
     image: "/pvg.jpeg",
     gallery: ["/pvg.jpeg", "/pvg1.png"],
     tags: ["Branding", "Social Media"],
+    outcome: "authority",
     problem:
       "In a professional services market where trust is everything, GVP's generic visual identity was undermining their credibility before a single conversation was had. Prospects couldn't distinguish them from dozens of similar firms, and their social media presence was inconsistent and forgettable.",
+    discovery: [
+      "A generic visual identity made GVP indistinguishable from dozens of similar consultancies",
+      "Leadership's stated differentiators didn't match what clients actually came back for - only the positioning workshop surfaced the real ones",
+      "Social media presence was inconsistent enough to be actively forgettable, not just underperforming",
+    ],
     scope: ["Brand Strategy", "Logo Design", "Brand Identity", "Social Media Templates"],
     features: [
       "Full logo suite - primary, secondary, and icon mark variants",
@@ -218,8 +260,14 @@ export const projects: Project[] = [
     image: "/chris-global.png",
     gallery: ["/chris-global.png", "/nextcash.png"],
     tags: ["Branding", "Web Design", "Social Media"],
+    outcome: "authority",
     problem:
       "Chris Global's online presence didn't reflect the scale of their operations - they were trading internationally but looked like a local business online, costing them credibility with new partners.",
+    discovery: [
+      "An internationally trading company presented online like a local operation, creating a credibility gap with new partners",
+      "Leadership interviews surfaced real competitive differentiators that had never been articulated anywhere public-facing",
+      "No content system existed to consistently reinforce scale and credibility across web, print, and social",
+    ],
     scope: ["Rebrand", "Web Design", "Social Media Strategy", "Content System"],
     features: [
       "International-grade brand identity",
@@ -247,8 +295,14 @@ export const projects: Project[] = [
     image: "/najec-fmcg.png",
     gallery: ["/najec-fmcg.png", "/najec.png"],
     tags: ["Branding", "Web Design", "Social Media"],
+    outcome: "authority",
     problem:
       "Najec FMCG had strong distribution relationships but no consistent brand voice - their social media was scattered and their website didn't communicate the breadth of their product range.",
+    discovery: [
+      "Strong distribution relationships weren't matched by a consistent brand voice anywhere online",
+      "Scattered social media made the brand look smaller and less reliable than its real distribution footprint",
+      "The website understated the actual breadth of the product catalogue, undercutting retail partner confidence",
+    ],
     scope: ["Brand Guidelines", "Web Design", "Social Media Templates", "Content Strategy"],
     features: [
       "Product catalogue website",

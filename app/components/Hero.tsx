@@ -6,7 +6,7 @@ import Container from "@/app/components/Elements/Container";
 import Button from "@/app/components/Elements/Button";
 import { MdArrowOutward } from "react-icons/md";
 
-const capabilities = ["Strategy", "Branding", "Web", "Content", "Advertising", "Growth"];
+const capabilities = ["Positioning", "Web Design", "CRO", "Content", "SEO", "Growth Systems"];
 
 const Hero = () => {
   const reduceMotion = useReducedMotion();
@@ -30,7 +30,7 @@ const Hero = () => {
         {/* ── Top row ──────────────────────────────────────────────── */}
         <motion.div {...rise(0)} className="flex items-center justify-between">
           <span className="text-white/50 text-[11px] tracking-[0.2em] uppercase font-medium">
-            Full-Service Marketing Agency
+            B2B Client Acquisition Studio
           </span>
           <div className="flex items-center gap-2">
             <span className="relative flex h-1.5 w-1.5">
@@ -50,10 +50,10 @@ const Hero = () => {
             className="font-bold text-white leading-[0.95] tracking-[-0.04em]"
             style={{ fontSize: "clamp(48px, 8.5vw, 124px)" }}
           >
-            We make brands
+            We build systems
             <br />
             <span className="font-serif italic font-normal tracking-normal text-primary">
-              worth remembering.
+              that win you clients.
             </span>
           </motion.h1>
 
@@ -62,8 +62,9 @@ const Hero = () => {
             className="mt-10 grid lg:grid-cols-[1fr_360px] gap-8 lg:gap-16 items-start"
           >
             <p className="text-white/45 text-[16px] sm:text-[18px] leading-[1.7] font-light max-w-lg">
-              Strategy, branding, web design, content and advertising, under
-              one roof. For companies who want to grow, not just look busy.
+              Positioning, web design, content and follow-up, engineered into
+              one system. For B2B service businesses who want predictable,
+              qualified sales conversations, not just a nicer-looking website.
             </p>
 
             <div className="flex flex-col sm:flex-row lg:flex-col gap-3">

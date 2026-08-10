@@ -24,7 +24,7 @@ const services = [
     number: "03",
     title: "Web & Digital Experience",
     description:
-      "Websites and digital products that look like you and work like they mean it. Design and development, done properly, not just prettily.",
+      "Websites and digital products built to do one job well: turn visitors into enquiries. Design and development, done properly, not just prettily.",
     includes: ["Web design", "Development", "Product design"],
   },
   {
@@ -45,7 +45,7 @@ const services = [
     number: "06",
     title: "Growth & Optimization",
     description:
-      "The work that never really finishes. Testing, refining, and compounding results long after launch day.",
+      "The work that never really finishes. Testing, refining, and compounding qualified leads long after launch day.",
     includes: ["Conversion optimization", "Analytics", "Ongoing iteration"],
   },
 ];
@@ -66,8 +66,8 @@ const Services = () => {
             <span className="font-serif italic font-normal"> actually do</span>
           </h2>
           <p className="text-muted text-[16px] leading-relaxed lg:pb-1">
-            Six disciplines, one team. Nothing we build is decorative, it&apos;s
-            all in service of a brand people remember.
+            Six disciplines, one team, one goal: turning your digital presence
+            into a system that consistently produces qualified conversations.
           </p>
         </div>
 

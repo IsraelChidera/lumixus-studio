@@ -13,7 +13,7 @@ const faqs = [
   {
     question: "What kind of brands do you work with?",
     answer:
-      "Ambitious ones, across a wide range of industries. What matters more than sector is whether a company is serious about growing the brand, not just the traffic.",
+      "B2B service businesses — consulting, IT, logistics, HR & recruitment, professional services. What matters more than sector is whether you're serious about turning your digital presence into a source of qualified clients, not just traffic.",
   },
   {
     question: "How is this different from hiring a web design agency?",
