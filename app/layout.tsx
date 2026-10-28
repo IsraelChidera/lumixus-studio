@@ -8,36 +8,34 @@ import FloatingButton from "./components/FloatingButton";
 import CustomCursor from "./components/CustomCursor";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
+import { SITE_URL, SITE_TITLE, SITE_DESCRIPTION } from "./lib/site";
+import { faqs } from "./lib/faqs";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://lumixus.studio"),
+  metadataBase: new URL(SITE_URL),
   title: {
-    default: "Lumixus Studio | B2B Client Acquisition Systems",
+    default: SITE_TITLE,
     template: "%s | Lumixus Studio"
   },
-  description:
-    "Lumixus Studio builds client acquisition systems for B2B service businesses — positioning, brand identity, websites, content and follow-up engineered for qualified sales conversations, not just a nicer-looking brand.",
+  description: SITE_DESCRIPTION,
   applicationName: "Lumixus Studio",
   keywords: [
-    "B2B client acquisition",
+    "digital growth systems",
     "B2B lead generation agency",
-    "client acquisition system",
-    "branding agency",
-    "brand identity design",
-    "web design agency",
+    "B2B service business marketing",
+    "B2B client acquisition",
+    "B2B website design",
+    "lead generation for service businesses",
     "B2B marketing agency",
     "conversion rate optimization",
-    "brand strategy",
-    "website design and development",
-    "growth marketing",
-    "B2B growth agency",
+    "marketing automation",
     "Lumixus Studio",
     "Lumixus"
   ],
-  authors: [{ name: "Lumixus Studio", url: "https://lumixus.studio" }],
+  authors: [{ name: "Lumixus Studio", url: SITE_URL }],
   creator: "Lumixus Studio",
   publisher: "Lumixus Studio",
-  category: "B2B Growth Agency",
+  category: "B2B Marketing Agency",
   robots: {
     index: true,
     follow: true,
@@ -50,19 +48,18 @@ export const metadata: Metadata = {
     }
   },
   openGraph: {
-    title: "Lumixus Studio | B2B Client Acquisition Systems",
-    description:
-      "Positioning, web design, content and follow-up for B2B service businesses. Good marketing is good business.",
-    url: "https://lumixus.studio",
+    title: SITE_TITLE,
+    description: SITE_DESCRIPTION,
+    url: SITE_URL,
     siteName: "Lumixus Studio",
     locale: "en_US",
     type: "website",
     images: [
       {
-        url: "https://lumixus.studio/og-image.png",
+        url: `${SITE_URL}/og-image.png`,
         width: 1200,
         height: 630,
-        alt: "Lumixus Studio - B2B Client Acquisition Systems"
+        alt: "Lumixus Studio - Digital growth systems for B2B service businesses"
       }
     ]
   },
@@ -70,16 +67,15 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     site: "@lumixus_studio",
     creator: "@lumixus_studio",
-    title: "Lumixus Studio | B2B Client Acquisition Systems",
-    description:
-      "Positioning, web design, content and follow-up for B2B service businesses. Good marketing is good business.",
-    images: ["https://lumixus.studio/og-image.png"]
+    title: SITE_TITLE,
+    description: SITE_DESCRIPTION,
+    images: [`${SITE_URL}/og-image.png`]
   },
   verification: {
     google: "88ZqRCGFRf_I2IGEUIxUaF0Wes8tGZq59uGbTjImxAo"
   },
   alternates: {
-    canonical: "https://lumixus.studio"
+    canonical: SITE_URL
   }
 };
 
@@ -136,18 +132,18 @@ export default function RootLayout({
   const organizationSchema = {
     "@context": "https://schema.org",
     "@type": "Organization",
-    "@id": "https://lumixus.studio/#organization",
+    "@id": `${SITE_URL}/#organization`,
     name: "Lumixus Studio",
     alternateName: "Lumixus",
-    url: "https://lumixus.studio",
+    url: SITE_URL,
     logo: {
       "@type": "ImageObject",
-      url: "https://lumixus.studio/logo-1.png",
+      url: `${SITE_URL}/logo-1.png`,
       width: 300,
       height: 60
     },
     description:
-      "Lumixus Studio builds client acquisition systems for B2B service businesses, specializing in positioning, brand identity, web design and development, content, and conversion optimization.",
+      SITE_DESCRIPTION,
     foundingDate: "2022",
     email: "lumixusstudio@gmail.com",
     contactPoint: {
@@ -162,54 +158,30 @@ export default function RootLayout({
         "@type": "Offer",
         itemOffered: {
           "@type": "Service",
-          name: "Strategy & Positioning",
-          description: "Brand strategy and market positioning that gives ambitious companies a clear, differentiated point of view."
+          name: "Pipeline Audit",
+          description: "A structured review of a business's positioning, website, content and enquiry handling, with a prioritised action plan."
         }
       },
       {
         "@type": "Offer",
         itemOffered: {
           "@type": "Service",
-          name: "Brand Identity",
-          description: "Logo, visual identity systems, and brand guidelines built for long-term recognition."
+          name: "Client Acquisition System",
+          description: "Messaging, a conversion-focused website, case-study pages, qualifying enquiry forms, CRM, tracking and follow-up automation."
         }
       },
       {
         "@type": "Offer",
         itemOffered: {
           "@type": "Service",
-          name: "Web & Digital Experience",
-          description: "Websites and digital products designed and engineered to represent the brand and convert visitors."
-        }
-      },
-      {
-        "@type": "Offer",
-        itemOffered: {
-          "@type": "Service",
-          name: "Content & Storytelling",
-          description: "Content strategy, copy, and creative that gives brands a consistent, human voice."
-        }
-      },
-      {
-        "@type": "Offer",
-        itemOffered: {
-          "@type": "Service",
-          name: "Advertising & Media",
-          description: "Paid media strategy and campaign creative across search, social, and display."
-        }
-      },
-      {
-        "@type": "Offer",
-        itemOffered: {
-          "@type": "Service",
-          name: "Growth & Optimization",
-          description: "Ongoing conversion and performance work that compounds results over time."
+          name: "Pipeline Growth Retainer",
+          description: "Ongoing authority content, SEO, email nurture and monthly pipeline reporting."
         }
       }
     ],
     sameAs: [
-      "https://www.instagram.com/lumixus_studio/",
-      "https://www.facebook.com/lumixusstudio"
+      "https://www.instagram.com/lumixus.studio/",
+      "https://www.facebook.com/profile.php?id=61563258786419"
     ]
   };
 
@@ -217,12 +189,12 @@ export default function RootLayout({
   const websiteSchema = {
     "@context": "https://schema.org",
     "@type": "WebSite",
-    "@id": "https://lumixus.studio/#website",
-    url: "https://lumixus.studio",
+    "@id": `${SITE_URL}/#website`,
+    url: SITE_URL,
     name: "Lumixus Studio",
-    description: "B2B Client Acquisition Systems",
+    description: "Digital growth systems for B2B service businesses",
     publisher: {
-      "@id": "https://lumixus.studio/#organization"
+      "@id": `${SITE_URL}/#organization`
     },
     inLanguage: "en"
   };
@@ -231,56 +203,11 @@ export default function RootLayout({
   const faqSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    mainEntity: [
-      {
-        "@type": "Question",
-        name: "We already have a website. Can you still help us?",
-        acceptedAnswer: {
-          "@type": "Answer",
-          text: "Yes, and that is often where we add the most value. A lot of the sites we look at were built to look good, not to work. We run a straight audit, tell you what is actually holding it back, and fix it."
-        }
-      },
-      {
-        "@type": "Question",
-        name: "What kind of brands do you work with?",
-        acceptedAnswer: {
-          "@type": "Answer",
-          text: "B2B service businesses — consulting, IT, logistics, HR & recruitment, professional services. What matters more than sector is whether you're serious about turning your digital presence into a source of qualified clients, not just traffic."
-        }
-      },
-      {
-        "@type": "Question",
-        name: "How is this different from hiring a web design agency?",
-        acceptedAnswer: {
-          "@type": "Answer",
-          text: "A web agency builds a website. We build the whole picture: positioning, brand identity, the site itself, content, and the campaigns that bring people to it."
-        }
-      },
-      {
-        "@type": "Question",
-        name: "How long does a project take?",
-        acceptedAnswer: {
-          "@type": "Answer",
-          text: "Depends on scope. A brand identity and website usually lands in four to eight weeks. Ongoing marketing work runs as a partnership, reviewed every month."
-        }
-      },
-      {
-        "@type": "Question",
-        name: "Do you work on one-off projects or only long-term partnerships?",
-        acceptedAnswer: {
-          "@type": "Answer",
-          text: "Both. Some brands need a focused project such as a new identity or a new site. Others want us running point on marketing month to month."
-        }
-      },
-      {
-        "@type": "Question",
-        name: "What does the first conversation involve?",
-        acceptedAnswer: {
-          "@type": "Answer",
-          text: "A short, honest call about where the brand is and where it needs to go. No slideshow, no pressure. Just a clear sense of what is working, what isn't, and whether we are the right fit."
-        }
-      }
-    ]
+    mainEntity: faqs.map((faq) => ({
+      "@type": "Question",
+      name: faq.question,
+      acceptedAnswer: { "@type": "Answer", text: faq.answer }
+    }))
   };
 
   return (

@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { SITE_URL } from "@/app/lib/site";
 import { notFound } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
@@ -6,6 +7,7 @@ import { MdArrowOutward } from "react-icons/md";
 import Container from "@/app/components/Elements/Container";
 import Button from "@/app/components/Elements/Button";
 import { getProjectBySlug, getRelatedProjects, projects } from "@/app/lib/projects";
+import { screens } from "@/app/lib/screens";
 import GalleryCarousel from "@/app/components/GalleryCarousel";
 
 type Props = { params: Promise<{ slug: string }> };
@@ -21,11 +23,11 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: `${project.name} - Case Study`,
     description: project.tagline,
-    alternates: { canonical: `https://lumixus.studio/work/${project.slug}` },
+    alternates: { canonical: `${SITE_URL}/work/${project.slug}` },
     openGraph: {
       title: `${project.name} | Lumixus Studio`,
       description: project.tagline,
-      url: `https://lumixus.studio/work/${project.slug}`,
+      url: `${SITE_URL}/work/${project.slug}`,
       type: "website",
     },
   };
@@ -43,9 +45,10 @@ export default async function ProjectPage({ params }: Props) {
   const isWebProject = Boolean(project.link);
   // Non-web work leads with its curated gallery asset rather than `image`,
   // which isn't guaranteed to be hero-shaped for brand-only projects.
-  const featuredImage = isWebProject
-    ? project.image || project.gallery?.[0]
-    : project.gallery?.[0] || project.image;
+  // A fresh high-resolution capture (app/lib/screens.ts) beats older assets.
+  const featuredImage =
+    screens[project.slug]?.desktop ??
+    (isWebProject ? project.image || project.gallery?.[0] : project.gallery?.[0] || project.image);
 
   return (
     <main>
@@ -148,18 +151,20 @@ export default async function ProjectPage({ params }: Props) {
                 </ul>
               </div>
 
-              <div>
-                <p className="text-xs font-semibold text-muted tracking-widest uppercase mb-3">
-                  Tools
-                </p>
-                <ul className="space-y-1.5">
-                  {project!.stack.map((s) => (
-                    <li key={s} className="text-sm font-medium text-text">
-                      {s}
-                    </li>
-                  ))}
-                </ul>
-              </div>
+              {project!.stack.length > 0 && (
+                <div>
+                  <p className="text-xs font-semibold text-muted tracking-widest uppercase mb-3">
+                    Tools
+                  </p>
+                  <ul className="space-y-1.5">
+                    {project!.stack.map((s) => (
+                      <li key={s} className="text-sm font-medium text-text">
+                        {s}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )}
 
               <div className="col-span-2">
                 <p className="text-xs font-semibold text-muted tracking-widest uppercase mb-3">
@@ -281,11 +286,11 @@ export default async function ProjectPage({ params }: Props) {
                   href={`/work/${rel.slug}`}
                   className="group rounded-2xl overflow-hidden bg-white block card-glow"
                 >
-                  {rel.image ? (
+                  {(screens[rel.slug]?.desktop ?? rel.image) ? (
                     /* Image card — for projects with visuals to show */
                     <div className={`relative aspect-[4/3] ${rel.link ? "" : "bg-white"}`}>
                       <Image
-                        src={rel.image}
+                        src={(screens[rel.slug]?.desktop ?? rel.image)!}
                         alt={rel.name}
                         fill
                         sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"

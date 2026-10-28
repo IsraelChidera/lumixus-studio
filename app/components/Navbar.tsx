@@ -52,7 +52,7 @@ const Navbar = () => {
           className={`w-full max-w-[1100px] flex items-center justify-between gap-4 rounded-full border transition-all duration-300 ${
             scrolled
               ? "bg-dark/85 border-white/10 shadow-xl shadow-black/20 backdrop-blur-xl py-2 pl-5 pr-2"
-              : "bg-dark/40 border-white/10 backdrop-blur-md py-2.5 pl-6 pr-2.5"
+              : "bg-dark/90 border-white/10 backdrop-blur-md py-2.5 pl-6 pr-2.5"
           }`}
         >
           {/* Logo */}
@@ -193,7 +193,7 @@ const Navbar = () => {
                 </p>
                 <div className="flex items-center gap-3">
                   <Link
-                    href="https://www.instagram.com/lumixus_studio/"
+                    href="https://www.instagram.com/lumixus.studio/"
                     className="p-2.5 rounded-full border border-white/15 text-white/40 hover:text-white hover:border-white/30 transition-colors"
                   >
                     <FaInstagram className="w-4 h-4" />

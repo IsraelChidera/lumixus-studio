@@ -1,156 +1,132 @@
-"use client";
-
-import { useState } from "react";
-import { AnimatePresence, motion } from "motion/react";
+import Link from "next/link";
+import { MdArrowOutward } from "react-icons/md";
 import Container from "@/app/components/Elements/Container";
-import Button from "@/app/components/Elements/Button";
 
+// The three offers are a path: diagnose, build, grow. Shown side by side so a
+// buyer can compare them without clicking anything open.
 const services = [
   {
-    number: "01",
-    title: "Strategy & Positioning",
+    stage: "Start here",
+    title: "Pipeline Audit",
+    bestFor: "Businesses that want a clear diagnosis before committing budget",
+    timeline: "1–2 weeks",
     description:
-      "Before a single pixel, we figure out what makes you different and why anyone should care. A clear plan everyone on your team can point to.",
-    includes: ["Brand strategy", "Market positioning", "Messaging framework"],
+      "A structured review of how you win clients online today, with a prioritised list of what's costing you qualified conversations.",
+    includes: ["Positioning review", "Website & conversion audit", "Enquiry-handling review", "Prioritised action plan"],
+    note: "Fee credited if you go on to the full build",
+    featured: false,
   },
   {
-    number: "02",
-    title: "Brand Identity",
+    stage: "The core system",
+    title: "Client Acquisition System",
+    bestFor: "Businesses whose website doesn't explain their value or produce enquiries",
+    timeline: "4–8 weeks",
     description:
-      "Logos are the easy part. We build full identity systems, color, type, voice, and the rules that keep it consistent as you grow.",
-    includes: ["Visual identity", "Brand guidelines", "Naming & voice"],
+      "A fixed-scope build that turns your digital presence into a path from first visit to booked call, and stops leads going cold.",
+    includes: [
+      "Messaging & positioning",
+      "Conversion-focused website",
+      "Case-study pages",
+      "Qualifying enquiry form",
+      "CRM, tracking & follow-up automation",
+    ],
+    note: "One-time project, fixed scope",
+    featured: true,
   },
   {
-    number: "03",
-    title: "Web & Digital Experience",
+    stage: "Keep growing",
+    title: "Pipeline Growth Retainer",
+    bestFor: "Businesses ready to build steady inbound demand month after month",
+    timeline: "Monthly",
     description:
-      "Websites and digital products built to do one job well: turn visitors into enquiries. Design and development, done properly, not just prettily.",
-    includes: ["Web design", "Development", "Product design"],
-  },
-  {
-    number: "04",
-    title: "Content & Storytelling",
-    description:
-      "The words and visuals that carry your brand everywhere it shows up, written to sound like a person, not a press release.",
-    includes: ["Copywriting", "Content systems", "Creative direction"],
-  },
-  {
-    number: "05",
-    title: "Advertising & Media",
-    description:
-      "Paid campaigns across search, social, and display, built on the strategy underneath them instead of guesswork.",
-    includes: ["Paid social", "Search & display", "Campaign creative"],
-  },
-  {
-    number: "06",
-    title: "Growth & Optimization",
-    description:
-      "The work that never really finishes. Testing, refining, and compounding qualified leads long after launch day.",
-    includes: ["Conversion optimization", "Analytics", "Ongoing iteration"],
+      "Ongoing work that keeps qualified prospects coming in after launch, reported against enquiries, calls and proposals.",
+    includes: ["LinkedIn & authority content", "SEO & insight pages", "Email nurture", "Monthly pipeline report"],
+    note: "Reviewed every month, ad spend billed separately",
+    featured: false,
   },
 ];
 
-const Services = () => {
-  const [active, setActive] = useState(0);
+const Check = ({ featured }: { featured: boolean }) => (
+  <svg
+    className={`w-4 h-4 mt-[3px] flex-shrink-0 ${featured ? "text-[#a7a9ff]" : "text-primary"}`}
+    fill="none"
+    viewBox="0 0 24 24"
+    stroke="currentColor"
+    strokeWidth={2.5}
+    aria-hidden="true"
+  >
+    <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+  </svg>
+);
 
+const Services = () => {
   return (
     <section id="services" className="py-24 sm:py-32 bg-surface">
       <Container>
-        {/* ── Section header ─────────────────────────────────────── */}
-        <div className="grid lg:grid-cols-[1fr_380px] gap-8 items-end mb-14">
+        <div className="grid lg:grid-cols-[1fr_400px] gap-6 lg:gap-16 items-end mb-14 sm:mb-16">
           <h2
-            className="font-bold text-text tracking-tight"
-            style={{ fontSize: "clamp(34px, 5vw, 60px)", letterSpacing: "-0.03em" }}
+            className="font-bold text-text"
+            style={{ fontSize: "clamp(34px, 5vw, 64px)", letterSpacing: "-0.035em", lineHeight: 1.02 }}
           >
-            What we
-            <span className="font-serif italic font-normal"> actually do</span>
+            Three ways to work with us.
           </h2>
-          <p className="text-muted text-[16px] leading-relaxed lg:pb-1">
-            Six disciplines, one team, one goal: turning your digital presence
-            into a system that consistently produces qualified conversations.
+          <p className="text-muted text-[16px] leading-relaxed">
+            Each one builds on the last. Start with a diagnosis, fix the
+            foundations, then keep the pipeline growing.
           </p>
         </div>
 
-        {/* ── Interactive list ──────────────────────────────────── */}
-        <div className="border-t border-border">
-          {services.map((service, i) => {
-            const isOpen = active === i;
-            return (
-              <div key={service.number} className="border-b border-border">
-                <button
-                  onClick={() => setActive(isOpen ? -1 : i)}
-                  aria-expanded={isOpen}
-                  aria-controls={`service-panel-${service.number}`}
-                  className="w-full flex items-center gap-6 py-7 sm:py-9 text-left group focus:outline-none focus-visible:ring-2 focus-visible:ring-primary/40 rounded-lg"
+        <ol className="grid lg:grid-cols-3 gap-5 items-stretch">
+          {services.map((s) => (
+            <li
+              key={s.title}
+              className={`relative flex flex-col rounded-[28px] p-8 sm:p-9 ${
+                s.featured
+                  ? "bg-dark text-white shadow-[0_40px_80px_-40px_rgba(54,0,255,0.6)] lg:-my-4 lg:py-12"
+                  : "bg-white text-text ring-1 ring-border"
+              }`}
+            >
+              <p className={`text-[13px] font-semibold ${s.featured ? "text-[#a7a9ff]" : "text-primary"}`}>
+                {s.stage}
+              </p>
+              <h3 className="mt-3 text-[28px] font-bold tracking-[-0.03em] leading-tight">{s.title}</h3>
+              <p className={`mt-4 text-[15px] leading-relaxed ${s.featured ? "text-white/65" : "text-muted"}`}>
+                {s.description}
+              </p>
+
+              <ul className="mt-7 space-y-3">
+                {s.includes.map((item) => (
+                  <li key={item} className={`flex gap-3 text-[15px] ${s.featured ? "text-white/90" : "text-text/85"}`}>
+                    <Check featured={s.featured} />
+                    {item}
+                  </li>
+                ))}
+              </ul>
+
+              <dl className={`mt-8 pt-6 border-t grid grid-cols-[auto_1fr] gap-x-6 gap-y-3 text-[14px] ${s.featured ? "border-white/10" : "border-border"}`}>
+                <dt className={s.featured ? "text-white/45" : "text-muted"}>Timeline</dt>
+                <dd className="font-semibold">{s.timeline}</dd>
+                <dt className={s.featured ? "text-white/45" : "text-muted"}>Best for</dt>
+                <dd className={s.featured ? "text-white/80" : "text-text/80"}>{s.bestFor}</dd>
+              </dl>
+
+              <div className="mt-auto pt-8">
+                <p className={`text-[13px] mb-4 ${s.featured ? "text-white/45" : "text-muted"}`}>{s.note}</p>
+                <Link
+                  href="#contact"
+                  className={`inline-flex w-full items-center justify-center gap-2 rounded-full px-6 py-3.5 text-sm font-semibold transition-colors ${
+                    s.featured
+                      ? "bg-primary text-white hover:bg-secondary"
+                      : "bg-surface text-text hover:bg-primary hover:text-white"
+                  }`}
                 >
-                  <span
-                    className={`text-sm font-semibold tracking-widest tabular-nums transition-colors flex-shrink-0 ${
-                      isOpen ? "text-primary" : "text-muted/50"
-                    }`}
-                  >
-                    {service.number}
-                  </span>
-                  <span
-                    className={`flex-1 font-bold tracking-tight transition-colors ${
-                      isOpen ? "text-primary" : "text-text group-hover:text-primary/70"
-                    }`}
-                    style={{ fontSize: "clamp(22px, 3.6vw, 40px)", letterSpacing: "-0.02em" }}
-                  >
-                    {service.title}
-                  </span>
-                  <span
-                    className={`flex-shrink-0 w-9 h-9 rounded-full border flex items-center justify-center transition-all duration-200 ${
-                      isOpen
-                        ? "bg-primary border-primary text-white rotate-45"
-                        : "border-border text-muted"
-                    }`}
-                  >
-                    <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M12 4v16M4 12h16" />
-                    </svg>
-                  </span>
-                </button>
-
-                <AnimatePresence initial={false}>
-                  {isOpen && (
-                    <motion.div
-                      id={`service-panel-${service.number}`}
-                      initial={{ height: 0, opacity: 0 }}
-                      animate={{ height: "auto", opacity: 1 }}
-                      exit={{ height: 0, opacity: 0 }}
-                      transition={{ duration: 0.3, ease: "easeOut" }}
-                      className="overflow-hidden"
-                    >
-                      <div className="pb-9 pl-0 sm:pl-[68px] grid sm:grid-cols-[1fr_260px] gap-6 sm:gap-10">
-                        <p className="text-muted text-[16px] leading-relaxed max-w-xl">
-                          {service.description}
-                        </p>
-                        <div className="flex flex-wrap content-start gap-2">
-                          {service.includes.map((item) => (
-                            <span
-                              key={item}
-                              className="text-xs font-medium text-text/70 bg-white border border-border px-3 py-1.5 rounded-full"
-                            >
-                              {item}
-                            </span>
-                          ))}
-                        </div>
-                      </div>
-                    </motion.div>
-                  )}
-                </AnimatePresence>
+                  {s.featured ? "Book a pipeline review" : `Ask about the ${s.title.split(" ").slice(-1)[0].toLowerCase()}`}
+                  <MdArrowOutward aria-hidden="true" />
+                </Link>
               </div>
-            );
-          })}
-        </div>
-
-        {/* ── Footer row ─────────────────────────────────────────── */}
-        <div className="flex items-center gap-4 mt-14">
-          <div className="flex-1 h-px bg-border" />
-          <Button href="#contact" variant="primary">
-            Talk through your project
-          </Button>
-        </div>
+            </li>
+          ))}
+        </ol>
       </Container>
     </section>
   );

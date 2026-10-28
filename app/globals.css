@@ -173,3 +173,7 @@ a, button {
     scroll-behavior: auto;
   }
 }
+
+@media (prefers-reduced-motion: reduce) {
+  .marquee-track { animation: none; }
+}

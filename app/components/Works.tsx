@@ -1,289 +1,331 @@
 "use client";
-import React, { useState } from "react";
+
+import { useState, type ReactNode } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { motion } from "motion/react";
 import { MdArrowOutward } from "react-icons/md";
 import Container from "@/app/components/Elements/Container";
 import Button from "@/app/components/Elements/Button";
-import { projects, type Project, type Outcome } from "@/app/lib/projects";
+import { projects, type Project } from "@/app/lib/projects";
+import { screens } from "@/app/lib/screens";
 
-const CATEGORIES = [
-  "All",
-  "Web Design",
-  "Web Dev",
-  "Branding",
-  "E-commerce",
-  "CRO",
-  "Social Media",
-  "SEO",
-];
+const hostOf = (url?: string) => {
+  if (!url) return "";
+  try {
+    return new URL(url).hostname.replace(/^www\./, "");
+  } catch {
+    return "";
+  }
+};
 
-// The strongest quantified proof in the portfolio - CRO outcome, real numbers.
-const FEATURED_SLUG = "rdj-estates";
-
-// Groups shown when browsing "All" - honest categories the portfolio actually
-// has evidence for. "convert" only has one project so far (the featured slug
-// above), which is exactly why it's featured rather than folded into a group.
-const OUTCOME_GROUPS: { key: Outcome; label: string; description: string }[] = [
-  {
-    key: "authority",
-    label: "Build Authority & Positioning",
-    description: "Brand identity and presence that make trust easier to earn.",
-  },
-  {
-    key: "modernize",
-    label: "Modernize Digital Presence",
-    description: "Websites and platforms that finally match the scale of the business.",
-  },
-];
-
-const ProjectCard = ({
-  project,
-  featured,
-}: {
-  project: Project;
-  featured: boolean;
-}) => {
-  // No live link means this wasn't a website - lead with the curated
-  // gallery asset rather than `image`, which isn't guaranteed to be
-  // hero-shaped for brand-only work, and contain it instead of cropping.
-  const isWebProject = Boolean(project.link);
-  const cover = isWebProject
-    ? project.image || project.gallery?.[0]
-    : project.gallery?.[0] || project.image;
-
-  return (
-    <Link
-      href={`/work/${project.slug}`}
-      className={`group relative text-left rounded-2xl overflow-hidden bg-dark focus:outline-none focus-visible:ring-2 focus-visible:ring-primary/40 focus-visible:ring-offset-2 ${
-        featured ? "sm:col-span-2" : ""
-      }`}
+// WeRunAm has no screenshot in /public yet, so it gets a cover drawn in its
+// own brand colours. Add `image` to its entry in projects.ts to replace this.
+const WeRunAmCover = () => (
+  <div className="absolute inset-0 bg-[#1c120b] flex flex-col justify-center px-[9%] overflow-hidden">
+    <div
+      className="absolute -right-[18%] -top-[30%] w-[70%] aspect-square rounded-full bg-[#e66a10]/35 blur-3xl"
+      aria-hidden="true"
+    />
+    <p className="relative text-[#e66a10] font-bold tracking-tight text-[clamp(13px,1.3vw,16px)]">
+      WeRunAm
+    </p>
+    <p
+      className="relative mt-3 text-white font-bold leading-[1.02] tracking-[-0.03em]"
+      style={{ fontSize: "clamp(26px, 3.4vw, 50px)" }}
     >
-      <div className={`relative w-full ${featured ? "aspect-[16/9]" : "aspect-[4/3]"}`}>
-        {cover ? (
+      You need it done.
+      <br />
+      We run am.
+    </p>
+    <div className="relative mt-6 flex flex-wrap gap-2">
+      {["Market Run", "Errand Run", "Airport Rescue", "Import & Export"].map((s) => (
+        <span
+          key={s}
+          className="rounded-full border border-white/15 bg-white/[0.06] px-3 py-1 text-white/75 text-[clamp(10px,0.9vw,12px)] font-medium"
+        >
+          {s}
+        </span>
+      ))}
+    </div>
+  </div>
+);
+
+/** Browser chrome around a desktop capture. */
+const BrowserFrame = ({ host, children }: { host: string; children: ReactNode }) => (
+  <div className="rounded-[10px] overflow-hidden bg-white ring-1 ring-black/[0.06] shadow-[0_40px_90px_-35px_rgba(15,14,26,0.55)]">
+    <div className="flex items-center gap-3 px-3.5 h-7 sm:h-8 border-b border-black/[0.06] bg-[#fbfbfd]">
+      <span className="flex gap-1.5" aria-hidden="true">
+        <span className="w-2 h-2 rounded-full bg-[#ff5f57]/80" />
+        <span className="w-2 h-2 rounded-full bg-[#febc2e]/80" />
+        <span className="w-2 h-2 rounded-full bg-[#28c840]/80" />
+      </span>
+      {host && (
+        <span className="mx-auto text-[10px] sm:text-[11px] text-muted bg-black/[0.04] rounded-md px-3 py-0.5 truncate max-w-[55%]">
+          {host}
+        </span>
+      )}
+      <span className="w-[42px]" aria-hidden="true" />
+    </div>
+    <div className="relative aspect-[16/10] bg-surface">{children}</div>
+  </div>
+);
+
+/**
+ * A project's live site on its brand tint: desktop in a browser window, with
+ * the phone view overlapping when a mobile capture exists.
+ */
+const Showcase = ({ project, priority = false }: { project: Project; priority?: boolean }) => {
+  const host = hostOf(project.link);
+  const shot = screens[project.slug];
+  const desktop = shot?.desktop ?? (project.imageStyle === "mockup" ? undefined : project.image);
+  const mobile = shot?.mobile;
+
+  // Older assets that are already device mockups: show them as they are.
+  if (!desktop && project.image && project.imageStyle === "mockup") {
+    return (
+      <div className="absolute inset-0 p-[7%]">
+        <div className="relative w-full h-full">
           <Image
-            src={cover}
-            alt={project.name}
+            src={project.image}
+            alt={`${project.name} website on desktop and mobile`}
             fill
-            sizes={featured ? "(max-width: 640px) 100vw, 1200px" : "(max-width: 640px) 100vw, 600px"}
-            className={`transition-transform duration-500 group-hover:scale-[1.04] ${
-              isWebProject ? "object-cover object-top" : "object-contain p-8 bg-white/[0.03]"
-            }`}
+            priority={priority}
+            sizes="(max-width: 1024px) 90vw, 680px"
+            className="object-contain drop-shadow-[0_30px_40px_rgba(15,14,26,0.25)]"
           />
-        ) : (
-          <div className="absolute inset-0 bg-gradient-to-br from-deep to-dark flex items-center justify-center">
-            <span className="font-serif italic text-white/15 text-6xl">
-              {project.name.charAt(0)}
-            </span>
-          </div>
-        )}
-
-        {/* Gradient scrim */}
-        <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/10 to-transparent" />
-
-        {/* Top row */}
-        <div className="absolute top-5 left-5 right-5 flex items-start justify-between">
-          <div className="flex flex-wrap gap-1.5">
-            {project.tags.slice(0, featured ? 3 : 2).map((tag) => (
-              <span
-                key={tag}
-                className="text-[10px] font-medium text-white/80 bg-white/10 backdrop-blur-sm border border-white/15 px-2.5 py-1 rounded-full"
-              >
-                {tag}
-              </span>
-            ))}
-          </div>
-          <span className="w-9 h-9 rounded-full bg-white/10 backdrop-blur-sm border border-white/15 flex items-center justify-center text-white opacity-0 group-hover:opacity-100 group-focus-visible:opacity-100 transition-opacity duration-200 flex-shrink-0">
-            <MdArrowOutward className="text-sm" />
-          </span>
-        </div>
-
-        {/* Bottom content */}
-        <div className="absolute bottom-0 left-0 right-0 p-6">
-          <h3
-            className="font-bold text-white leading-tight mb-2"
-            style={{
-              fontSize: featured ? "clamp(24px, 3vw, 34px)" : "clamp(19px, 2.2vw, 24px)",
-              letterSpacing: "-0.02em",
-            }}
-          >
-            {project.name}
-          </h3>
-          <p className="text-white/55 text-sm leading-relaxed max-w-md">
-            {project.tagline}
-          </p>
         </div>
       </div>
-    </Link>
+    );
+  }
+
+  return (
+    <div className="absolute inset-0">
+      <div
+        className={`absolute ${
+          mobile ? "top-[9%] left-[6%] w-[80%]" : "top-1/2 -translate-y-1/2 left-[8%] w-[84%]"
+        }`}
+      >
+        <BrowserFrame host={host}>
+          {desktop ? (
+            <Image
+              src={desktop}
+              alt={`${project.name} website on desktop`}
+              fill
+              priority={priority}
+              quality={90}
+              sizes="(max-width: 1024px) 85vw, 620px"
+              className="object-cover object-top"
+            />
+          ) : project.slug === "werunam" ? (
+            <WeRunAmCover />
+          ) : null}
+        </BrowserFrame>
+      </div>
+
+      {mobile && (
+        <div className="absolute right-[5%] bottom-[7%] w-[21%]">
+          <div className="relative aspect-[390/844] rounded-[18%/8.5%] bg-[#0f0e1a] p-[4%] shadow-[0_30px_60px_-20px_rgba(15,14,26,0.6)]">
+            <div className="relative w-full h-full rounded-[15%/7%] overflow-hidden bg-white">
+              <Image
+                src={mobile}
+                alt={`${project.name} website on mobile`}
+                fill
+                quality={90}
+                sizes="(max-width: 1024px) 22vw, 150px"
+                className="object-cover object-top"
+              />
+            </div>
+          </div>
+        </div>
+      )}
+    </div>
   );
 };
 
+const Source = ({ project }: { project: Project }) => (
+  <span
+    className={`inline-flex items-center rounded-full px-2.5 py-0.5 text-[11px] font-semibold ${
+      project.kind === "in-house" ? "bg-[#fbe9dc] text-[#a3480a]" : "bg-surface text-muted"
+    }`}
+  >
+    {project.highlightSource}
+  </span>
+);
+
 const Works = () => {
-  const [active, setActive] = useState("All");
-
-  const isAll = active === "All";
-  const hero = isAll ? projects.find((p) => p.slug === FEATURED_SLUG) : undefined;
-
-  const filtered = isAll
-    ? projects
-    : projects.filter((p) => p.tags.includes(active));
+  const [active, setActive] = useState(0);
+  const current = projects[active];
 
   return (
     <section id="works" className="py-24 sm:py-32 bg-white">
-        <Container>
-          {/* ── Header ─────────────────────────────────────────── */}
-          <div className="mb-10 text-center max-w-2xl mx-auto">
-            <span className="section-label justify-center mb-6">
-              <span className="w-1 h-1 rounded-full bg-primary" />
-              Selected Work
-            </span>
-            <h2
-              className="font-bold text-text tracking-tight"
-              style={{ fontSize: "clamp(34px, 5vw, 60px)", letterSpacing: "-0.03em" }}
-            >
-              Systems we&apos;ve
-              <span className="font-serif italic font-normal"> built to grow.</span>
-            </h2>
-            <p className="mt-4 text-muted text-[16px] leading-relaxed">
-              Positioning, websites and conversion systems for companies serious about their next client.
-            </p>
-          </div>
-
-          {/* ── Category filter ─────────────────────────────────── */}
-          <div className="flex flex-wrap justify-center gap-2 mb-14">
-            {CATEGORIES.map((cat) => (
-              <button
-                key={cat}
-                onClick={() => setActive(cat)}
-                className={`text-xs font-semibold px-4 py-2 rounded-full border transition-all duration-200 ${
-                  active === cat
-                    ? "bg-primary text-white border-primary"
-                    : "bg-white text-muted border-border hover:border-primary/40 hover:text-text"
-                }`}
-              >
-                {cat}
-              </button>
-            ))}
-          </div>
-
-          <motion.div
-            key={active}
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.3, ease: "easeOut" }}
+      <Container>
+        {/* ── Header ─────────────────────────────────────────────── */}
+        <div className="grid lg:grid-cols-[1fr_380px] gap-6 lg:gap-16 items-end mb-14 sm:mb-20">
+          <h2
+            className="font-bold text-text"
+            style={{ fontSize: "clamp(36px, 5.4vw, 72px)", letterSpacing: "-0.035em", lineHeight: 1 }}
           >
-            {/* ── Featured case study ───────────────────────────── */}
-            {hero && (
-              <div className="mb-16 rounded-3xl overflow-hidden bg-dark grid lg:grid-cols-2">
-                <div className="relative aspect-[4/3] lg:aspect-auto">
-                  {(hero.image || hero.gallery?.[0]) && (
-                    <Image
-                      src={hero.image || hero.gallery![0]}
-                      alt={hero.name}
-                      fill
-                      sizes="(max-width: 1024px) 100vw, 50vw"
-                      className="object-cover object-top"
-                    />
-                  )}
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent lg:bg-gradient-to-r lg:from-transparent lg:via-transparent lg:to-black/40" />
-                </div>
-                <div className="p-8 sm:p-10 lg:p-14 flex flex-col justify-center">
-                  <span className="inline-flex items-center gap-2 text-[11px] font-semibold tracking-[0.18em] uppercase text-white/45 mb-5">
-                    <span className="w-1 h-1 rounded-full bg-primary" />
-                    Featured Case Study
-                  </span>
-                  <h3
-                    className="font-bold text-white leading-tight mb-3"
-                    style={{ fontSize: "clamp(26px, 3.4vw, 40px)", letterSpacing: "-0.02em" }}
+            Work that brings
+            <br className="hidden sm:block" /> in business.
+          </h2>
+          <p className="text-muted text-[16px] leading-relaxed">
+            Websites and growth systems built to do one job: turn attention
+            into enquiries, donations and sales.
+          </p>
+        </div>
+
+        {/* ── Desktop: index + sticky preview ───────────────────── */}
+        <div className="hidden lg:grid grid-cols-[minmax(0,5fr)_minmax(0,7fr)] gap-14 xl:gap-20 items-start">
+          <ul className="border-t border-border">
+            {projects.map((project, i) => {
+              const isActive = i === active;
+              return (
+                <li key={project.slug} className="border-b border-border">
+                  <Link
+                    href={`/work/${project.slug}`}
+                    onMouseEnter={() => setActive(i)}
+                    onFocus={() => setActive(i)}
+                    aria-current={isActive ? "true" : undefined}
+                    className="group relative block py-7 pl-6 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary/40 rounded-lg"
                   >
-                    {hero.name}
-                  </h3>
-                  <p className="text-white/50 text-[15px] leading-relaxed max-w-md mb-8">
-                    {hero.tagline}
-                  </p>
-                  <div className="space-y-3 mb-9">
-                    {hero.results.map((r) => (
-                      <div key={r} className="flex items-start gap-2.5 text-sm font-medium text-white/85">
-                        <span className="flex-shrink-0 mt-[3px] w-4 h-4 rounded-full bg-primary/20 flex items-center justify-center">
-                          <span className="w-1.5 h-1.5 rounded-full bg-primary" />
+                    <span
+                      className={`absolute left-0 top-7 bottom-7 w-[3px] rounded-full bg-primary transition-transform duration-300 origin-top ${
+                        isActive ? "scale-y-100" : "scale-y-0"
+                      }`}
+                      aria-hidden="true"
+                    />
+                    <span className="flex items-center gap-3 text-[13px] text-muted">
+                      {project.sector}
+                      {project.kind === "in-house" && (
+                        <span className="rounded-full bg-[#fbe9dc] text-[#a3480a] px-2 py-0.5 text-[11px] font-semibold">
+                          Our product
                         </span>
-                        {r}
-                      </div>
-                    ))}
-                  </div>
-                  <div>
-                    <Button href={`/work/${hero.slug}`} variant="inverse">
-                      Read the case study
-                    </Button>
-                  </div>
+                      )}
+                    </span>
+                    <span className="mt-1.5 flex items-center justify-between gap-6">
+                      <span
+                        className={`font-bold transition-colors duration-300 ${
+                          isActive ? "text-text" : "text-text/25 group-hover:text-text/60"
+                        }`}
+                        style={{ fontSize: "clamp(28px, 3vw, 44px)", letterSpacing: "-0.03em", lineHeight: 1.05 }}
+                      >
+                        {project.name}
+                      </span>
+                      <span
+                        className={`flex-shrink-0 w-10 h-10 rounded-full flex items-center justify-center transition-all duration-300 ${
+                          isActive ? "bg-primary text-white" : "bg-surface text-muted opacity-0"
+                        }`}
+                        aria-hidden="true"
+                      >
+                        <MdArrowOutward />
+                      </span>
+                    </span>
+                    {/* The result opens under the active project */}
+                    <span
+                      className={`grid transition-[grid-template-rows,opacity] duration-300 ${
+                        isActive ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"
+                      }`}
+                    >
+                      <span className="overflow-hidden">
+                        <span className="block pt-3 text-[15px] text-text/70 leading-relaxed max-w-md">
+                          {project.tagline}
+                        </span>
+                      </span>
+                    </span>
+                  </Link>
+                </li>
+              );
+            })}
+          </ul>
+
+          <div className="sticky top-28">
+            <div
+              className="relative aspect-[4/3] rounded-[32px] overflow-hidden transition-colors duration-500"
+              style={{ backgroundColor: current.tint }}
+            >
+              {projects.map((project, i) => (
+                <div
+                  key={project.slug}
+                  className={`absolute inset-0 transition-[opacity,transform] duration-500 ease-out ${
+                    i === active ? "opacity-100 translate-y-0" : "opacity-0 translate-y-3 pointer-events-none"
+                  }`}
+                  aria-hidden={i !== active}
+                >
+                  <Showcase project={project} priority={i === 0} />
                 </div>
-              </div>
-            )}
+              ))}
 
-            {/* ── Grid: grouped by outcome on "All", flat when filtering by tag ── */}
-            {isAll ? (
-              <div className="space-y-16">
-                {OUTCOME_GROUPS.map((group) => {
-                  const groupProjects = projects.filter(
-                    (p) => p.outcome === group.key && p.slug !== FEATURED_SLUG
-                  );
-                  if (groupProjects.length === 0) return null;
-                  return (
-                    <div key={group.key}>
-                      <div className="mb-6">
-                        <h3 className="text-lg font-bold text-text tracking-tight">{group.label}</h3>
-                        <p className="text-muted text-sm mt-1">{group.description}</p>
-                      </div>
-                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
-                        {groupProjects.map((project) => (
-                          <ProjectCard
-                            key={project.slug}
-                            project={project}
-                            featured={false}
-                          />
-                        ))}
-                      </div>
-                    </div>
-                  );
-                })}
-              </div>
-            ) : (
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
-                {filtered.map((project) => (
-                  <ProjectCard
-                    key={project.slug}
-                    project={project}
-                    featured={false}
-                  />
-                ))}
-              </div>
-            )}
+            </div>
 
-            {/* ── Empty state ──────────────────────────────────────── */}
-            {!isAll && filtered.length === 0 && (
-              <div className="text-center py-24 border border-dashed border-border rounded-2xl">
-                <p className="text-base font-semibold text-text mb-2">
-                  Nothing in this category yet
-                </p>
-                <p className="text-sm text-muted">
-                  We&apos;re always adding new work, check back soon.
+            {/* Result for the selected project */}
+            <div className="mt-5 flex items-end justify-between gap-6 px-1">
+              <div className="min-w-0">
+                <Source project={current} />
+                <p className="mt-2 text-text font-bold text-[20px] leading-snug tracking-tight">
+                  {current.highlight}
                 </p>
               </div>
-            )}
-          </motion.div>
-
-          {/* ── Footer row ───────────────────────────────────────── */}
-          <div className="flex flex-col sm:flex-row sm:items-center justify-between mt-14 pt-8 border-t border-border gap-5">
-            <p className="text-muted text-sm">{projects.length} selected projects</p>
-            <Button href="#contact" variant="primary">
-              Start your project
-            </Button>
+              <Link
+                href={`/work/${current.slug}`}
+                className="flex-shrink-0 inline-flex items-center gap-1.5 text-sm font-semibold text-primary hover:underline underline-offset-4 whitespace-nowrap"
+              >
+                Read the case study <MdArrowOutward />
+              </Link>
+            </div>
           </div>
-        </Container>
-      </section>
+        </div>
+
+        {/* ── Mobile & tablet: stacked cases ─────────────────────── */}
+        <ul className="lg:hidden space-y-12">
+          {projects.map((project, i) => (
+            <li key={project.slug}>
+              <Link href={`/work/${project.slug}`} className="group block focus:outline-none">
+                <div
+                  className="relative aspect-[4/3] rounded-3xl overflow-hidden group-focus-visible:ring-2 group-focus-visible:ring-primary/40"
+                  style={{ backgroundColor: project.tint }}
+                >
+                  <Showcase project={project} priority={i === 0} />
+                </div>
+                <div className="mt-5 flex items-center gap-3 text-[13px] text-muted">
+                  {project.sector}
+                  {project.kind === "in-house" && (
+                    <span className="rounded-full bg-[#fbe9dc] text-[#a3480a] px-2 py-0.5 text-[11px] font-semibold">
+                      Our product
+                    </span>
+                  )}
+                </div>
+                <div className="mt-1 flex items-center justify-between gap-4">
+                  <h3 className="font-bold text-text text-[28px] sm:text-[34px] tracking-[-0.03em] leading-tight">
+                    {project.name}
+                  </h3>
+                  <span className="flex-shrink-0 w-10 h-10 rounded-full bg-primary text-white flex items-center justify-center" aria-hidden="true">
+                    <MdArrowOutward />
+                  </span>
+                </div>
+                <p className="mt-2 text-text/80 text-[16px] font-semibold leading-snug">
+                  {project.highlight}
+                </p>
+                <div className="mt-2">
+                  <Source project={project} />
+                </div>
+              </Link>
+            </li>
+          ))}
+        </ul>
+
+        {/* ── Footer row ─────────────────────────────────────────── */}
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between mt-16 pt-8 border-t border-border gap-5">
+          <p className="text-muted text-sm max-w-md">
+            Results marked client-reported were shared with us by the client
+            from their own data.
+          </p>
+          <Button href="#contact" variant="primary">
+            Book a pipeline review
+          </Button>
+        </div>
+      </Container>
+    </section>
   );
 };
-
 
 export default Works;

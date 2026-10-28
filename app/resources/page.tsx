@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { SITE_URL } from "@/app/lib/site";
 import Link from "next/link";
 import React from "react";
 import Container from "@/app/components/Elements/Container";
@@ -19,13 +20,13 @@ export const metadata: Metadata = {
     "Lumixus Studio resources"
   ],
   alternates: {
-    canonical: "https://lumixus.studio/resources"
+    canonical: `${SITE_URL}/resources`
   },
   openGraph: {
     title: "Free Business Resources - Templates & Tools | Lumixus Studio",
     description:
       "Free Notion templates, content systems, and strategy guides for B2B business owners and content creators. Built by the Lumixus Studio team.",
-    url: "https://lumixus.studio/resources",
+    url: `${SITE_URL}/resources`,
     type: "website"
   }
 };

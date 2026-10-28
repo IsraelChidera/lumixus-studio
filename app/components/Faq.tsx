@@ -1,110 +1,92 @@
 "use client";
 
 import { useState } from "react";
+import { MdArrowOutward } from "react-icons/md";
 import Container from "@/app/components/Elements/Container";
-import Button from "@/app/components/Elements/Button";
-
-const faqs = [
-  {
-    question: "We already have a website. Can you still help us?",
-    answer:
-      "Yes, and that's often where we add the most value. A lot of the sites we look at were built to look good, not to work. We run a straight audit, tell you what's actually holding it back, and fix it.",
-  },
-  {
-    question: "What kind of brands do you work with?",
-    answer:
-      "B2B service businesses — consulting, IT, logistics, HR & recruitment, professional services. What matters more than sector is whether you're serious about turning your digital presence into a source of qualified clients, not just traffic.",
-  },
-  {
-    question: "How is this different from hiring a web design agency?",
-    answer:
-      "A web agency builds you a website. We build the whole picture: positioning, brand identity, the site itself, content, and the campaigns that bring people to it.",
-  },
-  {
-    question: "How long does a project take?",
-    answer:
-      "Depends on scope. A brand identity and website usually lands in four to eight weeks. Ongoing marketing work runs as a partnership, reviewed every month.",
-  },
-  {
-    question: "Do you work on one-off projects or only long-term partnerships?",
-    answer:
-      "Both. Some brands need a focused project, a new identity, a new site. Others want us running point on marketing month to month.",
-  },
-  {
-    question: "What does the first conversation involve?",
-    answer:
-      "A short, honest call about where your brand is and where it needs to go. No slideshow, no pressure. Just a clear sense of what's working and whether we're the right fit.",
-  },
-];
+import { faqs } from "@/app/lib/faqs";
+import { BOOKING_URL } from "@/app/lib/site";
 
 const Faq = () => {
   const [active, setActive] = useState<number | null>(0);
 
   return (
-    <section className="py-24 sm:py-32 bg-white">
+    <section id="faq" className="py-24 sm:py-32 bg-white">
       <Container>
-        <div className="max-w-2xl mx-auto">
-          {/* ── Section header ───────────────────────────────────── */}
-          <div className="mb-12">
-            <span className="section-label mb-6 inline-flex">
-              <span className="w-1 h-1 rounded-full bg-primary" />
-              FAQ
-            </span>
+        <div className="grid lg:grid-cols-[minmax(0,5fr)_minmax(0,7fr)] gap-12 lg:gap-20">
+          {/* ── Header + direct line ─────────────────────────────── */}
+          <div className="lg:sticky lg:top-32 self-start">
             <h2
-              className="font-bold text-text tracking-tight"
-              style={{ fontSize: "clamp(30px, 4vw, 48px)", letterSpacing: "-0.03em" }}
+              className="font-bold text-text"
+              style={{ fontSize: "clamp(32px, 4.2vw, 56px)", letterSpacing: "-0.035em", lineHeight: 1.04 }}
             >
-              Straight answers to
-              <span className="font-serif italic font-normal"> real questions.</span>
+              Questions buyers ask before they call.
             </h2>
+            <p className="mt-6 text-muted text-[17px] leading-relaxed max-w-md">
+              Straight answers on scope, cost, timelines and how we measure
+              results.
+            </p>
+
+            <div className="mt-10 rounded-[24px] bg-surface p-6 sm:p-7 max-w-md">
+              <p className="text-[17px] font-bold text-text tracking-tight">Have a question that isn&apos;t here?</p>
+              <p className="mt-2 text-[15px] text-muted leading-relaxed">
+                Ask it on a 30-minute call. If we&apos;re not the right fit, we&apos;ll tell you.
+              </p>
+              <a
+                href={BOOKING_URL}
+                className="mt-5 inline-flex items-center gap-2 rounded-full bg-primary hover:bg-secondary text-white text-sm font-semibold px-5 py-3 transition-colors"
+              >
+                Book a pipeline review <MdArrowOutward aria-hidden="true" />
+              </a>
+            </div>
           </div>
 
-          {/* ── List ─────────────────────────────────────────────── */}
+          {/* ── Questions ────────────────────────────────────────── */}
           <div className="border-t border-border">
             {faqs.map((faq, i) => {
               const isOpen = active === i;
               const panelId = `faq-panel-${i}`;
               return (
                 <div key={faq.question} className="border-b border-border">
-                  <button
-                    id={`faq-trigger-${i}`}
-                    className="w-full flex items-start justify-between gap-4 py-6 text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-primary/40 rounded-lg"
-                    onClick={() => setActive(isOpen ? null : i)}
-                    aria-expanded={isOpen}
-                    aria-controls={panelId}
-                  >
-                    <span className={`text-base font-semibold leading-snug ${isOpen ? "text-primary" : "text-text"}`}>
-                      {faq.question}
-                    </span>
-                    <span
-                      className={`flex-shrink-0 w-6 h-6 rounded-full border flex items-center justify-center transition-all duration-200 mt-0.5 ${
-                        isOpen
-                          ? "bg-primary border-primary text-white rotate-45"
-                          : "border-border text-muted"
-                      }`}
+                  <h3>
+                    <button
+                      id={`faq-trigger-${i}`}
+                      className="w-full flex items-start justify-between gap-6 py-7 text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-primary/40 rounded-lg group"
+                      onClick={() => setActive(isOpen ? null : i)}
+                      aria-expanded={isOpen}
+                      aria-controls={panelId}
                     >
-                      <svg className="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
-                        <path strokeLinecap="round" strokeLinejoin="round" d="M12 4v16M4 12h16" />
-                      </svg>
-                    </span>
-                  </button>
+                      <span
+                        className={`text-[18px] sm:text-[20px] font-bold tracking-[-0.02em] leading-snug transition-colors ${
+                          isOpen ? "text-text" : "text-text/70 group-hover:text-text"
+                        }`}
+                      >
+                        {faq.question}
+                      </span>
+                      <span
+                        className={`flex-shrink-0 w-9 h-9 rounded-full flex items-center justify-center transition-all duration-200 ${
+                          isOpen ? "bg-primary text-white rotate-45" : "bg-surface text-text"
+                        }`}
+                        aria-hidden="true"
+                      >
+                        <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                          <path strokeLinecap="round" strokeLinejoin="round" d="M12 4v16M4 12h16" />
+                        </svg>
+                      </span>
+                    </button>
+                  </h3>
 
-                  {isOpen && (
-                    <div id={panelId} role="region" aria-labelledby={`faq-trigger-${i}`} className="pb-6 pr-10">
-                      <p className="text-sm text-muted leading-relaxed">{faq.answer}</p>
-                    </div>
-                  )}
+                  <div
+                    id={panelId}
+                    role="region"
+                    aria-labelledby={`faq-trigger-${i}`}
+                    hidden={!isOpen}
+                    className="pb-8 pr-14"
+                  >
+                    <p className="text-[16px] text-muted leading-relaxed">{faq.answer}</p>
+                  </div>
                 </div>
               );
             })}
-          </div>
-
-          {/* ── Footer ───────────────────────────────────────────── */}
-          <div className="flex items-center gap-4 mt-12 pt-10 border-t border-border">
-            <div className="flex-1" />
-            <Button href="#contact" variant="primary">
-              Ask us directly
-            </Button>
           </div>
         </div>
       </Container>

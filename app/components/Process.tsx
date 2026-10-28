@@ -1,94 +1,84 @@
-"use client";
-
-import { motion } from "motion/react";
 import Container from "@/app/components/Elements/Container";
 
 const steps = [
   {
-    number: "01",
-    title: "Understand",
-    duration: "Week 1",
+    title: "Diagnose",
+    duration: "Weeks 1–2",
     description:
-      "We start by listening. Your market, your customers, what's already working and what's quietly not.",
+      "How clients find you today, what your website and content say, and where enquiries drop off or go cold.",
+    output: "Pipeline Audit report",
   },
   {
-    number: "02",
-    title: "Shape",
+    title: "Position",
     duration: "Weeks 2–3",
     description:
-      "Strategy and creative direction come together into a plan you can actually see, not just a deck.",
+      "Who you serve, what you solve and why you're the safer choice, turned into messaging every page is built on.",
+    output: "Messaging framework",
   },
   {
-    number: "03",
     title: "Build",
-    duration: "Weeks 3–6",
+    duration: "Weeks 3–8",
     description:
-      "Design and development move fast, with you kept in the loop at every stage. No surprises, no scope creep.",
+      "Website, case-study pages, qualifying enquiry form, tracking and follow-up, with you reviewing at every stage.",
+    output: "Live acquisition system",
   },
   {
-    number: "04",
     title: "Grow",
     duration: "Ongoing",
     description:
-      "Launch isn't the finish line. We keep testing, refining, and compounding results long after.",
+      "We publish, test and refine, and report every month on qualified enquiries, booked calls and proposals.",
+    output: "Monthly pipeline report",
   },
 ];
 
 const Process = () => {
   return (
     <section id="process" className="py-24 sm:py-32 bg-dark relative overflow-hidden">
-      <div className="absolute top-1/3 right-0 w-[420px] h-[420px] bg-primary/10 rounded-full blur-[160px] pointer-events-none" />
+      <div
+        className="absolute -right-40 -top-40 w-[700px] h-[700px] rounded-full pointer-events-none opacity-70"
+        style={{
+          background:
+            "repeating-radial-gradient(circle at center, transparent 0 69px, rgba(167,169,255,0.07) 69px 70px)",
+          maskImage: "radial-gradient(circle at center, black 25%, transparent 70%)",
+          WebkitMaskImage: "radial-gradient(circle at center, black 25%, transparent 70%)",
+        }}
+        aria-hidden="true"
+      />
 
       <Container className="relative z-10">
-        {/* ── Section header ─────────────────────────────────────── */}
-        <div className="flex items-end justify-between gap-8 mb-16 sm:mb-24 flex-wrap">
+        <div className="grid lg:grid-cols-[1fr_380px] gap-6 lg:gap-16 items-end mb-16 sm:mb-20">
           <h2
-            className="font-bold text-white tracking-tight max-w-xl"
-            style={{ fontSize: "clamp(34px, 5vw, 60px)", letterSpacing: "-0.03em" }}
+            className="font-bold text-white"
+            style={{ fontSize: "clamp(34px, 5vw, 64px)", letterSpacing: "-0.035em", lineHeight: 1.02 }}
           >
-            How we
-            <span className="font-serif italic font-normal text-primary"> work together</span>
+            From first call to a steady pipeline.
           </h2>
-          <p className="text-white/55 text-[16px] leading-relaxed max-w-xs">
-            No mysterious process. Four stages, start to finish.
+          <p className="text-white/55 text-[16px] leading-relaxed">
+            Four stages, each with a clear output, so you always know what
+            you&apos;re getting and when.
           </p>
         </div>
 
-        {/* ── Steps ──────────────────────────────────────────────── */}
-        <div className="relative pl-8 sm:pl-12 border-l border-white/10">
+        <ol className="grid sm:grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-12">
           {steps.map((step, i) => (
-            <motion.div
-              key={step.number}
-              initial={{ y: 30, opacity: 0 }}
-              whileInView={{ y: 0, opacity: 1 }}
-              transition={{ duration: 0.6, delay: i * 0.1, ease: "easeOut" }}
-              viewport={{ once: true }}
-              className={`relative ${i !== steps.length - 1 ? "pb-16 sm:pb-20" : ""}`}
-              style={{ marginLeft: `${(i % 2) * 6}%` }}
-            >
-              <span className="absolute -left-[35px] sm:-left-[51px] top-1.5 w-3 h-3 rounded-full bg-primary ring-4 ring-dark" />
-
-              <div className="flex items-baseline gap-4 mb-3 flex-wrap">
-                <span className="text-xs font-semibold text-white/45 tracking-widest tabular-nums">
-                  {step.number}
-                </span>
-                <span className="text-xs font-semibold text-primary bg-primary/10 px-2.5 py-1 rounded-full">
-                  {step.duration}
-                </span>
+            <li key={step.title} className="relative">
+              {/* Track with a node per stage */}
+              <div className="flex items-center gap-3 mb-8" aria-hidden="true">
+                <span className="relative flex-shrink-0 w-3 h-3 rounded-full bg-primary ring-[6px] ring-primary/20" />
+                <span className={`h-px flex-1 ${i === steps.length - 1 ? "bg-gradient-to-r from-white/15 to-transparent" : "bg-white/15"}`} />
               </div>
-
-              <h3
-                className="font-serif italic font-normal text-white leading-none mb-4"
-                style={{ fontSize: "clamp(30px, 4.5vw, 52px)" }}
-              >
-                {step.title}
-              </h3>
-              <p className="text-white/60 text-[16px] leading-relaxed max-w-md">
-                {step.description}
+              <p className="text-[13px] font-semibold text-[#a7a9ff]">
+                Step {i + 1} <span className="text-white/35 font-normal">· {step.duration}</span>
               </p>
-            </motion.div>
+              <h3 className="mt-2 text-[28px] font-bold text-white tracking-[-0.03em]">{step.title}</h3>
+              <p className="mt-3 text-white/60 text-[15px] leading-relaxed">{step.description}</p>
+              <p className="mt-5 inline-flex items-center gap-2 rounded-full bg-white/[0.06] border border-white/10 px-3 py-1.5 text-[12px] font-medium text-white/75">
+                <span className="w-1.5 h-1.5 rounded-full bg-[#a7a9ff]" aria-hidden="true" />
+                {step.output}
+              </p>
+            </li>
           ))}
-        </div>
+        </ol>
       </Container>
     </section>
   );
